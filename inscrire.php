@@ -13,20 +13,20 @@
             <div class="modal-body">
               
             
-                <form id="registerForm" method="POST" >
+                <form id="registerForm" method="POST" action="inscriptionAPI.php">
 <!---form--->           <div class="form-group">
 <!---input width--->    <div class="col-xs-6">
                         <label for="InputName">Prénom</label>
                         <div class="input-group">
 						 <span class="input-group-addon"><span class="fa fa-user"></span></span>
-                        <input type="text" class="form-control" name="first_name" placeholder="Enter First Name" required>
+                        <input type="text" class="form-control" name="prenom" placeholder="Entrez votre prénom" required>
                        
                         </div>
                         <br>
                         <label for="InputName">Nom d'utilisateur</label>
                         <div class="input-group">
 						 <span class="input-group-addon"><span  class="fa fa-user"></span></span>
-                        <input type="text" class="form-control" name="username" placeholder="Enter Username" required>
+                        <input type="text" class="form-control" name="lg" placeholder="Saisissez votre nom d'utilisateur" required>
                        
                     </div>
 <!--------------------------------------separator---------------------------------------------------------------> <hr>
@@ -37,7 +37,7 @@
 
                         <label for="InputName">Nom de famille</label>
                         <div class="input-group">
-                        <input type="text" class="form-control" name="last_name" placeholder="Enter Last Name" required>
+                        <input type="text" class="form-control" name="nom" placeholder="Entrer le nom de famille" required>
                         <span class="input-group-addon"><span class="fa fa-user"></span></span>
                         </div>
                     
@@ -51,13 +51,13 @@
 						
                         <label for="profil">Profil</label>
 						
-							<select class="form-control">
+							<select class="form-control" name="profil">
 									<option selected=""> Selectionner un profil</option>
 									<option>Officier</option>
 									<option>Agent</option>
 									<option>Livreur</option>
 									<option>Citoyen</option>
-								</select>
+							</select>
 	
                     </div>
 <!--------------------------------------separator---------------------------------------------------------------> <hr>
@@ -75,7 +75,7 @@
                         <label for="InputEmail">Enter Email</label>
                         <div class="input-group">
 						 <span class="input-group-addon"><span  class="fa fa-envelope"></span></span>
-                        <input type="email" class="form-control" name="email" placeholder="Enter Email" required>
+                        <input type="email" class="form-control" name="email" placeholder="Entrez l'e-mail" required>
                        
                     </div>
 <!----------------------------break-------------------------------------------------------------> <br>
@@ -87,7 +87,7 @@
                         <label for="InputStreetName">Adresse</label>
                         <div class="input-group">
 						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                        <input type="text" class="form-control" name="street_name" placeholder="Enter Street Name and Number" required>
+                        <input type="text" class="form-control" name="adresse" placeholder="Entrer votre adresse" required>
                         
                         </div>
 <!----------------------------break-------------------------------------------------------------> <br> 
@@ -99,7 +99,7 @@
                         <label for="InputCity">Numéro de telephone</label>
                         <div class="input-group">
 						 <span class="input-group-addon"><span class="fa fa-phone"></span></span>
-                        <input type="text" class="form-control" name="city" placeholder="Enter City" required>
+                        <input type="text" class="form-control" name="numtel" placeholder="vore numéro de téléphone" required>
                        
                     </div>
 <!----------------------------break-------------------------------------------------------------> <br> 
