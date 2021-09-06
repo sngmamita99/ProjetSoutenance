@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="administrateur.css?t=<?php echo time();?>">
     <title>Accueuil</title>
     </head>
-    <body>ggggg
+    <body>
         <section id="part1">
 		<p>
             <p id="lien1"><a href="officier.php"><button>OFFICIER</button></a></p>
