@@ -1,0 +1,121 @@
+body
+{
+    background-color:beige;		
+}
+#form
+{
+	background-color:beige;
+	border:5px solid silver;
+	border-radius:30%;
+	margin:auto;
+	width:60%;
+	margin-top:20px;
+	padding:10%;
+}
+.lab
+{
+	font-size:120%;
+	font-weight:bold;
+	font-family:Georgia;
+}
+#inp1,#inp2
+{
+	width:90%;
+	/* margin-left:10px; */
+	padding:1%;
+}
+.labp
+{
+	font-size:140%;
+	font-weight:bold;
+	font-family:Georgia;
+	text-align:center;
+}
+#sub
+{
+	width:30%;
+	background-color:silver;
+	margin-left:35%;
+	padding:1%;
+	font-size:110%;
+	color:black;
+}
+#div1
+{
+	height:10%;
+	width:50%;
+	margin:auto;
+    background-color:white;
+	border:20px double silver;
+	border-radius:20px 0px 20px 0px;
+	margin-top:7%;
+}
+h1
+{
+	text-align:center;
+	font-style:italic;
+	background-image:linear-gradient(white,silver,silver,silver,white);
+	border:3px solid black;
+	padding:10px;
+	color:black;
+	width:30%;
+	margin:auto;
+	border-radius:50px;
+	font-family:Georgia;
+	font-size:20px;
+}
+h3
+{
+	text-align:center;
+	font-style:italic;
+	background-color:silver;
+	padding:2px;
+	color:white;
+	margin:auto;
+}
+#par3
+{
+	text-align:center;
+	margin-top:5%;
+}
+
+a 
+{
+	margin-left:10%;
+	color:blue;
+	font-size:150%;
+	font-style:italic;
+}
+span 
+{
+	margin-right:10%;
+	color:red;
+	font-size:150%;
+	font-style:oblique;
+	font-weight:bold;
+}
+#btn
+{
+    background-color:black;
+    color:white;
+    position:relative;
+	bottom:4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

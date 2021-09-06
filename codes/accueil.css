@@ -1,0 +1,39 @@
+body
+{
+	background-image:url("images/etatcivil22.jpg");
+	background-repeat:no-repeat;
+}
+
+#lien1,#lien2
+{
+	display:inline;
+
+	
+}
+#lien2
+{
+	margin-left:50px;
+}
+#lien3,#lien4
+{
+	display:inline;
+}
+#lien0
+{
+	margin-left:80px;
+}
+		
+#lien4
+{
+	margin-left:50px;
+}
+button
+{
+	width:7%;
+	height:100px;
+	color:white;
+	border-radius:20px 15px;
+	background:#8093FF;
+	border-color:#8093FF;
+	font-weight:bold;
+}
