@@ -1,0 +1,18 @@
+button
+{
+	width:63%;
+	text-align:center;
+	
+}
+th,td
+{
+	text-align:center;
+}
+#act
+{
+	color:green;
+}
+#desact
+{
+	color:red;
+}

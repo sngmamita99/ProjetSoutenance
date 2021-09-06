@@ -9,7 +9,6 @@
     <title>Cours Complet Bootstrap 4</title>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="officier.css" rel="stylesheet">
   </head>
   <body>
   <form method="post" action="">
@@ -23,7 +22,7 @@
 		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect){ 
 		
-		    $req="SELECT * FROM Users WHERE profil='livreur'";
+		    $req="SELECT * FROM Users WHERE profil='officier'";
 			$res=$connect->query($req);
 			echo "<table class='table table-bordered'>";
 			echo"<thead>";
@@ -54,14 +53,14 @@
 							{
 								echo "<td>";
 								    echo '<span id="desact">Inactif</span>';
-									echo '<td><a href="activer.php?code='.$id.'"><button class="btn btn-success">activer</button></a></td>';
+									echo '<td><a href="activer.php?code='.$id.'"><button id="btn1">activer</button></a></td>';
                                    echo "</td>";
 							}
 							else
 							{
 								echo "<td>";
 							        echo '<span id="act">Actif</span>';
-									echo '<td><a href="desactiver.php?code='.$id.'"><button class="btn btn-danger">désactiver</button></a></td>';
+									echo '<td><a href="desactiver.php?code='.$id.'"><button id="btn2">désactiver</button></a></td>';
                                 echo "</td>";
 							}
 						echo "</tr>";
