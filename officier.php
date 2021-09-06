@@ -20,9 +20,9 @@ session_start();
 			<?php 
 			    if(isset($_POST['rechUser'])){
 					$nme=$_POST['rechUser'];
-					$connect=new PDO("mysql:host=localhost;port=3306;dbname=projetsoutenance","root","");
+					$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
                     if($connect){                 
-					$req="SELECT * FROM Users WHERE (nom like '%$nme%' AND profil='citoyen')or(prenom like '%$nme%' AND profil='citoyen')";
+					$req="SELECT * FROM Users WHERE (nom like '%$nme%' AND profil='officier')or(prenom like '%$nme%' AND profil='officier')";
 					$res=$connect->query($req);
 					echo "<table>";
                             echo"<tr>";
@@ -65,51 +65,51 @@ session_start();
 				}
 			?>
 		</section>
-<?php 
-		$connect=new PDO("mysql:host=localhost;port=3306;dbname=projetsoutenance","root","");
-        if($connect){                 
-		    $req="SELECT * FROM Users WHERE profil='citoyen'";
+    <?php 
+	
+		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
+        if($connect){ 
+		
+		    $req="SELECT * FROM Users WHERE profil='officier'";
 			$res=$connect->query($req);
 			echo "<table>";
-                            echo"<tr>";
-                                echo"<th>N°</th><th>Nom</th><th>Prénom</th><th>Adresse</th><th>Email</th><th>Numéro de téléphone</th>";
-                                echo"<th>Etat</th><th>Login</th><th>Mot de Passe</th><th>Profil</th><th>Date création compte</th>";
-                                echo'<th colspan="2">changer l\'etat</th>'; 
-                            echo"</tr>";								
-                            while($row=$res->fetch(PDO::FETCH_ASSOC)){
-								echo"<tr>";
-                                $id=$row['idUser'];
-                                $nm=$row['nom'];
-                                $pnm=$row['prenom'];
-                                $adr=$row['adresse'];
-                                $email=$row['email'];
-                                $ntl=$row['numTel'];
-                                $etat=$row['etat'];
-                                $login=$row['login'];
-                                $mdp=$row['password'];
-                                $profil=$row['profil'];
-                                $dtcr=$row['created'];
-                                // $dtmod=$row['modified'];
-                                echo "<tr>";
-                                    echo "<td> $id</td><td>$nm</td><td>$pnm</td><td>$adr</td><td>$email</td><td>$ntl</td><td>$etat</td>";
-									echo "<td>$login</td><td>$mdp</td><td>$profil</td><td>$dtcr</td>";
-									if($etat=='0'){
-									    echo "<td>";
-									        echo '<span id="desact">Inactif</span>';
-											echo '<td><a href="activer.php?code='.$id.'"><button id="btn1">activer</button></a></td>';
-                                        echo "</td>";
-									}
-									else{
-									    echo "<td>";
-									        echo '<span id="act">Actif</span>';
-											echo '<td><a href="desactiver.php?code='.$id.'"><button id="btn2">désactiver</button></a></td>';
-                                        echo "</td>";
-									}
-								echo "</tr>";
-						}
-						echo "</table>";
+                echo"<tr>";
+                    echo"<th>N°</th><th>Nom</th><th>Prénom</th><th>Adresse</th><th>Email</th><th>Numéro de téléphone</th>";
+                    echo"<th>Login</th><th>Mot de Passe</th><th>Profil</th><th>Etat</th>";
+                    echo'<th colspan="2">changer l\'etat</th>'; 
+                echo"</tr>";								
+                while($row=$res->fetch(PDO::FETCH_ASSOC)){
+
+                    $id=$row['idUser'];
+                    $nm=$row['nom'];
+                    $pnm=$row['prenom'];
+                    $adr=$row['adresse'];
+                        $email=$row['email'];
+                        $ntl=$row['numTel'];
+                        $etat=$row['etat'];
+                        $login=$row['login'];
+                        $mdp=$row['password'];
+                        $profil=$row['profil'];
+                        echo "<tr>";
+                            echo "<td> $id</td><td>$nm</td><td>$pnm</td><td>$adr</td><td>$email</td><td>$ntl</td>";
+							echo "<td>$login</td><td>$mdp</td><td>$profil</td><td>$etat</td>";
+							if($etat=='0'){
+								echo "<td>";
+								    echo '<span id="desact">Inactif</span>';
+									echo '<td><a href="activer.php?code='.$id.'"><button id="btn1">activer</button></a></td>';
+                                   echo "</td>";
+							}
+							else{
+								echo "<td>";
+							        echo '<span id="act">Actif</span>';
+									echo '<td><a href="desactiver.php?code='.$id.'"><button id="btn2">désactiver</button></a></td>';
+                                echo "</td>";
+							}
+						echo "</tr>";
 					}
+			echo "</table>";
+		}
 				
-			?>
+    ?>
 </body>
 </html>
