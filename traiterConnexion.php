@@ -1,5 +1,6 @@
 <?php
-	connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
+
+	$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 	if($connect){
 		
 		$id=null;
@@ -7,7 +8,6 @@
 			
 				$userName=$_POST['userName'];
 				$mdpAut=$_POST['mdpAut'];
-				$profil=$_GET['profil'];
 		        $req="SELECT * FROM users";
 		        $res=$connect->query($req);
      		    if($res){
@@ -16,19 +16,19 @@
 
 						if($lign['login']==$userName AND $lign['password']==$mdpAut AND $lign['etat']==1){
 							
-							if ($profil=="admin"){
+							if ($lign['profil']=="admin"){
 							    header("Location:administrateur.php");
 							    break;
 						    }
-							else if ($profil=="agent"){
+							else if ($lign['profil']=="agent"){
 							    header("Location:agent.php");
 							    break;
 						    }
-							else if ($profil=="officier"){
+							else if ($lign['profil']=="officier"){
 							    header("Location:officier.php");
 							    break;
 						    }
-							else if ($profil=="citoyen"){
+							else if ($lign['profil']=="citoyen"){
 							    header("Location:citoyen.php");
 							    break;
 						    }
