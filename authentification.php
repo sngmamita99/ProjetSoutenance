@@ -29,18 +29,18 @@
         </div>		
 	</body>
 	<?php
-	    $connect=new PDO("mysql:host=localhost;port=3306;dbname=projetsoutenance","root","");
+	    $connect=new PDO("mysql:host=localhost;port=3306;dbname=Ecivil","root","");
 		if($connect){
 			$id=null;
 		    if(isset($_POST['userName']) AND isset($_POST['mdpAut'])){
 				$userName=$_POST['userName'];
 				$mdpAut=$_POST['mdpAut'];
-		        $req="SELECT idUser,login,password,etat FROM users";
+		        $req="SELECT idUser,email,password,etat FROM users";
 				$res=$connect->query($req);
 				if($res){
 					while($lign=$res->fetch()){
 						// $idc=$lign['idmb'];
-						if($lign['login']==$userName AND $lign['password']==$mdpAut AND $lign['etat']==1){
+						if($lign['email']==$userName AND $lign['password']==$mdpAut AND $lign['etat']==1){
 							header("Location:accueil.php");
 							break;
 						}
