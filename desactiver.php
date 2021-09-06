@@ -4,7 +4,9 @@
     if($connect){                 
 	    $req="UPDATE users SET etat='0' WHERE iduser='$cd'";
 	    $res=$connect->query($req);
-		$row=$res->fetch();
+		$reqR="SELECT * FROM users WHERE iduser='$cd'";
+	    $resR=$connect->query($reqR);
+		$row=$resR->fetch();
 		if($row['profil']=="agent"){
 		    header("Location:agent.php");
 	    }
