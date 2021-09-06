@@ -25,11 +25,11 @@
                     <input id="sub" type="submit" value="connexion"/>
                 </p>
             </form>
-		    <p id='par3'><span>Vous n'avez pas de compte?</span> <a href="inscription.php">S'inscrire?</a></p> 
+		    <p id='par3'><span>Vous n'avez pas de compte?</span> <a href="inscriptionFormulaire.php">S'inscrire?</a></p> 
         </div>		
 	</body>
 	<?php
-	    $connect=new PDO("mysql:host=localhost;port=3306;dbname=Ecivil","root","");
+	    $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 		if($connect){
 			$id=null;
 		    if(isset($_POST['userName']) AND isset($_POST['mdpAut'])){
