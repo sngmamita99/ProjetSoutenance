@@ -11,7 +11,7 @@ session_start();
     </head>
     <body>
         <section id="part1">
-		 <p  id="lien0"><a href="livreur.php"><button>ADMIN</button></a></p>
+		 <p  id="lien0"><a href="accueil.php?profil=admin"><button>ADMIN</button></a></p>
 		<p>
             <p id="lien1"><a href="officier.php"><button>OFFICIER</button></a></p>
            <p id="lien2"><a href="agent.php"><button>AGENT</button></a></p>
