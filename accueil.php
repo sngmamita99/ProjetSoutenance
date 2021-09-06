@@ -10,11 +10,11 @@ session_start();
     <title>Document</title>
     </head>
     <body>
-        <section>
-            <a href="officier.php"><button>OFFICIER D'ETAT CIVIL</button></a>
-            <a href="agent.php"><button>AGENT</button></a>
-            <a href="citoyen.php"><button>CITOYEN</button></a>
-            <a href="livreur.php"><button>LIVREUR</button></a>
-        </section>
+        // <section>
+            // <a href="officier.php"><button>OFFICIER D'ETAT CIVIL</button></a>
+            // <a href="agent.php"><button>AGENT</button></a>
+            // <a href="citoyen.php"><button>CITOYEN</button></a>
+            // <a href="livreur.php"><button>LIVREUR</button></a>
+        // </section>
     </body>
 </html>
