@@ -12,7 +12,7 @@
 	    <div id="div1">
 		    <p id="par1">
             </p>			
-	        <form id="form" method="post" action="" enctype='multipart/form-data'>
+	        <form id="form" method="post" action="inscriptionAPI.php" enctype='multipart/form-data'>
                 <p id="aut">
      		        <label class="lab">Nom</label>
                     <input  id="inp1" type="text" id='rech' name="nom" required="required"/>
@@ -37,13 +37,9 @@
 			        <label class="lab">Login(non d'utilisateur)</label>
                     <input id="inp2" type="text" name="lg" required="required"/>
                 </p>
-				<p id="aut">
-     		        <label class="lab">Mot de passe</label>
-                    <input  id="inp1" type="text" id='rech' name="mdp" required="required"/>
-			    </p>
 				<p>
 				    <label class="lab">Profil</label>
-				    <select name="maliste" required="required">
+				    <select name="profil" required="required">
                         
                         <option value=""></option>
                         <option value="officier">officier</option>
@@ -59,20 +55,20 @@
         </div>		
 	</body>
 	 <?php
-    $connect=new PDO("mysql:host=localhost;port=3306;dbname=projetsoutenance","root","");
-	if($connect){
+    // $connect=new PDO("mysql:host=localhost;port=3306;dbname=Ecivil","root","");
+	// if($connect){
 			
-	    if(isset($_POST['nom']) AND isset($_POST['prenom']) AND isset($_POST['adresse']) AND isset($_POST['email'])
-			AND isset($_POST['numtel']) AND isset($_POST['maliste']) AND isset($_POST['lg']) AND isset($_POST['mdp'])){
-	     	$nom=$_POST['nom'];
-			$pnom=$_POST['prenom'];
-			$lg=$_POST['lg'];
-			$mdp=$_POST['mdp'];
-			$numtel=$_POST['numtel'];
-			$email=$_POST['email'];
-			$maliste=$_POST['maliste'];
-			$adresse=$_POST['adresse'];		
-			$created = date('Y-m-d H:i:s');
+	    // if(isset($_POST['nom']) AND isset($_POST['prenom']) AND isset($_POST['adresse']) AND isset($_POST['email'])
+			// AND isset($_POST['numtel']) AND isset($_POST['maliste']) AND isset($_POST['lg']) AND isset($_POST['mdp'])){
+	     	// $nom=$_POST['nom'];
+			// $pnom=$_POST['prenom'];
+			// $lg=$_POST['lg'];
+			// $mdp=$_POST['mdp'];
+			// $numtel=$_POST['numtel'];
+			// $email=$_POST['email'];
+			// $maliste=$_POST['maliste'];
+			// $adresse=$_POST['adresse'];		
+			// $created = date('Y-m-d H:i:s');
             // $modified = date('Y-m-d H:i:s');	
 			
 			// if(isset($_FILES['photo'])){               
@@ -89,17 +85,17 @@
                     // echo "<p>transfert du fichier reussi</p>";
                 // }
                 // $url="mesphotos/".$dhc."_".$_FILES['photo']['name'];               
-		        $req="INSERT INTO users (nom,prenom,adresse,email,numTel,etat,login,password,profil,created)VALUES('$nom','$pnom','$adresse','$email','$numtel',0,'$lg','$mdp','$maliste','$created')";
-			    $res=$connect->query($req);
+		        // $req="INSERT INTO users (nom,prenom,adresse,email,password,numTel,etat)VALUES('$nom','$pnom','$adresse','$email','$numtel',0,'$lg','$mdp','$maliste','$created')";
+			    // $res=$connect->query($req);
 			    // $_SESSION['idmbre']=$connect->lastInsertId();
 			// }
 			// else
 				// echo 'insertion photo failed';
-		 }
-	}
-	else
-		echo 'connexion à la BD non établie';
-?>
+		 // }
+	// }
+	// else
+		// echo 'connexion à la BD non établie';
+// ?>
 	<script  ></script>
 </html>
 		
