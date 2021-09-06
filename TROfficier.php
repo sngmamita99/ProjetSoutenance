@@ -12,19 +12,25 @@
 	<link href="officier.css" rel="stylesheet">
   </head>
   <body>
-  <form method="post" action="TRLivreur.php">
+  <form method="post" action="">
             <div id="recherche">
                 <input type="search" id='rech' name="rechUser" placeholder="Rechercher un utilisateur"/>
-                <input type="submit" id='su' value="Rechercher">
+                <input type="submit" id='bsubmit' value="Rechercher">
             </div>
             </form>
-	 <?php 
-	
+			
+	<section id="section2">		
+	<script  src="rechercher.js"></script>
+<?php 
+			    
+    if(isset($_POST['rechUser'])){
+		
+		$nme=$_POST['rechUser'];
 		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect){ 
-		
-		    $req="SELECT * FROM Users WHERE profil='livreur'";
-			$res=$connect->query($req);
+                
+			$req="SELECT * FROM Users WHERE (nom like '%$nme%' AND profil='officier')or(prenom like '%$nme%' AND profil='officier')";
+					$res=$connect->query($req);
 			echo "<table class='table table-bordered'>";
 			echo"<thead>";
 				echo"<tr>";
@@ -54,14 +60,14 @@
 							{
 								echo "<td>";
 								    echo '<span id="desact">Inactif</span>';
-									echo '<td><a href="activer.php?code='.$id.'"><button class="btn btn-success">activer</button></a></td>';
+									echo '<td><a href="activerR.php?code='.$id.'"><button class="btn btn-success">activer</button></a></td>';
                                    echo "</td>";
 							}
 							else
 							{
 								echo "<td>";
 							        echo '<span id="act">Actif</span>';
-									echo '<td><a href="desactiver.php?code='.$id.'"><button class="btn btn-danger">désactiver</button></a></td>';
+									echo '<td><a href="desactiverR.php?code='.$id.'"><button class="btn btn-danger">désactiver</button></a></td>';
                                 echo "</td>";
 							}
 						echo "</tr>";
@@ -69,7 +75,8 @@
 					}
 			echo "</table>";
 		}
-				
-    ?>
+		}
+			?>
+			</section>
   </body>
 </html>

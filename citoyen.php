@@ -12,7 +12,7 @@
 	<link href="officier.css" rel="stylesheet">
   </head>
   <body>
-  <form method="post" action="">
+  <form method="post" action="TRCitoyen.php">
             <div id="recherche">
                 <input type="search" id='rech' name="rechUser" placeholder="Rechercher un utilisateur"/>
                 <input type="submit" id='su' value="Rechercher">
