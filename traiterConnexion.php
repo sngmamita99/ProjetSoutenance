@@ -8,7 +8,7 @@
 				$userName=$_POST['userName'];
 				$mdpAut=$_POST['mdpAut'];
 				$profil=$_GET['profil'];
-		        $req="SELECT idUser,email,password,profil,etat FROM users";
+		        $req="SELECT * FROM users";
 		        $res=$connect->query($req);
      		    if($res){
 					
