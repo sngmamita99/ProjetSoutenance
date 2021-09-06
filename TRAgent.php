@@ -26,8 +26,13 @@
 		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect){ 
                 
-			$req="SELECT * FROM Users WHERE (nom like '%$nme%' AND profil='agent')or(prenom like '%$nme%' AND profil='agent')";
-					$res=$connect->query($req);
+			$req="SELECT * FROM users WHERE (nom like '%$nme%' AND profil='agent')or(prenom like '%$nme%' AND profil='agent')";
+			$res=$connect->query($req);
+			$row=$res->fetch(PDO::FETCH_ASSOC);
+			if(empty($row)){
+				echo "Aucun resultat trouver";
+			}
+			else {
 			echo "<table class='table table-bordered'>";
 			echo"<thead>";
 				echo"<tr>";
@@ -57,20 +62,21 @@
 							{
 								echo "<td>";
 								    echo '<span id="desact">Inactif</span>';
-									echo '<td><a href="activerR.php?code='.$id.'"><button class="btn btn-success">activer</button></a></td>';
+									echo '<td><a href="activer.php?code='.$id.'"><button class="btn btn-success">activer</button></a></td>';
                                    echo "</td>";
 							}
 							else
 							{
 								echo "<td>";
 							        echo '<span id="act">Actif</span>';
-									echo '<td><a href="desactiverR.php?code='.$id.'"><button class="btn btn-danger">désactiver</button></a></td>';
+									echo '<td><a href="desactiver.php?code='.$id.'"><button class="btn btn-danger">désactiver</button></a></td>';
                                 echo "</td>";
 							}
 						echo "</tr>";
 						 echo "</tbody>";
 					}
 			echo "</table>";
+		}
 		}
 		}
 			?>

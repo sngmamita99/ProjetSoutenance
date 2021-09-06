@@ -26,7 +26,7 @@
 		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect){ 
 		
-		    $req="SELECT * FROM Users WHERE profil='officier'";
+		    $req="SELECT * FROM users WHERE profil='officier'";
 			$res=$connect->query($req);
 			echo "<table class='table table-bordered'>";
 			echo"<thead>";

@@ -27,7 +27,12 @@
         if($connect){ 
                 
 			$req="SELECT * FROM users WHERE (nom like '%$nme%' AND profil='livreur')or(prenom like '%$nme%' AND profil='livreur')";
-					$res=$connect->query($req);
+			$res=$connect->query($req);
+			$row1=$res->fetch();
+			if(empty($row1)){
+				echo "Aucun resultat trouver";
+			}
+			else {
 			echo "<table class='table table-bordered'>";
 			echo"<thead>";
 				echo"<tr>";
@@ -57,20 +62,21 @@
 							{
 								echo "<td>";
 								    echo '<span id="desact">Inactif</span>';
-									echo '<td><a href="activerR.php?code='.$id.'"><button class="btn btn-success">activer</button></a></td>';
+									echo '<td><a href="activer.php?code='.$id.'"><button class="btn btn-success">activer</button></a></td>';
                                    echo "</td>";
 							}
 							else
 							{
 								echo "<td>";
 							        echo '<span id="act">Actif</span>';
-									echo '<td><a href="desactiverR.php?code='.$id.'"><button class="btn btn-danger">désactiver</button></a></td>';
+									echo '<td><a href="desactiver.php?code='.$id.'"><button class="btn btn-danger">désactiver</button></a></td>';
                                 echo "</td>";
 							}
 						echo "</tr>";
 						 echo "</tbody>";
 					}
 			echo "</table>";
+		}
 		}
 		}
 			?>

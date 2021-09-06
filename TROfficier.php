@@ -29,9 +29,14 @@
 		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect){ 
                 
-			$req="SELECT * FROM Users WHERE (nom like '%$nme%' AND profil='officier')or(prenom like '%$nme%' AND profil='officier')";
-					$res=$connect->query($req);
-			echo "<table class='table table-bordered'>";
+			$req="SELECT * FROM users WHERE (nom like '%$nme%' AND profil='officier')or(prenom like '%$nme%' AND profil='officier')";
+		    $res=$connect->query($req);
+			$row=$res->fetch(PDO::FETCH_ASSOC);
+			if(empty($row)){
+				echo "Aucun resultat trouver";
+			}
+			else {
+				echo "<table class='table table-bordered'>";
 			echo"<thead>";
 				echo"<tr>";
                     echo"<th>Nom</th><th>Prénom</th><th>Adresse</th><th>Email</th><th>Téléphone</th>";
@@ -39,6 +44,7 @@
                     echo'<th colspan="2">Etat</th>'; 
                 echo"</tr>";	
 			echo"</thead>";
+			
                while($row=$res->fetch(PDO::FETCH_ASSOC))
 				{
 
@@ -52,7 +58,7 @@
                         $login=$row['login'];
                         $mdp=$row['password'];
                         $profil=$row['profil'];
-						 echo "<tbody>";
+						echo "<tbody>";
                         echo "<tr>";
                             echo "<td>$nm</td><td>$pnm</td><td>$adr</td><td>$email</td><td>$ntl</td>";
 							echo "<td>$login</td><td>$profil</td>";
@@ -60,20 +66,21 @@
 							{
 								echo "<td>";
 								    echo '<span id="desact">Inactif</span>';
-									echo '<td><a href="activerR.php?code='.$id.'"><button class="btn btn-success">activer</button></a></td>';
+									echo '<td><a href="activer.php?code='.$id.'"><button class="btn btn-success">activer</button></a></td>';
                                    echo "</td>";
 							}
 							else
 							{
 								echo "<td>";
 							        echo '<span id="act">Actif</span>';
-									echo '<td><a href="desactiverR.php?code='.$id.'"><button class="btn btn-danger">désactiver</button></a></td>';
+									echo '<td><a href="desactiver.php?code='.$id.'"><button class="btn btn-danger">désactiver</button></a></td>';
                                 echo "</td>";
 							}
 						echo "</tr>";
 						 echo "</tbody>";
 					}
 			echo "</table>";
+		}
 		}
 		}
 			?>
