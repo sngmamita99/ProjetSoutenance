@@ -43,10 +43,10 @@ position: absolute;
 right: 20px;
 top: -45px;
 }
-
+/* #FFC312 */
 .input-group-prepend span{
 width: 50px;
-background-color: #FFC312;
+background-color:#8093FF ;
 color: black;
 border:0 !important;
 }
@@ -71,7 +71,7 @@ margin-right: 5px;
 
 .login_btn{
 color: black;
-background-color: #FFC312;
+background-color: #8093FF;
 width: 100px;
 }
 
