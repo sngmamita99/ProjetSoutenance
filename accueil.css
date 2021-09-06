@@ -1,72 +1,39 @@
-/* body */
-/* { */
-    /* background-color:#ffeaa7; */
-    
-/* } */
-#div1
+body
 {
-	
-    background-color:beige; 
-	border:2px double white; 
-	height:680px;
-	text-align:center;
-	margin:auto;
+	background-image:url("images/etatcivil22.jpg");
+	background-repeat:no-repeat;
 }
-h1
-{
-	/* text-align:center; */
-	font-style:italic;
-	background-image:linear-gradient(white,silver,silver,silver,white);
-	border:3px solid black;
-	padding:8%;
-	color:black;
-	width:40%;
-	margin:auto;
-	border-radius:100px 0px 100px 0px;
-	font-family:Georgia;
-	font-size:300%;
-	margin-top:10px;
-	/* height:200px; */
-}
-nav 
-{
-	margin:auto;
-	/* background-color:yellow; */
-	padding:10px;
-	text-align:center;
-	margin-top:70px;
-	height:200px;
-}
-li
+
+#lien1,#lien2
 {
 	display:inline;
-	margin-left:3%;
-	margin-right:3%;
-	width:20%;
-	background-color:silver;
-	border:5px solid white;
-	height:200px;
-	padding:5%;
-	margin-top:30px;
-	border-radius:40%;
+
 	
 }
-a 
+#lien2
 {
-	text-decoration:none;
-	font-size:120%;
-	color:black;
-	background-color:white; 
-	border-radius:5px;
-	padding:2px;
-	font-style:italic;
+	margin-left:50px;
 }
-#pbv
+#lien3,#lien4
 {
-	background-color:silver;
+	display:inline;
+}
+#lien0
+{
+	margin-left:80px;
+}
+		
+#lien4
+{
+	margin-left:50px;
+}
+button
+{
+	width:7%;
+	height:100px;
 	color:white;
-	font-size:60px;
-	margin:auto;
-	border-radius:10px;
-	margin-top:2px;
+	border-radius:20px 15px;
+	background:#8093FF;
+	border-color:#8093FF;
+	font-weight:bold;
 }
