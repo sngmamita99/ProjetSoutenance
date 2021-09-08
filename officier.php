@@ -5,13 +5,14 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
+    <head>
     <title>Cours Complet Bootstrap 4</title>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="officier.css" rel="stylesheet">
   </head>
   <body>
+  
   <form method="post" action="TROfficier.php">
             <div id="recherche">
                 <input type="search" id='rech' name="rechUser" placeholder="Rechercher un utilisateur"/>
@@ -19,8 +20,10 @@
             </div>
             </form>
 			
-	<section id="section2">		
-	<script  src="rechercher.js"></script>
+			<div id="section2">	</div>	
+	
+	<div id="section1">	
+<!--<script  src="rechercher.js"></script>-->	
 	 <?php 
 	
 		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
@@ -74,6 +77,6 @@
 		}
 				
     ?>
-	</section>
+	</div>
   </body>
 </html>

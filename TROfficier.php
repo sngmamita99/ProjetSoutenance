@@ -15,27 +15,26 @@
   <form method="post" action="">
             <div id="recherche">
                 <input type="search" id='rech' name="rechUser" placeholder="Rechercher un utilisateur"/>
-                <input type="submit" id='bsubmit' value="Rechercher">
+                <input type="submit" id='su' value="Rechercher">
             </div>
             </form>
-			
-	<section id="section2">		
-	<script  src="rechercher.js"></script>
-<?php 
-			    
-    if(isset($_POST['rechUser'])){
+  
+  
+  <?php 
+
+    //$valeur = $_GET['vals'];
+	if(isset($_POST['rechUser'])){
 		
 		$nme=$_POST['rechUser'];
-		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
-        if($connect){ 
-                
-			$req="SELECT * FROM users WHERE (nom like '%$nme%' AND profil='officier')or(prenom like '%$nme%' AND profil='officier')";
-		    $res=$connect->query($req);
-			$row=$res->fetch(PDO::FETCH_ASSOC);
-			if(empty($row)){
-				echo "Aucun resultat trouver";
-			}
-			else {
+	$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
+    if($connect){ 
+        $req="SELECT * FROM users WHERE (nom like '%$nme%' AND profil='officier')or(prenom like '%$nme%' AND profil='officier')";
+		$res=$connect->query($req);
+		//$row=$res->fetch(PDO::FETCH_ASSOC);
+		// if(empty($row)){
+			// echo "Aucun resultat trouver";
+		// }
+			// else {
 				echo "<table class='table table-bordered'>";
 			echo"<thead>";
 				echo"<tr>";
@@ -82,8 +81,9 @@
 			echo "</table>";
 		}
 		}
-		}
+		
 			?>
-			</section>
+ 
+
   </body>
 </html>

@@ -26,13 +26,13 @@
 		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect){ 
                 
-			$req="SELECT * FROM users WHERE (nom like '%$nme%' AND profil='agent')or(prenom like '%$nme%' AND profil='agent')";
+			$req="SELECT * FROM users WHERE (nom like '%$nme%' AND profil='agent')OR(prenom like '%$nme%' AND profil='agent')";
 			$res=$connect->query($req);
-			$row=$res->fetch(PDO::FETCH_ASSOC);
-			if(empty($row)){
-				echo "Aucun resultat trouver";
-			}
-			else {
+			//$rows=$res->rowCount();
+			// if($rows == 0){
+				// echo "Aucun resultat trouver";
+			// }
+			// else {
 			echo "<table class='table table-bordered'>";
 			echo"<thead>";
 				echo"<tr>";
@@ -43,6 +43,7 @@
 			echo"</thead>";
                while($row=$res->fetch(PDO::FETCH_ASSOC))
 				{
+					$id=$row['idUser'];
 
 						$id=$row['idUser'];
 						$nm=$row['nom'];
@@ -77,7 +78,7 @@
 					}
 			echo "</table>";
 		}
-		}
+		
 		}
 			?>
 			</body>

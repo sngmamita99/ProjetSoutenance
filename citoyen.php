@@ -5,20 +5,20 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Cours Complet Bootstrap 4</title>
-    <meta charset='utf-8'>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="officier.css" rel="stylesheet">
-  </head>
-  <body>
-  <form method="post" action="TRCitoyen.php">
-            <div id="recherche">
-                <input type="search" id='rech' name="rechUser" placeholder="Rechercher un utilisateur"/>
-                <input type="submit" id='su' value="Rechercher">
-            </div>
-            </form>
-	 <?php 
+    <head>
+        <title>Cours Complet Bootstrap 4</title>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <link href="officier.css" rel="stylesheet">
+    </head>
+    <body>
+    <form method="post" action="TRCitoyen.php">
+        <div id="recherche">
+            <input type="search" id='rech' name="rechUser" placeholder="Rechercher un utilisateur"/>
+            <input type="submit" id='su' value="Rechercher"/>
+        </div>
+    </form>
+	<?php 
 	
 		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect){ 
@@ -33,18 +33,17 @@
                     echo'<th colspan="2">Etat</th>'; 
                 echo"</tr>";	
 			echo"</thead>";
-               while($row=$res->fetch(PDO::FETCH_ASSOC))
-				{
-
-						$id=$row['idUser'];
-						$nm=$row['nom'];
-						$pnm=$row['prenom'];
-						$adr=$row['adresse'];
-                        $email=$row['email'];
-                        $ntl=$row['numTel'];
+            while($row=$res->fetch(PDO::FETCH_ASSOC)){
+				
+				$id=$row['idUser'];
+				$nm=$row['nom'];
+				$pnm=$row['prenom'];
+				$adr=$row['adresse'];
+                $email=$row['email'];
+                 $ntl=$row['numTel'];
                         $etat=$row['etat'];
                         $login=$row['login'];
-                        $mdp=$row['password'];
+                    
                         $profil=$row['profil'];
 						 echo "<tbody>";
                         echo "<tr>";

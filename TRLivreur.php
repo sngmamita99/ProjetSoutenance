@@ -29,10 +29,10 @@
 			$req="SELECT * FROM users WHERE (nom like '%$nme%' AND profil='livreur')or(prenom like '%$nme%' AND profil='livreur')";
 			$res=$connect->query($req);
 			$row1=$res->fetch();
-			if(empty($row1)){
-				echo "Aucun resultat trouver";
-			}
-			else {
+			// if(empty($row1)){
+				// echo "Aucun resultat trouver";
+			// }
+			// else {
 			echo "<table class='table table-bordered'>";
 			echo"<thead>";
 				echo"<tr>";
@@ -77,7 +77,7 @@
 					}
 			echo "</table>";
 		}
-		}
+		
 		}
 			?>
 			</body>
