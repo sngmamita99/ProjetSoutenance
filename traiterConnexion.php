@@ -10,7 +10,8 @@
 				$mdpAut=$_POST['mdpAut'];
 		        $req="SELECT * FROM users";
 		        $res=$connect->query($req);
-     		    if($res){
+     		    if($res)
+				{
 					
 				    while($lign=$res->fetch()){
 
@@ -20,20 +21,20 @@
 							    header("Location:administrateur.php");
 							    break;
 						    }
-							else if ($lign['profil']=="agent"){
-							    header("Location:agent.php");
+							else if ($lign['profil']=="Agent"){
+							    header("Location:acceuilAgent.php");
 							    break;
 						    }
-							else if ($lign['profil']=="officier"){
-							    header("Location:officier.php");
+							else if ($lign['profil']=="Officier"){
+							    header("Location:acceuilOfficier.php");
 							    break;
 						    }
-							else if ($lign['profil']=="citoyen"){
-							    header("Location:citoyen.php");
+							else if ($lign['profil']=="Citoyen"){
+							    header("Location:acceuilCitoyen.php");
 							    break;
 						    }
 							else{
-							    header("Location:livreur.php");
+							    header("Location:accuilLivreur.php");
 							    break;
 						    }
 							

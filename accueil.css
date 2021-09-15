@@ -1,39 +1,106 @@
+/* #part1 */
+/* { */
+	/* height:550px; */
+	 /* background:url(images/cap4.png);  */
+	/* background-repeat:no-repeat; */
+	 /* animation-duration:30s; */
+    /* animation-name: mapageanimer; */
+	/* animation-iteration-count:infinite; */
+/* } */
 body
+{	
+
+    animation-duration:30s;
+    animation-name: mapageanimer;
+	animation-iteration-count:infinite;
+	
+		
+}
+@keyframes mapageanimer {
+  0% 
 {
-	background-image:url("images/etatcivil22.jpg");
+    background:url(images/cap9.jpg);
 	background-repeat:no-repeat;
 }
-
-#lien1,#lien2
+10%
 {
-	display:inline;
-
-	
-}
-#lien2
-{
-	margin-left:50px;
-}
-#lien3,#lien4
-{
-	display:inline;
-}
-#lien0
-{
-	margin-left:80px;
-}
 		
-#lien4
-{
-	margin-left:50px;
+	background-image:url(images/cap10.jpg);
+	background-repeat:no-repeat;
 }
-button
+  20% 
 {
-	width:7%;
-	height:100px;
-	color:white;
-	border-radius:20px 15px;
-	background:#8093FF;
-	border-color:#8093FF;
+    background:url(images/cap8.jpg);
+	background-repeat:no-repeat;
+}
+30% 
+{
+    background:url(images/cap3.png);
+	background-repeat:no-repeat;
+}
+   40% 
+{
+    background:url(images/cap7.jpg);
+	background-repeat:no-repeat;
+}
+ 50% 
+{
+    background:url(images/im1.png);
+	background-repeat:no-repeat;
+}
+60%
+{
+		
+	background-image:url(images/cap10.jpg);
+	background-repeat:no-repeat;
+}
+  70% 
+{
+    background:url(images/cap8.jpg);
+	background-repeat:no-repeat;
+}
+80% 
+{
+    background:url(images/cap3.png);
+	background-repeat:no-repeat;
+}
+   90% 
+{
+    background:url(images/cap7.jpg);
+	background-repeat:no-repeat;
+}
+ 100% 
+{
+    background:url(images/im1.png);
+	background-repeat:no-repeat;
+}
+ 
+
+
+}
+p
+
+{
+	font-size:50px;
 	font-weight:bold;
 }
+span
+{
+	font-weight:bold;
+	color:red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

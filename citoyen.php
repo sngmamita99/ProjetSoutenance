@@ -53,14 +53,14 @@
 							{
 								echo "<td>";
 								    echo '<span id="desact">Inactif</span>';
-									echo '<td><a href="activer.php?code='.$id.'"><button class="btn btn-success">activer</button></a></td>';
+									echo "<td><a href='activer.php?code=$id'><button class='btn btn-success'>activer</button></a></td>";
                                    echo "</td>";
 							}
 							else
 							{
 								echo "<td>";
 							        echo '<span id="act">Actif</span>';
-									echo '<td><a href="desactiver.php?code='.$id.'"><button class="btn btn-danger">désactiver</button></a></td>';
+									echo "<td><a href='desactiver.php?code=$id'><button class='btn btn-danger'>désactiver</button></a></td>";
                                 echo "</td>";
 							}
 						echo "</tr>";

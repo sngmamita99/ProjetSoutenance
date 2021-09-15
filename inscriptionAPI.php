@@ -26,15 +26,18 @@
 		    $result=$connect->query($req1);
 		    if($result->fetchAll()){
 				
-			    echo "Ce compte existe deja";
+			    header("Location:CompteExistante.php");
+					 
 		    }   
 		    else{
 						
-				$req2="INSERT INTO users (nom,prenom,adresse,email,login,password,numTel,profil,etat)VALUES('$nom','$pnom','$adresse','$email','$lg','$mdp','$numtel','$profil',0)";
+				$req2="INSERT INTO users (nom,prenom,adresse,email,login,password,numTel,profil,etat) values ('$nom','$pnom','$adresse','$email','$lg','$mdp','$numtel','$profil',0)";
 				$result2=$connect->exec($req2);
-				if($result2){	
-					$response["message"]="Inscription Reussie! Vos parametres de connexion vous seront envoyer par mail";
-					echo json_encode($response);
+				if($result2){
+					header("Location:inscriptionReussi.php");
+						 // break;					
+					// $response["message"]="Inscription Reussie! Vos parametres de connexion vous seront envoyer par mail";
+					// echo json_encode($response);
                 }
 				else{
 					

@@ -5,7 +5,7 @@
 
 <body background="./images/pattern2.jpg">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="inscrire.css" rel="stylesheet"/>
+<link href="inscrireD.css" rel="stylesheet"/>
 
     <div id="login-overlay" class="modal-dialog">
      
@@ -42,21 +42,16 @@
                         </div>
                     
                         <br>
-						
-						
-						
-						
-						
-						
+			
 						
                         <label for="profil">Profil</label>
 						
 							<select class="form-control" name="profil">
 									<option selected=""> Selectionner un profil</option>
-									<option>Officier</option>
-									<option>Agent</option>
-									<option>Livreur</option>
-									<option>Citoyen</option>
+									<option value="officier">Officier</option>
+									<option value="agent">Agent</option>
+									<option  value="livreur">Livreur</option>
+									<option  value="citoyen">Citoyen</option>
 							</select>
 	
                     </div>
@@ -64,12 +59,7 @@
                      
                 </div> 
 			
-				
-				
-				
-	
-	
-                
+		
                     <div class="form-group"> 
                         <div class="col-xs-12">
                         <label for="InputEmail">Enter Email</label>
