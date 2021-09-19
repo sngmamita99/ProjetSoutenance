@@ -16,7 +16,7 @@
                 <form id="registerForm" method="POST" action="inscriptionAPI.php">
 <!---form--->           <div class="form-group">
 <!---input width--->    <div class="col-xs-6">
-                        <label for="InputName">Prénom</label>
+                        <label for="InputName">Prénom du déclarant</label>
                         <div class="input-group">
 						 <span class="input-group-addon"><span class="fa fa-user"></span></span>
                         <input type="text" class="form-control" name="prenom" placeholder="Entrez votre prénom" required>
@@ -35,7 +35,7 @@
                     <div class="form-group">
                     <div class="col-xs-6">
 
-                        <label for="InputName">Nom de famille</label>
+                        <label for="InputName">Nom du déclarant</label>
                         <div class="input-group">
                         <input type="text" class="form-control" name="nom" placeholder="Entrer le nom de famille" required>
                         <span class="input-group-addon"><span class="fa fa-user"></span></span>
@@ -44,13 +44,12 @@
                         <br>
 			
 						
-                        <label for="profil">Profil</label>
+                        <label for="profil">Sexe de l'enfant</label>
 						
 							<select class="form-control" name="profil">
-									<option value="officier">officier</option>
-									<option value="agent">agent</option>
-									<option  value="livreur">livreur</option>
-									<option  value="citoyen">citoyen</option>
+									<option value="masculin">masculin</option>
+									<option value="feminin">feminin</option>
+									
 							</select>
 	
                     </div>
@@ -61,10 +60,10 @@
 		
                     <div class="form-group"> 
                         <div class="col-xs-12">
-                        <label for="InputEmail">Enter Email</label>
+                        <label for="InputEmail">Date de Naissance</label>
                         <div class="input-group">
-						 <span class="input-group-addon"><span  class="fa fa-envelope"></span></span>
-                        <input type="email" class="form-control" name="email" placeholder="Entrez l'e-mail" required>
+					
+                        <input type="date" class="form-control" name="DateNaiss" placeholder="Entrez l'e-mail" required>
                        
                     </div>
 <!----------------------------break-------------------------------------------------------------> <br>
@@ -73,10 +72,17 @@
 
                         <div class="form-group">
                         <div class="col-xs-12">
-                        <label for="InputStreetName">Adresse</label>
+                        <label for="InputStreetName">Lien de parente</label>
                         <div class="input-group">
 						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                        <input type="text" class="form-control" name="adresse" placeholder="Entrer votre adresse" required>
+							
+							<select class="form-control" name="profil">
+									<option value="pére">pére</option>
+									<option value="mére">mére</option>
+									
+							</select>
+	
+                     <!--   <input type="text" class="form-control" name="adresse" placeholder="Entrer votre adresse" required>-->
                         
                         </div>
 <!----------------------------break-------------------------------------------------------------> <br> 
@@ -85,13 +91,13 @@
              
                         <div class="form-group">
                         <div class="col-xs-12">
-                        <label for="InputCity">Numéro de telephone</label>
+                        <label for="InputCity">Justificatif</label>
                         <div class="input-group">
-						 <span class="input-group-addon"><span class="fa fa-phone"></span></span>
-                        <input type="text" class="form-control" name="numtel" placeholder="vore numéro de téléphone" required>
+						
+                        <input type="file" class="form-control" name="justificatif"  required accept="image/*">
                        
                     </div>
-<!----------------------------break-------------------------------------------------------------> <br> 
+ <br> 
                     </div>
                     </div>
 

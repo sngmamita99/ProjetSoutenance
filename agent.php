@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cours Complet Bootstrap 4</title>
+        <title>agent</title>
         <meta charset='utf-8'>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	    <link href="officier.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 		    $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
             if($connect){ 
 		
-		        $req="SELECT * FROM users WHERE profil='citoyen'";
+		        $req="SELECT * FROM users WHERE profil='agent'";
 			    $res=$connect->query($req);
 			    echo "<table class='table table-bordered'>";
 			        echo"<thead>";

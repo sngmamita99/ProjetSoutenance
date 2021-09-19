@@ -47,10 +47,11 @@
                         <label for="profil">Profil</label>
 						
 							<select class="form-control" name="profil">
-									<option value="officier">officier</option>
-									<option value="agent">agent</option>
-									<option  value="livreur">livreur</option>
-									<option  value="citoyen">citoyen</option>
+									<option selected=""> Selectionner un profil</option>
+									<option value="officier">Officier</option>
+									<option value="agent">Agent</option>
+									<option  value="livreur">Livreur</option>
+									<option  value="citoyen">Citoyen</option>
 							</select>
 	
                     </div>

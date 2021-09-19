@@ -33,33 +33,22 @@
 			</div>
 			<div class="card-body">
 			
-				<form method="post" action="traiterConnexion.php">
+				<form method="post" action="traitementforgetpwd.php">
 					<div class="input-group form-group">
                        
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" name="userName" class="form-control" placeholder="Nom d'utlisateur">
+						<input type="email" name="emails" class="form-control" placeholder="entrer votre email" required="required">
 						
 					</div>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
-						</div>
-						<input type="password" name="mdpAut" class="form-control" placeholder="Mot de passe">
-					</div>
+					
 					<div class="form-group">
-						<input type="submit" value="Connexion" class="btn float-right login_btn">
+						<input type="submit" value="Valider" name="recpwd" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Vous n'avez pas de compte?<a href="inscrireD.php">S'inscrire</a>
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="MdpOubli.php">Mot de passe oublié ?</a>
-				</div>
+			
 			</div>
 		</div>
 	</div>

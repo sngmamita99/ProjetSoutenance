@@ -21,20 +21,20 @@
 							    header("Location:administrateur.php");
 							    break;
 						    }
-							else if ($lign['profil']=="Agent"){
+							else if ($lign['profil']=="agent"){
 							    header("Location:acceuilAgent.php");
 							    break;
 						    }
-							else if ($lign['profil']=="Officier"){
+							else if ($lign['profil']=="officier"){
 							    header("Location:acceuilOfficier.php");
 							    break;
 						    }
-							else if ($lign['profil']=="Citoyen"){
+							else if ($lign['profil']=="citoyen"){
 							    header("Location:acceuilCitoyen.php");
 							    break;
 						    }
 							else{
-							    header("Location:accuilLivreur.php");
+							    header("Location:acceuilLivreur.php");
 							    break;
 						    }
 							

@@ -13,20 +13,23 @@
             <div class="modal-body">
               
             
-                <form id="registerForm" method="POST" action="inscriptionAPI.php">
+                <form id="registerForm" method="POST" action="traitementDeclarationNaiss.php" enctype="multipart/form-data" >
 <!---form--->           <div class="form-group">
 <!---input width--->    <div class="col-xs-6">
-                        <label for="InputName">Prénom</label>
+                        <label for="InputName">Prénom du déclarant</label>
                         <div class="input-group">
 						 <span class="input-group-addon"><span class="fa fa-user"></span></span>
                         <input type="text" class="form-control" name="prenom" placeholder="Entrez votre prénom" required>
                        
                         </div>
                         <br>
-                        <label for="InputName">Nom d'utilisateur</label>
+                       
+                        <div class="input-group">
+						 <label for="InputName">Nom du justificatif</label>
                         <div class="input-group">
 						 <span class="input-group-addon"><span  class="fa fa-user"></span></span>
-                        <input type="text" class="form-control" name="lg" placeholder="Saisissez votre nom d'utilisateur" required>
+                        <input type="text" class="form-control" name="libelle"  required>
+						
                        
                     </div>
 <!--------------------------------------separator---------------------------------------------------------------> <hr>
@@ -35,25 +38,20 @@
                     <div class="form-group">
                     <div class="col-xs-6">
 
-                        <label for="InputName">Nom de famille</label>
+                        <label for="InputName">Nom du déclarant</label>
                         <div class="input-group">
                         <input type="text" class="form-control" name="nom" placeholder="Entrer le nom de famille" required>
                         <span class="input-group-addon"><span class="fa fa-user"></span></span>
                         </div>
-                    
-                        <br>
-			
-						
-                        <label for="profil">Profil</label>
-						
-							<select class="form-control" name="profil">
-									<option value="officier">officier</option>
-									<option value="agent">agent</option>
-									<option  value="livreur">livreur</option>
-									<option  value="citoyen">citoyen</option>
+                        <br>	
+                       <label for="sexe">Sexe de l'enfant</label>
+							<select class="form-control" name="sexe">
+									<option value="masculin">masculin</option>
+									<option value="feminin">feminin</option>	
+									
 							</select>
-	
                     </div>
+					 
 <!--------------------------------------separator---------------------------------------------------------------> <hr>
                      
                 </div> 
@@ -61,10 +59,10 @@
 		
                     <div class="form-group"> 
                         <div class="col-xs-12">
-                        <label for="InputEmail">Enter Email</label>
+                        <label for="InputEmail">Date de Naissance</label>
                         <div class="input-group">
-						 <span class="input-group-addon"><span  class="fa fa-envelope"></span></span>
-                        <input type="email" class="form-control" name="email" placeholder="Entrez l'e-mail" required>
+					
+                        <input type="date" class="form-control" name="DateNaiss" placeholder="Entrez l'e-mail" required>
                        
                     </div>
 <!----------------------------break-------------------------------------------------------------> <br>
@@ -73,25 +71,33 @@
 
                         <div class="form-group">
                         <div class="col-xs-12">
-                        <label for="InputStreetName">Adresse</label>
+                        <label for="InputStreetName">Lien de parente</label>
                         <div class="input-group">
-						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                        <input type="text" class="form-control" name="adresse" placeholder="Entrer votre adresse" required>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>			
+							<select class="form-control" name="parente">
+									<option value="pére">pére</option>
+									<option value="mére">mére</option>
+									<option value="mére">parent proche</option>
+									
+							</select>
+	
+                     <!--   <input type="text" class="form-control" name="adresse" placeholder="Entrer votre adresse" required>-->
                         
                         </div>
 <!----------------------------break-------------------------------------------------------------> <br> 
-                    </div>                     
+                    </div>   
+					
                 </div>
              
                         <div class="form-group">
                         <div class="col-xs-12">
-                        <label for="InputCity">Numéro de telephone</label>
+                        <label for="InputCity">Justificatif</label>
                         <div class="input-group">
-						 <span class="input-group-addon"><span class="fa fa-phone"></span></span>
-                        <input type="text" class="form-control" name="numtel" placeholder="vore numéro de téléphone" required>
+						<input type="file"  class="form-control" name="photo" accept="image/*" multiple="multiple" required="required"/>
+
                        
                     </div>
-<!----------------------------break-------------------------------------------------------------> <br> 
+ <br> 
                     </div>
                     </div>
 
