@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+$idConnected=$_SESSION['idConnected'];
+
 	$pD=$_POST['prenom'];
 	$nD=$_POST['nom'];
 	$sex=$_POST['sexe'];
@@ -10,13 +13,15 @@
 	$bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 	if($bdd)
 	{
-		$req="insert into declarationnaissance (nomDeclarant,prenomDeclarant,sexeEnfant,datedeNaissance,lienDeParente) values (?,?,?,?,?)";
+		$req="insert into declarationnaissance (numCompte,nomDeclarant,prenomDeclarant,sexeEnfant,datedeNaissance,lienDeParente) values (?,?,?,?,?,?)";
 		$stmt=$bdd->prepare($req);
-		$stmt->bindParam(1, $nD);
-		$stmt->bindParam(2,$pD);
-		$stmt->bindParam(3, $sex);
-		$stmt->bindParam(4, $dN);
-		$stmt->bindParam(5, $lP);
+		$stmt->bindParam(1, $idConnected);
+		$stmt->bindParam(2, $nD);
+		$stmt->bindParam(3,$pD);
+		$stmt->bindParam(4, $sex);
+		$stmt->bindParam(5, $dN);
+		$stmt->bindParam(6, $lP);
+		
 		$stmt->execute();
 		$numDecla=$bdd->lastInsertId();//lastInsertId si je veux savoir l'identifiant de la derniere ligne dans la base de donne                    
                         if(isset($_FILES['photo'])){  

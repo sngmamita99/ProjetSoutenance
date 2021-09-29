@@ -1,3 +1,7 @@
+<?php
+session_start();
+$idConnected=$_SESSION['idConnected'];
+?>
 <!DOCTYPE html>
 <html>
     <head>

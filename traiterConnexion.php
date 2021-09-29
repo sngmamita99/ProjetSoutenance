@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 	$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 	if($connect){
 		
@@ -18,18 +18,22 @@
 						if($lign['login']==$userName AND $lign['password']==$mdpAut AND $lign['etat']==1){
 							
 							if ($lign['profil']=="admin"){
+								$_SESSION['idConnected']=$lign['idUser'];
 							    header("Location:administrateur.php");
 							    break;
 						    }
 							else if ($lign['profil']=="agent"){
+								$_SESSION['idConnected']=$lign['idUser'];
 							    header("Location:acceuilAgent.php");
 							    break;
 						    }
 							else if ($lign['profil']=="officier"){
+								$_SESSION['idConnected']=$lign['idUser'];
 							    header("Location:acceuilOfficier.php");
 							    break;
 						    }
 							else if ($lign['profil']=="citoyen"){
+								$_SESSION['idConnected']=$lign['idUser'];
 							    header("Location:acceuilCitoyen.php");
 							    break;
 						    }
@@ -39,7 +43,9 @@
 						    }
 							
 						}
-						else{
+						else
+						{
+							// la on doit aficher un toastdisant quilfaut verifier les parametres de connection
 							header("Location:Connexion.html");
 						}
 					}					
