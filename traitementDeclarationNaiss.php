@@ -5,22 +5,20 @@ $idConnected=$_SESSION['idConnected'];
 
 	$pD=$_POST['prenom'];
 	$nD=$_POST['nom'];
-	$sex=$_POST['sexe'];
-	$dN=$_POST['DateNaiss'];
+	// $sex=$_POST['sexe'];
+	// $dN=$_POST['DateNaiss'];
 	$lP=$_POST['parente'];
 	$libelle=$_POST['libelle'];
 	
 	$bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 	if($bdd)
 	{
-		$req="insert into declarationnaissance (numCompte,nomDeclarant,prenomDeclarant,sexeEnfant,datedeNaissance,lienDeParente) values (?,?,?,?,?,?)";
+		$req="insert into declarationnaissance (numCompte,nomDeclarant,prenomDeclarant,lienDeParente) values (?,?,?,?)";
 		$stmt=$bdd->prepare($req);
 		$stmt->bindParam(1, $idConnected);
 		$stmt->bindParam(2, $nD);
 		$stmt->bindParam(3,$pD);
-		$stmt->bindParam(4, $sex);
-		$stmt->bindParam(5, $dN);
-		$stmt->bindParam(6, $lP);
+		$stmt->bindParam(4, $lP);
 		
 		$stmt->execute();
 		$numDecla=$bdd->lastInsertId();//lastInsertId si je veux savoir l'identifiant de la derniere ligne dans la base de donne                    

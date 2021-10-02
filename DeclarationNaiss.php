@@ -19,25 +19,26 @@ $idConnected=$_SESSION['idConnected'];
             
                 <form id="registerForm" method="POST" action="traitementDeclarationNaiss.php" enctype="multipart/form-data" >
 <!---form--->           <div class="form-group">
-<!---input width--->    <div class="col-xs-6">
-                        <label for="InputName">Prénom du déclarant</label>
-                        <div class="input-group">
-						 <span class="input-group-addon"><span class="fa fa-user"></span></span>
-                        <input type="text" class="form-control" name="prenom" placeholder="Entrez votre prénom" required>
-                       
-                        </div>
+<!---input width--->    	<div class="col-xs-6">
+								<label for="InputName">Prénom du déclarant</label>
+								<div class="input-group">
+									<span class="input-group-addon"><span class="fa fa-user"></span></span>
+									<input type="text" class="form-control" name="prenom" placeholder="Entrez votre prénom" required>
+								</div>
                         <br>
-                       
-                        <div class="input-group">
+						
+				  <div class="input-group">
 						 <label for="InputName">Nom du justificatif</label>
                         <div class="input-group">
 						 <span class="input-group-addon"><span  class="fa fa-user"></span></span>
                         <input type="text" class="form-control" name="libelle"  required>
-						
-                       
+			     
                     </div>
-<!--------------------------------------separator---------------------------------------------------------------> <hr>
+                       
+                      
+<!--------------------------------------separator--------------------------------------------------------------->
                 </div>
+				
                 </div>
                     <div class="form-group">
                     <div class="col-xs-6">
@@ -48,12 +49,7 @@ $idConnected=$_SESSION['idConnected'];
                         <span class="input-group-addon"><span class="fa fa-user"></span></span>
                         </div>
                         <br>	
-                       <label for="sexe">Sexe de l'enfant</label>
-							<select class="form-control" name="sexe">
-									<option value="masculin">masculin</option>
-									<option value="feminin">feminin</option>	
-									
-							</select>
+                     
                     </div>
 					 
 <!--------------------------------------separator---------------------------------------------------------------> <hr>
@@ -61,20 +57,13 @@ $idConnected=$_SESSION['idConnected'];
                 </div> 
 			
 		
-                    <div class="form-group"> 
-                        <div class="col-xs-12">
-                        <label for="InputEmail">Date de Naissance</label>
-                        <div class="input-group">
-					
-                        <input type="date" class="form-control" name="DateNaiss" placeholder="Entrez l'e-mail" required>
-                       
-                    </div>
+                  
 <!----------------------------break-------------------------------------------------------------> <br>
                      </div>
                  </div>
 
                         <div class="form-group">
-                        <div class="col-xs-12">
+                        <div class="col-xs-6">
                         <label for="InputStreetName">Lien de parente</label>
                         <div class="input-group">
 						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>			
@@ -94,7 +83,7 @@ $idConnected=$_SESSION['idConnected'];
                 </div>
              
                         <div class="form-group">
-                        <div class="col-xs-12">
+                        <div class="col-xs--">
                         <label for="InputCity">Justificatif</label>
                         <div class="input-group">
 						<input type="file"  class="form-control" name="photo" accept="image/*" multiple="multiple" required="required"/>

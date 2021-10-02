@@ -1,29 +1,12 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<!------ Include the above in your HEAD tag ---------->
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Login </title>
-	<meta charset="utf-8"/>
-	 <!-- Made with love by Mutiullah Samim -->
-   
-	<!-- Bootsrap 4 CDN -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-    <!-- Fontawesome CDN -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	
- <style>
- *
+<style>
+*
 	{
 		margin:0;
 	}
@@ -46,19 +29,58 @@
 			left:50%;
 			z-index:-100;
 			transform:translate(-40%,-40%);
- </style>
+		}
+html,body{
+
+background-size: cover;
+/* background-repeat: no-repeat; */
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+#login-overlay
+{
+	height: 100%;
+align-content: center;
+
+}
+label
+{
+	color:white;
+}
+#soumettre
+{
+	background:green;
+	margin-right:250px;
+}
+input:focus
+		{    
+		outline: 0;  
+		outline-style:none; 
+		outline-width:0; 
+		}  
+		input
+		{
+			border-top: hidden;
+			border-left: hidden;
+			border-right: hidden; 
+		}
+		form
+		{
+			
+			height: 480px;
+			margin-top: auto;
+			margin-bottom: auto;
+			width: 100%;
+			background-color:  rgba(0,0,0,0.5) !important;
+		}
+			
+</style>
 </head>
-
-<body background="./images/pattern2.jpg">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="inscrireD.css" rel="stylesheet"/>
-
+<body>
+<div class="bloc">
+	<video autoplay ="autoplay" muted=""  loop="infinite" src="../drapeauSN.mp4"></video>
     <div id="login-overlay" class="modal-dialog">
-     
-       
             <div class="modal-body">
-              
-            
                 <form id="registerForm" method="POST" action="inscriptionAPI.php">
 <!---form--->           <div class="form-group">
 <!---input width--->    <div class="col-xs-6">
@@ -157,10 +179,6 @@
               </div><!---modal-body--->
           </div>
        </div>
-
-
-<script type="text/javascript">
-
-</script>
+</div>
 </body>
 </html>
