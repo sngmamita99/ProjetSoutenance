@@ -90,13 +90,13 @@
 		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect){ 
 		
-		    $req="SELECT * FROM declarationnaissance";
+		    $req="SELECT * FROM declarationnaissance ORDER by date_declaration";
 			$res=$connect->query($req);
 			echo "<table class='table table-bordered'>";
 			echo"<thead>";
 				echo"<tr>";
-                    echo"<th>Nom declarant</th><th>Prenom declarant</th><th>Sexe de l'enfant</th><th>Date de Naissance</th>";
-                    echo"<th>Lien de Parenté</th><th>Certificat d'accouchement</th><th>Actions</th>";
+                    echo"<th>Nom declarant</th><th>Prenom declarant</th>";
+                    echo"<th>Lien de Parenté</th><th>Certificat d'accouchement</th><th>Date de Soumission</th><th>Actions</th>";
                 echo"</tr>";	
 			echo"</thead>";
                while($row=$res->fetch(PDO::FETCH_ASSOC))
@@ -106,16 +106,16 @@
 						
 						
 						$pD=$row['prenomDeclarant'];
-						$sD=$row['sexeEnfant'];
-                        $DNais=$row['dateDeNaissance'];
+						
                         $lien=$row['lienDeParente'];
+						$date=$row['date_declaration'];
                        
 						 echo "<tbody>";
                         echo "<tr>";
-                            echo "<td>$nD</td><td>$pD</td><td>$sD</td><td>$DNais</td><td>$lien</td><td><a href='justificatif.php'>justificatifs.jpg</a></td>";
+                            echo "<td>$nD</td><td>$pD</td><td>$lien</td><td><a href='justificatif.php'>justificatifs.jpg</a></td><td>$date</td>";
 								echo "<td>";
-								    echo '<a href="activer.php"><button class="btn btn-success">Valider</button></a>';
-									echo '<a href="desactiver.php"><button class="btn btn-danger">Annuler</button></a>';
+								    echo '<a href="rdv.php"><button class="btn btn-success">Valider</button></a>';
+									echo '<a href="annulerDemande.php"><button class="btn btn-danger">Annuler</button></a>';
                                   echo "</td>";
 							
 							

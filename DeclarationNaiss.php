@@ -18,8 +18,8 @@ $idConnected=$_SESSION['idConnected'];
               
             
                 <form id="registerForm" method="POST" action="traitementDeclarationNaiss.php" enctype="multipart/form-data" >
-<!---form--->           <div class="form-group">
-<!---input width--->    	<div class="col-xs-6">
+           <div class="form-group">
+							<div class="col-xs-6">
 								<label for="InputName">Prénom du déclarant</label>
 								<div class="input-group">
 									<span class="input-group-addon"><span class="fa fa-user"></span></span>

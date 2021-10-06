@@ -106,8 +106,8 @@
                         </div>
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="gender">
-                                    <option disabled="disabled" selected="selected"  name="parente">Lien de parente</option>
+                                <select name="parente">
+                                    <option disabled="disabled" selected="selected" >Lien de parente</option>
                                   <option value="pére">pére</option>
 									<option value="mére">mére</option>
 									<option value="mére">parent proche</option>
