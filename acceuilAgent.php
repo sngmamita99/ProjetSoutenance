@@ -101,20 +101,16 @@
 			echo"</thead>";
                while($row=$res->fetch(PDO::FETCH_ASSOC))
 				{
-
-						$nD=$row['nomDeclarant'];
-						
-						
-						$pD=$row['prenomDeclarant'];
-						
+						$nD=$row['nomDeclarant'];	
+						$pD=$row['prenomDeclarant'];	
                         $lien=$row['lienDeParente'];
 						$date=$row['date_declaration'];
-                       
+						$x=$row['numCompte'];
 						 echo "<tbody>";
                         echo "<tr>";
                             echo "<td>$nD</td><td>$pD</td><td>$lien</td><td><a href='justificatif.php'>justificatifs.jpg</a></td><td>$date</td>";
 								echo "<td>";
-								    echo '<a href="rdv.php"><button class="btn btn-success">Valider</button></a>';
+								    echo "<a href='rdv.php?code=$x'><button class='btn btn-success'>Valider</button></a>";
 									echo '<a href="annulerDemande.php"><button class="btn btn-danger">Annuler</button></a>';
                                   echo "</td>";
 							

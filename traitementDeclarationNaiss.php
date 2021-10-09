@@ -18,7 +18,6 @@ $idConnected=$_SESSION['idConnected'];
 		$stmt->bindParam(3,$pD);
 		$stmt->bindParam(4, $lP);
 		$stmt->bindParam(5,$date_declaration);
-		
 		$stmt->execute();
 		$numDecla=$bdd->lastInsertId();//lastInsertId si je veux savoir l'identifiant de la derniere ligne dans la base de donne                    
                         if(isset($_FILES['photo'])){  
