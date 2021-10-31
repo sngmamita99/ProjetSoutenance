@@ -30,7 +30,7 @@ public $days =['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'
 	}
 	public function getStartDay():\DateTime
 		{
-			//Cette founction renvoie le jour du mois
+			//Cette fonnction renvoie le jour du mois
 			return new \DateTime ("{$this->year}-{$this->month}-01");
 		}
 		public function toString():string

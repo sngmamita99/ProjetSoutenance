@@ -1,3 +1,7 @@
+.calendar
+{
+	position:relative;
+}
 .calendar_table
 {
 	width:100%;
@@ -30,8 +34,32 @@
 {
 	font-size:1.3em;
 }
+
 #jour
 {
 	text-decoration:none;
 	color:black;
+}
+.BouttonAjout
+{	display:block;
+	width:55px;
+	height:55px;
+	line-height:55px;
+	text-align:center;
+	color:#FFF;
+	font-size:30px;
+	background-color:#007bff;
+	border-radius:50%;
+	text-decoration:none;
+	position:absolute;
+	bottom:30px;
+	right:30px;
+	transition:transform 0.3s;
+	
+}
+.BouttonAjout:hover
+{
+	text-decoration:none;
+	color:#FFF;
+	transform:scale(1.2);
 }

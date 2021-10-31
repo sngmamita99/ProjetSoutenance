@@ -1,13 +1,17 @@
-<?php
+ <?php
 class Rdv
 {
+	private $pdo;
+	public function __construct($pdo)
+	{
+		$this->pdo=$pdo;
+	}
 	public function getEventBetween(\DateTime $start,\DateTime $end):array
 	{
 		// Prmet de recuperer les evenrments du mois
-		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","",[ \PDO::ATTR_ERRMODE =>\PDO::ERRMODE_EXCEPTION,\PDO::ATTR_DEFAULT_FETCH_MODE =>\PDO::FETCH_ASSOC
-		]);
-		$sql="select * from rdv WHERE DateRdv BETWEEN '{$start->format('Y-m-d 00:00:00')}' AND '{$end->format('Y-m-d 23:59:59')}'";
-		$statement=$connect->query($sql);
+		
+		$sql="select * from rdv WHERE DateRdv BETWEEN '{$start->format('Y-m-d 08:00:00')}' AND '{$end->format('Y-m-d 23:59:59')}'";
+		$statement=$this->pdo->query($sql);
 		$result=$statement->fetchAll();
 		return $result;
 	}
@@ -16,10 +20,14 @@ class Rdv
 	{
 		$events=$this->getEventBetween($start,$end);
 		$days=[];
-		foreach($events as $event)
-		{
+		$i=0;
 		
-			$date=explode(' ',$event['DateRdv'])[0];
+		foreach($events as $event)
+		{ 
+		
+			{
+				$date=explode(' ',$event['DateRdv'])[0];
+			}
 			if(!isset($days[$date]))
 			{
 				$days[$date]=[$event];
@@ -28,7 +36,14 @@ class Rdv
 			{
 					$days[$date][]=[$event];
 			}
+			
 		}
 		return $days;
+	}
+	// cette methode recupere une declaration  en connaissant lid
+	public function find(  $id)
+	{
+		return $this->pdo->query("select * from rdv WHERE idRdv = $id ");
+		
 	}
 }

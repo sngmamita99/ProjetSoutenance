@@ -414,7 +414,7 @@
                         echo "<tr>";
                             echo "<td>$nD</td><td>$pD</td><td>$sD</td><td>$DNais</td><td>$lien</td><td><a href='justificatif.php'>justificatifs.jpg</a></td>";
 								echo "<td>";
-								    echo '<a href="activer.php"><button class="btn btn-success">Valider</button></a>';
+								    echo '<a href="rdv.php"><button class="btn btn-success">Valider</button></a>';
 									echo '<a href="desactiver.php"><button class="btn btn-danger">Annuler</button></a>';
                                   echo "</td>";
 							
