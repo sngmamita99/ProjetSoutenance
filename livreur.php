@@ -12,12 +12,7 @@
 	<link href="officier.css" rel="stylesheet">
   </head>
   <body>
-  <form method="post" action="TRLivreur.php">
-            <div id="recherche">
-                <input type="search" id='rech' name="rechUser" placeholder="Rechercher un utilisateur"/>
-                <input type="submit" id='su' value="Rechercher">
-            </div>
-            </form>
+ 
 	 <?php 
 	
 		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
@@ -25,6 +20,13 @@
 		
 		    $req="SELECT * FROM users WHERE profil='livreur'";
 			$res=$connect->query($req);
+				if($res->rowCount())
+			{  echo '<form method="post" action="TRLivreur.php">';
+				echo'<div id="recherche">';
+                echo'<input type="search" id="rech" name="rechUser" placeholder="Rechercher un utilisateur"/>';
+                echo'<input type="submit" id="su" value="Rechercher">';
+           echo'</div>';
+          echo' /form>';
 			echo "<table class='table table-bordered'>";
 			echo"<thead>";
 				echo"<tr>";
@@ -68,6 +70,11 @@
 						 echo "</tbody>";
 					}
 			echo "</table>";
+			}
+			else
+			{
+				echo"Il n'ya pas encore de Livreur inscrit sur la plateforme";
+			}
 		}
 				
     ?>

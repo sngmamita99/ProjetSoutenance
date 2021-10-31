@@ -9,14 +9,14 @@ if(isset($_POST['recpwd']))
 if($bdd)
 {
 	$email = $_POST['emails'];
-$stmt = $bdd->prepare("SELECT * FROM users WHERE email=?");
-$stmt->execute([$email]); 
-$user = $stmt->fetch();
-if ($user) 
-{
-    $to_email = $email;
-    $subject = "Activer votre compte";
-    $body = "Bienvenue sur VotreSite,
+	$stmt = $bdd->prepare("SELECT * FROM users WHERE email=?");
+	$stmt->execute([$email]); 
+	$user = $stmt->fetch();
+	if ($user) 
+	{
+		$to_email = $email;
+		$subject = "Activer votre compte";
+		$body = "Bienvenue sur VotreSite,
 
     Pour activer votre compte, veuillez cliquer sur le lien ci-dessous
     ou copier/coller dans votre navigateur Internet.
@@ -34,6 +34,7 @@ if ($user)
 		
 		{
 			echo"Message bien envoyé";
+			var_dump($to_email);
 		}
 		else{
 		echo"no envoie";}

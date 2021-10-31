@@ -17,8 +17,11 @@ require_once('Month.php');
 	$start=$month->getStartDay();
 	$start=$start->format('N') == '1' ? $start: $month->getStartDay()->modify('last monday');
 	$weeks=$month->getWeeks();
+	// var_dump($weeks);
 	$end=(clone $start)->modify("+".(6+7 * ($weeks -1))."days");
+	// var_dump($start);
 	// var_dump($end);
+	// die();
 	$event=$events->getEventBetweenByDay($start,$end);
 	// echo"<pre>";
 	// var_dump($event);
@@ -57,7 +60,8 @@ require_once('Month.php');
 			</div>
 		<?php endif; ?>
 		<div class="calendar_day">
-				<a href="AllRdv.php" id="jour"><?=$date->format('d');?></a>
+				<!-- <a href="AllRdv.php" id="jour"><?=$date->format('d');?></a>-->
+				 <a  id="jour" href="AjoutRdv.php?date=<?=$date->format('Y-m-d');?>"><?=$date->format('d');?></a>
 				
 		</div>
 			<!--<?php foreach($eventsForDay as $events): ?>

@@ -25,6 +25,8 @@
 		
 		    $req="SELECT * FROM users WHERE profil='citoyen'";
 			$res=$connect->query($req);
+			if($res->rowCount())
+			{
 			echo "<table class='table table-bordered'>";
 			echo"<thead>";
 				echo"<tr>";
@@ -67,6 +69,11 @@
 						 echo "</tbody>";
 					}
 			echo "</table>";
+			}
+			else
+			{
+				echo"Il n'ya pas encore de citoyen inscrit sur la plateforme";
+			}
 		}
 				
     ?>

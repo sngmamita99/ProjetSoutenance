@@ -12,33 +12,31 @@
 	<link href="officier.css" rel="stylesheet">
   </head>
   <body>
-  
-  <form method="post" action="TROfficier.php">
-            <div id="recherche">
-                <input type="search" id='rech' name="rechUser" placeholder="Rechercher un utilisateur"/>
-                <input type="submit" id='bsubmit' value="Rechercher">
-            </div>
-            </form>
-			
-			<div id="section2">	</div>	
-	
-	<div id="section1">	
+
 <!--<script  src="rechercher.js"></script>-->	
 	 <?php 
 	
 		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
-        if($connect){ 
+        if($connect)
+		{ 
 		
 		    $req="SELECT * FROM users WHERE profil='officier'";
 			$res=$connect->query($req);
-			echo "<table class='table table-bordered'>";
-			echo"<thead>";
+				if($res->rowCount())
+			{  echo '<form method="post" action="TRLivreur.php">';
+				echo'<div id="recherche">';
+                echo'<input type="search" id="rech" name="rechUser" placeholder="Rechercher un utilisateur"/>';
+                echo'<input type="submit" id="su" value="Rechercher">';
+				echo'</div>';
+				echo' /form>';
+				echo "<table class='table table-bordered'>";
+				echo"<thead>";
 				echo"<tr>";
                     echo"<th>Nom</th><th>Prénom</th><th>Adresse</th><th>Email</th><th>Téléphone</th>";
                     echo"<th>Login</th><th>Profil</th>";
                     echo'<th colspan="2">Etat</th>'; 
                 echo"</tr>";	
-			echo"</thead>";
+				echo"</thead>";
                while($row=$res->fetch(PDO::FETCH_ASSOC))
 				{
 
@@ -72,8 +70,14 @@
 							}
 						echo "</tr>";
 						 echo "</tbody>";
-					}
-			echo "</table>";
+				}
+				echo "</table>";
+			
+			}
+			else
+			{
+				echo"Il n'ya pas encore d'Officier inscrit sur la plateforme";
+			}
 		}
 				
     ?>
