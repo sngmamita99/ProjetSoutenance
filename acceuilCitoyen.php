@@ -1,4 +1,9 @@
 
+<?php
+require_once("SessionError.php");
+ $SESSION = new Session();
+$idConnected=$_SESSION['idConnected']
+?> 
  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <!-- Icons font CSS-->
@@ -85,11 +90,12 @@
   </section><!-- End Hero -->
 
   <main id="main">
+  
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
-
+			<?php $SESSION->flash();?>
         <div class="section-title">
           <h2>Declarations de naissance</h2>
   <!-- <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins"> -->
@@ -98,15 +104,17 @@
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <form  method="POST" action="traitementDeclarationNaiss.php" enctype="multipart/form-data">
-                        <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Nom du déclarant" name="nom" required="required">
+
+                        <!--<div class="input-group">
+                          <input class="input--style-3" type="text" placeholder="Nom du déclarant" name="nom" required="required">
                         </div>
                          <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="Prénom du déclarant" name="prenom"required>
-                        </div>
+                        // </div>-->
                         <div class="input-group">
+						
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="parente">
+                                <select name="LienParente">
                                     <option disabled="disabled" selected="selected" >Lien de parente</option>
                                   <option value="pére">pére</option>
 									<option value="mére">mére</option>
@@ -116,10 +124,10 @@
                             </div>
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Nom du justificatif" name="libelle"  required>
-                        </div>
+                           <!-- <input class="input--style-3" type="text" placeholder="Nom du justificatif" name="libelle"  required>
+                        </div>-->
                         <div class="input-group">
-                            <input class="input--style-3" type="file" placeholder="Entrez la photo du justificatif"  name="photo" accept="image/*" required="required">
+                            <input class="input--style-3" type="file" placeholder="Entrez les justificatifs"  name="monFichier[]" accept="image/*" required="required" multiple="multiple">
                         </div>
                         <div class="p-t-10">
                             <button class="btn btn--pill "   name="soumettre" type="submit">Soumettre ma Demande </button>
@@ -455,6 +463,7 @@
 
     <!-- Main JS-->
     <script src="js/global.js"></script>
+	<script src="alert.js"></script>
 
 
 </body>

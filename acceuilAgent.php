@@ -31,7 +31,14 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
+<style>
+#IconeEye
+{
+	width:20px;
+	height:20px;
+	margin-left:15px;
+}
+</style>
   <!-- =======================================================
   * Template Name: iPortfolio - v3.5.0
   * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
@@ -95,20 +102,21 @@
 			echo "<table class='table table-bordered'>";
 			echo"<thead>";
 				echo"<tr>";
-                    echo"<th>Nom declarant</th><th>Prenom declarant</th>";
-                    echo"<th>Lien de Parenté</th><th>Certificat d'accouchement</th><th>Date de Soumission</th><th>Actions</th>";
+                    echo"<th>N°Demande </th>";
+                    echo"<th>Lien de Parenté</th><th>Détails</th><th>Date de Soumission</th><th>Actions</th>";
                 echo"</tr>";	
 			echo"</thead>";
                while($row=$res->fetch(PDO::FETCH_ASSOC))
 				{
-						$nD=$row['nomDeclarant'];	
-						$pD=$row['prenomDeclarant'];	
+						$numDe=$row['numDeclaration'];	
+						// $nD=$row['nomDeclarant'];	
+						// $pD=$row['prenomDeclarant'];	
                         $lien=$row['lienDeParente'];
 						$date=$row['date_declaration'];
 						$x=$row['numCompte'];
 						 echo "<tbody>";
                         echo "<tr>";
-                            echo "<td>$nD</td><td>$pD</td><td>$lien</td><td><a href='justificatif.php'>justificatifs.jpg</a></td><td>$date</td>";
+                            echo "<td>$numDe</td><td>$lien</td><td><a href='justificatif.php'><img id='IconeEye' src='images/eye.png' alt='Icone details'/></a></td><td>$date</td>";
 								echo "<td>";
 								    echo "<a href='rdv.php?code=$x'><button class='btn btn-success'>Valider</button></a>";
 									echo '<a href="annulerDemande.php"><button class="btn btn-danger">Annuler</button></a>';

@@ -34,7 +34,7 @@ if($bdd)
 		
 		{
 			echo"Message bien envoyé";
-			var_dump($to_email);
+			// var_dump($to_email);
 		}
 		else{
 		echo"no envoie";}

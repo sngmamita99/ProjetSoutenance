@@ -29,7 +29,7 @@ session_start();
 		</style>
     </head>
     <body>
-	<button><a href="Connexion.html">Se Connecter</a></button>
+	<button><a href="Connexion.php">Se Connecter</a></button>
         <section id="part1">
 		<p><span>La conservation numérique</span><br/> 
 		de l’état civil sénégalais,un moyen <br/>d’une démocratisation de l’accès à

@@ -13,6 +13,7 @@ require_once('descripRdv.php');
 $pdo=getPdo();
 $events=new Rdv($pdo);
 require_once('Month.php');
+$numCompte=$_GET['code'];
 	$month= new Month($_GET['month'] ?? null,$_GET['year'] ?? null);
 	$start=$month->getStartDay();
 	$start=$start->format('N') == '1' ? $start: $month->getStartDay()->modify('last monday');
@@ -38,8 +39,6 @@ require_once('Month.php');
 	</div>
 </div>
 
-
-
 <table class="calendar_table calendar_table--<?=$weeks;?> weeks">
 	<?php for($i=0;$i<$weeks;$i++): ?>
 	<tr>
@@ -60,8 +59,15 @@ require_once('Month.php');
 			</div>
 		<?php endif; ?>
 		<div class="calendar_day">
-				<!-- <a href="AllRdv.php" id="jour"><?=$date->format('d');?></a>-->
-				 <a  id="jour" href="AjoutRdv.php?date=<?=$date->format('Y-m-d');?>"><?=$date->format('d');?></a>
+		     
+				 <a  id="jour" href="RvDuJour.php
+						 ?date=<?=$date->format('Y-m-d');?>
+						 &numCompte=<?=$numCompte?>">
+						 <?=$date->format('d');?>
+				 </a>
+				  <?php 
+			  ?>
+	
 				
 		</div>
 			<!--<?php foreach($eventsForDay as $events): ?>
@@ -79,8 +85,10 @@ require_once('Month.php');
 	</tr>
 	<?php endfor ?>  
 </table>
-<a href="ajoutRdv.php"class="BouttonAjout"> + </a>
+
 </div>
 <?php require_once('footerCalendrier.php');?>
+<script src="rdv.js">
+</script>
 </body>
 </html>

@@ -1,4 +1,6 @@
-<?php
+ <?php
+ require_once("SessionError.php");
+
 session_start();
 	$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 	if($connect){
@@ -44,11 +46,13 @@ session_start();
 							
 						}
 						else
-						{
-							// la on doit aficher un toastdisant quilfaut verifier les parametres de connection
-							header("Location:Connexion.html");
+			 			{
+						
+							 $SESSION=new Session();
+							  $SESSION->setFlash("Veuillez vérifier vos paramétres de connexion",'danger');
+							header("Location:Connexion.php");
 						}
-					}					
+					} 					
 				}					
 				
 			}			

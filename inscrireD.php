@@ -2,10 +2,33 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-
+<?php
+require_once("SessionError.php");
+ $SESSION = new Session();
+ ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="JqueryCode.js"> </script>
+	<title>Login </title>
+	<meta charset="utf-8"/>
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <style>
+#alert
+	{
+		position:fixed;
+		top:5;
+		left:0;
+		right:0;
+		z-index:1060;
+		display:none;
+		height:49px;
+		width:50%;
+		text-align:center;
+		margin-left:25%;
+		
+	}
 *
 	{
 		margin:0;
@@ -77,6 +100,7 @@ input:focus
 </style>
 </head>
 <body>
+<?php $SESSION->flash();?>
 <div class="bloc">
 	<video autoplay ="autoplay" muted=""  loop="infinite" src="../drapeauSN.mp4"></video>
     <div id="login-overlay" class="modal-dialog">
@@ -180,5 +204,6 @@ input:focus
           </div>
        </div>
 </div>
+<script src="alert.js"></script>
 </body>
 </html>
