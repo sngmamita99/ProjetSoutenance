@@ -28,9 +28,9 @@ th,td
 }
 #desact
 {
-	color:white;
+	color:black;
 	font-weight:bold;
-	background:red;
+	
 	
 }
 #presence
@@ -59,7 +59,7 @@ th,td
         if($connect)
 		{ 
 		
-		    $req="select*from rdv where DateRdv='$date' ORDER BY heureDebut AND heureFin";
+		    $req="select*from rdv where DateRdv='$date' AND etatRdv=0 ORDER BY heureDebut AND heureFin";
 			$result=$connect->query($req);
 				if($result->rowCount()>=1)
 			{ 
@@ -93,6 +93,7 @@ th,td
 							
 							if($etat=='0')
 							{
+								//letat doit etre modifié car il permet de l'effacer cote citoyen
 								echo "<td  id='desact'>";
 								    echo '<span>ABSENT</span>';
                                    echo "</td>";

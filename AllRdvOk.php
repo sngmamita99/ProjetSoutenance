@@ -10,32 +10,117 @@
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<style>
-
+	button
+{
+	width:63%;
+	text-align:center;
+	
+}
+th,td
+{
+	text-align:center;
+}
+#act
+{	color:white;
+	font-weight:bold;
+	background:green;
+	
+}
+#desact
+{
+	color:black;
+	font-weight:bold;
+	
+	
+}
+#presence
+{
+	width:20px;
+	height:20px;
+}
+#absent
+{
+	width:25px;
+	height:25px;
+}
+#btn
+{
+	background:white;
+	border:0px white;
+}
 	</style>
   </head>
   <body>
-<div id="pp">
-</div>
 
-  
-// <script>
-	// setInterval(function(){
-    
-
-						// var divAm=document.getElementById("pp");
-						// var xhr=new XMLHttpRequest();
-						// xhr.open("GET","ServeurAjaxRdv.php");//specifier le fichier quon souhaite ouvrir et la methode de lecture
-						// xhr.send(null);//permet d'envoyer la requete
-						// xhr.onreadystatechange=function()
-						// {
-						// if(xhr.readyState==4 && xhr.status==200)
-						// {
+<!--<script  src="rechercher.js"></script>-->	
+	 <?php 
+	$date=$_GET['date'];
+		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
+        if($connect)
+		{ 
+		
+		    $req="select*from rdv where DateRdv='$date' AND etatRdv=1 ORDER BY heureDebut AND heureFin";
+			$result=$connect->query($req);
+				if($result->rowCount()>=1)
+			{ 
+				echo "<table class='table table-bordered'>";
+				echo"<thead>";
+				echo"<tr>";
+                echo"<th>Prenom</th><th>Nom</th><th>Heure De Début</th><th>Heure De Fin</th>";
+                echo'<th colspan="2">Etat</th>'; 
+                echo"</tr>";	
+				echo"</thead>";
+               while($row=$result->fetch(PDO::FETCH_ASSOC))
+				{
+							$numCompte=$row['numCompte'];
+							$req1="SELECT * from users where idUser=$numCompte";
+							$result=$connect->query($req1);
+							$resultat=$result->fetch();
+							$nm=$resultat['nom'];
+							$p=$resultat['prenom'];
+							$req2="select * from rdv where numCompte = $numCompte";
+							$sql=$connect->query($req2);
+							$sql2=$sql->fetch();
+							$hd=$sql2['heureDebut'];
+							$hf=$sql2['heureFin'];
+							$etat=$sql2['etatRdv'];
+							// $etat=$row['etatRdv'];
+							// $hdeb=$row['heureDebut'];
+							// $hfin=$row['heureFin'];
+						 echo "<tbody>";
+                        echo "<tr>";
+                            echo "<td>$p</td><td>$nm</td><td>$hd</td><td>$hf</td>";
 							
-							// divAm.innerHTML=this.responseText;
-						// }
-					// }
-					// },50);
-
-</script>
-</body>
+							if($etat=='0')
+							{
+								//letat doit etre modifié car il permet de l'effacer cote citoyen
+								echo "<td  id='desact'>";
+								    echo '<span>ABSENT</span>';
+                                   echo "</td>";
+								   // echo '<td><a href="activer.php"><button class="btn btn-success">activer</button></a></td>';
+								   echo '<td><a title="cliquez ici si la personne est presente" href="present.php?code='.$numCompte.'&date='.$date.'"><img id="presence" src="images/presence.png"></a></td>';
+							}
+							// else
+							// {
+								// echo "<td  id='act'>";
+							        // echo '<span>Présent</span>';
+                                // echo "</td>";
+								// echo '<td><a href="absent.php?code='.$numCompte.'&date='.$date.'"><button id="btn" ><img id="absent" src="images/absent.png"  "></button></a></td>';
+							// }
+						echo "</tr>";
+						 echo "</tbody>";
+				}
+				echo "</table>";
+			
+			}
+			else
+			{
+				echo"Il n'ya pas de rdv affecté à cette date";
+			}
+		}
+				
+    ?>
+	</div>
+	
+  </body>
 </html>
