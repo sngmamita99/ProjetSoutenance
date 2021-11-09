@@ -62,8 +62,8 @@
 		  <li><a href="#RNaiss" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Registres des naissances</span></a></li>
 		  <li><a href="#RMar" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>
 		  Registres des mariages</span></a></li>
-		  <li><a href="#RDeces" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>  Registres des décés</span></a></li>
-		<li><a href="#rdv" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span> Rendez-vous</span></a></li>
+		  <li><a href="#RDeces" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>  Rendez-vous</span></a></li>
+		
 		 
         </ul>
       </nav><!-- .nav-menu -->
@@ -491,106 +491,49 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Registres des décés</h2>
-                     <?php 
+          <h2>Rendez-vous</h2>
+                     
 	
-		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
-        if($connect){ 
-		
-		    $req="SELECT * FROM declarationnaissance";
-			$res=$connect->query($req);
-			echo "<table class='table table-bordered'>";
-			echo"<thead>";
-				echo"<tr>";
-                    echo"<th>Nom declarant</th><th>Prenom declarant</th><th>Sexe de l'enfant</th><th>Date de Naissance</th>";
-                    echo"<th>Lien de Parenté</th><th>Certificat d'accouchement</th><th>Actions</th>";
-                echo"</tr>";	
-			echo"</thead>";
-               while($row=$res->fetch(PDO::FETCH_ASSOC))
-				{
-
-						$nD=$row['nomDeclarant'];
-						
-						
-						$pD=$row['prenomDeclarant'];
-						$sD=$row['sexeEnfant'];
-                        $DNais=$row['dateDeNaissance'];
-                        $lien=$row['lienDeParente'];
-                       
-						 echo "<tbody>";
-                        echo "<tr>";
-                            echo "<td>$nD</td><td>$pD</td><td>$sD</td><td>$DNais</td><td>$lien</td><td><a href='justificatif.php'>justificatifs.jpg</a></td>";
-								echo "<td>";
-								    echo '<a href="activer.php"><button class="btn btn-success">Valider</button></a>';
-									echo '<a href="desactiver.php"><button class="btn btn-danger">Annuler</button></a>';
-                                  echo "</td>";
-							
-							
-						echo "</tr>";
-						 echo "</tbody>";
-					}
-			echo "</table>";
-		}
-				
-    ?>
+	<?php require_once("calendrierOff.php");?>
         </div>
 
       </div>
     </section>
-	 <section id="rdv" class="contact">
+	<!-- <section id="rdv" class="contact">
       <div class="container">
 
         <div class="section-title">
           <h2>Rendez-vous</h2>
-                     <?php 
-	
-		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
-        if($connect){ 
-		
-		    $req="SELECT * FROM declarationnaissance";
-			$res=$connect->query($req);
-			echo "<table class='table table-bordered'>";
-			echo"<thead>";
-				echo"<tr>";
-                    echo"<th>Nom declarant</th><th>Prenom declarant</th><th>Sexe de l'enfant</th><th>Date de Naissance</th>";
-                    echo"<th>Lien de Parenté</th><th>Certificat d'accouchement</th><th>Actions</th>";
-                echo"</tr>";	
-			echo"</thead>";
-               while($row=$res->fetch(PDO::FETCH_ASSOC))
-				{
-
-						$nD=$row['nomDeclarant'];
-						
-						
-						$pD=$row['prenomDeclarant'];
-						$sD=$row['sexeEnfant'];
-                        $DNais=$row['dateDeNaissance'];
-                        $lien=$row['lienDeParente'];
-                       
-						 echo "<tbody>";
-                        echo "<tr>";
-                            echo "<td>$nD</td><td>$pD</td><td>$sD</td><td>$DNais</td><td>$lien</td><td><a href='justificatif.php'>justificatifs.jpg</a></td>";
-								echo "<td>";
-								    echo '<a href="activer.php"><button class="btn btn-success">Valider</button></a>';
-									echo '<a href="desactiver.php"><button class="btn btn-danger">Annuler</button></a>';
-                                  echo "</td>";
-							
-							
-						echo "</tr>";
-						 echo "</tbody>";
-					}
-			echo "</table>";
-		}
-				
-    ?>
+		  <?php 
+		  // require_once("calendrier.php");?>
+                 <!-- <div id="rdv"></div>
         </div>
 
       </div>
-    </section>
+    </section>-->
   </main>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+<script>
+	setInterval(function(){
+    
+
+						var divAm=document.getElementById("rdv");
+						var xhr=new XMLHttpRequest();
+						xhr.open("GET","ServeurAjaxRdv.php");//specifier le fichier quon souhaite ouvrir et la methode de lecture
+						xhr.send(null);//permet d'envoyer la requete
+						xhr.onreadystatechange=function()
+						{
+						if(xhr.readyState==4 && xhr.status==200)
+						{
+							
+							divAm.innerHTML=this.responseText;
+						}
+					}
+					},50);
+
+</script>
 
 </body>
 

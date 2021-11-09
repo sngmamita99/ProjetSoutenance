@@ -8,6 +8,6 @@
 <link rel="stylesheet" href="calendrier.css"/>
 </head>
 <body>
-<nav class="navvar-dark bg-primary nb-3>
+<!--<nav class="navvar-dark bg-primary nb-3>
 <a href="rdv.php" class="navbar-brand">Mon calendrier</a>
-</nav>
+</nav>-->

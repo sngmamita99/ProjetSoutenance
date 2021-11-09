@@ -127,7 +127,7 @@ $idConnected=$_SESSION['idConnected']
                            <!-- <input class="input--style-3" type="text" placeholder="Nom du justificatif" name="libelle"  required>
                         </div>-->
                         <div class="input-group">
-                            <input class="input--style-3" type="file" placeholder="Entrez les justificatifs"  name="monFichier[]" accept="image/*" required="required" multiple="multiple">
+                            <input class="input--style-3" type="file" placeholder="Entrez les justificatifs"  name="monFichier[]" accept="image/*" required="required" multiple="multiple" placeholder="ddd">
                         </div>
                         <div class="p-t-10">
                             <button class="btn btn--pill "   name="soumettre" type="submit">Soumettre ma Demande </button>
@@ -403,43 +403,44 @@ $idConnected=$_SESSION['idConnected']
         <div class="section-title">
           <h2>Rendez-vous</h2>
                      <?php 
+					 
 	
 		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect){ 
 		
-		    $req="SELECT * FROM declarationnaissance";
+		    $req="SELECT * FROM rdv where numCompte=$idConnected AND etatRdv=0";
 			$res=$connect->query($req);
-			echo "<table class='table table-bordered'>";
-			echo"<thead>";
-				echo"<tr>";
-                    echo"<th>Nom declarant</th><th>Prenom declarant</th><th>Sexe de l'enfant</th><th>Date de Naissance</th>";
-                    echo"<th>Lien de Parenté</th><th>Certificat d'accouchement</th><th>Actions</th>";
+			if($res->rowCount()>=1)
+			{
+				
+					echo "<table class='table table-bordered'>";
+					echo"<thead>";
+						echo"<tr>";
+						 echo"<th>Date de votre Rdv</th><th>Heure de Début</th><th>Heure de Fin</th>";
                 echo"</tr>";	
-			echo"</thead>";
-               while($row=$res->fetch(PDO::FETCH_ASSOC))
-				{
-
-						$nD=$row['nomDeclarant'];
-						
-						
-						$pD=$row['prenomDeclarant'];
-						$sD=$row['sexeEnfant'];
-                        $DNais=$row['dateDeNaissance'];
-                        $lien=$row['lienDeParente'];
-                       
-						 echo "<tbody>";
-                        echo "<tr>";
-                            echo "<td>$nD</td><td>$pD</td><td>$sD</td><td>$DNais</td><td>$lien</td><td><a href='justificatif.php'>justificatifs.jpg</a></td>";
-								echo "<td>";
-								    echo '<a href="activer.php"><button class="btn btn-success">Valider</button></a>';
-									echo '<a href="desactiver.php"><button class="btn btn-danger">Annuler</button></a>';
-                                  echo "</td>";
-							
-							
-						echo "</tr>";
-						 echo "</tbody>";
-					}
-			echo "</table>";
+				echo"</thead>";
+			while($row=$res-> fetch())
+			{
+				
+						$DR=$row['DateRdv'];
+						$hdeb=$row['heureDebut'];
+                        $hfin=$row['heureFin'];
+						echo "<tbody>";
+							echo "<tr>";
+								echo "<td>$DR</td><td>$hdeb</td><td>$hfin</td>";
+							echo "</tr>";
+						echo "</tbody>";
+			}
+			}
+			else
+			{
+				echo "Vous n'avez aucun rdv";
+			}
+			
+		}
+		else
+		{
+			echo"Base de donnée non connecté";
 		}
 				
     ?>

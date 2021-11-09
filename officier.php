@@ -28,7 +28,7 @@
                 echo'<input type="search" id="rech" name="rechUser" placeholder="Rechercher un utilisateur"/>';
                 echo'<input type="submit" id="su" value="Rechercher">';
 				echo'</div>';
-				echo' /form>';
+				echo' </form>';
 				echo "<table class='table table-bordered'>";
 				echo"<thead>";
 				echo"<tr>";

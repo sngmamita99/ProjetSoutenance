@@ -1,45 +1,139 @@
-<?php
-require_once('ConnectionBdd.php');
-// require_once('headerCalendrier.php');
-require_once('descripRdv.php');
-$pdo=getPdo();
-$events=new Rdv($pdo);
-require_once('Month.php');
-	$month= new Month($_GET['month'] ?? null,$_GET['year'] ?? null);
-	$start=$month->getStartDay();
-	$start=$start->format('N') == '1' ? $start: $month->getStartDay()->modify('last monday');
-	$weeks=$month->getWeeks();
-	$end=(clone $start)->modify("+".(6+7 * ($weeks -1))."days");
-	// var_dump($end);
-	$event=$events->getEventBetweenByDay($start,$end);
-	// echo"<pre>";
-	// var_dump($event);
-	// echo"</pre>";
-	?>
-<table class="calendar_table calendar_table--<?=$weeks;?> weeks">
-	<?php for($i=0;$i<$weeks;$i++): ?>
-	<tr>
-		<?php
-		foreach($month->days as $k=>$day):
-		$date=(clone $start)->modify("+".($k+$i*7)."days");
-		
-		$eventsForDay=$event[$date->format('Y-m-d')] ?? [];
-;
-		?>
-			
-			<?php foreach($eventsForDay as $events): ?>
-					<div class="calendar_event">
-					<?php
-					
-					$x=$events['idRdv'];
-					echo"<a href='detailRdv.php?id=$x'>".$events['description']."</a>" ; 
-					// echo"<a href='detailRdv.php'>voir</a>" ;
-					?>
-					</div>
-			<?php endforeach; ?>
-			</td>
-		<?php endforeach; ?>
-	</tr>
-	<?php endfor ?>  
-</table>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Cours Complet Bootstrap 4</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+	button
+{
+	width:63%;
+	text-align:center;
+	
+}
+th,td
+{
+	text-align:center;
+}
+#act
+{	color:white;
+	font-weight:bold;
+	background:green;
+	
+}
+#desact
+{
+	color:white;
+	font-weight:bold;
+	background:red;
+	
+}
+#presence
+{
+	width:20px;
+	height:20px;
+}
+#absent
+{
+	width:25px;
+	height:25px;
+}
+#btn
+{
+	background:white;
+	border:0px white;
+}
+	</style>
+  </head>
+  <body>
+
+<!--<script  src="rechercher.js"></script>-->	
+	 <?php 
+	$date=$_GET['date'];
+		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
+        if($connect)
+		{ 
+		
+		    $req="select*from rdv where DateRdv='$date' ORDER BY heureDebut AND heureFin";
+			$result=$connect->query($req);
+				if($result->rowCount()>=1)
+			{ 
+				echo "<table class='table table-bordered'>";
+				echo"<thead>";
+				echo"<tr>";
+                echo"<th>Prenom</th><th>Nom</th><th>Heure De Début</th><th>Heure De Fin</th>";
+                echo'<th colspan="2">Etat</th>'; 
+                echo"</tr>";	
+				echo"</thead>";
+               while($row=$result->fetch(PDO::FETCH_ASSOC))
+				{
+							$numCompte=$row['numCompte'];
+							$req1="SELECT * from users where idUser=$numCompte";
+							$result=$connect->query($req1);
+							$resultat=$result->fetch();
+							$nm=$resultat['nom'];
+							$p=$resultat['prenom'];
+							$req2="select * from rdv where numCompte = $numCompte";
+							$sql=$connect->query($req2);
+							$sql2=$sql->fetch();
+							$hd=$sql2['heureDebut'];
+							$hf=$sql2['heureFin'];
+							$etat=$sql2['etatRdv'];
+							// $etat=$row['etatRdv'];
+							// $hdeb=$row['heureDebut'];
+							// $hfin=$row['heureFin'];
+						 echo "<tbody>";
+                        echo "<tr>";
+                            echo "<td>$p</td><td>$nm</td><td>$hd</td><td>$hf</td>";
+							
+							if($etat=='0')
+							{
+								echo "<td  id='desact'>";
+								    echo '<span>ABSENT</span>';
+                                   echo "</td>";
+								   // echo '<td><a href="activer.php"><button class="btn btn-success">activer</button></a></td>';
+								   echo '<td><a title="cliquez ici si la personne est presente" href="present.php?code='.$numCompte.'&date='.$date.'"><img id="presence" src="images/presence.png"></a></td>';
+							}
+							// else
+							// {
+								// echo "<td  id='act'>";
+							        // echo '<span>Présent</span>';
+                                // echo "</td>";
+								// echo '<td><a href="absent.php?code='.$numCompte.'&date='.$date.'"><button id="btn" ><img id="absent" src="images/absent.png"  "></button></a></td>';
+							// }
+						echo "</tr>";
+						 echo "</tbody>";
+				}
+				echo "</table>";
+			
+			}
+			else
+			{
+				echo"Il n'ya pas de rdv affecté à cette date";
+			}
+		}
+				
+    ?>
+	</div>
+	<!--<script>
+	
+		var btn=document.getElementById("btn");
+		btn.addEventListener("click",function(e){
+			// btn.style.borderWidth="0";
+			// btn.style.borderColor="red";
+			btn.style.border="0px hidden white";
+			 if (confirm("Etes vous sur que cette personne est absente")) {
+				txt = "You pressed OK!";
+			  } else {
+				txt = "You pressed Cancel!";
+			  }
+		},false);
+
+	</script>-->
+  </body>
+</html>
