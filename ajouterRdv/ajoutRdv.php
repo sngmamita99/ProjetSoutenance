@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="../jquery.min.js"></script>
 
 	</head>
 	<body>
@@ -33,26 +34,26 @@
 								<div class="contact-wrap w-100 p-md-5 p-4">
 							
 									<form method="POST"  action="../traitementAjoutRdv.php" id="contactForm" name="contactForm" class="contactForm">
-										<div class="row">
-											<div class="col-md-6">
-												<div class="form-group">
-													<label class="label" for="hDebut">Heure Début </label>
-							<input type="time" class="form-control" name="hDebut" id="hDebut" min="09:00" max="14:00" required="required" />
+				<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+<label class="label" for="hDebut">Heure Début </label>
+	<input type="time" class="form-control" name="hDebut"   id="hDebut" min="09:00" max="14:00" required="required" />
 												</div>
 											</div>
-											<div class="col-md-6"> 
-												<div class="form-group">
-													<label class="label" for="hFin">Heure De Fin </label>
-													<input type="time" class="form-control" name="hFin" id="hFin" min="09:00" max="14:00"  required="required"/>
+			<div class="col-md-6"> 
+				<div class="form-group">
+			<label class="label" for="hFin">Heure De Fin </label>
+<input type="time" id="hFin" class="form-control" name="hFin"  min="09:00" max="14:00"  required="required"/>
 												</div>
 											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<label class="label" for="subject">Date </label>
-													<input type="input" class="form-control" name="tdate" id="tsubject" placeholder="Subject"	value="<?=$date?>"/>
-												</div>
-											</div>
-											<div class="col-md-12">
+		<div class="col-md-12">
+					<div class="form-group">
+						<label class="label" for="subject">Date </label>
+							<input type="input" class="form-control" name="tdate" id="tsubject" placeholder="Subject"	value="<?=$date?>"/>
+								</div>
+									</div>
+		<div class="col-md-12">
 												<div class="form-group">
 													<label class="label" for="#">Type de Papier</label>
 													<select name="typeDemande" class="form-control">
@@ -62,9 +63,11 @@
 													</select>
 												</div>
 											</div>
-											
-													<input type="submit" value="Ajouter Un RDV" class="btn btn-primary">
+					<input type="submit" id="ajout" value="Ajouter Un RDV" class="btn btn-primary">
 													
+												</div>
+												<div class="col s4 offset-s8 center ">
+						<span class="erreur red-text" ></span>
 												</div>
 											</div>
 										</div>
@@ -83,16 +86,37 @@
 			</div>
 		</div>
 	</section>
+<script>
 
-	
-	<!--<script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.validate.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>-->
+// var hFin = document.getElementById("hFin");
+// hFin.addEventListener("blur",function(e){
+	// alert("bonjour");
+// },false);
 
+$('#hFin').blur(function (e) {
+
+		var hFin=$(this).val();
+		var hDebut=$('#hDebut').val();
+		// document.prompt('hDebut');
+		// document.write(hFin);
+		// document.write(hDebut);
+		// date_input= new Date(date_input);
+		// date_now= new Date();
+		if (hFin<hDebut)
+		{
+			alert('Erreur\nL\'heure de Fin ne peut pas inferieur à l\'heure de Début');
+			$(this).addClass('invalid');
+			$('#ajout').attr("disabled","");
+			$('.erreur').text("Erreur\n Veillez vérifier les heures saisies");
+		}
+		else
+		{
+			$(this).removeClass('invalid');
+			$('#ajout').removeAttr("disabled");
+			$('.erreur').text("");
+		}
+	});
+</script>
 	</body>
 </html>
 

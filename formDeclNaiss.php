@@ -20,6 +20,7 @@ body {
 <script type="text/javascript" src="js1/materialize.min.js"></script>
 
 
+
 <div class="modal modal" id="timeoutModal">
     <div class="modal-content">
         <h4 class="center">Timeout</h4>
@@ -98,7 +99,7 @@ $(window).on('load', function() {
   </li>
   <li><a href="l_demande_acte_confirme.php">Confirmés</a></li>
 </ul>
-<!--Dropdown structure naissance 
+<!--Dropdown structure naissance
 <ul id="naissance" class="dropdown-content">
   <li><a href="e_naissance.php">Déclaration</a></li>
   <li><a href="i_naissance.php">Impression</a></li>
@@ -113,7 +114,7 @@ $(window).on('load', function() {
   <li><a href="e_deces.php">Déclaration</a></li>
   <li><a href="i_deces.php">Impression</a></li>
 </ul>
-<!--Dropdown structure impression
+<!--Dropdown structure impression 
 <ul id="impression" class="dropdown-content">
 </ul>
 <!--Dropdown déconnexion 
@@ -128,9 +129,9 @@ $(window).on('load', function() {
   <li> <a  href="#">Attestation</a></li>
   <li> <a  href="#">Demandes</a></li>
   <li> <a  href="#">Fiche</a></li>
-</ul>-->
+</ul>
 
-<!--<div class="white center entete_img row center" style="margin-bottom: 0px">
+<div class="white center entete_img row center" style="margin-bottom: 0px">
   <img style="" src="../eregister/logos/5.png" class="col s2 offset-s2" >
   <h4 class="col s6" style="font:'times new roman';">COMMUNE DE NGATHIE NAOUDE<br>Centre d'Etat Civil de NGATHIE NAOUDE</h4>
 </div>
@@ -170,7 +171,7 @@ $(window).on('load', function() {
 
   <ul class="sidenav" id="mobile-demo">
     <li><a href=""></a></li>
-  </ul>-->
+  </ul> -->
 
 <style type="text/css">
 nav {
@@ -295,13 +296,13 @@ alignment: 'right'
 									<div class="col s5 offset-s2">
 										<p>
 											<label>
-												<input class="with-gap" id="structure_naissance" name="structure_naissance" value="Structure sanitaire publique" type="radio"  />
-												<span>Structure sanitaire publique</span>
+<input class="with-gap" id="structure_naissance" name="structure_naissance" value="Structure sanitaire publique" type="radio"  />
+	<span>Structure sanitaire publique</span>
 											</label>
 										</p>
 										<p>
 											<label>
-												<input class="with-gap"   id="structure_naissance" name="structure_naissance" value="Structure sanitaire privee" type="radio" />
+<input class="with-gap"   id="structure_naissance" name="structure_naissance" value="Structure sanitaire privee" type="radio" />
 												<span>Structure sanitaire privée</span>
 											</label>
 										</p>
@@ -507,11 +508,11 @@ alignment: 'right'
 							<div class="row" id="doc">
 								<div class="file-field input-field col s12">
 									<div class="btn blue darken-4">
-										<span >Domicile </span>
+										<span >Autres</span>
 										<input type="file" accept="application/pdf" name="domicle[]" class=" domicle" multiple>
 									</div>
 									<div class="file-path-wrapper">
-										<input class="file-path validate domicle" placeholder="Facture d’électricité / Facture d’eau"  type="text" >
+										<input class="file-path validate domicle" placeholder="Autres justificatifs"  type="text" >
 									</div>
 								</div>
 							</div>
@@ -560,6 +561,11 @@ alignment: 'right'
 			<a href="#!" class="modal-close waves-effect waves-green btn-flat green">Fermer</a>
 		</div>
 	</div>
+	<style type="text/css">
+footer {
+    background-color: #00695c !important;
+}
+</style>
 
 </body>
 <script type="text/javascript">

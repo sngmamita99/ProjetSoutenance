@@ -9,6 +9,7 @@
     <title>Cours Complet Bootstrap 4</title>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script type="text/javascript" src="jquery.min.js"></script>
 	<style>
 	button
 {
@@ -121,20 +122,12 @@ th,td
 				
     ?>
 	</div>
-	<!--<script>
-	
-		var btn=document.getElementById("btn");
-		btn.addEventListener("click",function(e){
-			// btn.style.borderWidth="0";
-			// btn.style.borderColor="red";
-			btn.style.border="0px hidden white";
-			 if (confirm("Etes vous sur que cette personne est absente")) {
-				txt = "You pressed OK!";
-			  } else {
-				txt = "You pressed Cancel!";
-			  }
-		},false);
-
-	</script>-->
+	<script>
+		$('#presence').click(function () {
+		if (!confirm('Etes-vous sure quil est présent ?')) {
+			return false;
+		}
+	});
+	</script>
   </body>
 </html>
