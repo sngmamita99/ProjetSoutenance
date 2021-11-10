@@ -60,7 +60,7 @@
 					$prenom_pere=$ligne["prenom_pere"];
 					$prenom_mere=$ligne["prenom_mere"];
 					$nom_mere=$ligne["nom_mere"];
-					echo"<tr><td>$numActe</td><td>$date_declaration</td><td>$type_declaration</td><td>$prenom</td><td>$nom</td><td>$date_naissance</td><td>$lieuNaiss</td><td>$prenom_mere & $prenom_mere $nom_mere</td><td><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionExtrait.php'>Extrait de Naissance</a></td></tr>";
+					echo"<tr><td>$numActe</td><td>$date_declaration</td><td>$type_declaration</td><td>$prenom</td><td>$nom</td><td>$date_naissance</td><td>$lieuNaiss</td><td>$prenom_pere & $prenom_mere $nom_mere</td><td><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionExtrait.php'>Extrait de Naissance</a><br/><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionExtrait.php'>Copie littérale</a></td></tr>";
 					
 				}
 					echo"</table>";

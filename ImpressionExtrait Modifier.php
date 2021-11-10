@@ -104,31 +104,31 @@ $(window).on('load', function() {
 			<div class="row" style="border: 1px solid;  margin-top: -21px;">
 				<div class="col s9" style="border-right: 1px solid; height: 50mm ">
 					<h6 style="font : 16pt 'times new roman'"><b>EXTRAIT DU REGISTRE DES ACTES DE NAISSANCE</b></h6>
-					<h6><span class="truncate">Pour l'année (2) <b> xx</b>.........................................</span> </h6>
-					<h6><span class='truncate'>N° dans le registre <b> x</b>.....................................................</span> </h6>
+					<h6><span class="truncate">Pour l'année (2) <b> deux mille vingt-et-un</b>.........................................</span> </h6>
+					<h6><span class='truncate'>N° dans le registre <b> un</b>.....................................................</span> </h6>
 					<i class="mini center col s6">En lettres</i><br>
 				</div>
 				<div class="col s3 center" style="">
-					<h5>Année <br> <b>x	</b>
+					<h5>Année <br> <b>2021					</b>
 					<br>
 					<br>
-					<b>x</b>
+					<b>N° 001</b>
 					</h5>
 					<p class="mini">(N° dans le registre en chiffres)</p>
 				</div>
 			</div>
 			<div class="row" style="border: 1px solid; margin-top: -21px;">
 				<div class="col s12">
-					<p><span class="truncate" >Le <b> ux</b>.............................................................................................</span>
+					<p><span class="truncate" >Le <b> un novembre deux mille vingt-et-un</b>.............................................................................................</span>
 						<span class="truncate">
-						à <b>x</b> est né(e) à <b> NDANDE....................................................</b></span>
-						<span class="truncate" >Un enfant de sexe <b>xx.....................................................................</b>
+						à <b>seize heures(s) quarante-neuf minute(s)</b> est né(e) à <b> NDANDE....................................................</b></span>
+						<span class="truncate" >Un enfant de sexe <b>FEMININ.....................................................................</b>
 						</span>
-						<h6><b>&nbsp &nbsp &nbspSOW &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  x</b></h6>
+						<h6><b>&nbsp &nbsp &nbspSOW &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  FATOU</b></h6>
 						<p style="margin-top: -10px"><i>&nbsp &nbsp &nbsp&nbsp &nbspPrénom(s) &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp   Nom</i></p>
-						<p>De &nbsp &nbsp &nbsp <b>x</b><br>
+						<p>De &nbsp &nbsp &nbsp <b>SOW</b><br>
 							&nbsp &nbsp &nbsp<i>Prénom(s) du père</i><br><br>
-							et de&nbsp&nbsp <b>x&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp  x</b><br>
+							et de&nbsp&nbsp <b>SOW&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp  FATOU</b><br>
 						&nbsp &nbsp&nbsp <i>Prénom(s) de la mère&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp  Nom de la mère</i></p>
 					</div>
 				</div>
@@ -140,14 +140,14 @@ $(window).on('load', function() {
 						de naissance</p>
 					</div>
 					<div class="col s8" style="border: 1px solid; height: 50mm">
-						<p><i>Délivré par le juge de paix de KEBEMER</i></p>
+						<p><i>Délivré par le juge d'instance de GUINGUINEO</i></p>
 						<p>Le <b>
 						 
 					</b>
 						</p>
 						<p>Sous le numéro N° <b>
 													</b> </p>
-						<span class="truncate">Inscrit-le <b></b>
+						<span class="truncate">Transcrit-le <b></b>
 						</span>
 						<p>Sur le registre des actes de naissances</p>
 					</div>
@@ -166,7 +166,7 @@ $(window).on('load', function() {
 				</div>
 				<div class="row " style="border: 1px solid; margin-top: -21px;	">
 					<p class="col s12">Extrait délivré par&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  POUR EXTRAIT CERTIFIE CONFORME
-						<br><b>la Mairie de NDANDE</b>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  <b>A NDANDE &nbsp &nbsp &nbsp&nbsp &nbsp Le 10 / 11 / 2021</b><br>
+						<br><b>la Mairie de NGATHIE NAOUDE</b>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  <b>A NGATHIE NAOUDE &nbsp &nbsp &nbsp&nbsp &nbsp Le 10 / 11 / 2021</b><br>
 						&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  L'officier d'etat-civil soussigné<br><br>
 						&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  PRENOM ET NOM
 					</p>
@@ -182,7 +182,61 @@ $(window).on('load', function() {
 					</div>
 				</div>
 			</div>
-			
+			<div class="contai1 white" >
+				<div class="row" style="border: 1px solid; padding-bottom: 25px;">
+					<h5 class="center col s12">MENTIONS MARGINALES</h5>
+					<span class="truncate col s12">
+						.......................................................................................................................................................................................
+					</span>
+					<span class="truncate col s12">
+						.......................................................................................................................................................................................
+					</span>
+					<span class="truncate col s12">
+						.......................................................................................................................................................................................
+					</span>
+					<span class="truncate col s12">
+						.......................................................................................................................................................................................
+					</span>
+					<span class="truncate col s12">
+						.......................................................................................................................................................................................
+					</span>
+					<span class="truncate col s12">
+						.......................................................................................................................................................................................
+					</span>
+					<span class="truncate col s12">
+						.......................................................................................................................................................................................
+					</span>
+					<span class="truncate col s12">
+						.......................................................................................................................................................................................
+					</span>
+					<span class="truncate col s12">
+						.......................................................................................................................................................................................
+					</span>
+				</div>
+				<br>
+				<br>
+				<div class="row" style="border: 1px solid; padding-bottom: 25px;">
+					<h5 class="center col s12">NOTES</h5>
+					<p class=" col s12">
+						(1)	Le centre d’état civil est dans tous les cas le centre de création de l’acte, qui tient ou a tenu le registre des actes de naissance dont l’extrait et tiré.<br><br>  
+						En particulier quand un centre principal délivre un extrait tiré d’un registre d’un centre secondaire, il doit porter  la désignation de ce centre secondaire et non le sienne propre.<br><br>
+						Toutes les mentions de la certification de conformité de et le sceau sont ceux de l’officier d’état civil du centre principal qui établit l’extrait.  
+					</p>
+					<br>
+					<br>
+					<span class="col s12">
+						(2)	Quant un acte de naissance résulte de la transcription d’un jugement d’autorisation d’inscription (tardive de naissance), l’année à porter est l’année de l’inscription, c’est-à-dire l’année du registre, et non celle de la naissance.
+					</span>
+					<span class="col s12">
+						<br>
+						<br>
+						(3)	La mention du pays de naissance pour les naissances à l’étranger n’intéresse que le centre principal de la 1ère circonscription urbaine du Cap-Vert et les postes diplomatiques et consulaires (Art.44 du code la famille).
+					</span>
+					<span class="col s12">
+						<br>
+						<br>
+						(4)	Conserver la case utile
+					</span>
 				</div>
 			</div>
 		</body>
