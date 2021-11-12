@@ -99,7 +99,7 @@
 
         <div class="section-title">
           <h2>Declarations de naissance</h2>
-		 <!-- <a href="deconnexion.php"> <button>Se deconnecter</button></a>-->
+
          
  <?php 
 	
@@ -129,7 +129,7 @@
 						 echo "<tbody>";
 						 // echo"$x";
                         echo "<tr>";
-                            echo "<td>$numDe</td><td>$lien</td><td><a href='justificatif.php?code=$x'><img id='IconeEye' src='images/eye.png' alt='Icone details'/></a></td><td>$date</td>";
+                            echo "<td>$numDe</td><td>$lien</td><td><a href='justificatif.php?code=$x'><img id='IconeEye' src='images/eye.png' alt='Icone details'/></a></td><td class='dateSoumission'>$date</td>";
 								echo "<td>";
 								    echo "<a href='rdv.php?code=$x'><button class='btn btn-success'>Valider</button></a>";
 									echo '<a href="annulerDemande.php"><button class="btn btn-danger">Annuler</button></a>';
@@ -421,7 +421,33 @@
   </main>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+<script>
+// var dd=document.getElementById('dateSoumission');
+// dd.addEventListener("click",function(e)
+// {
+	// alert(this.innerText);
+	// if(this.innerText==dd.getDate())
+		// {
+			// alert("bonjour");
+		// }
+// });
+// getElementsByTagName()
+// getElementsByName() 
+// var today=querySelectorAll("td,.dateSoumission") 
+// var n=today.length;
+// var i=0;
+// for(i=0;i<n;i++)
+// {
+	// today[i].addEventListener("click",function(e){
+		// alert("ok");
+		// if(this.innerText<d.getDate())
+		// {
+			// this.setAttribute('href','#');
+			
+		// }
+	// },false);
+// }
+</script>
 
 </body>
 

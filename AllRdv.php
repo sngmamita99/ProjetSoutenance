@@ -60,8 +60,9 @@ th,td
         if($connect)
 		{ 
 		
-		    $req="select*from rdv where DateRdv='$date' AND etatRdv=0 ORDER BY heureDebut AND heureFin";
+		    $req="select * from rdv where DateRdv='$date'";
 			$result=$connect->query($req);
+			
 				if($result->rowCount()>=1)
 			{ 
 				echo "<table class='table table-bordered'>";
@@ -71,8 +72,13 @@ th,td
                 echo'<th colspan="2">Etat</th>'; 
                 echo"</tr>";	
 				echo"</thead>";
-               while($row=$result->fetch(PDO::FETCH_ASSOC))
+				$row=$result->fetch();
+				// echo"<pre>";
+				// var_dump($row);
+				// echo"</pre>";
+               while($row=$result->fetch())
 				{
+							
 							$numCompte=$row['numCompte'];
 							$req1="SELECT * from users where idUser=$numCompte";
 							$result=$connect->query($req1);
@@ -85,9 +91,7 @@ th,td
 							$hd=$sql2['heureDebut'];
 							$hf=$sql2['heureFin'];
 							$etat=$sql2['etatRdv'];
-							// $etat=$row['etatRdv'];
-							// $hdeb=$row['heureDebut'];
-							// $hfin=$row['heureFin'];
+							
 						 echo "<tbody>";
                         echo "<tr>";
                             echo "<td>$p</td><td>$nm</td><td>$hd</td><td>$hf</td>";

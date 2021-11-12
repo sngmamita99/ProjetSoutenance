@@ -4,7 +4,7 @@ session_start();
 $SESSION=new Session();
 $idConnected=$_SESSION['idConnected'];
 	// $date_declaration= date('dmYHis');
-	$date_declaration = date("Y-m-d H:i:s");
+	$date_declaration = date("Y-m-d");
 	
 	// $pD=$_POST['prenom'];
 	// $nD=$_POST['nom'];

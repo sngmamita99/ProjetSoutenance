@@ -2,7 +2,6 @@
 	// alert(Bonjour);
 // },100);
 var d= new Date();
-
 var today=document.getElementsByTagName("a");
 var n=today.length;
 var i=0;
@@ -17,6 +16,11 @@ for(i=0;i<n;i++)
 		}
 	},false);
 }
+var dd=document.getElementById('dateSoumission');
+dd.addEventListener("click",function(e)
+{
+	alert("sql");
+});
 // today.addEventListener("click",function(e){
 	// alert(tfat);
 // },false);

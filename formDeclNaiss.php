@@ -214,9 +214,12 @@ belowOrigin: false,
 alignment: 'right'
 });
 });
-</script>	<body >
+</script>	
+<body >
+		
 		<div class="container z-depth-5 white">
 			<div class="row">
+	
 			<form class="col s12" method="POST" action="RegistreNaiss.php" id="form" enctype="multipart/form-data">
 				<h2 class="center">Déclaration d'un enfant</h2>
 				<br>

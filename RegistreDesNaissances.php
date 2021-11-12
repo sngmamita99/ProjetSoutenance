@@ -1,4 +1,8 @@
+ <?php
+session_start();
+$idConnected=$_SESSION['idConnected'];
 
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -50,6 +54,7 @@
 				</thead>';
 				while($ligne=$result->fetch())
 				{
+					$idRegistre=$ligne["idRegistre"];
 					$numActe=$ligne["num_registre"];
 					$date_declaration=$ligne["date_declaration"];
 					$type_declaration=$ligne["type_declaration"];
@@ -60,7 +65,10 @@
 					$prenom_pere=$ligne["prenom_pere"];
 					$prenom_mere=$ligne["prenom_mere"];
 					$nom_mere=$ligne["nom_mere"];
-					echo"<tr><td>$numActe</td><td>$date_declaration</td><td>$type_declaration</td><td>$prenom</td><td>$nom</td><td>$date_naissance</td><td>$lieuNaiss</td><td>$prenom_pere & $prenom_mere $nom_mere</td><td><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionExtrait.php'>Extrait de Naissance</a><br/><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionExtrait.php'>Copie littérale</a></td></tr>";
+					$heure_naissance_enfant=$ligne["heure_naissance_enfant"];
+					// $date= date("getHours([$heure_naissance_enfant])");
+					// echo $date;
+					echo"<tr><td>$numActe</td><td>$date_declaration</td><td>$type_declaration</td><td>$prenom</td><td>$nom</td><td>$date_naissance à $heure_naissance_enfant</td><td>$lieuNaiss</td><td>$prenom_pere & $prenom_mere $nom_mere</td><td><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionExtrait.php?idRegistre=$idRegistre'>Extrait de Naissance</a><br/><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionCopieLitteral.php'>Copie littérale</a></td></tr>";
 					
 				}
 					echo"</table>";

@@ -1,4 +1,89 @@
+ <?php
+session_start();
+$idConnected=$_SESSION['idConnected'];
+$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
+        if($connect)
+		{ 
+			$req="select * from users where idUser=$idConnected";
+			$result=$connect->query($req);
+			$ligne=$result->fetch();
+			$prenomOff=$ligne["prenom"];
+			$nomOff=$ligne["nom"];
+			
+		}
+		else
+		{
+			echo"Base de donnée non connecté";
+		}
 
+?>
+<?php
+$date=date("d/m/Y");
+$idRegistre=$_GET["idRegistre"];
+$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
+        if($connect)
+		{ 
+	
+			$req="select * from registrenaissance where idRegistre=$idRegistre";
+			$result=$connect->query($req);
+			if($result->rowCount())
+			{
+				while($ligne=$result->fetch())
+				{
+					$num_registre=$ligne["num_registre"];
+					$annee_registre=$ligne["annee_registre"];
+					$prenom_enfant=$ligne["prenom_enfant"];
+					$nom_enfant=$ligne["nom_enfant"];
+					$prenom_pere=$ligne["prenom_pere"];
+					$prenom_mere=$ligne["prenom_mere"];
+					$nom_mere=$ligne["nom_mere"];
+					$sexe_enfant=$ligne["sexe_enfant"];
+					$annee_registre=$ligne["annee_registre"];
+					$num_registre=$ligne["num_registre"];
+					$req2="select  * from conversion where annee_en_chiffre ='$annee_registre'";
+					$res=$connect->query($req2);
+					$row=$res->fetch();
+					$ann=$row["annee_en_lettre"];
+					$req3="select * from  conversion_jour where jour_chiffre=$num_registre";
+					$result3=$connect->query($req3);
+					$res3=$result3->fetch();
+					$jour_lettre=$res3["jour_lettre"];
+					$date_naissance_enfant=$ligne["date_naissance_enfant"];
+					// echo "$date_naissance_enfant";
+					 // echo $date->format('d');
+					 $jour=date('d', strtotime("$date_naissance_enfant"));
+					 $mois=date('m', strtotime("$date_naissance_enfant"));
+					 $year=date('Y', strtotime("$date_naissance_enfant"));
+					 $req_jour="select * from  conversion_jour where jour_chiffre=$jour";
+					 $res_jour=$connect->query($req_jour);
+					 $rowJour=$res_jour->fetch();
+					 $jn=$rowJour["jour_lettre"];
+					 // echo $jn;
+					 $req_mois="select * from conversionmois where mois_chiffre=$mois";
+					 $res_mois=$connect->query($req_mois);
+					 $row_mois=$res_mois->fetch();
+					 $mn=$row_mois["mois_lettre"];
+					 // echo $mn;
+					 $req_annee="select * from conversion where annee_en_chiffre=$year";
+					 $res_annee=$connect->query($req_annee);
+					 $row_annee=$res_annee->fetch();
+					 $an=$row_annee["annee_en_lettre"];
+					 // echo $mn;
+				}
+				
+			}
+			else
+			{
+				
+			}
+
+		}
+		else
+		{
+			echo"not connect";
+		}
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -19,13 +104,6 @@ body {
 <script type="text/javascript" src="js1/jquery.min.js"></script>
 <script type="text/javascript" src="js1/materialize.min.js"></script>
 
-
-<div class="modal modal" id="timeoutModal">
-  
-    <div class="modal-footer">
-        <a class="modal-close btn-flat waves-effect blue">Connexion</a>
-    </div>
-</div>
 
 <script type="text/javascript">
 // Set timeout variables.
@@ -84,7 +162,7 @@ $(window).on('load', function() {
 	</head>
 	<body >
 				<a href="" class="btn" onclick="window.print();">Imprimer</a>
-		<a href="" class="btn" onclick="window.close();">Fermer</a>
+		<a href="RegistreDesNaissances.php" class="btn" onclick="window.close();">Fermer</a>
 		<div class="contai white" style="padding:  10px">
 			<div class="row premier">
 				<div class="col s7 " style="border: 1px solid; height: 47mm">
@@ -104,31 +182,31 @@ $(window).on('load', function() {
 			<div class="row" style="border: 1px solid;  margin-top: -21px;">
 				<div class="col s9" style="border-right: 1px solid; height: 50mm ">
 					<h6 style="font : 16pt 'times new roman'"><b>EXTRAIT DU REGISTRE DES ACTES DE NAISSANCE</b></h6>
-					<h6><span class="truncate">Pour l'année (2) <b> xx</b>.........................................</span> </h6>
-					<h6><span class='truncate'>N° dans le registre <b> x</b>.....................................................</span> </h6>
+					<h6><span class="truncate">Pour l'année (2) <b> <?php echo $ann?></b>.........................................</span> </h6>
+					<h6><span class='truncate'>N° dans le registre <b> <?php echo "$jour_lettre";?></b>.....................................................</span> </h6>
 					<i class="mini center col s6">En lettres</i><br>
 				</div>
 				<div class="col s3 center" style="">
-					<h5>Année <br> <b>x	</b>
+					<h5>Année <br> <b><?php echo" $annee_registre";?></b>
 					<br>
 					<br>
-					<b>x</b>
+					<b><?php echo "N° $num_registre";?></b>
 					</h5>
 					<p class="mini">(N° dans le registre en chiffres)</p>
 				</div>
 			</div>
 			<div class="row" style="border: 1px solid; margin-top: -21px;">
 				<div class="col s12">
-					<p><span class="truncate" >Le <b> ux</b>.............................................................................................</span>
+					<p><span class="truncate" >Le <b> <?php echo" $jn $mn $an";?></b>.............................................................................................</span>
 						<span class="truncate">
 						à <b>x</b> est né(e) à <b> NDANDE....................................................</b></span>
-						<span class="truncate" >Un enfant de sexe <b>xx.....................................................................</b>
+						<span class="truncate" >Un enfant de sexe <b><?php echo $sexe_enfant;?>..................................................................</b>
 						</span>
-						<h6><b>&nbsp &nbsp &nbspSOW &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  x</b></h6>
+						<h6><b>&nbsp &nbsp &nbsp<?php echo $prenom_enfant;?> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <?php echo $nom_enfant;?></b></h6>
 						<p style="margin-top: -10px"><i>&nbsp &nbsp &nbsp&nbsp &nbspPrénom(s) &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp   Nom</i></p>
-						<p>De &nbsp &nbsp &nbsp <b>x</b><br>
+						<p>De &nbsp &nbsp &nbsp <b><?php echo $prenom_pere;?></b><br>
 							&nbsp &nbsp &nbsp<i>Prénom(s) du père</i><br><br>
-							et de&nbsp&nbsp <b>x&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp  x</b><br>
+							et de&nbsp&nbsp <b><?php echo $prenom_mere;?>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp  <?php echo $nom_mere;?></b><br>
 						&nbsp &nbsp&nbsp <i>Prénom(s) de la mère&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp  Nom de la mère</i></p>
 					</div>
 				</div>
@@ -166,9 +244,9 @@ $(window).on('load', function() {
 				</div>
 				<div class="row " style="border: 1px solid; margin-top: -21px;	">
 					<p class="col s12">Extrait délivré par&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  POUR EXTRAIT CERTIFIE CONFORME
-						<br><b>la Mairie de NDANDE</b>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  <b>A NDANDE &nbsp &nbsp &nbsp&nbsp &nbsp Le 10 / 11 / 2021</b><br>
+						<br><b>la Mairie de NDANDE</b>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  <b>A NDANDE &nbsp &nbsp &nbsp&nbsp &nbsp <?php echo $date;?></b><br>
 						&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  L'officier d'etat-civil soussigné<br><br>
-						&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  PRENOM ET NOM
+						&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  <?php echo "$prenomOff $nomOff";?>
 					</p>
 					<p style="font-size: 12px">(1) (2) (3) Notes et mentions marginales au verso</p>
 				</div>
@@ -223,10 +301,6 @@ $(window).on('load', function() {
 				margin: 40px;
 			}
 		</style>
-		<script type="text/javascript">
-			$(document).ready(function () {
-			
-			window.print();
-		});
+		
 		</script>
 	</html>
