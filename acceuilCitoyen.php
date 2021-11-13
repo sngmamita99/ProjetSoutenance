@@ -69,7 +69,7 @@ $idConnected=$_SESSION['idConnected']
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Declarations de naissance</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Declarations mariages</span></a></li>
           <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Declarations décés</span></a></li>
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Demandes actes naissance</span></a></li>
+          <li><a href="DemandesActesNaissances.php" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Demandes actes naissance</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Demandes actes mariage</span></a></li>
 		  <li><a href="#D-acte-deces" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Demandes actes décés</span></a></li>
 		 

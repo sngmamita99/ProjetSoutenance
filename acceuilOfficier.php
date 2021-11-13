@@ -438,7 +438,12 @@ $idConnected=$_SESSION['idConnected'];
       <div class="container">
 
         <div class="section-title">
-          <h2>Rendez-vous</h2>
+          <h2>Rendez-vous 
+		 
+		  <a href="AllRdvOk.php ?date=<?=date("Y-m-d")?>">Jour-J </a>
+		  
+		  </h2>
+		  
                      
 	
 	<?php require_once("calendrierOff.php");?>
@@ -461,26 +466,6 @@ $idConnected=$_SESSION['idConnected'];
   </main>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-<script>
-	setInterval(function(){
-    
-
-						var divAm=document.getElementById("rdv");
-						var xhr=new XMLHttpRequest();
-						xhr.open("GET","ServeurAjaxRdv.php");//specifier le fichier quon souhaite ouvrir et la methode de lecture
-						xhr.send(null);//permet d'envoyer la requete
-						xhr.onreadystatechange=function()
-						{
-						if(xhr.readyState==4 && xhr.status==200)
-						{
-							
-							divAm.innerHTML=this.responseText;
-						}
-					}
-					},50);
-
-</script>
 
 </body>
 
