@@ -1,6 +1,5 @@
 <?php
  require_once("SessionError.php");
-
 $SESSION=new Session();
 $idConnected=$_SESSION['idConnected'];
 $date_declaration = date("Y-m-d");
@@ -76,7 +75,7 @@ $k=0;
 					}
 			
 						
-					// echo"ok";
+					
 					// $SESSION->setFlash("Votre demande 	a été envoyée avec succés ! Vous allez recevoir la date de votre RV pour la declaration",'success');
 							// header("Location:acceuilCitoyen.php");
 		

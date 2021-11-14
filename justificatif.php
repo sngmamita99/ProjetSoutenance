@@ -7,6 +7,19 @@
 		<style>
 		#tof
 		{
+			width:10%;
+			height:10%;
+			
+		}
+
+		</style>
+	</head>
+	<body >
+      
+
+		<style>
+		#tof
+		{
 			width:50px;
 			height:50px;
 		}
@@ -26,13 +39,7 @@ $numCompte=$_GET['code'];
 			echo "<img id='tof' src='$img' alt=''/><br/>";
 		}
 		
-		
-		
 	}
-	else
-	{
-		echo"nok";
-	}
-?>
+    ?>
 </body>
 </html>
