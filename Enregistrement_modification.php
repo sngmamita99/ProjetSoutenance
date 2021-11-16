@@ -80,7 +80,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 				degre_parente='$degre_parente'
 				WHERE annee_registre='$annee_registre' AND num_registre=$num_registre";
 				$result=$connect->exec($req);
-				echo"Enregistrement réussi";
+				header(Location:);
 		}
 		else
 		{

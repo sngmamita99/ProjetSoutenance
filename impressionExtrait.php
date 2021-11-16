@@ -161,7 +161,7 @@ $(window).on('load', function() {
 		<div class="contai white" style="padding:  10px">
 			<div class="row premier">
 				<div class="col s7 " style="border: 1px solid; height: 47mm">
-					<p class="center"><b>REGION DE LOUGA<br>
+					<p class="center"><b>REGION DE DAKAR<br>
 						DEPARTEMENT DE KEBEMER<br>
 						COMMUNE DE NDANDE</b><br>
 											</p>

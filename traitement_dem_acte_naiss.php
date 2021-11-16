@@ -1,4 +1,5 @@
 <?php
+require_once("headerCitoyen.php");
 $naissances=$_POST["naissance"];
 $annee_registre=$_POST["annee_registre"];
 $num_registre=$_POST["num_registre"];
@@ -20,6 +21,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 			$stmt->bindParam(6, $etat);
 			$stmt->bindParam(7, $nbr_copies);
 			$stmt->bindParam(8, $naissances);
+			$stmt->bindParam(9, $idConnected);
 			$stmt->execute();
 			echo"Demande envoyé avec succes";
 			

@@ -86,7 +86,7 @@ $(window).on('load', function() {
 	<body id="debut" >
 		<!--Dropdown structure demande d'acte -->
 <ul id="demande_acte" class="dropdown-content">
-  <li> <a href="l_demande_acte.php"> Naissance</a></li>
+  <li> <a href="traitementDemNaiss.php"> Naissance</a></li>
   <li><a href="l_demande_acte_confirme.php">Mariage</a></li>
     <li><a href="l_demande_acte_confirme.php">Déces</a></li>
 </ul>
