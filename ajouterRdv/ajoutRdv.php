@@ -1,9 +1,9 @@
 <?php
-	session_start();
+	require_once("../SessionError.php");
+ $SESSION = new Session();
 	$date=$_SESSION['date'];
 	$numCompte=$_SESSION['numCompte'];
-	// $nom=$_SESSION['nom'];
-	// $prenom=$_SESSION['prenom'];
+	
 	?>
 	
 <!doctype html>
@@ -19,10 +19,36 @@
 
 	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript" src="../jquery.min.js"></script>
+<style>
+#alert
+	{
+		
+		height:30px;
+		width:50%;
+		text-align:center;
+		margin-left:25%;
+		
+	}
 
+.contact-wrap
+{
+
+	margin-left:70%;
+	margin-top:-30px;
+
+
+	
+}
+body
+{
+	background-image:url("https://cdn.pixabay.com/photo/2017/06/09/19/02/time-2387976_1280.jpg");
+	
+	overflow: hidden;
+}
+</style>
 	</head>
 	<body>
-	
+	<?php $SESSION->flash();?>
 	<section class="ftco-section">
 		<div class="container">
 			
@@ -30,7 +56,7 @@
 				<div class="col-md-12">
 					<div class="wrapper">
 						<div class="row no-gutters mb-5">
-							<div class="col-md-7">
+							<div class="col-md-5">
 								<div class="contact-wrap w-100 p-md-5 p-4">
 							
 									<form method="POST"  action="../traitementAjoutRdv.php" id="contactForm" name="contactForm" class="contactForm">
@@ -53,7 +79,7 @@
 							<input type="input" class="form-control" name="tdate" id="tsubject" placeholder="Subject"	value="<?=$date?>"/>
 								</div>
 									</div>
-		<div class="col-md-12">
+								<div class="col-md-12">
 												<div class="form-group">
 													<label class="label" for="#">Type de Papier</label>
 													<select name="typeDemande" class="form-control">
@@ -87,11 +113,6 @@
 		</div>
 	</section>
 <script>
-
-// var hFin = document.getElementById("hFin");
-// hFin.addEventListener("blur",function(e){
-	// alert("bonjour");
-// },false);
 
 $('#hFin').blur(function (e) {
 

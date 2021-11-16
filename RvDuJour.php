@@ -41,13 +41,13 @@
         if($connect)
 		{ 
 		
-		    $req="SELECT * FROM rdv WHERE DateRdv='$date' AND type='Declaration de Naissance'";
+		    $req="SELECT * FROM rdv WHERE DateRdv='$date' AND type='Declaration de Naissance' AND etatRdv=0";
 			$res=$connect->query($req);
 			// $req1="SELECT * from users where idUser=$numCompte";
 			// $result=$connect->query($req1);
 				if($res->rowCount()>=1)
 					
-			{ // echo"<h2 id='titreRv'>Rendez-vous du $date </h2>";
+			{  echo"<h2 id='titreRv'>Rendez-vous du $date </h2>";
 				echo "<table class='table table-bordered'>";
 				echo"<thead>";
 				echo"<tr>";

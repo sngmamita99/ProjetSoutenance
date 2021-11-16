@@ -49,8 +49,6 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					$res3=$result3->fetch();
 					$jour_lettre=$res3["jour_lettre"];
 					$date_naissance_enfant=$ligne["date_naissance_enfant"];
-					// echo "$date_naissance_enfant";
-					 // echo $date->format('d');
 					 $jour=date('d', strtotime("$date_naissance_enfant"));
 					 $mois=date('m', strtotime("$date_naissance_enfant"));
 					 $year=date('Y', strtotime("$date_naissance_enfant"));
@@ -58,17 +56,14 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					 $res_jour=$connect->query($req_jour);
 					 $rowJour=$res_jour->fetch();
 					 $jn=$rowJour["jour_lettre"];
-					 // echo $jn;
 					 $req_mois="select * from conversionmois where mois_chiffre=$mois";
 					 $res_mois=$connect->query($req_mois);
 					 $row_mois=$res_mois->fetch();
 					 $mn=$row_mois["mois_lettre"];
-					 // echo $mn;
 					 $req_annee="select * from conversion where annee_en_chiffre=$year";
 					 $res_annee=$connect->query($req_annee);
 					 $row_annee=$res_annee->fetch();
 					 $an=$row_annee["annee_en_lettre"];
-					 // echo $mn;
 				}
 				
 			}

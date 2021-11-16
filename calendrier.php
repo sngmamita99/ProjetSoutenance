@@ -75,7 +75,7 @@ require_once('Month.php');
 					
 					$x=$events['idRdv'];
 					echo"<a href='detailRdv.php?id=$x'>".$events['description']."</a>" ; 
-					// echo"<a href='detailRdv.php'>voir</a>" ;
+					 ;
 					?>
 					</div>
 			<?php endforeach; ?>-->

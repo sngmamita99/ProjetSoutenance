@@ -1,4 +1,7 @@
+<?php
+require_once("heederOfficier.php");
 
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,7 +13,7 @@
 <link type="text/css" rel="stylesheet" href="css1/formulaire.css" media="screen,projection" />
 <style type="text/css">
 body {
-    background-color: #eff1f2;
+    background-color: white;
 }
 </style>
 <!--Let browser know website is optimized for mobile-->
@@ -90,99 +93,17 @@ $(window).on('load', function() {
 </script>
 	 	
 	</head>
-	<!--Dropdown structure demande d'acte -->
-<!--<ul id="demande_acte" class="dropdown-content">
-  <li>
-    <a href="l_demande_acte.php">
-    En attente
-        </a>
-  </li>
-  <li><a href="l_demande_acte_confirme.php">Confirmés</a></li>
-</ul>
-<!--Dropdown structure naissance
-<ul id="naissance" class="dropdown-content">
-  <li><a href="e_naissance.php">Déclaration</a></li>
-  <li><a href="i_naissance.php">Impression</a></li>
-</ul>
-<!--Dropdown structure mariage 
-<ul id="mariage" class="dropdown-content">
-  <li><a href="e_mariage.php">Déclaration</a></li>
-  <li><a href="i_mariage.php">Impression</a></li>
-</ul>
-<!--Dropdown structure deces 
-<ul id="deces" class="dropdown-content">
-  <li><a href="e_deces.php">Déclaration</a></li>
-  <li><a href="i_deces.php">Impression</a></li>
-</ul>
-<!--Dropdown structure impression 
-<ul id="impression" class="dropdown-content">
-</ul>
-<!--Dropdown déconnexion 
-<ul id="deconnexion" class="dropdown-content">
-  <li> <a  href="deconnexion.php">Déconnexion</a></li>
-  <li> <a  href="m_pwd.php">Changer password</a></li>
-</ul>
-
-<!--Dropdown autres documents 
-<ul id="autres_documents" class="dropdown-content">
-  <li> <a  href="#">Certificat</a></li>
-  <li> <a  href="#">Attestation</a></li>
-  <li> <a  href="#">Demandes</a></li>
-  <li> <a  href="#">Fiche</a></li>
-</ul>
-
-<div class="white center entete_img row center" style="margin-bottom: 0px">
-  <img style="" src="../eregister/logos/5.png" class="col s2 offset-s2" >
-  <h4 class="col s6" style="font:'times new roman';">COMMUNE DE NGATHIE NAOUDE<br>Centre d'Etat Civil de NGATHIE NAOUDE</h4>
-</div>
-
-<nav>
-    <div class="nav-wrapper">
-      <a href="accueil.php" class="brand-logo">&nbsp&nbsp&nbsp AIDA</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a class="ab"   href="#"></a></li>
-        <li>
-          <a href="l_pre_declaration_att.php">
-            Pré-déclaration
-                      </a>
-        </li>
-      <li>
-          <a href="l_demande_acte.php" class="dropdown-trigger" data-beloworigin="true" data-target="demande_acte">
-            Demandes d'actes
-                      </a>
-        </li>
-        <li>
-          <a href="i_naissance.php" class="dropdown-trigger" data-beloworigin="true" data-target="naissance">Naissance</a>
-        </li>
-        <li>
-          <a href="i_mariage.php" class="dropdown-trigger" data-beloworigin="true" data-target="mariage">Mariage</a>
-      </li>
-        <li>
-          <a href="i_deces.php" class="dropdown-trigger" data-beloworigin="true" data-target="deces">Décés</a>
-      </li>
-      <li><a href="" class="dropdown-trigger" data-beloworigin="true" data-target="autres_documents" >Autres</a></li>
-        <li>
-          <a class="dropdown-trigger ab"  href="deconnexion.php" data-beloworigin="true"  data-target="deconnexion"><i class="material-icons right" style="font-size: 40px">person_pin</i>T.Sall</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href=""></a></li>
-  </ul> -->
-
+	
 <style type="text/css">
 nav {
-  background-color: #00695c   ; 
+  background-color:  #650065  ; 
 }
 ul.dropdown-content>li>a{/*Sélection des liens qui sont dans les listes déroulentes de la barre de navigation que l'on met en bleu*/
 background-color : white   ;
-color: #00695c    ;
+color:  #650065    ;
 }
 ul.dropdown-content>li>a:hover{
-background-color : #00695c       ;
+background-color :  #650065     ;
 color: white;
 }
 .dropdown-trigger{
@@ -201,19 +122,7 @@ font: 14pt 'times new roman';
 background-color: #eff1f2;
 }
 </style>
-<script type="text/javascript">
-$(document).ready(function(){
-$('.sidenav').sidenav();
-$(".dropdown-trigger").dropdown({
-hover: true, //déroulement de la liste au survol de l'élément
-inDuration : 400,
-outDuration : 300,
-coverTrigger:false,//la liste déroulante apparaîtra sous le déclencheur.
 
-belowOrigin: false,
-alignment: 'right'
-});
-});
 </script>	
 <body >
 		
@@ -226,7 +135,7 @@ alignment: 'right'
 				<div class="row">
 					<div class="col s4 m2  input-field offset-s1">
 						<span>Année registre</span>
-						<select class="browser-default" name="annee_registre" id="annee_registre">
+<select class="browser-default" name="annee_registre" id="annee_registre" ">
 							<option value='1941'>1941</option>
 							<option value='1942'>1942</option>
 							<option value='1943'>1943</option>
@@ -575,6 +484,7 @@ footer {
 </style>
 
 </body>
+
 <script type="text/javascript">
 $(document).ready(function() {
 	$('.collapsible').collapsible();
@@ -679,7 +589,7 @@ $(document).ready(function() {
 	$('#nbr_naissance').keyup(function(){
 		nbr_naissance();
 	});
-
+ 
 	
 	//Controlle des dates
 	$('.date_input').blur(function () {
@@ -700,21 +610,8 @@ $(document).ready(function() {
 			$('.erreur').text("");
 		}
 	});
-	function comptage_num_registre() {
-		var annee_registre = $("#annee_registre").val();
-		$.ajax({
-			type:'POST',
-			url:'comptage_num_registre.php',
-			data:'annee_registre='+annee_registre +'&p=n',
-			success:function (html) {
-				$('.num_registre').html(html);
-			}
-		});
-	}
-	comptage_num_registre();
-	$('#annee_registre').change(function(){
-		comptage_num_registre();
-	});
+
+
 	//fonction permettant d'afficher les input pour le jugement
 	$('#type_declaration').change(function () {
 		if ($(this).val()=="jugement")
@@ -734,7 +631,23 @@ $(document).ready(function() {
 	});
 
 });
+function comptage_numRegistre()
+ {
+	 var ann=document.getElementById("annee_registre");
+	 var annValue=ann.value;
+	 var url='comptage_registre.php?msg='+annValue;
+	var xhr=new XMLHttpRequest();
+	xhr.open('GET',url);
+	xhr.send();
+	if (xhr.readyState == 4 && xhr.status == 200)
+	{
+		document.getElementById("num_registre").value=xhr.responseText;
+}
+ }
 
+	$('#annee_registre').change(function(){
+		comptage_num_registre();
+	});
 </script>
 <style type="text/css">
 	.collapsible-header
@@ -764,4 +677,5 @@ $(document).ready(function() {
 		background-size:  cover;
 	}
 </style>
+
 </html>

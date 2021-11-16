@@ -29,7 +29,7 @@ require_once("SessionError.php");
 		margin-left:25%;
 		
 	}
-*
+
 	{
 		margin:0;
 	}

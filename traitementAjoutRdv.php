@@ -1,13 +1,15 @@
 <?php
+ require_once("SessionError.php");
+session_start();
+$SESSION=new Session();
 
-	session_start();
 	$date=$_SESSION['date'];
 	$numCompte=$_SESSION['numCompte'];
 	
 	
 		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
-		{ $req1="DELETE from declarationnaissance WHERE numCompte = $numCompte";
+		{ 	$req1="UPDATE declarationnaissance SET etat=1 WHERE numCompte = $numCompte";
 			$result=$connect->exec($req1);
 		if(isset($_POST['hDebut']) && isset($_POST['hFin']) && isset($_POST['tdate']) && isset($_POST['typeDemande']))
 		{
@@ -19,7 +21,9 @@
 			// echo"$date $hdeb $hfin $type";
 			$req="insert into rdv (DateRdv,numCompte,type,heureDebut,heureFin) values ('$date',$numCompte,'$type','$hdeb','$hfin')";
 			$result=$connect->exec($req);
-			// header("Location:RvDuJour.php");
+			 $SESSION->setFlash("Rendez-vous ajouté avec succes Retournez à la page pour voir la nouvelle rendez-vous",'success');
+							header("Location:ajouterRdv/ajoutRdv.php?numCompte=$numCompte");
+			
 		}
 		else
 		{

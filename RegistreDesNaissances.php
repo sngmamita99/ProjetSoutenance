@@ -1,24 +1,10 @@
  <?php
-session_start();
+ require_once("heederOfficier.php");
+
 $idConnected=$_SESSION['idConnected'];
 
 ?>
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Registre des naissances</title>
-		<meta charset="utf-8">
-<!--Import materialize.min.css-->
-<link type="text/css" rel="stylesheet" href="css1/materialize.min.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="css1/icones.css"  media="screen,projection"/>
-   
-    <link rel="stylesheet" type="text/css" href="css1/datatables.min.css"/> 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="js1/jquery.min.js"></script>
-    <script type="text/javascript" src="js1/materialize.min.js"></script>
-    <script type="text/javascript" src="js1/datatables.min.js"></script>
+
    <style>
    #impression
    {
@@ -36,10 +22,10 @@ $idConnected=$_SESSION['idConnected'];
 			$result=$connect->query($req);
 			if($result->rowCount())
 			{
-				
+				echo"<br/><br/>";
 			echo'<table class="col s12 responsive-table striped " id="l_naissance">
 				<thead>
-					<tr class="grey darken-3 lighten-2 white-text center ">
+					<tr class="purple darken-3 lighten-2 white-text center ">
 						<th>N° Acte</th>
 						<th>Date déclaration</th>	
 						<th>Type déclaration</td>
@@ -49,6 +35,7 @@ $idConnected=$_SESSION['idConnected'];
 						<th>Lieu naissance</td>
 						<th>Pére et mére</td>
 						
+						<th></th>
 						<th></th>
 					</tr>
 				</thead>';
@@ -68,7 +55,25 @@ $idConnected=$_SESSION['idConnected'];
 					$heure_naissance_enfant=$ligne["heure_naissance_enfant"];
 					// $date= date("getHours([$heure_naissance_enfant])");
 					// echo $date;
-					echo"<tr><td>$numActe</td><td>$date_declaration</td><td>$type_declaration</td><td>$prenom</td><td>$nom</td><td>$date_naissance à $heure_naissance_enfant</td><td>$lieuNaiss</td><td>$prenom_pere & $prenom_mere $nom_mere</td><td><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionExtrait.php?idRegistre=$idRegistre'>Extrait de Naissance</a><br/><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionCopieLitteral.php'>Copie littérale</a></td></tr>";
+					echo"<tr>
+					<td>$numActe</td>
+					<td>$date_declaration</td>
+					<td>$type_declaration</td>
+					<td>$prenom</td>
+					<td>$nom</td>
+					<td>$date_naissance à $heure_naissance_enfant</td>
+					<td>$lieuNaiss</td>
+					<td>$prenom_pere & $prenom_mere $nom_mere</td>
+					<td>
+					<a href='modifier_enregistrement.php?idRegistre=$idRegistre'><img id='impression' src='https://previews.123rf.com/images/sulikns/sulikns1706/sulikns170600418/80878621-dessiner-modifier-stylo-crayon-%C3%A9crire-ic%C3%B4ne-vector-illustration-.jpg' alt='imprimerie'/>
+					</a>
+					</td>
+					<td>
+					<img id='impression' src='images/impression.png'alt='imprimerie'/><a href='impressionExtrait.php?idRegistre=$idRegistre'>Extrait</a><br/><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionCopieLitteral.php'>Copie littérale</a>
+					</td>
+					</tr>";
+					
+					// </td><td><img id='impression' src='https://previews.123rf.com/images/sulikns/sulikns1706/sulikns170600418/80878621-dessiner-modifier-stylo-crayon-%C3%A9crire-ic%C3%B4ne-vector-illustration-.jpg' alt='imprimerie'/><a href='impressionExtrait.php?idRegistre=$idRegistre'>Extrait de Naissance</a><br/><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionCopieLitteral.php'>Copie littérale</a></td></tr>";
 					
 				}
 					echo"</table>";

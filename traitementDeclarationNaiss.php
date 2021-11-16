@@ -1,6 +1,11 @@
 <?php
- require_once("SessionError.php");
-$SESSION=new Session();
+require_once("headerCitoyen.php");
+?>
+
+<?php
+
+ // require_once("SessionError.php");
+// $SESSION=new Session();
 $idConnected=$_SESSION['idConnected'];
 $date_declaration = date("Y-m-d");
 $lP=$_POST['LienParente'];
@@ -76,8 +81,6 @@ $k=0;
 			
 						
 					
-					// $SESSION->setFlash("Votre demande 	a été envoyée avec succés ! Vous allez recevoir la date de votre RV pour la declaration",'success');
-							// header("Location:acceuilCitoyen.php");
 		
 	
 	}
@@ -87,3 +90,7 @@ $k=0;
 	}
 
 ?>
+<body>
+Votre demande a été envoyé avec succés
+</body>
+</html>

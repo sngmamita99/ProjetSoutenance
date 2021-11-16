@@ -20,8 +20,8 @@
 		<style>
 		#tof
 		{
-			width:50px;
-			height:50px;
+			width:30%;
+			height:30%;
 		}
 		</style>
 	</head>
