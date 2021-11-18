@@ -1,6 +1,4 @@
-<?php
-require_once("headerCitoyen.php");
-?>
+
 <!DOCTYPE html>
 <html>
 
@@ -87,8 +85,8 @@ $(window).on('load', function() {
    
     <div class="container white" >
         <div class="row">
-            <form class="col s12 m12 l12" method="POST" action="traitement_dem_acte_naiss.php">
-                <input type="number" name="s" hidden="">
+            <form id="formu" class="col s12 m12 l12" method="POST" action="traitement_dem_acte_naiss.php">
+                <input type="number" name="s" hidden="" onsubmit="return verification()">
                 <h3 class="center">Formulaire de demande d'acte d'état civils</h3>
                 <div class="row">
                    
@@ -101,7 +99,7 @@ $(window).on('load', function() {
                         </select>
                     </div>
                     <div class="naissances input-field col s6 m4 l4 " id="naissances">
-                        <select class="browser-default acte" name="naissance">
+                        <select class="browser-default acte" name="naissance" id="naissances">
  <option value="" disabled selected>Choisissez l'acte naissance</option>
    <option value="Extrait de naissance">Extrait de naissance</option>
   <option value="Copie littérale de naissance">Copie littérale de naissance</option>
@@ -151,13 +149,13 @@ $(window).on('load', function() {
                         <input type="number" required min="1" value="1" max="15" name="nbr_copies" id="nbr_copies">
                         <label for="nbr_copies">Nombre de copies de l'acte</label>
                     </div>
-                    <div class="input-field col s6 m3 l4">
+                   <!-- <div class="input-field col s6 m3 l4">
                         <select class="browser-default acte" name="methode_paiement" id="methode_paiement">
                             <option value="" disabled selected> Methode de Paiement</option>
                             <option value="Sur Place">Sur Place</option>
-                <option value="Livraison">Livraison</option>
+							<option value="Livraison">Livraison</option>
                         </select>
-                    </div>
+                    </div>-->
  </div>
                 <div class="row">
                     <div class="col s2 offset-s8 input-field">
@@ -166,6 +164,7 @@ $(window).on('load', function() {
                     </div>
                 </div>
             </form>
+
         </div>
     </div>
 </body>
@@ -208,7 +207,27 @@ $(document).ready(function() {
         if (!confirm('Voulez-vous confirmer l\'enregistrement de cette demande d\'acte ?')) {
             return false;
         }
-    })
+    });
+	// document.getElementById("formu").addEventListener("submit",function(e){
+		// e.preventDefault();
+		// var papier=document.getElementById("naissances");
+		// if(!papier.value)
+		// {
+			// erreur="Il nya aucun acte choisi";
+		// }
+		// if(erreur)
+		// {
+			// e.preventDefault();
+			// alert("inner");
+			// return false;
+		// }
+		// else
+		// {
+			// alert("formu envoyé");
+		// }
+		
+	// }
+	// );
 
 })
 </script>

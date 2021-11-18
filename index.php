@@ -9,6 +9,7 @@
 <link type="text/css" rel="stylesheet" href="css1/materialize.min.css" media="screen,projection" />
 <link type="text/css" rel="stylesheet" href="css1/icones.css" media="screen,projection" />
 <link type="text/css" rel="stylesheet" href="css1/formulaire.css" media="screen,projection" />
+<script src="https://kit.fontawesome.com/89205a59df.js" crossorigin="anonymous"></script>
 <style type="text/css">
 body {
     background-color: #eff1f2;
@@ -100,6 +101,10 @@ $(window).on('load', function() {
             </ul>
         </div>
     </nav>
+				 
+            <a href="acceuil_demande.php" class="btn btn-indigo btn-lg">Demande d'acte en ligne
+              <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            </a>
     <div class="row">
         <div class="slider ">
             <ul class="slides">
@@ -131,6 +136,7 @@ $(window).on('load', function() {
                         <h3>Vue d'ensemeble des données</h3>
                         <h5 class="light white-text text-lighten-3 blue-grey darken-1" >Visualiser sélectivement les données en fonction de leur statut (en attente de validation, validé, transféré, confirmé)</h5>
                     </div>
+			
                 </li>
             </ul>
         </div>
@@ -138,7 +144,9 @@ $(window).on('load', function() {
     
     <div class="row">
         <h5 class="col s6"></h5>
+	
     </div>
+	
 </body>
 <style type="text/css">
 nav {
