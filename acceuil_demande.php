@@ -7,6 +7,7 @@
 <link type="text/css" rel="stylesheet" href="css1/materialize.min.css" media="screen,projection" />
 <link type="text/css" rel="stylesheet" href="css1/icones.css" media="screen,projection" />
 <link type="text/css" rel="stylesheet" href="css1/formulaire.css" media="screen,projection" />
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js" > </script > 
 <style type="text/css">
 body {
     background-color: #eff1f2;
@@ -42,18 +43,20 @@ body {
                         pour le recupérer. Pour cela, insérer juste le code qui vous a été fournis lors de la demande
                         puis cliquez sur le bouton recherche.</h5>
                     <div class="input-field col s6 m6 offset-s6 white">
-                        
-                        <input id="icon_prefix" placeholder="Code de recherche" type="text" class="validate">
+                     <form method="POST" action="rechercher.php">
+                        <input id="icon_prefix" placeholder="Code de recherche" type="search" class="validate" name="Code_de_recherche">
                     </div>
                     <br>
                     <br>
                     <br>
-
                 </div>
                 <span class="recherche white-text"></span>
                 <div class="card-action">
-                    <a class="btn white purple-text darken-3 btn_recherche">Recherche</a>
+				 <input class="btn white purple-text darken-3 btn_recherche" id = "btRech" type ="submit" value = "Rechercher" />
+                </form>
                 </div>
             </div>
-        </div>
+        </div>	
     </div>
+ 
+				

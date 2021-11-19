@@ -1,5 +1,6 @@
  <?php
 session_start();
+
 $idConnected=$_SESSION['idConnected'];
 $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
@@ -20,10 +21,13 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 <?php
 $date=date("d/m/Y");
 $idRegistre=$_GET["idRegistre"];
+// echo"$idRegistre";
 
 $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
 		{ 
+	$req1="UPDATE demandeactedenaissance SET etat_demande =1 where numeroDeRegistre=$idRegistre";
+	$result1=$connect->exec($req1);
 	
 	$req="select * from registrenaissance where num_registre = $idRegistre";
 	$result=$connect->query($req);
@@ -158,7 +162,7 @@ $(window).on('load', function() {
 	</head>
 	<body >
 				<a href="" class="btn" onclick="window.print();">Imprimer</a>
-		<a href="RegistreDesNaissances.php" class="btn" onclick="window.close();">Fermer</a>
+		<a href="traitementDemNaiss.php" class="btn" onclick="window.close();">Fermer</a>
 		<div class="contai white" style="padding:  10px">
 			<div class="row premier">
 				<div class="col s7 " style="border: 1px solid; height: 47mm">

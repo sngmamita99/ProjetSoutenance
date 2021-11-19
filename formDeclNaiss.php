@@ -11,6 +11,7 @@ require_once("heederOfficier.php");
 <link type="text/css" rel="stylesheet" href="css1/materialize.min.css" media="screen,projection" />
 <link type="text/css" rel="stylesheet" href="css1/icones.css" media="screen,projection" />
 <link type="text/css" rel="stylesheet" href="css1/formulaire.css" media="screen,projection" />
+
 <style type="text/css">
 body {
     background-color: white;
@@ -21,6 +22,8 @@ body {
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="js1/jquery.min.js"></script>
 <script type="text/javascript" src="js1/materialize.min.js"></script>
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script >
+<script src="script.php" > </script >
 
 
 
@@ -67,6 +70,7 @@ function IdleTimeout() {
 }
 
 $(document).ready(function() {
+	
     $('.modal').modal({
         dismissible: false,
         opacity: 0.6, // Opacity of modal background

@@ -69,7 +69,7 @@ $idConnected=$_SESSION['idConnected'];
 					</a>
 					</td>
 					<td>
-					<img id='impression' src='images/impression.png'alt='imprimerie'/><a href='impressionExtrait.php?idRegistre=$idRegistre'>Extrait</a><br/><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionCopieLitteral.php'>Copie littérale</a>
+					<img id='impression' src='images/impression.png'alt='imprimerie'/><a href='impressionExtrait.php?idRegistre=$numActe'>Extrait</a><br/><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionCopie.php'>Copie littérale</a>
 					</td>
 					</tr>";
 					

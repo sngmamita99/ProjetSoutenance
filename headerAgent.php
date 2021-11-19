@@ -25,6 +25,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 body {
     background-color: #eff1f2;
 }
+
 </style>
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -114,7 +115,7 @@ $(window).on('load', function() {
 </ul>
 
 <div class="white center entete_img row center" style="margin-bottom: 0px">
-  <img style="" src=""  alt="logo" class="col s2 offset-s2" >
+  <img  id="logo" style="" src=""  alt="logo" class="col s2 offset-s2" >
   <h4 class="col s6" style="font:'times new roman';">Système d'Enregistrement<br>d'Etat Civil Automatisé</h4>
 </div>
 
