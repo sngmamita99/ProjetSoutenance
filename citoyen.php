@@ -30,9 +30,10 @@
 			echo "<table class='table table-bordered'>";
 			echo"<thead>";
 				echo"<tr>";
-                    echo"<th>Nom</th><th>Prénom</th><th>Adresse</th><th>Email</th><th>Téléphone</th>";
-                    echo"<th>Login</th><th>Profil</th>";
-                    echo'<th colspan="2">Etat</th>'; 
+                    echo"<th>Nom</th><th>Prénom</th><th>Email</th>";
+                    
+                    echo'<th>Etat</th>'; 
+					 echo'<th>Suppression</th>'; 
                 echo"</tr>";	
 			echo"</thead>";
             while($row=$res->fetch(PDO::FETCH_ASSOC)){
@@ -49,22 +50,23 @@
                         $profil=$row['profil'];
 						 echo "<tbody>";
                         echo "<tr>";
-                            echo "<td>$nm</td><td>$pnm</td><td>$adr</td><td>$email</td><td>$ntl</td>";
-							echo "<td>$login</td><td>$profil</td>";
+                            echo "<td>$nm</td><td>$pnm</td><td>$email</td>";
+							
 							if($etat=='0')
 							{
-								echo "<td>";
-								    echo '<span id="desact">Inactif</span>';
+								// echo "<td>";
+								    // echo '<span id="desact">Inactif</span>';
 									echo "<td><a href='activer.php?code=$id'><button class='btn btn-success'>activer</button></a></td>";
-                                   echo "</td>";
+                                   // echo "</td>";
 							}
 							else
 							{
-								echo "<td>";
-							        echo '<span id="act">Actif</span>';
-									echo "<td><a href='desactiver.php?code=$id'><button class='btn btn-danger'>désactiver</button></a></td>";
-                                echo "</td>";
+								// echo "<td>";
+							        // echo '<span id="act">Actif</span>';
+									echo "<td><a href='desactiver.php?code=$id'><button class='btn btn-warning'>désactiver</button></a></td>";
+                                // echo "</td>";
 							}
+							echo"<td><a href='supprimerUser.php?code=$id'><button class='btn btn-danger'>supprimer</button></</a></td>";
 						echo "</tr>";
 						 echo "</tbody>";
 					}
