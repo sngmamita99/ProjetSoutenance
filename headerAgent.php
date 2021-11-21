@@ -21,11 +21,15 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 <link type="text/css" rel="stylesheet" href="css1/materialize.min.css" media="screen,projection" />
 <link type="text/css" rel="stylesheet" href="css1/icones.css" media="screen,projection" />
 <link type="text/css" rel="stylesheet" href="css1/formulaire.css" media="screen,projection" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style type="text/css">
 body {
     background-color: #eff1f2;
 }
-
+nav ul li a
+{
+	font-size:20px;
+}
 </style>
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -90,11 +94,13 @@ $(window).on('load', function() {
   <li> <a href="traitementDemNaiss.php"> Naissance</a></li>
   <li><a href="l_demande_acte_confirme.php">Mariage</a></li>
     <li><a href="l_demande_acte_confirme.php">Déces</a></li>
+    <li><a href="l_demande_acte_confirme.php">Historiques</a></li>
 </ul>
 <ul id="declaration" class="dropdown-content">
   <li> <a href="Traitement_DemandeDecNaiss.php"> Naissance</a></li>
   <li><a href="l_demande_acte_confirme.php">Mariage</a></li>
     <li><a href="l_demande_acte_confirme.php">Déces</a></li>
+	<li><a href="l_demande_acte_confirme.php">Historiques</a></li>
 </ul>
 
 <!--Dropdown structure impression -->
@@ -141,12 +147,18 @@ $(window).on('load', function() {
         </li>
         
         <li>
-          <a class="dropdown-trigger ab"  href="deconnexion.php" data-beloworigin="true"  data-target="deconnexion"><?php echo" $prenom $nom";?><img id="fa" src="fa.png" alt="se connecter"></a>
+          <a class="dropdown-trigger ab"  href="deconnexion.php" data-beloworigin="true"  data-target="deconnexion">
+		  
+		  <i class="material-icons right" style="font-size: 40px">person_pin</i><?php echo" $prenom $nom";?></a>
+        </li>
+        
+
+		  </a>
         </li>
       </ul>
     </div>
   </nav>
-
+		 <!-- <img id="fa" src="fa.png" alt="se connecter">-->
   <ul class="sidenav" id="mobile-demo">
     <li><a href=""></a></li>
   </ul>
