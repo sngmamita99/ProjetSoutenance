@@ -14,27 +14,12 @@ if($bdd)
 	$user = $stmt->fetch();
 	if ($user) 
 	{
-		$to_email = $email;
-		$subject = "Activer votre compte";
-		$body = "Bienvenue sur VotreSite,
-
-    Pour activer votre compte, veuillez cliquer sur le lien ci-dessous
-    ou copier/coller dans votre navigateur Internet.
-    ou copier/coller dans votre navigateur Internet.
-     
-    http://localhost/site-kai/activation.php?cle=1111
-     
-     
-    --------------- 
-    Ceci est un mail automatique, Merci de ne pas y répondre.";
-    $headers = "From: sowfatou022@gmail.com";
-    $envoie= mail($to_email, $subject, $body, $headers);
+		
     $_SESSION['e']=$email;
 	if($envoie)
 		
 		{
 			echo"Message bien envoyé";
-			// var_dump($to_email);
 		}
 		else{
 		echo"no envoie";}

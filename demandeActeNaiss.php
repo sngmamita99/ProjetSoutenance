@@ -208,28 +208,7 @@ $(document).ready(function() {
             return false;
         }
     });
-	// document.getElementById("formu").addEventListener("submit",function(e){
-		// e.preventDefault();
-		// var papier=document.getElementById("naissances");
-		// if(!papier.value)
-		// {
-			// erreur="Il nya aucun acte choisi";
-		// }
-		// if(erreur)
-		// {
-			// e.preventDefault();
-			// alert("inner");
-			// return false;
-		// }
-		// else
-		// {
-			// alert("formu envoyé");
-		// }
-		
-	// }
-	// );
-
-})
+	
 </script>
 <style type="text/css">
 body {

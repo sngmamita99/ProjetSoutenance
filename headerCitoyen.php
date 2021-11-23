@@ -21,6 +21,8 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 <link type="text/css" rel="stylesheet" href="css1/materialize.min.css" media="screen,projection" />
 <link type="text/css" rel="stylesheet" href="css1/icones.css" media="screen,projection" />
 <link type="text/css" rel="stylesheet" href="css1/formulaire.css" media="screen,projection" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <style type="text/css">
 body {
     background-color: white;
@@ -102,18 +104,9 @@ $(window).on('load', function() {
 </ul>
 <!--Dropdown déconnexion -->
 <ul id="deconnexion" class="dropdown-content">
-  <li> <a  href="deconnexion.php">Déconnexion</a></li>
-  
+  <li> <a  href="deconnexion.php">Déconnexion</a></li> 
+   <li> <a  href="modificationPassword.php">Changer Mot de passe</a></li> 
 </ul>
-
-<!--Dropdown autres documents -->
-<ul id="autres_documents" class="dropdown-content">
-  <li> <a  href="#">Certificat</a></li>
-  <li> <a  href="#">Attestation</a></li>
-  <li> <a  href="#">Demandes</a></li>
-  <li> <a  href="#">Fiche</a></li>
-</ul>
-
 <div class="white center entete_img row center" style="margin-bottom: 0px">
   <img style="" src=""  alt="logo" class="col s2 offset-s2" >
   <h4 class="col s6" style="font:'times new roman';">Système d'Enregistrement<br>d'Etat Civil Automatisé</h4>
@@ -139,14 +132,14 @@ $(window).on('load', function() {
             Demandes de déclaration
             </a>
         </li>
-        
-        <li>
-          <a class="dropdown-trigger ab"  href="deconnexion.php" data-beloworigin="true"  data-target="deconnexion"><?php echo" $prenom $nom";?><img id="fa" src="fa.png" alt="se connecter"></a>
+		 <li>
+          <a class="dropdown-trigger ab"  href="deconnexion.php" data-beloworigin="true"  data-target="deconnexion">
+		  <i class="material-icons right" style="font-size: 40px">person_pin</i><?php echo" $prenom $nom";?></a>
         </li>
+        
       </ul>
     </div>
   </nav>
-
   <ul class="sidenav" id="mobile-demo">
     <li><a href=""></a></li>
   </ul>

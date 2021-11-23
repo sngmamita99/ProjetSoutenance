@@ -104,7 +104,11 @@ $(window).on('load', function() {
 
 <ul id="deconnexion" class="dropdown-content">
   <li> <a  href="Connexion.php">Connecter</a></li>
-  <li> <a  href="demandeActeNaiss.php">Demande d'acte <i class="fas fa-graduation-cap ml-2"></i></a></li>
+  <li> 
+		<a  href="demandeActeNaiss.php">
+			Demande d'acte <i class="fa fa-graduation-cap ml-2"></i>
+		</a>
+	</li>
   
 </ul>
 

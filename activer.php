@@ -9,8 +9,24 @@
 		$reqR="SELECT * FROM users WHERE iduser='$cd'";
 	    $resR=$connect->query($reqR);
 		
-		$row=$resR->fetch();
 		
+		
+		$row=$resR->fetch();
+		$prenom=$row["prenom"];
+		$nom=$row["nom"];
+		$to_email=$row["email"];
+		$login=$row["login"];
+		$password=$row["password"];
+		$subject = "Activation de  votre compte";
+		$body = "Bonjour 
+		$prenom $nom 
+		Votre login est $login 
+		Votre mot de passe est $password";
+		$headers = "From: sowfatou022@gmail.com";
+		$envoie= mail($to_email, $subject, $body, $headers);
+	
+	
+	
 		if($row['profil']=="agent"){
 			 header("Location:agent.php");
 			
