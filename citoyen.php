@@ -189,7 +189,6 @@ $(window).on('load', function() {
 			if($res->rowCount())
 			{
 				
-				echo'<div id="recherche">';
             echo'<h4 class="center col s12 m12 black-text">Liste des Citoyens</h4>';
 			echo "<table id='ta' class='bordered highlight centered col s12 m12'>";
 			echo"<thead>";

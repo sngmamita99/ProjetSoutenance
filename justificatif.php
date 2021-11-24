@@ -7,11 +7,11 @@
 		<style>
 		#tof
 		{
-			width:10%;
-			height:10%;
+			width:50%;
+			height:45%;
+			margin-left:300px;
 			
 		}
-
 		</style>
 	</head>
 	<body >
@@ -20,8 +20,8 @@
 		<style>
 		#tof
 		{
-			width:30%;
-			height:30%;
+			width:50%;
+			height:50%;
 		}
 		</style>
 	</head>
@@ -36,7 +36,7 @@ $numCompte=$_GET['code'];
 		while($row=$result->fetch())
 		{
 			$img=$row['url'];
-			echo "<img id='tof' src='$img' alt=''/><br/>";
+			echo "<img id='tof' src='$img' alt='justification'/><br/><br/><br/>";
 		}
 		
 	}

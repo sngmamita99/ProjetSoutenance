@@ -109,6 +109,7 @@ $(window).on('load', function() {
 <!--Dropdown déconnexion -->
 <ul id="deconnexion" class="dropdown-content">
   <li> <a  href="deconnexion.php">Déconnexion</a></li>
+  <li> <a  href="modificationPassword.php">Changer Mot de Passe</a></li>
   
 </ul>
 

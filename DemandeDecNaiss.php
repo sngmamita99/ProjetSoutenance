@@ -1,17 +1,93 @@
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script > 
 <?php 
 require_once("headerCitoyen.php");
-$idConnected=$_SESSION['idConnected'];
-$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
-        if($connect)
-		{ 
-			$req="select nom,prenom from users where idUser=$idConnected ";
-			$res=$connect->query($req);
-			$ligne=$res->fetch();
-			$prenom=$ligne["prenom"];
-			$nom=$ligne["nom"];
-		}
-
-?> 
+$date_declaration = date("Y-m-d");
+	if(isset($_POST['LienParente']))
+	{
+		$lP=$_POST['LienParente'];
+		$bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
+		if($bdd)
+		{
+		$k=0;
+		$req="insert into declarationnaissance (numCompte,lienDeParente,etat,date_declaration) values (?,?,?,?)";
+		$stmt=$bdd->prepare($req);
+		$stmt->bindParam(1, $idConnected);
+		$stmt->bindParam(2, $lP);
+		$stmt->bindParam(3,$k);
+		$stmt->bindParam(4,$date_declaration);
+		$stmt->execute();
+		$numDecla=$bdd->lastInsertId();
+				if(!empty($_FILES['monFichier1']))
+					{
+						
+						
+						$h=date('dmYHis',time());
+						$photos=$_FILES['monFichier1'];
+						$dest=$h.'_'.$photos['name'];
+						$chemin ='photos/'.$dest;
+						$images=move_uploaded_file($photos['tmp_name'],$chemin);
+						if($images)
+						{
+							$req2 = $bdd->prepare("INSERT into justification(numDeclaration,url) values (?,?)");
+							$res1 = $req2->execute(array($numDecla,$chemin));
+						}
+						else
+						{
+							echo"transfert non ok";
+						}
+					}
+					if(!empty($_FILES['monFichier2']))
+					{
+						$h=date('dmYHis',time());
+						$photos=$_FILES['monFichier2'];
+						$dest=$h.'_'.$photos['name'];
+						$chemin ='photos/'.$dest;
+						$images=move_uploaded_file($photos['tmp_name'],$chemin);
+						if($images)
+						{
+							$req2 = $bdd->prepare("INSERT into justification(numDeclaration,url) values (?,?)");
+							$res1 = $req2->execute(array($numDecla,$chemin));
+						}
+						else
+						{
+							echo"transfert non ok";
+						}
+					}
+			
+			if(!empty($_FILES['monFichier3']))
+					{
+						
+						
+						$h=date('dmYHis',time());
+						$photos=$_FILES['monFichier3'];
+						$dest=$h.'_'.$photos['name'];
+						$chemin ='photos/'.$dest;
+						$images=move_uploaded_file($photos['tmp_name'],$chemin);
+						if($images)
+						{
+							$req2 = $bdd->prepare("INSERT into justification(numDeclaration,url) values (?,?)");
+							$res1 = $req2->execute(array($numDecla,$chemin));
+						}
+						else
+						{
+							echo"transfert non ok";
+						}
+					}
+					echo'<script>';
+							echo'swal({
+								title: "Envoie de demande de déclaration réussi!",
+								text: " Vous pouvez désormais suivre vos demandes",
+								icon: "success",
+								button: "ok"
+							});';
+					echo'</script>';
+	}
+	else
+	{
+		echo"Erreur de connexion à la base de donnée";
+	}
+	}
+?>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -31,9 +107,8 @@ alignment: 'right'
 		
 </style>
 <body>
-	 <!-- Pièces Justificatives -->
-					    
-					  <form method="POST" action="traitementDeclarationNaiss.php" enctype="multipart/form-data">
+	 <!-- Pièces Justificatives traitementDeclarationNaiss.php -->
+ <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>" enctype="multipart/form-data">
 					  <div class="row" id="doc">
 								<div class="file-field input-field col s12">
 									<div class="btn white darken-4">
@@ -89,7 +164,7 @@ alignment: 'right'
 						<input class="btn valider" type="submit" style="background-color:#00695c" name="enregsitrer" value="Envoyer">
 					</div>
 					    </form>
-
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script > 
 </body>
 	<style type="text/css">
 	span{
@@ -120,7 +195,9 @@ alignment: 'right'
 			font-size: 20px;
 		}
 	</style>
+	
 	<script type="text/javascript">
+	
 		function demandes() {
 				var mois = $('select:eq(0)').val();
 			    var annee = $('select:eq(1)').val();
@@ -132,7 +209,7 @@ alignment: 'right'
 						$('tbody').html(html);
 					}
 				});
-			}
+			};
 			demandes();
 			$('select').change(function () {
 				demandes();
@@ -140,4 +217,6 @@ alignment: 'right'
 	$('.tooltipped').tooltip();
 	 $('.fixed-action-btn').floatingActionButton();
 </script>
+<script src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js"> 
+</script > 
 </html>

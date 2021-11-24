@@ -8,11 +8,8 @@
 <body>
 <?php
 require_once("headerCitoyen.php");
-// echo $idConnected;
 $ancien_password=$_POST["ancien_password"];
 $new_password=$_POST["new_password"];
-// $confirm_password=$_POST["confirm_password"];
-// echo" $ancien_password $new_password $confirm_password";
 $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
     if($connect)
 	{
@@ -29,7 +26,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 		}
 		else
 		{
-			// pupup
+			
 			echo"l'ancien mdp est incorrect";
 		}
 		
