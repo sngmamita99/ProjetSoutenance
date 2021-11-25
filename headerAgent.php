@@ -94,13 +94,13 @@ $(window).on('load', function() {
   <li> <a href="traitementDemNaiss.php"> Naissance</a></li>
   <li><a href="l_demande_acte_confirme.php">Mariage</a></li>
     <li><a href="l_demande_acte_confirme.php">Déces</a></li>
-    <li><a href="l_demande_acte_confirme.php">Historiques</a></li>
+    <li><a href="historique_dem_acte.php">Historiques</a></li>
 </ul>
 <ul id="declaration" class="dropdown-content">
   <li> <a href="Traitement_DemandeDecNaiss.php"> Naissance</a></li>
   <li><a href="l_demande_acte_confirme.php">Mariage</a></li>
     <li><a href="l_demande_acte_confirme.php">Déces</a></li>
-	<li><a href="l_demande_acte_confirme.php">Historiques</a></li>
+	<li><a href="historique_dem_decla.php">Historiques</a></li>
 </ul>
 
 <!--Dropdown structure impression -->

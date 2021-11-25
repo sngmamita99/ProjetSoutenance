@@ -1,20 +1,38 @@
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<?php
+require_once("headerAgent.php");
+?>
+<!--<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+</script>-->
 
 <!DOCTYPE html>
 <html>
     <head>
     <title>Cours Complet Bootstrap 4</title>
     <meta charset='utf-8'>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<script type="text/javascript" src="jquery.min.js"></script>
+   .<!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script type="text/javascript" src="jquery.min.js"></script>-->
 	<style>
+nav ul li a
+{
+	text-decoration:none;
+}
+nav ul li a:hover
+{
+	text-decoration:none;
+	color:white;
+}
+.brand-logo
+{
+	text-decoration:none;
+}
 		
 	#titreRv
 	{
 		text-align:center;
+		font-size:30px;
 		
 	}
 	
@@ -105,17 +123,15 @@ th,td
 							
 							if($etat=='0')
 							{
-								//letat doit etre modifié car il permet de l'effacer cote citoyen
 								echo "<td  id='desact'>";
-								    echo '<span>ABSENT</span>';
-                                   echo "</td>";
-								   // echo '<td><a href="activer.php"><button class="btn btn-success">activer</button></a></td>';
-								   echo '<td><a title="cliquez ici si la personne est presente" href="present.php?code='.$numCompte.'&date='.$date.'"><img id="presence" src="images/presence.png"></a></td>';
+								echo '<span>ABSENT</span>';
+								echo "</td>";
+								echo '<td><a title="cliquez ici si la personne est presente" href="present.php?code='.$numCompte.'&date='.$date.'"><img id="presence" src="images/presence.png"></a></td>';
 							}
 							else
 							{
 								echo "<td  id='act'>";
-							        echo '<span>Présent</span>';
+							    echo '<span>Présent</span>';
                                 echo "</td>";
 								echo '<td><a href="absent.php?code='.$numCompte.'&date='.$date.'"><button id="btn" ><img id="absent" src="images/absent.png"  "></button></a></td>';
 							}

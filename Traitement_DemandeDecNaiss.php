@@ -65,8 +65,6 @@ require_once("headerAgent.php");
                while($row=$res->fetch(PDO::FETCH_ASSOC))
 				{
 						$numDe=$row['numDeclaration'];	
-						// $nD=$row['nomDeclarant'];	
-						// $pD=$row['prenomDeclarant'];	
                         $lien=$row['lienDeParente'];
 						$date=$row['date_declaration'];
 						$x=$row['numCompte'];

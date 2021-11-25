@@ -1,3 +1,6 @@
+<?php
+require_once("headerAgent.php");
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -5,6 +8,21 @@
 		<title>Prise de rdv</title>
 		<link rel="stylesheet" href="calendrierP.css"/>
 	</head>
+	<style>
+	nav ul li a
+{
+	text-decoration:none;
+}
+nav ul li a:hover
+{
+	text-decoration:none;
+	color:white;
+}
+.brand-logo
+{
+	text-decoration:none;
+}
+	</style>
 	</body>
 <?php
 require_once('ConnectionBdd.php');

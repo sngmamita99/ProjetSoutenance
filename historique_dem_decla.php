@@ -1,3 +1,7 @@
+<?php
+require_once("headerAgent.php");
+
+?>
 <!DOCTYPE html3
 <html>
 <head>
@@ -59,21 +63,22 @@
 <body>
 
 <?php
-require_once("headerCitoyen.php");
+
 $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 		if($bdd)
 		{
-			$req="select * from declarationnaissance where numCompte=$idConnected AND etat=1";
+			$req="select * from declarationnaissance where  etat=1";
 			$result=$bdd->query($req);
 			if($result->rowCount())
 			{
 				echo"<br/><br/>";
 			echo'<table class="col s12 responsive-table striped " id="l_naissance">
-			<caption id="fina">Mes Demandes Finalisées</caption>
+			<caption id="fina">Demandes Finalisées</caption>
 				<thead>
 					<tr class="white darken-3 lighten-2 black-text center ">
 						<th>Numero de demande</th>
-						<th>Date de demande</th>	
+						<th>Date de demande</th>
+						
 					</tr>
 				</thead>';
 			while($ligne=$result->fetch())
@@ -89,7 +94,7 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 			}
 			else
 			{
-				echo"Vous n'avez validé aucun demande";
+				echo"Vous n'avez jamais fait de demande de declaration";
 			}
 		}
 		else
@@ -103,13 +108,13 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 		if($bdd)
 		{
-			$req="select * from declarationnaissance where numCompte=$idConnected AND etat=0" ;
+			$req="select * from declarationnaissance where  etat=0" ;
 			$result=$bdd->query($req);
 			if($result->rowCount())
 			{
 				echo"<br/><br/>";
 			echo'<table class="col s12 responsive-table striped " id="l_naissances">
-			<caption id="nf" >Mes Demandes En Cours de Traitement</caption>
+			<caption id="nf" >Demandes En Cours de Traitement</caption>
 				<thead>
 					<tr class="white darken-3 lighten-2 black-text center ">
 						<th>Numero de demande</th>
@@ -122,13 +127,11 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 			{
 				$num_dem=$ligne["numDeclaration"];
 				$date_dec=$ligne["date_declaration"];
-				$etat_demande=$ligne["etat"];
+				// $etat_demande=$ligne["etat"];
 				echo"<tr>
 				<td> $num_dem</td>
 				<td> $date_dec</td>";
-				echo"<td id='ann'>
-				<a href='annulerDemandeDec.php?numDem=$num_dem'>Annuler</a></td>";
-			
+				
 			}
 			}
 			else
