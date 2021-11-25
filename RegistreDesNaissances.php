@@ -8,13 +8,18 @@ $idConnected=$_SESSION['idConnected'];
    <style>
    #impression
    {
-	   width:30px;
+	   width:25px;
+	   height:25px;
+   }	
+	#suppression
+	{
+		width:30px;
 	   height:30px;
-   }
- caption
+	}		
+	h5
    {
 	   text-align:center;
-	   background:red;
+	   font-weight:bold;
    }
    </style>
 	</head>
@@ -28,7 +33,7 @@ $idConnected=$_SESSION['idConnected'];
 			if($result->rowCount())
 			{
 				echo"<br/><br/>";
-				echo"<caption>REGISTRE DES NAISSANCES</caption>";
+				echo"<h5>REGISTRE DES NAISSANCES</h5>";
 			echo'<table class="col s12 responsive-table striped " id="l_naissance">
 				<thead>
 					<tr class="purple darken-3 lighten-2 white-text center ">
@@ -40,7 +45,7 @@ $idConnected=$_SESSION['idConnected'];
 						<th>Date naissance</td>
 						<th>Lieu naissance</td>
 						<th>Pére et mére</td>
-						
+						<th></th>
 						<th></th>
 						<th></th>
 					</tr>
@@ -70,12 +75,19 @@ $idConnected=$_SESSION['idConnected'];
 					<td>$date_naissance à $heure_naissance_enfant</td>
 					<td>$lieuNaiss</td>
 					<td>$prenom_pere & $prenom_mere $nom_mere</td>
+					
+					<td>
+					<img id='impression' src='images/impression.png'alt='imprimerie'/>
+					<a href='impressionExtrait.php?idRegistre=$numActe'>Extrait</a>
+					<br/><img id='impression' src='images/impression.png' alt='imprimerie'/>
+					<a href='impressionCopie.php'>Copie littérale</a>
+					</td>
 					<td>
 					<a href='modifier_enregistrement.php?idRegistre=$idRegistre'><img id='impression' src='https://previews.123rf.com/images/sulikns/sulikns1706/sulikns170600418/80878621-dessiner-modifier-stylo-crayon-%C3%A9crire-ic%C3%B4ne-vector-illustration-.jpg' alt='imprimerie'/>
 					</a>
 					</td>
 					<td>
-					<img id='impression' src='images/impression.png'alt='imprimerie'/><a href='impressionExtrait.php?idRegistre=$numActe'>Extrait</a><br/><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionCopie.php'>Copie littérale</a>
+					<a href='suppressionDec.php?idRegistre=$idRegistre'><img id='suppression' src='images/supp.png'/></a>
 					</td>
 					</tr>";
 					
@@ -96,4 +108,11 @@ $idConnected=$_SESSION['idConnected'];
 		}
 ?>
 	</body>
+	<script>
+		$('#suppression').click(function () {
+		if (!confirm('Etes-vousde vouloir supprimer cette déclaration ?')) {
+			return false;
+		}
+	});
+	</script>
 </html>

@@ -159,9 +159,10 @@ $(window).on('load', function() {
 	<body >
 				<a href="" class="btn" onclick="window.print();">Imprimer</a>
 		<a href="RegistreDesNaissances.php" class="btn" onclick="window.close();">Fermer</a>
+		<div >
 		<div class="contai white" style="padding:  10px">
-			<div class="row premier">
-				<div class="col s7 " style="border: 1px solid; height: 47mm">
+			<div class="row premier"  id="ok">
+				<div class="col s7 " style="border: 1px solid; height: 47mm" >
 					<p class="center"><b>REGION DE DAKAR<br>
 						DEPARTEMENT DE KEBEMER<br>
 						COMMUNE DE NDANDE</b><br>
@@ -256,11 +257,12 @@ $(window).on('load', function() {
 					</div>
 				</div>
 			</div>
-			
+			</div>
 				</div>
 			</div>
 		</body>
 		<style type="text/css">
+		
 			/*import du css de materialize*/
 			@import "css/materialize.min.css" print;
 			/*CSS pour la page à imprimer */
@@ -270,8 +272,16 @@ $(window).on('load', function() {
 				size: portrait;
 				margin: 0px;
 			}
+			
+				
 			@media print
 			{
+			@page {
+    size: 297mm 210mm;  
+    margin: 25mm;
+    margin-right: 45mm;  
+  }
+  
 				.btn{
 					display: none;
 				}
@@ -299,4 +309,6 @@ $(window).on('load', function() {
 		</style>
 		
 		</script>
+		</body>
+		
 	</html>
