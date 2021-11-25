@@ -11,6 +11,11 @@ $idConnected=$_SESSION['idConnected'];
 	   width:30px;
 	   height:30px;
    }
+ caption
+   {
+	   text-align:center;
+	   background:red;
+   }
    </style>
 	</head>
 	<body >
@@ -23,6 +28,7 @@ $idConnected=$_SESSION['idConnected'];
 			if($result->rowCount())
 			{
 				echo"<br/><br/>";
+				echo"<caption>REGISTRE DES NAISSANCES</caption>";
 			echo'<table class="col s12 responsive-table striped " id="l_naissance">
 				<thead>
 					<tr class="purple darken-3 lighten-2 white-text center ">

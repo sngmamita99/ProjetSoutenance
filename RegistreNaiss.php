@@ -83,6 +83,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 			$stmt->bindParam(37, $profession_declarant);
 			$stmt->bindParam(38,$degre_parente);
 			$stmt->execute();
+			header("Location:RegistreDesNaissances.php");
 		}
 		else
 		{
