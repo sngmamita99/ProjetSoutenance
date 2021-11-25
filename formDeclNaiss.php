@@ -16,6 +16,20 @@ require_once("heederOfficier.php");
 body {
     background-color: white;
 }
+nav ul li a
+{
+	text-decoration:none;
+	font-size:20px;
+}
+nav ul li a:hover
+{
+	text-decoration:none;
+	color:white;
+}
+.brand-logo
+{
+	text-decoration:none;
+}
 </style>
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />

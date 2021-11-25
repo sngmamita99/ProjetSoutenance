@@ -1,9 +1,28 @@
+<?php
+require_once("heederOfficier.php");
+?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8"/>
 		<title>Prise de rdv</title>
 		<link rel="stylesheet" href="calendrierP.css"/>
+		<style>
+nav ul li a
+{
+	text-decoration:none;
+	font-size:20px;
+}
+nav ul li a:hover
+{
+	text-decoration:none;
+	color:white;
+}
+.brand-logo
+{
+	text-decoration:none;
+}
+		</style>
 	</head>
 	</body>
 <?php
@@ -13,20 +32,12 @@ require_once('descripRdv.php');
 $pdo=getPdo();
 $events=new Rdv($pdo);
 require_once('Month.php');
-// $numCompte=$_GET['code'];
 	$month= new Month($_GET['month'] ?? null,$_GET['year'] ?? null);
 	$start=$month->getStartDay();
 	$start=$start->format('N') == '1' ? $start: $month->getStartDay()->modify('last monday');
 	$weeks=$month->getWeeks();
-	// var_dump($weeks);
 	$end=(clone $start)->modify("+".(6+7 * ($weeks -1))."days");
-	// var_dump($start);
-	// var_dump($end);
-	// die();
 	$event=$events->getEventBetweenByDay($start,$end);
-	// echo"<pre>";
-	// var_dump($event);
-	// echo"</pre>";
  ?> 
 <div class="calendar">
 <div class="d-flex flex-row align-items-center justify-content-between  mx-sm-3">

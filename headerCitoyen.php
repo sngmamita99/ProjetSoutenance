@@ -27,6 +27,10 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 body {
     background-color: white;
 }
+nav ul li a
+{
+	font-size:20px;
+}
 </style>
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />

@@ -20,7 +20,8 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 <!--Import materialize.min.css-->
 <link type="text/css" rel="stylesheet" href="css1/materialize.min.css" media="screen,projection" />
 <link type="text/css" rel="stylesheet" href="css1/icones.css" media="screen,projection" />
-<link type="text/css" rel="stylesheet" href="css1/formulaire.css" media="screen,projection" />
+<link type="text/css" rel="stylesheet" href="css1/formulaire.css" media="screen,projection"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style type="text/css">
 body {
     background-color: white;
@@ -159,7 +160,12 @@ $(window).on('load', function() {
         <li><a href="" class="dropdown-trigger" data-beloworigin="true" data-target="impression" >Demandes d'actes</a></li>
         <li><a href="calendrierOff.php" data-beloworigin="true" data-target="autres_documents" >Rendez-vous</a></li>
         <li>
-          <a class="dropdown-trigger ab"  href="deconnexion.php" data-beloworigin="true"  data-target="deconnexion"><?php echo" $prenom $nom";?><img id="fa" src="fa.png" alt="se connecter"></a>
+          <a class="dropdown-trigger ab"  
+		  href="deconnexion.php" data-beloworigin="true" 
+		  data-target="deconnexion">
+		 
+		   <i class="material-icons right" style="font-size: 40px">
+		   person_pin</i><?php echo" $prenom $nom";?></a>
         </li>
         
       </ul>
