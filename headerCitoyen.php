@@ -97,6 +97,7 @@ $(window).on('load', function() {
    <li> <a href="DemandeDecNaiss.php"> Naissance</a></li>
   <li><a href="l_demande_acte_confirme.php">Mariage</a></li>
     <li><a href="l_demande_acte_confirme.php">Déces</a></li>
+	<li><a href="suivi_demandeDec.php">Suivi de nos demandes</a></li>
 </ul>
 
 <!--Dropdown structure impression -->

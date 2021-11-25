@@ -2,14 +2,12 @@
  require_once("SessionError.php");
 session_start();
 $SESSION=new Session();
-
 	$date=$_SESSION['date'];
 	$numCompte=$_SESSION['numCompte'];
-	
-	
+	$numDe=$_SESSION['numDe'];
 		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
-		{ 	$req1="UPDATE declarationnaissance SET etat=1 WHERE numCompte = $numCompte";
+		{ 	$req1="UPDATE declarationnaissance SET etat=1 WHERE numCompte = $numCompte AND numDeclaration=$numDe";
 			$result=$connect->exec($req1);
 		if(isset($_POST['hDebut']) && isset($_POST['hFin']) && isset($_POST['tdate']) && isset($_POST['typeDemande']))
 		{

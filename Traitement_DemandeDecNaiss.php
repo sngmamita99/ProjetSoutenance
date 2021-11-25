@@ -79,7 +79,7 @@ require_once("headerAgent.php");
                         echo "<tr>";
                             echo "<td>$numDe</td><td>$p</td><td>$n</td><td>$lien</td><td><a href='justificatif.php?code=$x'><img id='IconeEye' src='images/eye.png' alt='Icone details'/></a></td><td class='dateSoumission'>$date</td>";
 								echo "<td>";
-								    echo "<a href='rdv.php?code=$x'><button class='valid'>Valider</button></a>";
+								    echo "<a href='rdv.php?code=$x&numDe=$numDe'><button class='valid'>Valider</button></a>";
 									echo '<a href="annulerDemande.php"><button class="annuler">Annuler</button></a>';
                                   echo "</td>";
 							

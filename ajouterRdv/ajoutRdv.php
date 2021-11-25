@@ -1,14 +1,15 @@
 <?php
-	require_once("../SessionError.php");
- $SESSION = new Session();
-	$date=$_SESSION['date'];
-	$numCompte=$_SESSION['numCompte'];
+// require_once("../headerAgent.php");
+require_once("../SessionError.php");
+$SESSION = new Session();
+$date=$_SESSION['date'];
+$numCompte=$_SESSION['numCompte'];
 	
 	?>
 	
 <!doctype html>
 <html lang="en">
-  <head>
+ <head>
   	<title>Contact Form 06</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +17,6 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
 	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript" src="../jquery.min.js"></script>
 <style>

@@ -1,14 +1,15 @@
 <?php
-	session_start();
+require_once("headerAgent.php");
+	
 	$date=$_SESSION['date'];
 	$numCompte=$_SESSION['numCompte'];
-	// $nom=$_SESSION['nom'];
-	// $prenom=$_SESSION['prenom'];
+	
 	?>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!--<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+</script>-->
 
 <!DOCTYPE html>
 <html>
@@ -22,8 +23,18 @@
 	#titreRv
 	{
 		text-align:center;
+		font-size:30px;
 		
 	}
+	#nok
+	{
+		text-align:center;
+		font-size:50px;
+		font-weight:bold;
+		margin-top:90px;
+		
+	}
+	
 	</style>
   </head>
   <body>
@@ -34,6 +45,7 @@
 		
 		$_SESSION['date']=$_GET['date'];
 		$date=$_SESSION['date'];
+		$numDe=$_SESSION['numDe'];
 		// echo "$date $numCompte";
 		$_SESSION['numCompte']=$_GET['numCompte'];
 		$numCompte=$_SESSION['numCompte'];
@@ -88,7 +100,7 @@
 			}
 			else
 			{
-				echo"Il n'ya pas encore de RDV affecté à cette date";
+				echo"<div id='nok'> Il n'ya pas encore de RDV affecté à cette date</div>";
 			}		
 			
 			}
@@ -100,7 +112,7 @@
 	<?php 
 	 
 	echo"<a class='BouttonAjout' 
-			href='ajouterRdv/ajoutRdv.php?numCompte=$numCompte'> + </a>";
+			href='ajouterRdv/ajoutRdv.php?numCompte=$numCompte&numDe=$numDe'> + </a>";
 		?>
 		<script src="rdv.js">
 </script>	
