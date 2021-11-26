@@ -1,4 +1,4 @@
- <?php
+<?php
  require_once("heederOfficier.php");
 
 $idConnected=$_SESSION['idConnected'];
@@ -21,6 +21,18 @@ $idConnected=$_SESSION['idConnected'];
 	   text-align:center;
 	   font-weight:bold;
    }
+   #icon_prefix
+{
+	width:300px;
+	margin-left:72%;
+}
+#rech
+{
+	margin-left:120px;
+	width:80%;
+	text-align:center;
+	
+}
    </style>
 	</head>
 	<body >
@@ -31,8 +43,15 @@ $idConnected=$_SESSION['idConnected'];
 			$req="select * from registrenaissance ";
 			$result=$connect->query($req);
 			if($result->rowCount())
-			{
-				echo"<br/><br/>";
+			{echo"<div id='rech'>";
+		echo'<br/>';
+		echo'<br/>';
+                    echo' <form method="POST" action="rechercher.php">';
+                       echo' <input id="icon_prefix" placeholder="prenom ou nom figurant sur la demande" 
+					   type="search" class="validate" name="Code_de_recherche">';
+                echo'</form>'; 
+				echo'<br/>';
+				
 				echo"<h5>REGISTRE DES NAISSANCES</h5>";
 			echo'<table class="col s12 responsive-table striped " id="l_naissance">
 				<thead>

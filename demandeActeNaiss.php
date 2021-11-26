@@ -1,4 +1,6 @@
-
+<?php
+require_once("headerCitoyen.php");
+?>
 <!DOCTYPE html>
 <html>
 
