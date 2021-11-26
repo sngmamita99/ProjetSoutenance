@@ -1,4 +1,5 @@
  <?php
+ 
 session_start();
 $idConnected=$_SESSION['idConnected'];
 $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
@@ -18,6 +19,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 
 ?>
 <?php
+// require_once("extraitDesi.php");
 $date=date("d/m/Y");
 $idRegistre=$_GET["idRegistre"];
 
@@ -41,6 +43,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					$sexe_enfant=$ligne["sexe_enfant"];
 					$annee_registre=$ligne["annee_registre"];
 					$num_registre=$ligne["num_registre"];
+					$lieu_naissance_enfant=$ligne["lieu_naissance_enfant"];
 					$req2="select  * from conversion where annee_en_chiffre ='$annee_registre'";
 					$res=$connect->query($req2);
 					$row=$res->fetch();
@@ -65,6 +68,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					 $res_annee=$connect->query($req_annee);
 					 $row_annee=$res_annee->fetch();
 					 $an=$row_annee["annee_en_lettre"];
+					 
 				}
 				
 			}
@@ -163,7 +167,7 @@ $(window).on('load', function() {
 		<div class="contai white" style="padding:  10px">
 			<div class="row premier"  id="ok">
 				<div class="col s7 " style="border: 1px solid; height: 47mm" >
-					<p class="center"><b>REGION DE DAKAR<br>
+					<p class="center"><b>REGION DE LOUGA<br>
 						DEPARTEMENT DE KEBEMER<br>
 						COMMUNE DE NDANDE</b><br>
 											</p>
@@ -196,11 +200,15 @@ $(window).on('load', function() {
 				<div class="col s12">
 					<p><span class="truncate" >Le <b> <?php echo" $jn $mn $an";?></b>.............................................................................................</span>
 						<span class="truncate">
-						à <b>x</b> est né(e) à <b> NDANDE....................................................</b></span>
+						à <b> .................</b> est né(e) à <b> <?php echo $lieu_naissance_enfant;?>...................................................</b></span>
 						<span class="truncate" >Un enfant de sexe <b><?php echo $sexe_enfant;?>..................................................................</b>
 						</span>
-						<h6><b>&nbsp &nbsp &nbsp<?php echo $prenom_enfant;?> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <?php echo $nom_enfant;?></b></h6>
-						<p style="margin-top: -10px"><i>&nbsp &nbsp &nbsp&nbsp &nbspPrénom(s) &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp   Nom</i></p>
+						<h6><b>&nbsp &nbsp &nbsp<?php echo $prenom_enfant;?> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+						&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+						&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <?php echo $nom_enfant;?></b></h6>
+						<p style="margin-top: -10px"><i>&nbsp &nbsp &nbsp&nbsp &nbspPrénom(s) &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+						&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+						&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp   Nom</i></p>
 						<p>De &nbsp &nbsp &nbsp <b><?php echo $prenom_pere;?></b><br>
 							&nbsp &nbsp &nbsp<i>Prénom(s) du père</i><br><br>
 							et de&nbsp&nbsp <b><?php echo $prenom_mere;?>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp  <?php echo $nom_mere;?></b><br>
@@ -264,7 +272,7 @@ $(window).on('load', function() {
 		<style type="text/css">
 		
 			/*import du css de materialize*/
-			@import "css/materialize.min.css" print;
+			@import "css1/materialize.min.css" print;
 			/*CSS pour la page à imprimer */
 			/*Dimension de la page*/
 			@page
@@ -276,11 +284,7 @@ $(window).on('load', function() {
 				
 			@media print
 			{
-			@page {
-    size: 297mm 210mm;  
-    margin: 25mm;
-    margin-right: 45mm;  
-  }
+			
   
 				.btn{
 					display: none;

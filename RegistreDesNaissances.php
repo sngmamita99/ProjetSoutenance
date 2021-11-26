@@ -78,12 +78,13 @@ $idConnected=$_SESSION['idConnected'];
 					
 					<td>
 					<img id='impression' src='images/impression.png'alt='imprimerie'/>
-					<a href='impressionExtrait.php?idRegistre=$numActe'>Extrait</a>
+					 <a href='impressionExtrait.php?idRegistre=$numActe'>Extrait</a>
 					<br/><img id='impression' src='images/impression.png' alt='imprimerie'/>
-					<a href='impressionCopie.php'>Copie littérale</a>
+					<a href='impressionCopieLitteral.php?idRegistre=$numActe'>Copie littérale</a>
 					</td>
 					<td>
-					<a href='modifier_enregistrement.php?idRegistre=$idRegistre'><img id='impression' src='https://previews.123rf.com/images/sulikns/sulikns1706/sulikns170600418/80878621-dessiner-modifier-stylo-crayon-%C3%A9crire-ic%C3%B4ne-vector-illustration-.jpg' alt='imprimerie'/>
+					<a href='modifier_enregistrement.php?idRegistre=$idRegistre'>
+					<img id='impression' src='https://previews.123rf.com/images/sulikns/sulikns1706/sulikns170600418/80878621-dessiner-modifier-stylo-crayon-%C3%A9crire-ic%C3%B4ne-vector-illustration-.jpg' alt='imprimerie'/>
 					</a>
 					</td>
 					<td>
