@@ -266,7 +266,7 @@ $(window).on('load', function() {
 		</body>
 		<style type="text/css">
 			/*import du css de materialize*/
-			@import "css/materialize.min.css" print;
+			@import "css1/materialize.min.css" print;
 			/*CSS pour la page à imprimer */
 			/*Dimension de la page*/
 			@page

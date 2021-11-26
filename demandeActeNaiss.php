@@ -1,5 +1,7 @@
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script > 
 <?php
 require_once("headerCitoyen.php");
+// traitement_dem_acte_naiss.php page destination
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,17 +9,9 @@ require_once("headerCitoyen.php");
 <head>
     <title>Demande d'acte d'état civils</title>
     <meta charset="utf-8">
-<!--Import materialize.min.css-->
-<link type="text/css" rel="stylesheet" href="css1/materialize.min.css" media="screen,projection" />
-<link type="text/css" rel="stylesheet" href="css1/icones.css" media="screen,projection" />
-<link type="text/css" rel="stylesheet" href="css1/formulaire.css" media="screen,projection" />
 <style type="text/css">
 body {
-    background-color: white;
-}
-nav
-{
-	background:#00695c ;
+    background-color: #eff1f2;
 }
 </style>
 <!--Let browser know website is optimized for mobile-->
@@ -26,6 +20,19 @@ nav
 <script type="text/javascript" src="js1/jquery.min.js"></script>
 <script type="text/javascript" src="js1/materialize.min.js"></script>
 
+
+<div class="modal modal" id="timeoutModal">
+    <div class="modal-content">
+        <h4 class="center">Timeout</h4>
+        <h5>
+            Vous session a été déconnecté.<br>
+            Veillez vous reconnectez.
+        </h5>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close btn-flat waves-effect blue">Connexion</a>
+    </div>
+</div>
 
 <script type="text/javascript">
 // Set timeout variables.
@@ -84,14 +91,20 @@ $(window).on('load', function() {
 </head>
 
 <body >
-   
+    
     <div class="container white" >
         <div class="row">
-            <form id="formu" class="col s12 m12 l12" method="POST" action="traitement_dem_acte_naiss.php">
-                <input type="number" name="s" hidden="" onsubmit="return verification()">
+            <form class="col s12 m12 l12" method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>">
+                <input type="number" name="s" hidden="">
                 <h3 class="center">Formulaire de demande d'acte d'état civils</h3>
                 <div class="row">
-                   
+                   <!-- <div class=" input-field col s6 m4 l4 " , id="mairie">
+                        <select class="browser-default acte" name="mairie">
+                            <option value="" disabled selected>Choisissez la commune</option>
+							<option value="1" >AKANDA</option><option value="2" >NZENG-AYONG</option><option value="3" >LIBREVILLE</option><option value="4" >ZIGUINCHOR</option><option value="5" >WAKANDA</option><option value="6" >NGATHIE NAOUDE</option><option value="7" >BIMBO</option><option value="8" >BEGOUA</option><option value="9" >GUITA</option><option value="10" >PETEVO</option><option value="11" >92LOGEMENT</option><option value="12" >ARD</option><option value="13" >BOUAR</option><option value="14" >COCO</option><option value="15" >AMBASSADE</option><option value="16" >YALOKé</option><option value="17" >MAIRIE DE BANGUI</option>                            <option value=""></option>
+
+                        </select>
+                    </div>-->
                     <div class=" input-field col s6 m4 l4">
                         <select class="browser-default registre" required="" name="registre" id="registre">
                             <option value="" disabled selected>Choisissez le registre</option>
@@ -101,10 +114,10 @@ $(window).on('load', function() {
                         </select>
                     </div>
                     <div class="naissances input-field col s6 m4 l4 " id="naissances">
-                        <select class="browser-default acte" name="naissance" id="naissances">
- <option value="" disabled selected>Choisissez l'acte naissance</option>
-   <option value="Extrait de naissance">Extrait de naissance</option>
-  <option value="Copie littérale de naissance">Copie littérale de naissance</option>
+                        <select class="browser-default acte" name="naissances">
+                            <option value="" disabled selected>Choisissez l'acte naissance</option>
+                            <option value="Extrait de naissance">Extrait de naissance</option>
+                            <option value="Copie littérale de naissance">Copie littérale de naissance</option>
                         </select>
                     </div>
                     <div class="deces input-field col s6 m4 l4 " id="deces">
@@ -151,14 +164,15 @@ $(window).on('load', function() {
                         <input type="number" required min="1" value="1" max="15" name="nbr_copies" id="nbr_copies">
                         <label for="nbr_copies">Nombre de copies de l'acte</label>
                     </div>
-                   <!-- <div class="input-field col s6 m3 l4">
-                        <select class="browser-default acte" name="methode_paiement" id="methode_paiement">
+					<div class="input-field col s6 m3 l4">
+                        <select class="browser-default acte" name="methode_paiement" id="methode_paiement" required="required">
                             <option value="" disabled selected> Methode de Paiement</option>
                             <option value="Sur Place">Sur Place</option>
+							<option value="En Ligne">En Ligne</option>
 							<option value="Livraison">Livraison</option>
                         </select>
-                    </div>-->
- </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col s2 offset-s8 input-field">
                         <input class="btn white-text blue darken-4" type="submit" name="enregistrer"
@@ -166,7 +180,6 @@ $(window).on('load', function() {
                     </div>
                 </div>
             </form>
-
         </div>
     </div>
 </body>
@@ -178,7 +191,6 @@ $(document).ready(function() {
     $('input').addClass('hide');
     $('label').addClass('hide');
 	 $('#methode_paiement').addClass('hide');
-	
 
     function select_acte() {
         var registre = $('.registre').val();
@@ -198,7 +210,6 @@ $(document).ready(function() {
         $('input').removeClass('hide');
         $('label').removeClass('hide');
 		 $('#methode_paiement').removeClass('hide');
-
     }
 
 
@@ -209,8 +220,9 @@ $(document).ready(function() {
         if (!confirm('Voulez-vous confirmer l\'enregistrement de cette demande d\'acte ?')) {
             return false;
         }
-    });
-	
+    })
+
+})
 </script>
 <style type="text/css">
 body {
@@ -222,3 +234,83 @@ body {
 </style>
 
 </html>
+
+<?php
+		
+if(isset($_POST["registre"]) && isset($_POST["naissances"]) && isset($_POST["num_registre"]) && isset($_POST["annee_registre"]) && isset($_POST["prenom"]) && isset($_POST["nom"]) && isset($_POST["nbr_copies"]))
+{			$typeRegistre=$_POST["registre"];
+			$naissances=$_POST["naissances"];
+			$annee_registre=$_POST["annee_registre"];
+			$num_registre=$_POST["num_registre"];
+			$prenom=$_POST["prenom"];
+			$nom=$_POST["nom"];
+			$nbr_copies=$_POST["nbr_copies"];
+			$methode_paiement=$_POST["methode_paiement"];
+			// echo"$naissances $annee_registre $num_registre $prenom $nom $nbr_copies";
+			$etat=0;
+			$date_demande = date("Y-m-d");
+			$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
+        if($connect)
+		{
+			if($typeRegistre=="Registre des naissances")
+			{
+				
+				$req="select * from registrenaissance where num_registre=$num_registre AND annee_registre='$annee_registre' AND prenom_enfant='$prenom' AND nom_enfant='$nom' ";
+				$result=$connect->query($req);
+				if($result->rowCount()==1)
+				{
+					$req="insert into demandeactedenaissance(numCompte,nom,prenom,numeroDeRegistre,annee_registre,etat_demande,nbre_copie,typePapier,methode_paiement,date_demande) value (?,?,?,?,?,?,?,?,?,?);";
+					$stmt = $connect->prepare($req);
+					$stmt->bindParam(1, $idConnected);
+					$stmt->bindParam(2, $nom);
+					$stmt->bindParam(3, $prenom);
+					$stmt->bindParam(4, $num_registre);
+					$stmt->bindParam(5, $annee_registre);
+					$stmt->bindParam(6, $etat);
+					$stmt->bindParam(7, $nbr_copies);
+					$stmt->bindParam(8, $naissances);
+					$stmt->bindParam(9, $methode_paiement);
+					$stmt->bindParam(10, $date_demande);
+					
+					$stmt->execute();
+					$numDem=$connect->lastInsertId();
+						echo'<script>';
+							echo'swal({
+								title: "Demande d\'Acte Réussi!",
+								text: " Vous pouvez désormais suivre vos demandes",
+								icon: "success",
+								button: "ok"
+							});';
+					echo'</script>';
+					// echo"$numDem";
+				}
+				else
+				{echo'<script>';
+		
+							echo'swal({';
+								echo'title: "Echec!",';
+								echo'text:  "Veuillez bien Vérifier vos Paramétres !",';
+								echo'icon: "error",';
+								echo' button: "ok",';
+								echo' timer: 30000';
+									
+							echo'});';
+							
+					echo'</script>';
+					
+				}
+			}
+			else
+			{
+				echo"not ok";
+			}
+			
+		}
+		else
+		{
+			echo"Base de donnée non connnectée";
+		}
+}
+
+
+?>

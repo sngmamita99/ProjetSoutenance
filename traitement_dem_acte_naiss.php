@@ -1,16 +1,18 @@
 
 <?php
-if(isset($_POST["registre"]) && isset($_POST["naissance"]) && isset($_POST["num_registre"]) && isset($_POST["annee_registre"]) && isset($_POST["prenom"]) && isset($_POST["nom"]) && isset($_POST["nbr_copies"]))
+		
+if(isset($_POST["registre"]) && isset($_POST["naissances"]) && isset($_POST["num_registre"]) && isset($_POST["annee_registre"]) && isset($_POST["prenom"]) && isset($_POST["nom"]) && isset($_POST["nbr_copies"]))
 {			$typeRegistre=$_POST["registre"];
-			$naissances=$_POST["naissance"];
+			$naissances=$_POST["naissances"];
 			$annee_registre=$_POST["annee_registre"];
 			$num_registre=$_POST["num_registre"];
 			$prenom=$_POST["prenom"];
 			$nom=$_POST["nom"];
 			$nbr_copies=$_POST["nbr_copies"];
-			// $methode_paiement=$_POST["methode_paiement"];
+			$methode_paiement=$_POST["methode_paiement"];
+			// echo"$naissances $annee_registre $num_registre $prenom $nom $nbr_copies";
 			$etat=0;
-			// echo"ok";		
+					
 			$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
 		{
@@ -22,7 +24,7 @@ if(isset($_POST["registre"]) && isset($_POST["naissance"]) && isset($_POST["num_
 				if($result->rowCount()==1)
 				{
 					// echo "Il ya au moins un enregistrement";
-					$req="insert into demandeactedenaissance(nom,prenom,numeroDeRegistre,annee_registre,etat_demande,nbre_copie,typePapier) value (?,?,?,?,?,?,?);";
+					$req="insert into demandeactedenaissance(nom,prenom,numeroDeRegistre,annee_registre,etat_demande,nbre_copie,typePapier,methode_paiement) value (?,?,?,?,?,?,?,?);";
 					$stmt = $connect->prepare($req);
 					$stmt->bindParam(1, $nom);
 					$stmt->bindParam(2, $prenom);
@@ -31,14 +33,14 @@ if(isset($_POST["registre"]) && isset($_POST["naissance"]) && isset($_POST["num_
 					$stmt->bindParam(5, $etat);
 					$stmt->bindParam(6, $nbr_copies);
 					$stmt->bindParam(7, $naissances);
+					$stmt->bindParam(8, $methode_paiement);
 					$stmt->execute();
 					$numDem=$connect->lastInsertId();
-					// on doit le renvoyer le numero de la demande sous format d'un popup
 					echo"$numDem";
 				}
 				else
 				{
-					// on doit dire que les données ne correspondent pas a ceux de la BD
+					
 					echo "le cas ou les donnees du formulaire ne sont pas dans la BD";
 				}
 			}

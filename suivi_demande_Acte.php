@@ -1,3 +1,7 @@
+<?php
+require_once("headerCitoyen.php");
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,13 +61,14 @@
 	</style>
 </head>
 <body>
-
+<br/>
+<br/>
 <?php
 require_once("headerCitoyen.php");
 $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 		if($bdd)
 		{
-			$req="select * from declarationnaissance where numCompte=$idConnected AND etat=1";
+			$req="select * from demandeactedenaissance where numCompte=$idConnected AND etat_demande=1";
 			$result=$bdd->query($req);
 			if($result->rowCount())
 			{
@@ -78,9 +83,9 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 				</thead>';
 			while($ligne=$result->fetch())
 			{
-				$num_dem=$ligne["numDeclaration"];
-				$date_dec=$ligne["date_declaration"];
-				$etat_demande=$ligne["etat"];
+				$num_dem=$ligne["numDemande"];
+				$date_dec=$ligne["date_demande"];
+				$etat_demande=$ligne["etat_demande"];
 				echo"<tr>
 				<td> $num_dem</td>
 				<td> $date_dec</td>";
@@ -103,7 +108,7 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 		if($bdd)
 		{
-			$req="select * from declarationnaissance where numCompte=$idConnected AND etat=0" ;
+			$req="select * from demandeactedenaissance where numCompte=$idConnected AND etat_demande=0" ;
 			$result=$bdd->query($req);
 			if($result->rowCount())
 			{
@@ -120,14 +125,14 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 				</thead>';
 			while($ligne=$result->fetch())
 			{
-				$num_dem=$ligne["numDeclaration"];
-				$date_dec=$ligne["date_declaration"];
-				$etat_demande=$ligne["etat"];
+				$num_dem=$ligne["numDemande"];
+				$date_dec=$ligne["date_demande"];
+				$etat_demande=$ligne["etat_demande"];
 				echo"<tr>
 				<td> $num_dem</td>
 				<td> $date_dec</td>";
 				echo"<td id='ann'>
-				<a href='annulerDemandeDec.php?numDem=$num_dem'>Annuler</a></td>";
+				<a href='annulerDemandeActe.php?numDem=$num_dem'>Annuler</a></td>";
 			
 			}
 			}

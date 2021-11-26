@@ -95,7 +95,7 @@ $(window).on('load', function() {
   <li> <a href="demandeActeNaiss.php"> Naissance</a></li>
   <li><a href="l_demande_acte_confirme.php">Mariage</a></li>
     <li><a href="l_demande_acte_confirme.php">Déces</a></li>
-	<li><a href="suivi_demande.php">Suivi de nos demandes</a></li>
+	<li><a href="suivi_demande_Acte.php">Suivi de nos demandes</a></li>
 </ul>
 <ul id="declaration" class="dropdown-content">
    <li> <a href="DemandeDecNaiss.php"> Naissance</a></li>
