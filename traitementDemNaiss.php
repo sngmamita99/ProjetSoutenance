@@ -113,14 +113,13 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 							{
 								echo "<td id='desact'>";
 								    echo '<span id="desact">En cours</span>';
-									// echo '<td><a href="activer.php?code='.$id.'"><button class="btn btn-success">activer</button></a></td>';
+									
                                    echo "</td>";
 							}
 							else
 							{
 								echo "<td id='act'>";
 							        echo '<span id="act">Terminé</span>';
-									// echo '<td><a href="desactiver.php?code='.$id.'"><button class="btn btn-danger">désactiver</button></a></td>';
                                 echo "</td>";
 							}
 								
@@ -133,7 +132,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 							else
 							{
 								echo "<td>";
-							       echo '<a href="activer.php"><img id="im" src="images/supprimer.png" alt="valider"></a></td>';
+							    
                                 echo "</td>";
 							}
 				
