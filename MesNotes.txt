@@ -6,3 +6,4 @@ sur place et recuperer son extrait
 La livaison sur place et par livraison sont reserve a ceux qui on un compte sur la plateforme
 La livraison en ligne se fait avec un compte externe est dans ce cas il faut un compte externe 
 cest à donner quelques info pour apres  pouvoir suivre ses demandes
+L'objectif principal de ce projet est de la squvegarde des informations et le demande d'acte d'etat civil
