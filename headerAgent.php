@@ -89,11 +89,16 @@ $(window).on('load', function() {
 </script>
 	</head>
 	<body id="debut" >
-		<!--Dropdown structure demande d'acte -->
+		<!--Dropdown structure demande d'acte 
 <ul id="demande_acte" class="dropdown-content">
-  <li> <a href="traitementDemNaiss.php"> Naissance</a></li>
+  <li> <a href="traitementDemNaiss.php" > Naissance</a></li>
   <li><a href="l_demande_acte_confirme.php">Mariage</a></li>
     <li><a href="l_demande_acte_confirme.php">Déces</a></li>
+    <li><a href="historique_dem_acte.php">Historiques</a></li>
+</ul>-->
+<ul id="demande_acte" class="dropdown-content">
+  <li> <a href="traitementDemNaissSurPlace.php" >Sur Place</a></li>
+  <li><a href="traitementDemNaissParLivraison.php">Par Livraison</a></li>
     <li><a href="historique_dem_acte.php">Historiques</a></li>
 </ul>
 <ul id="declaration" class="dropdown-content">
@@ -123,7 +128,7 @@ $(window).on('load', function() {
 
 <div class="white center entete_img row center" style="margin-bottom: 0px">
   <img  id="logo" style="" src=""  alt="logo" class="col s2 offset-s2" >
-  <h4 class="col s6" style="font:'times new roman';">Système d'Enregistrement<br>d'Etat Civil Automatisé</h4>
+  <h4 class="col s6" style="font:'times new roman';">Système d'Enregistrement<br>d'Etat Civil </h4>
 </div>
 
 <nav>
@@ -137,8 +142,8 @@ $(window).on('load', function() {
             Rendez-vous</a>
         </li>
       <li>
-          <a href="l_demande_acte.php" class="dropdown-trigger" data-beloworigin="true" data-target="demande_acte">
-            Demandes d'actes
+          <a href="l_demande_acte.php" class="dropdown-trigger"  data-target="demande_acte" >
+            Demandes d'actes de Naissance
                       </a>
         </li>
 		 <li>

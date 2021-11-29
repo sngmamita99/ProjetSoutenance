@@ -40,6 +40,7 @@ session_start();
 							    break;
 						    }
 							else{
+								$_SESSION['idConnected']=$lign['idUser'];
 							    header("Location:acceuilLivreur.php");
 							    break;
 						    }

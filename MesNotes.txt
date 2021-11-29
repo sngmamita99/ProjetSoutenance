@@ -7,3 +7,9 @@ La livaison sur place et par livraison sont reserve a ceux qui on un compte sur 
 La livraison en ligne se fait avec un compte externe est dans ce cas il faut un compte externe 
 cest à donner quelques info pour apres  pouvoir suivre ses demandes
 L'objectif principal de ce projet est de la squvegarde des informations et le demande d'acte d'etat civil
+En lever le cad d'utilisation de rejeter qui est dans le use case de l'agent
+Pour le cas du use case transmettre ) l'ofiicier faut le reserver pour la demande en ligne et la getion des paiemnts
+Il faudra enlever la notion d'annuler ou de rejeter dans les use cases des officiers et agent de demandes parck une demande tank les info ne sont  pas à ceux qui corres
+pondent àceux de la BD ils ne seront enregistrées dan sla plateforme
+la page de recherche pour la demande en ligne il faut le reserver au cas de suivi d'une livraison
+Apres pour le menu le mettre en cascade

@@ -19,7 +19,7 @@ body {
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="js1/jquery.min.js"></script>
 <script type="text/javascript" src="js1/materialize.min.js"></script>
-
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script > 
 
 <div class="modal modal" id="timeoutModal">
     <div class="modal-content">
@@ -168,7 +168,6 @@ $(window).on('load', function() {
                         <select class="browser-default acte" name="methode_paiement" id="methode_paiement" required="required">
                             <option value="" disabled selected> Methode de Paiement</option>
                             <option value="Sur Place">Sur Place</option>
-							<option value="En Ligne">En Ligne</option>
 							<option value="Livraison">Livraison</option>
                         </select>
                     </div>
@@ -224,6 +223,7 @@ $(document).ready(function() {
 
 })
 </script>
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script > 
 <style type="text/css">
 body {
     background-position: center center;
@@ -271,7 +271,6 @@ if(isset($_POST["registre"]) && isset($_POST["naissances"]) && isset($_POST["num
 					$stmt->bindParam(8, $naissances);
 					$stmt->bindParam(9, $methode_paiement);
 					$stmt->bindParam(10, $date_demande);
-					
 					$stmt->execute();
 					$numDem=$connect->lastInsertId();
 						echo'<script>';
@@ -282,10 +281,11 @@ if(isset($_POST["registre"]) && isset($_POST["naissances"]) && isset($_POST["num
 								button: "ok"
 							});';
 					echo'</script>';
-					// echo"$numDem";
+					
 				}
 				else
-				{echo'<script>';
+				{
+					echo'<script>';
 		
 							echo'swal({';
 								echo'title: "Echec!",';
@@ -314,3 +314,4 @@ if(isset($_POST["registre"]) && isset($_POST["naissances"]) && isset($_POST["num
 
 
 ?>
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script > 
