@@ -102,15 +102,15 @@ $(window).on('load', function() {
 </head>
 	<body id="debut" >
 
-<ul id="deconnexion" class="dropdown-content">
+<!--<ul id="deconnexion" class="dropdown-content">
 
  <li> <a  href="Connexion.php">Connecter</a></li> 
-  <!-- <li> <a  href="paypal/formulaire.html">Connecter</a></li>-->
+   <li> <a  href="paypal/formulaire.html">Connecter</a></li>
   <li> 
 		<a  href="acceuil_demande.php">
 			Demande d'acte <i class="fa fa-graduation-cap ml-2"></i>
 		</a>
-	</li>
+	</li>-->
   
 </ul>
 
@@ -120,7 +120,7 @@ $(window).on('load', function() {
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
 		<li>
-			<a class="dropdown-trigger ab"  href="deconnexion.php" data-beloworigin="true"  data-target="deconnexion">
+			<a class="dropdown-trigger ab"  href="Connexion.php" data-beloworigin="true"  data-target="deconnexion">
 			<i class="material-icons " style="font-size: 40px">person_pin</i><a>
         </li>
       </ul>

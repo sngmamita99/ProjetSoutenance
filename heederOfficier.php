@@ -122,7 +122,7 @@ $(window).on('load', function() {
 
 <!--Dropdown structure impression -->
 <ul id="impression" class="dropdown-content">
-  <li><a href="i_naissance.php">Naissance</a></li>
+  <li><a href="valider_dem_acte_livraison.php">Naissance</a></li>
   <li class="divider"></li>
   <li><a href="i_deces.php">Décés</a></li>
   <li><a href="i_mariage.php">Mariage</a></li>

@@ -71,6 +71,7 @@ require_once("headerCitoyen.php");
 		color:white;
 		text-align:center;
 	}
+	
 	</style>
 </head>
 <body>
@@ -163,8 +164,10 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 				}
 				else
 				{
-					echo"<td id='termine'>
-						<span>Paiment ok</span></td>
+					echo"<td><span id='oui'>Paiment ok</span></td>";
+				
+						echo"<td id='termine'>
+						<a href='acceuil_demande.php'>Suivre Mes Livraisons</a>
 						";
 						echo"</td>
 						";

@@ -149,10 +149,10 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					}
 					else
 					{
-						
+								
 								echo "<td>";
 								echo"<span>payé</span>";
-								echo "<a href=''>Transmettre</a></td>";
+								echo "<a href='Transmission.php?idRegistre=$numDemande'>Transmettre</a></td>";
 								echo "</td>";	
 					}
 				}

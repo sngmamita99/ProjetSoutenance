@@ -21,7 +21,7 @@ body {
 <script type="text/javascript" src="js1/materialize.min.js"></script>
 <script src="https://kit.fontawesome.com/89205a59df.js" crossorigin="anonymous"></script>
 
- <div class="row">
+ <!--<div class="row">
         <div class="col s12 m6">
             <div class="card indigo darken-4">
                 <div class="card-content white-text">
@@ -34,7 +34,7 @@ body {
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <div class="row">
         <div class="col s12 m6 offset-m6">
             <div class="card   indigo darken-4">
