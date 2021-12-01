@@ -19,7 +19,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 
 ?>
 <?php
-// require_once("extraitDesi.php");
+
 $date=date("d/m/Y");
 $idRegistre=$_GET["idRegistre"];
 
@@ -27,8 +27,8 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
 		{ 
 	
-	$req="select * from registrenaissance where num_registre = $idRegistre";
-	$result=$connect->query($req);
+				$req="select * from registrenaissance where num_registre = $idRegistre";
+				$result=$connect->query($req);
 			if($result->rowCount())
 			{
 				while($ligne=$result->fetch())

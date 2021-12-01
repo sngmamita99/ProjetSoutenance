@@ -44,6 +44,7 @@ require_once("headerAgent.php");
 $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
 		{ 
+			
 			$req="select * from demandeactedenaissance  where methode_paiement='Livraison'";
 			$result=$connect->query($req);
 			if($result->rowCount())
@@ -58,16 +59,14 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 			echo'<table class="col s12 responsive-table striped " id="l_naissance">
 				<thead>
 					<tr class="white darken-3 lighten-2 black-text center ">
-					<th>Numéro de Registre </th>
+					<th>Numéro</th>
 						<th>Prenom</th>
 						<th>Nom</th>	
-						<th>Année de Declaration</th>
-						
+						<th>Année</th>
 						<th>Nombre de Copies</th>
-						<th>Demande de:</td>
-						<th>Methode de Paiement</td>
-						<th>Etat</th>
-						<th>Opérations</th>
+						<th>Demande de:</th>
+						<th></th>
+						<th></th>
 						<th></th>
 						<th></th>
 					</tr>
@@ -84,7 +83,10 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					$etat_demande=$ligne["etat_demande"];
 					$methode_paiement=$ligne["methode_paiement"];
 					$etat_paiement=$ligne["etat_paiement"];
-					
+					$etat_transmission=$ligne["etat_transmission"];
+					$req1="select * from transmettredeman where num_demande=$numDemande";
+					$resulat=$connect->query($req1);
+					$row=$resulat->fetch();
 					echo"<tr>
 					<td>$numeroDeRegistre</td>
 					<td>$prenom</td>
@@ -109,20 +111,20 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 								echo"<a href='index.php'>Copie Littérale</a>";
 						echo"</td>";
 					}
-					echo"<td>$methode_paiement</td>";
-					if($etat_demande=='0')
-							{
-								echo "<td id='desact'>";
-								    echo '<span id="desact">En cours</span>';
+					
+					// if($etat_demande=='0')
+							// {
+								// echo "<td id='desact'>";
+								    // echo '<span id="desact">En cours</span>';
 									
-                                   echo "</td>";
-							}
-							else
-							{
-								echo "<td id='act'>";
-							        echo '<span id="act">Terminé</span>';
-                                echo "</td>";
-							}
+                                   // echo "</td>";
+							// }
+							// else
+							// {
+								// echo "<td id='act'>";
+							        // echo '<span id="act">Terminé</span>';
+                                // echo "</td>";
+							// }
 							
 						if($etat_demande=='0')
 							{
@@ -139,22 +141,43 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 								echo "</td>";	
 
 							}
-					if($etat_paiement==0)
+					if(($etat_paiement==0) &&($etat_transmission==0))
 					{
 								echo "<td>";
 								echo"<span>Non payé</span>";
-								// echo "<a href='accepter.php?idRegistre=$numDemande'>Accepter</a></td>";
 								echo "</td>";	
 
+					}
+					else if(($etat_paiement==1) &&($etat_transmission==0))
+					{
+								
+								echo "<td>";
+								echo"<span>payé</span>";
+								echo "<a href='Transmission.php?
+								numDem=$numDemande&annDec=$annee_registre
+								&numReg=$numeroDeRegistre'><button>Transmettre</button></a>";
+								echo "</td>";	
 					}
 					else
 					{
 								
 								echo "<td>";
-								echo"<span>payé</span>";
-								echo "<a href='Transmission.php?idRegistre=$numDemande'>Transmettre</a></td>";
+								echo"<span>demande transmise</span>";
 								echo "</td>";	
 					}
+					if($row["etat_demande"]==0)
+					{
+						echo "<td>";
+								echo"<button>en attente</button>";
+								echo "</td>";	
+					}
+					else
+					{
+						echo "<td>";
+								echo"<button>Notifier</button>";
+								echo "</td>";	
+					}
+					
 				}
 				
 					echo"</table>";
