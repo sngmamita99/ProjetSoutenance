@@ -1,4 +1,5 @@
 <?php
+
 require_once("headerCitoyen.php");
 
 ?>
@@ -120,7 +121,7 @@ require_once("headerCitoyen.php");
 $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 		if($bdd)
 		{
-			$req="select * from demandeactedenaissance where numCompte=$idConnected " ;
+			$req="select * from demandeactedenaissance where numCompte=$idConnected LIMIT 1" ;
 			$result=$bdd->query($req);
 			if($result->rowCount())
 			{
@@ -138,8 +139,10 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 			while($ligne=$result->fetch())
 			{
 				$num_dem=$ligne["numDemande"];
+				$_SESSION["numDemande"]=$num_dem;
 				$date_dec=$ligne["date_demande"];
 				$etat_demande=$ligne["etat_demande"];
+				$etat_paiement=$ligne["etat_demande"];
 				echo"<tr>
 				<td> $num_dem</td>
 				<td> $date_dec</td>";
@@ -148,15 +151,23 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 						echo"<td id='ann'>
 						<a href='annulerDemandeActe.php?numDem=$num_dem'>Annuler</a></td>";
 				}
-				else
+				else if($etat_demande==0 && $etat_paiement==0)
 				{
 						echo"<td id='termine'>
 						<span>Termine</span></td>
 						";
 						echo"<td id ='payer'>
-						<a href=''>Payer </a></td>
+						<a href='paypal/formulaire.php'>Payer </a></td>
 						";
 						
+				}
+				else
+				{
+					echo"<td id='termine'>
+						<span>Paiment ok</span></td>
+						";
+						echo"</td>
+						";
 				}
 			}
 			}

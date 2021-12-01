@@ -69,6 +69,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 						<th>Etat</th>
 						<th>Opérations</th>
 						<th></th>
+						<th></th>
 					</tr>
 				</thead>';
 				while($ligne=$result->fetch())
@@ -82,6 +83,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					$typePapier=$ligne["typePapier"];
 					$etat_demande=$ligne["etat_demande"];
 					$methode_paiement=$ligne["methode_paiement"];
+					$etat_paiement=$ligne["etat_paiement"];
 					
 					echo"<tr>
 					<td>$numeroDeRegistre</td>
@@ -121,26 +123,38 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 							        echo '<span id="act">Terminé</span>';
                                 echo "</td>";
 							}
-							echo "<td>";
-							echo "<a href='accepter.php?idRegistre=$numeroDeRegistre'>Accepter</a></td>";
-                            echo "</td>";
+							
+						if($etat_demande=='0')
+							{
+								echo "<td>";
+								echo "<a href='accepter.php?idRegistre=$numDemande'>Accepter</a></td>";
+								echo "</td>";
+							}
+							else
 								
-					// if($etat_demande=='0')
-							// {
-								// echo "<td>";
-								 // echo "<a href='impressionDemExtrait.php?idRegistre=$numeroDeRegistre'><img id='im' src='images/v.png' alt='valider'></a></td>";
-                                   // echo "</td>";
-							// }
-							// else
-							// {
-								// echo "<td>";
-							    
-                                // echo "</td>";
-							// }
-				
-					// echo"<td>";
-				// echo "<a href='supprimerDem.php?idRegistre=$numDemande'><img id='imd' src='images/sup.png' alt='valider'></a></td>";
-				// echo"</td>";
+							{	
+								echo "<td>";
+								echo"<span>Dejà accepté</span>";
+								// echo "<a href='accepter.php?idRegistre=$numDemande'>Accepter</a></td>";
+								echo "</td>";	
+
+							}
+					if($etat_paiement==0)
+					{
+								echo "<td>";
+								echo"<span>Non payé</span>";
+								// echo "<a href='accepter.php?idRegistre=$numDemande'>Accepter</a></td>";
+								echo "</td>";	
+
+					}
+					else
+					{
+						
+								echo "<td>";
+								echo"<span>payé</span>";
+								echo "<a href=''>Transmettre</a></td>";
+								echo "</td>";	
+					}
 				}
 				
 					echo"</table>";
