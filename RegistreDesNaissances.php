@@ -6,6 +6,7 @@ $idConnected=$_SESSION['idConnected'];
 ?>
 
    <style>
+ 
    #impression
    {
 	   width:25px;
@@ -51,7 +52,7 @@ $idConnected=$_SESSION['idConnected'];
 					   type="search" class="validate" name="Code_de_recherche">';
                 echo'</form>'; 
 				echo'<br/>';
-				
+				echo"<div id='recuperation'></div>";
 				echo"<h5>REGISTRE DES NAISSANCES</h5>";
 			echo'<table class="col s12 responsive-table striped " id="l_naissance">
 				<thead>
@@ -83,8 +84,6 @@ $idConnected=$_SESSION['idConnected'];
 					$prenom_mere=$ligne["prenom_mere"];
 					$nom_mere=$ligne["nom_mere"];
 					$heure_naissance_enfant=$ligne["heure_naissance_enfant"];
-					// $date= date("getHours([$heure_naissance_enfant])");
-					// echo $date;
 					echo"<tr>
 					<td>$numActe</td>
 					<td>$date_declaration</td>
@@ -135,4 +134,5 @@ $idConnected=$_SESSION['idConnected'];
 		}
 	});
 	</script>
+	<script src='Autocomplete.js'></script>
 </html>

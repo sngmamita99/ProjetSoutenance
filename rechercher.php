@@ -1,51 +1,128 @@
-<!DOCTYPE html>
-<head>
-	<meta charset=""/>
-	<title>rechercher</title>
-	<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script > 
-</head>
 <?php
-// $rech=$_POST["Code_de_recherche"];
-// echo "$rech";
-if(isset($_POST["Code_de_recherche"]))
-{	
-	// echo"ok";
-	$rech=$_POST["Code_de_recherche"];
+if(isset($_POST['nom']))
+{
+	$nom=$_POST['nom'];
 	$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
 		{
-			$req="select * from demandeactedenaissance where numDemande=$rech";
+			$req="select * from registrenaissance where prenom_enfant like '%$nom%'";
 			$result=$connect->query($req);
-			if($result->rowCount())
-			{
-				$ligne=$result->fetch();
-				$etat_demande=$ligne["etat_demande"];
-				if($etat_demande==0)
-				{  
-					echo"Votre demande est en cours de traitement";
-						// echo '<script type="text/javascript">sweetAlert("Désolé !","Votre avis n\'a pas été pris en compte par notre équipe !","error")</script>';
+			echo"<h5>REGISTRE DES NAISSANCES</h5>";
+			echo'<table class="col s12 responsive-table striped " id="l_naissance">
+				<thead>
+					<tr class="purple darken-3 lighten-2 white-text center ">
+						<th>N° Acte</th>
+						<th>Date déclaration</th>	
+						<th>Type déclaration</td>
+						<th>Prénom </td>
+						<th>Nom</td>
+						<th>Date naissance</td>
+						<th>Lieu naissance</td>
+						<th>Pére et mére</td>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>';
+				if($result->rowCount())
+				{
+					while($ligne=$result->fetch())
+					{
+					$idRegistre=$ligne["idRegistre"];
+					$numActe=$ligne["num_registre"];
+					$date_declaration=$ligne["date_declaration"];
+					$type_declaration=$ligne["type_declaration"];
+					$prenom=$ligne["prenom_enfant"];
+					$nom=$ligne["nom_enfant"];
+					$date_naissance=$ligne["date_naissance_enfant"];
+					$lieuNaiss=$ligne["lieu_naissance_pere"];
+					$prenom_pere=$ligne["prenom_pere"];
+					$prenom_mere=$ligne["prenom_mere"];
+					$nom_mere=$ligne["nom_mere"];
+					$heure_naissance_enfant=$ligne["heure_naissance_enfant"];
+					echo"<tr>
+					<td>$numActe</td>
+					<td>$date_declaration</td>
+					<td>$type_declaration</td>
+					<td>$prenom</td>
+					<td>$nom</td>
+					<td>$date_naissance à $heure_naissance_enfant</td>
+					<td>$lieuNaiss</td>
+					<td>$prenom_pere & $prenom_mere $nom_mere</td>
+					
+					<td>
+					<img id='impression' src='images/impression.png'alt='imprimerie'/>
+					 <a href='impressionExtrait.php?idRegistre=$numActe'>Extrait</a>
+					<br/><img id='impression' src='images/impression.png' alt='imprimerie'/>
+					<a href='impressionCopieLitteral.php?idRegistre=$numActe'>Copie littérale</a>
+					</td>
+					<td>
+					<a href='modifier_enregistrement.php?idRegistre=$idRegistre'>
+					<img id='impression' src='https://previews.123rf.com/images/sulikns/sulikns1706/sulikns170600418/80878621-dessiner-modifier-stylo-crayon-%C3%A9crire-ic%C3%B4ne-vector-illustration-.jpg' alt='imprimerie'/>
+					</a>
+					</td>
+					<td>
+					<a href='suppressionDec.php?idRegistre=$idRegistre'><img id='suppression' src='images/supp.png'/></a>
+					</td>
+					</tr>";
+					
+					}
 				}
 				else
 				{
-						echo"Votre demande est terminé";
+					echo"<td>Aucun élement correspondant trouvé</td>";
 					
 				}
+					echo"</table>";
 			}
-			else
-			{
-				echo"Pas d'enregistrement";
-			}
-		}
-		else
-		{
-			echo"Base de donnée non connecté";
-		}
+			
+		
+	
+}
+
+?>
+<?php
+// $rech=$_POST["Code_de_recherche"];
+// echo "$rech";
+// if(isset($_POST["Code_de_recherche"]))
+// {	
+	// echo"ok";
+	// $rech=$_POST["Code_de_recherche"];
+	// $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
+        // if($connect)
+		// {
+			// $req="select * from demandeactedenaissance where numDemande=$rech";
+			// $result=$connect->query($req);
+			// if($result->rowCount())
+			// {
+				// $ligne=$result->fetch();
+				// $etat_demande=$ligne["etat_demande"];
+				// if($etat_demande==0)
+				// {  
+					// echo"Votre demande est en cours de traitement";
+						// echo '<script type="text/javascript">sweetAlert("Désolé !","Votre avis n\'a pas été pris en compte par notre équipe !","error")</script>';
+				// }
+				// else
+				// {
+						// echo"Votre demande est terminé";
+					
+				// }
+			// }
+			// else
+			// {
+				// echo"Pas d'enregistrement";
+			// }
+		// }
+		// else
+		// {
+			// echo"Base de donnée non connecté";
+		// }
 				
 
-}
-else
-{
-	echo " mot non ok";
-}
+// }
+// else
+// {
+	// echo " mot non ok";
+// }
 
 ?>

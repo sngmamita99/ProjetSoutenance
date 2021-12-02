@@ -152,7 +152,7 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 						echo"<td id='ann'>
 						<a href='annulerDemandeActe.php?numDem=$num_dem'>Annuler</a></td>";
 				}
-				else if($etat_demande==0 && $etat_paiement==0)
+				else if($etat_demande==1)
 				{
 						echo"<td id='termine'>
 						<span>Termine</span></td>
