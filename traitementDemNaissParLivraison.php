@@ -143,7 +143,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 								echo "</td>";	
 
 							}
-					if(($etat_paiement==0) &&($etat_transmission==0))
+					if(($etat_paiement==0) && ($etat_transmission==0))
 					{
 								echo "<td>";
 								echo"<span>Non payé</span>";
@@ -176,7 +176,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					else
 					{
 						echo "<td>";
-								echo"<button>Notifier</button>";
+								echo"<a href=''><button>Notifier</button></a>";
 								echo "</td>";	
 					}
 					
