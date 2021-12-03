@@ -1,3 +1,15 @@
+<!doctype html>
+<head>
+<meta charset="utf-8"/>
+<title> rechercher</title>
+<style>
+#aucun
+{
+	text-align:center;
+}
+</style>
+</head>
+
 <?php
 if(isset($_POST['nom']))
 {
@@ -5,7 +17,7 @@ if(isset($_POST['nom']))
 	$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
 		{
-			$req="select * from registrenaissance where prenom_enfant like '%$nom%'";
+			$req="select * from registrenaissance where prenom_enfant like '%$nom%' OR nom_enfant like '%$nom%' ";
 			$result=$connect->query($req);
 			echo"<h5>REGISTRE DES NAISSANCES</h5>";
 			echo'<table class="col s12 responsive-table striped " id="l_naissance">
@@ -70,7 +82,7 @@ if(isset($_POST['nom']))
 				}
 				else
 				{
-					echo"<td>Aucun élement correspondant trouvé</td>";
+					echo"<td colspan='8' id='aucun'>Aucun élement correspondant trouvé</td>";
 					
 				}
 					echo"</table>";
@@ -79,50 +91,5 @@ if(isset($_POST['nom']))
 		
 	
 }
-
-?>
-<?php
-// $rech=$_POST["Code_de_recherche"];
-// echo "$rech";
-// if(isset($_POST["Code_de_recherche"]))
-// {	
-	// echo"ok";
-	// $rech=$_POST["Code_de_recherche"];
-	// $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
-        // if($connect)
-		// {
-			// $req="select * from demandeactedenaissance where numDemande=$rech";
-			// $result=$connect->query($req);
-			// if($result->rowCount())
-			// {
-				// $ligne=$result->fetch();
-				// $etat_demande=$ligne["etat_demande"];
-				// if($etat_demande==0)
-				// {  
-					// echo"Votre demande est en cours de traitement";
-						// echo '<script type="text/javascript">sweetAlert("Désolé !","Votre avis n\'a pas été pris en compte par notre équipe !","error")</script>';
-				// }
-				// else
-				// {
-						// echo"Votre demande est terminé";
-					
-				// }
-			// }
-			// else
-			// {
-				// echo"Pas d'enregistrement";
-			// }
-		// }
-		// else
-		// {
-			// echo"Base de donnée non connecté";
-		// }
-				
-
-// }
-// else
-// {
-	// echo " mot non ok";
-// }
 
 ?>

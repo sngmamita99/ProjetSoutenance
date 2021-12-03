@@ -10,9 +10,12 @@
 <link type="text/css" rel="stylesheet" href="css1/formulaire.css" media="screen,projection" />
 <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js" > </script > 
 <style type="text/css">
-body {
-    background-color: #eff1f2;
+body 
+{
+    background-image: url("images/livreur.jpg");
 }
+
+	
 </style>
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,7 +24,7 @@ body {
 <script type="text/javascript" src="js1/materialize.min.js"></script>
 <script src="https://kit.fontawesome.com/89205a59df.js" crossorigin="anonymous"></script>
 
- <!--<div class="row">
+ <div class="row">
         <div class="col s12 m6">
             <div class="card indigo darken-4">
                 <div class="card-content white-text">
@@ -34,17 +37,18 @@ body {
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>
     <div class="row">
         <div class="col s12 m6 offset-m6">
-            <div class="card   indigo darken-4">
+            <div class="card green  darken-4" id='carre'>
                 <div class="card-content white-text">
                     <span class="card-title">Consultation de l'etat d'avancement</span>
                     <h5>Ici, il vous est possible de suivre l'état d'avancement de votre demande d'acte d'Etat civils
-                        pour le recupérer. Pour cela, insérer juste le code qui vous a été fournis lors de la demande
+                        pour le recupérer. Pour cela, insérer juste le numéro de la demande
+						
                         puis cliquez sur le bouton recherche.</h5>
                     <div class="input-field col s6 m6 offset-s6 white">
-                     <form method="POST" action="rechercher.php">
+                     <form method="POST" action="rechercherDem.php">
                         <input id="icon_prefix" placeholder="Code de recherche" type="search" class="validate" name="Code_de_recherche">
                     </div>
                     <br>

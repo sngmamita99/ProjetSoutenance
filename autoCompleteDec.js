@@ -1,14 +1,17 @@
+  /*recuperation c'est là ou l'on veut fare la recuperation le div*/
   var recuperation=document.getElementById('recuperation');
+  /* icon_prefix c'est l'identifiant de la barre de recherche*/
      var icon_prefix=document.getElementById('icon_prefix');
+	  // l_naissance l'identifiant du tableau affichée
 	var l_naissance=document.getElementById('l_naissance');
-	recuperation.style.visibility='hidden';
-	var MonTitre=document.getElementById('MonTitre');
+	// var titreR=document.getElementById('titreR');
+       recuperation.style.visibility='hidden';
      icon_prefix.addEventListener("keyup",function(e){
        l_naissance.style.visibility='hidden';
-	   MonTitre.style.visibility='hidden';
+	   // titreR.style.visibility='hidden';
        var nt=icon_prefix.value;
        var xhr=new XMLHttpRequest();
-       var url="rechercher.php";
+       var url="rechercherDec.php";
        xhr.open('POST',url);
        xhr.setRequestHeader("Content-Type",
 
@@ -33,7 +36,7 @@
           },false);
         }
         td.addEventListener('click',function(){
-            recuperation.value=this.innerHTML ;
+          icon_prefix.value=this.innerHTML ;
         },false);
      
       

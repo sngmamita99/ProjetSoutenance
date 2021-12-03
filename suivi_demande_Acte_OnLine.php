@@ -24,9 +24,10 @@ require_once("headerCitoyen.php");
 	}
 	#ann
 	{
-		background:red;
+		background:#FFC107;
 		color:white;
 		text-align:center;
+		border:0px hidden #FFC107;
 		
 	}
 	td a
@@ -64,14 +65,21 @@ require_once("headerCitoyen.php");
 		background:green;
 		color:white;
 		text-align:center;
+		border:0px hidden green;
 	}
 	#payer
 	{
+		border:0px hidden red;
 		background:yellow;
 		color:white;
 		text-align:center;
 	}
-	
+	#annuler
+	{
+		background:red;
+		border:0px hidden red;
+		text-align:center;
+	}
 	</style>
 </head>
 <body>
@@ -82,7 +90,7 @@ require_once("headerCitoyen.php");
 // $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 		// if($bdd)
 		// {
-			// $req="select * from demandeactedenaissance where numCompte=$idConnected AND etat_demande=1";
+			// $req="select * from demandeactedenaissance where numCompte=$idConnected ";
 			// $result=$bdd->query($req);
 			// if($result->rowCount())
 			// {
@@ -122,7 +130,7 @@ require_once("headerCitoyen.php");
 $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 		if($bdd)
 		{
-			$req="select * from demandeactedenaissance where numCompte=$idConnected LIMIT 1" ;
+			$req="select * from demandeactedenaissance where numCompte=$idConnected " ;
 			$result=$bdd->query($req);
 			if($result->rowCount())
 			{
@@ -133,8 +141,8 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 					<tr class="white darken-3 lighten-2 black-text center ">
 						<th>Numero de demande</th>
 						<th>Date de demande</th>
-						
-						<td></td>
+						<th>Etat</th>
+						<th></th>
 					</tr>
 				</thead>';
 			while($ligne=$result->fetch())
@@ -143,26 +151,29 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 				$_SESSION["numDemande"]=$num_dem;
 				$date_dec=$ligne["date_demande"];
 				$etat_demande=$ligne["etat_demande"];
-				$etat_paiement=$ligne["etat_demande"];
+				$etat_paiement=$ligne["etat_paiement"];
 				echo"<tr>
 				<td> $num_dem</td>
 				<td> $date_dec</td>";
-				if($etat_demande==0)
+				if($etat_demande==0 AND $etat_paiement==0)
 				{
-						echo"<td id='ann'>
-						<a href='annulerDemandeActe.php?numDem=$num_dem'>Annuler</a></td>";
-				}
-				else if($etat_demande==1)
-				{
-						echo"<td id='termine'>
-						<span>Termine</span></td>
-						";
-						echo"<td id ='payer'>
-						<a href='paypal/formulaire.php'>Payer </a></td>
+					echo "<td>
+						<button id='ann'>En Cours</button></td>
 						";
 						
+						echo"<td>
+						<a href='annulerDemandeActe.php?numDem=$num_dem'><button  id ='annuler'>Annuler</a></button></td>";
 				}
-				else
+				else if($etat_demande==1 AND $etat_paiement==0)
+				{
+						echo "<td>
+						<button id='termine'>Termine</button>
+						</td>";
+						echo"<td>
+						<a href='paypal/formulaire.php'><button  id ='payer'>Payer</button> </a></td>
+						";	
+				}
+				else if($etat_demande==1 AND $etat_paiement==1)
 				{
 					echo"<td><span id='oui'>Paiment ok</span></td>";
 				
@@ -172,6 +183,16 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 						echo"</td>
 						";
 				}
+				// else
+				// {
+					// echo"<td><span id='oui'>go</span></td>";
+				
+						// echo"<td id='termine'>
+						// <a href='acceuil_demande.php'>go</a>
+						// ";
+						// echo"</td>
+						// ";
+				// }
 			}
 			}
 			else

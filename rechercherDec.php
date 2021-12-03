@@ -1,59 +1,13 @@
 <?php
- require_once("heederOfficier.php");
-
-$idConnected=$_SESSION['idConnected'];
-
-?>
-
-   <style>
- 
-   #impression
-   {
-	   width:25px;
-	   height:25px;
-   }	
-	#suppression
-	{
-		width:30px;
-	   height:30px;
-	}		
-	h5
-   {
-	   text-align:center;
-	   font-weight:bold;
-   }
-   #icon_prefix
+if(isset($_POST['nom']))
 {
-	width:300px;
-	margin-left:72%;
-}
-#rech
-{
-	margin-left:120px;
-	width:80%;
-	text-align:center;
-	
-}
-   </style>
-	</head>
-	<body >
-  <?php 
-  $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
+	$nom=$_POST['nom'];
+	$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
 		{
-			$req="select * from registrenaissance ";
+			$req="select * from declarationnaissance where prenom like '%$nom%'";
 			$result=$connect->query($req);
-			if($result->rowCount())
-			{echo"<div id='rech'>";
-		echo'<br/>';
-		echo'<br/>';
-                    echo' <form method="POST" action="rechercher.php">';
-                       echo' <input id="icon_prefix" placeholder="prenom ou nom figurant sur la demande" 
-					   type="search" class="validate" name="Code_de_recherche">';
-                echo'</form>'; 
-				echo'<br/>';
-				echo"<div id='recuperation'></div>";
-				echo"<h5 id='MonTitre'>REGISTRE DES NAISSANCES</h5>";
+			echo"<h5>REGISTRE DES NAISSANCES</h5>";
 			echo'<table class="col s12 responsive-table striped " id="l_naissance">
 				<thead>
 					<tr class="purple darken-3 lighten-2 white-text center ">
@@ -70,8 +24,10 @@ $idConnected=$_SESSION['idConnected'];
 						<th></th>
 					</tr>
 				</thead>';
-				while($ligne=$result->fetch())
+				if($result->rowCount())
 				{
+					while($ligne=$result->fetch())
+					{
 					$idRegistre=$ligne["idRegistre"];
 					$numActe=$ligne["num_registre"];
 					$date_declaration=$ligne["date_declaration"];
@@ -110,29 +66,18 @@ $idConnected=$_SESSION['idConnected'];
 					</td>
 					</tr>";
 					
-					// </td><td><img id='impression' src='https://previews.123rf.com/images/sulikns/sulikns1706/sulikns170600418/80878621-dessiner-modifier-stylo-crayon-%C3%A9crire-ic%C3%B4ne-vector-illustration-.jpg' alt='imprimerie'/><a href='impressionExtrait.php?idRegistre=$idRegistre'>Extrait de Naissance</a><br/><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionCopieLitteral.php'>Copie littérale</a></td></tr>";
+					}
+				}
+				else
+				{
+					echo"<td>Aucun élement correspondant trouvé</td>";
 					
 				}
 					echo"</table>";
 			}
-			else
-			{
-				echo"Il n'a aucune decaration de Naissance";
-			}
 			
-		}
-		else
-		{
-			echo"Base de donnée non connecté";
-		}
+		
+	
+}
+
 ?>
-	</body>
-	<script>
-		$('#suppression').click(function () {
-		if (!confirm('Etes-vousde vouloir supprimer cette déclaration ?')) {
-			return false;
-		}
-	});
-	</script>
-	<script src='Autocomplete.js'></script>
-</html>

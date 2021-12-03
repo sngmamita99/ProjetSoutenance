@@ -50,12 +50,13 @@ require_once("headerAgent.php");
 			if($res->rowCount()>=1)
 			{
 				echo"<div id='rech'>";
-                    echo' <form method="POST" action="rechercher.php">';
+                    echo' <form method="POST" action="rechercherDec.php">';
                        echo' <input id="icon_prefix" placeholder="prenom ou nom figurant sur la demande" 
 					   type="search" class="validate" name="Code_de_recherche">';
                 echo'</form>'; 
 				echo'<br/>';
-				echo "<table class='bordered highlight centered col s12 m12'>";
+				echo"<div id='recuperation'></div>";
+				echo "<table class='bordered highlight centered col s12 m12' id='l_naissance'>";
 			echo"<thead>";
 				echo"<tr>";
                     echo"<th>N°Demande </th>";
@@ -78,7 +79,7 @@ require_once("headerAgent.php");
                             echo "<td>$numDe</td><td>$p</td><td>$n</td><td>$lien</td><td><a href='justificatif.php?code=$x'><img id='IconeEye' src='images/eye.png' alt='Icone details'/></a></td><td class='dateSoumission'>$date</td>";
 								echo "<td>";
 								    echo "<a href='rdv.php?code=$x&numDe=$numDe'><button class='valid'>Valider</button></a>";
-									echo '<a href="annulerDemande.php"><button class="annuler">Annuler</button></a>';
+									echo "<a href='annulerDemande.php?code=$x&numDe=$numDe'><button class='annuler'>Annuler</button></a>";
                                   echo "</td>";
 							
 							
@@ -98,6 +99,6 @@ require_once("headerAgent.php");
 				
     ?>
 </body>
-
+<script src='autoCompleteDec.js'></script>
 </html>
  

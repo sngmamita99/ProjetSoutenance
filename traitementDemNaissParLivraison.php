@@ -11,11 +11,12 @@
 		text-align:center;
 		
 	}
-	#act
+	#acc
 	{
 		background:green;
 		color:white;
 		text-align:center;
+		border:0px hidden green;
 		
 	}
 	#im
@@ -129,14 +130,15 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 						if($etat_demande=='0')
 							{
 								echo "<td>";
-								echo "<a href='accepter.php?idRegistre=$numDemande'>Accepter</a></td>";
+								echo "<a href='accepter.php?idRegistre=$numDemande'><button id='acc'>Accepter</button></a></td>";
 								echo "</td>";
 							}
 							else
 								
 							{	
 								echo "<td>";
-								echo"<span>Dejà accepté</span>";
+								echo"<button id='acc'>Dejà accepté</button>";
+								// echo"<span></span>";
 								// echo "<a href='accepter.php?idRegistre=$numDemande'>Accepter</a></td>";
 								echo "</td>";	
 
@@ -148,11 +150,11 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 								echo "</td>";	
 
 					}
-					else if(($etat_paiement==1) &&($etat_transmission==0))
+					else if(($etat_paiement==1) AND ($etat_transmission==0))
 					{
 								
 								echo "<td>";
-								echo"<span>payé</span>";
+								echo"<button>Déjà payé</button>";
 								echo "<a href='Transmission.php?
 								numDem=$numDemande&annDec=$annee_registre
 								&numReg=$numeroDeRegistre'><button>Transmettre</button></a>";
