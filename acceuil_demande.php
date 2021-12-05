@@ -49,7 +49,8 @@ body
                         puis cliquez sur le bouton recherche.</h5>
                     <div class="input-field col s6 m6 offset-s6 white">
                      <form method="POST" action="rechercherDem.php">
-                        <input id="icon_prefix" placeholder="Code de recherche" type="search" class="validate" name="Code_de_recherche">
+                        <input id="icon_prefix" placeholder="Code de recherche" type="search" class="validate" 
+						name="Code_de_recherche">
                     </div>
                     <br>
                     <br>

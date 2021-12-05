@@ -170,6 +170,7 @@ alignment: 'right'
 });
 </script>		
 </style>
+<body>
     <div class="row">
         <div class="slider ">
 		
@@ -221,14 +222,9 @@ h3,h5
 }
 nav {
   background-color: #00695c  ; 
+
 }
-body {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: #999;
-}
+
 
 #preloader {
     position: absolute;

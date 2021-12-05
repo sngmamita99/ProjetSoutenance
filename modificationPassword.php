@@ -57,7 +57,22 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 <head>
 	<meta charset="utf-8"/>
 	<title>traitement</title>
+	<style>
+	body
 	
+	{
+		background-image:url("https://cdn.pixabay.com/photo/2017/03/03/16/11/key-2114313_1280.jpg");
+	}
+	#btn
+	
+	{
+		background:#00695c ;
+	}
+	#btn:hover
+	{
+		color:white;
+	}
+	</style>
 
 </head>
 <div class="modal modal" id="timeoutModal">
@@ -167,7 +182,7 @@ alignment: 'right'
 					</div>
 					<div class="row">
 						<div class="col s3 m2 offset-m8 offset-s1 input-field">
-							<input class="btn" type="submit" name="enregistrer" value="Sauvegarder" >
+							<input id="btn" class="btn" type="submit" name="enregistrer" value="Sauvegarder" >
 						</div>
 					</div>
 				</form>

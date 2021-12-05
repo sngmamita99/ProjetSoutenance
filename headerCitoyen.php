@@ -115,7 +115,7 @@ $(window).on('load', function() {
 </ul>
 <div class="white center entete_img row center" style="margin-bottom: 0px">
   <img style="" src=""  alt="logo" class="col s2 offset-s2" >
-  <h4 class="col s6" style="font:'times new roman';">Système d'Enregistrement<br>d'Etat Civil Automatisé</h4>
+  <h4 class="col s6" style="font:'times new roman';">Commune de Diamaguene<br> d'Etat Civil Automatisé</h4>
 </div>
 
 <nav>
@@ -218,6 +218,7 @@ alignment: 'right'
 		}
 	</style>
 	<script type="text/javascript">
+	
 		function demandes() {
 				var mois = $('select:eq(0)').val();
 			    var annee = $('select:eq(1)').val();

@@ -1,11 +1,13 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
 <!------ Include the above in your HEAD tag ---------->
 <?php
-require_once("SessionError.php");
- $SESSION = new Session();
+// require_once("SessionError.php");
+ // $SESSION = new Session();
  ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,6 +77,15 @@ label
 	background:green;
 	margin-right:250px;
 }
+#quitter
+{
+	color:white;
+	
+	background:green;
+	margin-right:250px;
+	border:0px hidden green;
+	
+}
 input:focus
 		{    
 		outline: 0;  
@@ -100,12 +111,15 @@ input:focus
 </style>
 </head>
 <body>
-<?php $SESSION->flash();?>
+<?php 
+// $SESSION->flash();
+?>
 <div class="bloc">
 	<video autoplay ="autoplay" muted=""  loop="infinite" src="../drapeauSN.mp4"></video>
     <div id="login-overlay" class="modal-dialog">
             <div class="modal-body">
-                <form id="registerForm" method="POST" action="inscriptionAPI.php">
+              <!--  <form id="registerForm" method="POST" action="inscriptionAPI.php">--> 
+			  <form id="registerForm" method="POST" action="">
 <!---form--->           <div class="form-group">
 <!---input width--->    <div class="col-xs-6">
                         <label for="InputName">Prénom</label>
@@ -196,7 +210,8 @@ input:focus
                  
                 </div>
                   <input type="submit" name="soumettre" id="soumettre" value="soumettre" class="btn btn-success pull-right">
-                  
+				 <!-- <a href='index.php'><button  id="quitter">Quitter</button></a>-->
+
                   </div>
                 </div>
                 </form>
@@ -205,5 +220,104 @@ input:focus
        </div>
 </div>
 <script src="alert.js"></script>
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
 </body>
 </html>
+ <?php
+ // require_once("SessionError.php");
+// session_start();
+// $SESSION=new Session();
+    $response=array();
+	
+	//connexion à la base de données
+    $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
+	
+	//vérifacation de la connexion
+	if($connect){
+	    
+		if(isset($_POST['nom']) AND isset($_POST['prenom']) AND isset($_POST['adresse']) AND isset($_POST['email'])
+			AND isset($_POST['numtel']) AND isset($_POST['profil']) AND isset($_POST['lg'])){
+			
+			$nom=$_POST['nom'];
+			$pnom=$_POST['prenom'];
+			$adresse=$_POST['adresse'];	
+			$email=$_POST['email'];
+			$lg=$_POST['lg'];
+			$numtel=$_POST['numtel'];
+			$profil=$_POST['profil'];
+			
+			$string = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&";
+            $mdp = substr (str_shuffle($string),0,8);
+	
+			
+			$req1 = "SELECT * FROM users WHERE login='$lg' LIMIT 1";
+		    $result=$connect->query($req1);
+		    if($result->fetchAll())
+			{
+				echo'<script>';
+							echo'swal({
+								title: "Error!",
+								text: " Votre nom d\'utilisateur est déja utilisée",
+								icon: "info",
+								button: "ok"
+							});';
+					echo'</script>';
+				
+							 // $SESSION->setFlash("Cette adresse email est déja utilisée",'info');
+							// header("Location:inscrireD.php");
+		    }   
+		    else{
+				
+						// echo"<script>";
+	
+						// echo"</script>";
+			
+				$req2="INSERT INTO users (nom,prenom,adresse,email,login,password,numTel,profil,etat) values ('$nom','$pnom','$adresse','$email','$lg','$mdp','$numtel','$profil',0)";
+				$result2=$connect->exec($req2);
+				if($result2){
+					// header("Location:index.php");
+					
+							echo'<script>';
+							echo'swal({
+								title: "Inscription Reussie!",
+								text: " Vos parametres de connexion vous seront envoyer par mail",
+								icon: "success",
+								button: "ok"
+							});';
+							// window.location.href='index.php';
+					echo'</script>';
+					
+							  // $SESSION->setFlash("Inscription Reussie! Vos parametres de connexion vous seront envoyer par mail",'success');
+							// header("Location:inscrireD.php");
+					
+                }
+				else{
+					echo'<script>';
+							echo'swal({
+								title: "Inscription non Reussie!",
+								text: " Veuillez réessayer une nouvelle inscription",
+								icon: "error",
+								button: "ok"
+							});';
+					echo'</script>';
+					// $response["success"]=0; 
+					// $response["message"]="Inscription Non Reussie";
+					// echo json_encode($response); 
+				}	
+			}	
+				
+		}
+		// else{
+		
+		    // $response["success"]=0; 
+		    // $response["message"]="Tous les champs sont obligatoires";
+		    // echo json_encode($response); 
+        // }
+	}
+	else{
+		
+		$response["success"]=0; 
+		$response["message"]="Erreur de connexion";
+		echo json_encode($response); 
+	}
+?>

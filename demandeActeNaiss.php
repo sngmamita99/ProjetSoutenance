@@ -1,4 +1,4 @@
-<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script > 
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
 <?php
 require_once("headerCitoyen.php");
 // traitement_dem_acte_naiss.php page destination
@@ -10,9 +10,20 @@ require_once("headerCitoyen.php");
     <title>Demande d'acte d'état civils</title>
     <meta charset="utf-8">
 <style type="text/css">
-body {
-    background-color: #eff1f2;
+body 
+{
+   
+		background-image:url("https://cdn.pixabay.com/photo/2017/03/03/16/11/key-2114313_1280.jpg");
 }
+#btn
+	
+	{
+		background:#00695c ;
+	}
+	#btn:hover
+	{
+		color:white;
+	}
 </style>
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -174,7 +185,7 @@ $(window).on('load', function() {
                 </div>
                 <div class="row">
                     <div class="col s2 offset-s8 input-field">
-                        <input class="btn white-text blue darken-4" type="submit" name="enregistrer"
+                        <input id="btn" class="btn white-text " type="submit" name="enregistrer"
                             value="Enregistrer">
                     </div>
                 </div>
