@@ -22,6 +22,15 @@
 		background:red;
 		color:white;
 		text-align:center;
+		border:0px hidden red;
+		
+	}
+	#annR
+	{
+		background:orange;
+		color:white;
+		text-align:center;
+		border:0px hidden red;
 		
 	}
 	td a
@@ -53,6 +62,10 @@
 	{
 		background:#FFC107;
 		color:white;
+	}
+	body
+	{
+		background-image:url("https://cdn.pixabay.com/photo/2018/04/07/08/28/notepad-3297994_1280.jpg");
 	}
 	</style>
 </head>
@@ -123,12 +136,20 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 				$num_dem=$ligne["numDeclaration"];
 				$date_dec=$ligne["date_declaration"];
 				$etat_demande=$ligne["etat"];
+				$etat_rejet=$ligne["etat_rejet"];
 				echo"<tr>
 				<td> $num_dem</td>
 				<td> $date_dec</td>";
-				echo"<td id='ann'>
-				<a href='annulerDemandeDec.php?numDem=$num_dem'>Annuler</a></td>";
-			
+				if($etat_rejet==0)
+				{
+					echo"<td>
+					<a href='annulerDemandeDec.php?numDem=$num_dem'><button  id='ann'>Annuler</button></a></td>";
+				}
+				else
+				{
+					echo"<td >
+					<a href='annulerDemandeDec.php?numDem=$num_dem'><button id='ann' >Demande rejetée</a></button></td>";
+				}
 			}
 			}
 			else

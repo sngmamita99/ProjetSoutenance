@@ -5,79 +5,52 @@ if(isset($_POST['nom']))
 	$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
 		{
-			$req="select * from declarationnaissance where prenom like '%$nom%'";
+			$req="select * from declarationnaissance where numDeclaration like '%$nom%' AND  etat = 0 AND etat_rejet =0";
 			$result=$connect->query($req);
-			echo"<h5>REGISTRE DES NAISSANCES</h5>";
-			echo'<table class="col s12 responsive-table striped " id="l_naissance">
-				<thead>
-					<tr class="purple darken-3 lighten-2 white-text center ">
-						<th>N° Acte</th>
-						<th>Date déclaration</th>	
-						<th>Type déclaration</td>
-						<th>Prénom </td>
-						<th>Nom</td>
-						<th>Date naissance</td>
-						<th>Lieu naissance</td>
-						<th>Pére et mére</td>
-						<th></th>
-						<th></th>
-						<th></th>
-					</tr>
-				</thead>';
-				if($result->rowCount())
+			if($result->rowCount()>=1)
+			{
+				
+				echo'<br/>';
+				echo"<div id='recuperation'></div>";
+				echo "<table class='bordered highlight centered col s12 m12' id='l_naissance'>";
+			echo"<thead>";
+				echo"<tr>";
+                    echo"<th>N°Demande </th>";
+                    echo"<th>Prénom</th><th>Nom</th><th>Lien de Parenté</th><th>Détails</th><th>Date de Soumission</th><th>Actions</th>";
+                echo"</tr>";	
+			echo"</thead>";
+               while($row=$result->fetch(PDO::FETCH_ASSOC))
 				{
-					while($ligne=$result->fetch())
-					{
-					$idRegistre=$ligne["idRegistre"];
-					$numActe=$ligne["num_registre"];
-					$date_declaration=$ligne["date_declaration"];
-					$type_declaration=$ligne["type_declaration"];
-					$prenom=$ligne["prenom_enfant"];
-					$nom=$ligne["nom_enfant"];
-					$date_naissance=$ligne["date_naissance_enfant"];
-					$lieuNaiss=$ligne["lieu_naissance_pere"];
-					$prenom_pere=$ligne["prenom_pere"];
-					$prenom_mere=$ligne["prenom_mere"];
-					$nom_mere=$ligne["nom_mere"];
-					$heure_naissance_enfant=$ligne["heure_naissance_enfant"];
-					echo"<tr>
-					<td>$numActe</td>
-					<td>$date_declaration</td>
-					<td>$type_declaration</td>
-					<td>$prenom</td>
-					<td>$nom</td>
-					<td>$date_naissance à $heure_naissance_enfant</td>
-					<td>$lieuNaiss</td>
-					<td>$prenom_pere & $prenom_mere $nom_mere</td>
-					
-					<td>
-					<img id='impression' src='images/impression.png'alt='imprimerie'/>
-					 <a href='impressionExtrait.php?idRegistre=$numActe'>Extrait</a>
-					<br/><img id='impression' src='images/impression.png' alt='imprimerie'/>
-					<a href='impressionCopieLitteral.php?idRegistre=$numActe'>Copie littérale</a>
-					</td>
-					<td>
-					<a href='modifier_enregistrement.php?idRegistre=$idRegistre'>
-					<img id='impression' src='https://previews.123rf.com/images/sulikns/sulikns1706/sulikns170600418/80878621-dessiner-modifier-stylo-crayon-%C3%A9crire-ic%C3%B4ne-vector-illustration-.jpg' alt='imprimerie'/>
-					</a>
-					</td>
-					<td>
-					<a href='suppressionDec.php?idRegistre=$idRegistre'><img id='suppression' src='images/supp.png'/></a>
-					</td>
-					</tr>";
-					
+						$numDe=$row['numDeclaration'];	
+                        $lien=$row['lienDeParente'];
+						$date=$row['date_declaration'];
+						$x=$row['numCompte'];
+						$req1="select * from users where idUser=$x";
+						$resultGood=$connect->query($req1);
+						$ligne=$resultGood->fetch();
+						$n=$ligne['nom'];	
+						$p=$ligne['prenom'];	
+						 echo "<tbody>";
+                        echo "<tr>";
+                            echo "<td>$numDe</td><td>$p</td><td>$n</td><td>$lien</td><td><a href='justificatif.php?code=$x'><img id='IconeEye' src='images/eye.png' alt='Icone details'/></a></td><td class='dateSoumission'>$date</td>";
+								echo "<td>";
+								    echo "<a href='rdv.php?code=$x&numDe=$numDe'><button class='valid'>Valider</button></a>";
+									echo "<a href='annulerDemande.php?code=$x&numDe=$numDe'><button class='annuler'>Rejeter</button></a>";
+                                  echo "</td>";
+							
+							
+						echo "</tr>";
+						 echo "</tbody>";
 					}
-				}
-				else
-				{
-					echo"<td>Aucun élement correspondant trouvé</td>";
-					
-				}
-					echo"</table>";
+			echo "</table>";
+			echo"</div>";
 			}
-			
-		
-	
+			else
+			{
+				echo"Aucun élément correspondant trouvé";
+			}
+				
+		}
 }
 
 ?>

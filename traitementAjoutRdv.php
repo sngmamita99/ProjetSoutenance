@@ -1,7 +1,7 @@
 <?php
- require_once("SessionError.php");
+ // require_once("SessionError.php");
 session_start();
-$SESSION=new Session();
+// $SESSION=new Session();
 	$date=$_SESSION['date'];
 	$numCompte=$_SESSION['numCompte'];
 	$numDe=$_SESSION['numDe'];
@@ -19,8 +19,10 @@ $SESSION=new Session();
 			// echo"$date $hdeb $hfin $type";
 			$req="insert into rdv (DateRdv,numCompte,type,heureDebut,heureFin) values ('$date',$numCompte,'$type','$hdeb','$hfin')";
 			$result=$connect->exec($req);
-			 $SESSION->setFlash("Rendez-vous ajouté avec succes Retournez à la page pour voir la nouvelle rendez-vous",'success');
-							header("Location:ajouterRdv/ajoutRdv.php?numCompte=$numCompte");
+			echo"Bonne insertion";
+			
+			 // $SESSION->setFlash("Rendez-vous ajouté avec succes Retournez à la page pour voir la nouvelle rendez-vous",'success');
+							// header("Location:ajouterRdv/ajoutRdv.php?numCompte=$numCompte");
 			
 		}
 		else

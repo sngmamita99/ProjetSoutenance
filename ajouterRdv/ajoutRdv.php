@@ -1,7 +1,9 @@
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script > 
 <?php
+session_start();
 // require_once("../headerAgent.php");
-require_once("../SessionError.php");
-$SESSION = new Session();
+// require_once("../SessionError.php");
+// $SESSION = new Session();
 $date=$_SESSION['date'];
 $numCompte=$_SESSION['numCompte'];
 	
@@ -19,6 +21,7 @@ $numCompte=$_SESSION['numCompte'];
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript" src="../jquery.min.js"></script>
+	<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script > 
 <style>
 #alert
 	{
@@ -48,7 +51,9 @@ body
 </style>
 	</head>
 	<body>
-	<?php $SESSION->flash();?>
+	<?php
+	// $SESSION->flash();
+	?>
 	<section class="ftco-section">
 		<div class="container">
 			
@@ -58,8 +63,10 @@ body
 						<div class="row no-gutters mb-5">
 							<div class="col-md-5">
 								<div class="contact-wrap w-100 p-md-5 p-4">
-							
-									<form method="POST"  action="../traitementAjoutRdv.php" id="contactForm" name="contactForm" class="contactForm">
+<!--<form method="POST"  action="../traitementAjoutRdv.php" 
+id="contactForm" name="contactForm" class="contactForm">-->
+<form method="POST"  action="" 
+id="contactForm" name="contactForm" class="contactForm">
 				<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
@@ -128,7 +135,7 @@ $('#hFin').blur(function (e) {
 			alert('Erreur\nL\'heure de Fin ne peut pas inferieur à l\'heure de Début');
 			$(this).addClass('invalid');
 			$('#ajout').attr("disabled","");
-			$('.erreur').text("Erreur\n Veillez vérifier les heures saisies");
+			$('.erreur').text("Erreur\n Veuillez vérifier les heures saisies");
 		}
 		else
 		{
@@ -138,6 +145,54 @@ $('#hFin').blur(function (e) {
 		}
 	});
 </script>
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script > 
 	</body>
 </html>
 
+<?php
+ // require_once("SessionError.php");
+// session_start();
+// $SESSION=new Session();
+	$date=$_SESSION['date'];
+	$numCompte=$_SESSION['numCompte'];
+	$numDe=$_SESSION['numDe'];
+		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
+        if($connect)
+		{ 	$req1="UPDATE declarationnaissance SET etat=1 WHERE numCompte = $numCompte AND numDeclaration=$numDe";
+			$result=$connect->exec($req1);
+		if(isset($_POST['hDebut']) && isset($_POST['hFin']) && isset($_POST['tdate']) && isset($_POST['typeDemande']))
+		{
+			$numCompte=$_SESSION['numCompte'];
+			$date=$_POST['tdate'];
+			$type=$_POST['typeDemande'];
+			$hdeb=$_POST['hDebut'];
+			$hfin=$_POST['hFin'];
+			// echo"$date $hdeb $hfin $type";
+			$req="insert into rdv (DateRdv,numCompte,type,heureDebut,heureFin) values ('$date',$numCompte,'$type','$hdeb','$hfin')";
+			$result=$connect->exec($req);
+			// echo"Bonne insertion";
+			echo'<script>';
+							echo'swal({
+								title: "Succés!",
+								text: " rendez-vous ajouté avec succés",
+								icon: "success",
+								button: "ok"
+							});';
+					echo'</script>';
+			
+			 // $SESSION->setFlash("Rendez-vous ajouté avec succes Retournez à la page pour voir la nouvelle rendez-vous",'success');
+							// header("Location:ajouterRdv/ajoutRdv.php?numCompte=$numCompte");
+			
+		}
+		// else
+		// {
+			// echo"Veuillez remplir toutes les données";
+		// }
+			
+				
+		}
+		else
+		{
+			echo"connexion not reussi";
+		}
+	?>

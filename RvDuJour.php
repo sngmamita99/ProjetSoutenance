@@ -111,8 +111,12 @@ require_once("headerAgent.php");
     ?>
 	<?php 
 	 
-	echo"<a class='BouttonAjout' 
-			href='ajouterRdv/ajoutRdv.php?numCompte=$numCompte&numDe=$numDe'> + </a>";
+	// echo"
+	// <a class='BouttonAjout' 
+			// href='ajouterRdv/ajoutRdv.php?numCompte=$numCompte&numDe=$numDe'> + </a>";
+			echo"
+	<a class='BouttonAjout' 
+			href='ajouterRdv/ajoutRdv.php'> + </a>";
 		?>
 		<script src="rdv.js">
 </script>	

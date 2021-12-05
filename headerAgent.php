@@ -142,12 +142,12 @@ $(window).on('load', function() {
             Rendez-vous</a>
         </li>
       <li>
-          <a href="l_demande_acte.php" class="dropdown-trigger"  data-target="demande_acte" >
+          <a href="" class="dropdown-trigger"  data-target="demande_acte" >
             Demandes d'actes de Naissance
                       </a>
         </li>
 		 <li>
-          <a href="DemandeDecNaiss.php" class="dropdown-trigger" data-beloworigin="true" data-target="declaration">
+          <a href="" class="dropdown-trigger" data-beloworigin="true" data-target="declaration">
             Demandes de déclaration
             </a>
         </li>
@@ -195,12 +195,14 @@ padding-left: 50px;
 overflow-y: visible;
 }
 /* Permet de décaler la liste déroulante vers la droite*/
-.dropdown-content .dropdown-content {
-margin-left: 100%;
+.dropdown-content .dropdown-content 
+{
+	margin-left: 100%;
 }
-body{
-font: 14pt 'times new roman';
-background-color: white;
+body
+{
+		font: 14pt 'times new roman';
+		background-color: white;
 }
 </style>
 <script type="text/javascript">

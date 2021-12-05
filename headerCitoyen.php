@@ -102,7 +102,7 @@ $(window).on('load', function() {
    <li> <a href="DemandeDecNaiss.php"> Naissance</a></li>
   <li><a href="l_demande_acte_confirme.php">Mariage</a></li>
     <li><a href="l_demande_acte_confirme.php">Déces</a></li>
-	<li><a href="suivi_demandeDec.php">Suivi de nos demandes</a></li>
+	<li><a href="suivi_demandeDec.php">Suivi de mes demandes</a></li>
 </ul>
 
 <!--Dropdown structure impression -->
@@ -134,7 +134,7 @@ $(window).on('load', function() {
                       </a>
         </li>
 		 <li>
-          <a href="DemandeDecNaiss.php" class="dropdown-trigger" data-beloworigin="true" data-target="declaration">
+          <a href="" class="dropdown-trigger" data-beloworigin="true" data-target="declaration">
             Demandes de déclaration
             </a>
         </li>

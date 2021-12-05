@@ -6,7 +6,7 @@ require_once("headerAgent.php");
 	<head>
 		<meta charset="utf-8"/>
 		<title>Prise de rdv</title>
-		<link rel="stylesheet" href="calendrierP.css"/>
+	<!--	<link rel="stylesheet" href="calendrierP.css"/>-->
 		<style>
 nav ul li a
 {
@@ -49,8 +49,10 @@ $numDe=$_SESSION["numDe"];
 <div class="d-flex flex-row align-items-center justify-content-between  mx-sm-3">
 	<h1><?=$month->toString();?></h1>
 	<div>
-	<a href="rdv.php?month=<?= $month->previousMonth()->month; ?>&year=<?= $month->previousMonth()->year; ?>" class= "btn btn-primary ya">&lt;</a>
-	<a href="rdv.php?month=<?= $month->nextMonth()->month; ?>&year=<?= $month->nextMonth()->year; ?>" class= "btn btn-primary">&gt;</a>
+	<a href="rdv.php?month=<?= $month->previousMonth()->month; ?>
+	&year=<?= $month->previousMonth()->year; ?>" class= "btn btn-primary ya">&lt;</a>
+	<a href="rdv.php?month=<?= $month->nextMonth()->month; ?>
+	&year=<?= $month->nextMonth()->year; ?>" class= "btn btn-primary">&gt;</a>
 	
 		
 	</div>

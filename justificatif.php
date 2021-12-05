@@ -1,4 +1,6 @@
-
+<?php
+require_once("headerAgent.php");
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,6 +14,10 @@
 			margin-left:300px;
 			
 		}
+	body
+	{
+		background-image:url("https://cdn.pixabay.com/photo/2018/04/07/08/28/notepad-3297994_1280.jpg");
+	}
 		</style>
 	</head>
 	<body >

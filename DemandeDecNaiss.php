@@ -161,12 +161,15 @@ alignment: 'right'
 							</div>
 					      </div>
 						  <div class="col s3 m1 offset-m1 offset-s6 input-field">
-						<input class="btn valider" type="submit" style="background-color:#00695c" name="enregsitrer" value="Envoyer">
+						<input class="btn valider"  id='btn' type="submit" style="background-color:#00695c" name="enregsitrer" value="Envoyer">
 					</div>
 					    </form>
 <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script > 
 </body>
 	<style type="text/css">
+	footer {
+    background-color: #00695c !important;
+}
 	span{
 		color:black;
 		font-weight:bold
@@ -194,8 +197,12 @@ alignment: 'right'
 			font-family: "times new roman";
 			font-size: 20px;
 		}
+		#btn:hover
+		{
+			color:white;
+		}
 	</style>
-	
+
 	<script type="text/javascript">
 	
 		function demandes() {

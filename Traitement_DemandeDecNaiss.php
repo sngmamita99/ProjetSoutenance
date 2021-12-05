@@ -32,6 +32,10 @@ require_once("headerAgent.php");
 	text-align:center;
 	
 }
+body
+	{
+		background-image:url("https://cdn.pixabay.com/photo/2018/04/07/08/28/notepad-3297994_1280.jpg");
+	}
 
 </style>
 <body>
@@ -45,13 +49,13 @@ require_once("headerAgent.php");
         if($connect)
 		{ 
 		
-		    $req="SELECT * FROM declarationnaissance  where etat =0 ORDER by date_declaration";
+		    $req="SELECT * FROM declarationnaissance  where etat =0 AND etat_rejet =0  ORDER  by date_declaration DESC";
 			$res=$connect->query($req);
 			if($res->rowCount()>=1)
 			{
 				echo"<div id='rech'>";
                     echo' <form method="POST" action="rechercherDec.php">';
-                       echo' <input id="icon_prefix" placeholder="prenom ou nom figurant sur la demande" 
+                       echo' <input id="icon_prefix" placeholder="Entrez un numéro de demande" 
 					   type="search" class="validate" name="Code_de_recherche">';
                 echo'</form>'; 
 				echo'<br/>';
@@ -79,7 +83,7 @@ require_once("headerAgent.php");
                             echo "<td>$numDe</td><td>$p</td><td>$n</td><td>$lien</td><td><a href='justificatif.php?code=$x'><img id='IconeEye' src='images/eye.png' alt='Icone details'/></a></td><td class='dateSoumission'>$date</td>";
 								echo "<td>";
 								    echo "<a href='rdv.php?code=$x&numDe=$numDe'><button class='valid'>Valider</button></a>";
-									echo "<a href='annulerDemande.php?code=$x&numDe=$numDe'><button class='annuler'>Annuler</button></a>";
+									echo "<a href='annulerDemande.php?code=$x&numDe=$numDe'><button class='annuler'>Rejeter</button></a>";
                                   echo "</td>";
 							
 							
