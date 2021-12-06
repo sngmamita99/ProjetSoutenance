@@ -15,6 +15,21 @@ require_once("headerAgent.php");
    .<!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<script type="text/javascript" src="jquery.min.js"></script>-->
 	<style>
+body
+{
+	background-image:url("https://cdn.pixabay.com/photo/2018/04/07/08/28/notepad-3297994_1280.jpg");
+}
+table
+	{
+		width:50%;
+		text-align:center;
+		margin:auto;
+	}
+	#aucun
+{
+	text-align:center;
+	font-size:30px;
+}
 nav ul li a
 {
 	text-decoration:none;
@@ -90,7 +105,7 @@ th,td
 			
 				if($result->rowCount()>=1)
 			{ echo"<h2 id='titreRv'>Rendez-vous du Jour_J </h2>";
-				echo "<table class='table table-bordered'>";
+				echo "<table class='table table-bordered' id='tab'>";
 				echo"<thead>";
 				echo"<tr>";
                 echo"<th>Prenom</th><th>Nom</th><th>Heure De Début</th><th>Heure De Fin</th>";
@@ -143,7 +158,7 @@ th,td
 			}
 			else
 			{
-				echo"Il n'ya pas de rdv affecté à cette date";
+				echo"<div id='aucun'>Il n'ya pas de rdv affecté à cette date</div>";
 			}
 		}
 				

@@ -34,6 +34,7 @@ if(isset($_POST['nom']))
 						<th></th>
 						<th></th>
 						<th></th>
+						<th></th>
 					</tr>
 				</thead>';
 				if($result->rowCount())
@@ -76,6 +77,8 @@ if(isset($_POST['nom']))
 					<td>
 					<a href='suppressionDec.php?idRegistre=$idRegistre'><img id='suppression' src='images/supp.png'/></a>
 					</td>
+					<td><a href='justificatifReg.php'><img id='suppression' src='images/jus.png'/></td>
+					</tr>;
 					</tr>";
 					
 					}

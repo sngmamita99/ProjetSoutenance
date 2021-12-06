@@ -1,4 +1,4 @@
-<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script > 
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script > 
 <?php 
 require_once("headerCitoyen.php");
 $date_declaration = date("Y-m-d");

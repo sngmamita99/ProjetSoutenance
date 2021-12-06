@@ -7,8 +7,14 @@ require_once("headerCitoyen.php");
 	<title>rdv_citoyen</title>
 	<style>
 	body
+{
+	background-image:url("https://cdn.pixabay.com/photo/2018/04/07/08/28/notepad-3297994_1280.jpg");
+}
+table
 	{
-		background:white;
+		width:50%;
+		text-align:center;
+		margin:auto;
 	}
 	</style>
 </head>

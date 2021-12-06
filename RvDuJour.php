@@ -34,7 +34,17 @@ require_once("headerAgent.php");
 		margin-top:90px;
 		
 	}
-	
+	body
+	{
+		background-image:url("https://cdn.pixabay.com/photo/2018/04/07/08/28/notepad-3297994_1280.jpg");
+	}
+	table
+	{
+		width:50%;
+		text-align:center;
+		margin:auto;
+	}
+
 	</style>
   </head>
   <body>
@@ -60,7 +70,7 @@ require_once("headerAgent.php");
 				if($res->rowCount()>=1)
 					
 			{  echo"<h2 id='titreRv'>Rendez-vous du $date </h2>";
-				echo "<table class='table table-bordered'>";
+				echo "<table class='table table-bordered '>";
 				echo"<thead>";
 				echo"<tr>";
                     echo"<th>Rdv N°:</th><th>Prénom</th><th>Nom</th>";

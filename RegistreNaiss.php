@@ -83,6 +83,68 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 			$stmt->bindParam(37, $profession_declarant);
 			$stmt->bindParam(38,$degre_parente);
 			$stmt->execute();
+			$jus=$connect->lastInsertId();
+				if(!empty($_FILES['cniP']))
+					{
+						
+						
+						$h=date('dmYHis',time());
+						$photos=$_FILES['cniP'];
+						$dest=$h.'_'.$photos['name'];
+						$chemin ='photos/'.$dest;
+						$images=move_uploaded_file($photos['tmp_name'],$chemin);
+						if($images)
+						{
+							$req2 = $connect->prepare("INSERT into justificatif(libelle,url,idRegistre) values (?,?,?)");
+							$res1 = $req2->execute(array('Carte National d’identité du pére',$chemin,$jus));
+						}
+						else
+						{
+							echo"transfert non ok";
+						}
+					}
+					
+					
+					if(!empty($_FILES['cniM']))
+					{
+						
+						
+						$h=date('dmYHis',time());
+						$photos=$_FILES['cniM'];
+						$dest=$h.'_'.$photos['name'];
+						$chemin ='photos/'.$dest;
+						$images=move_uploaded_file($photos['tmp_name'],$chemin);
+						if($images)
+						{
+							$req2 = $connect->prepare("INSERT into justificatif(libelle,url,idRegistre) values (?,?,?)");
+							$res1 = $req2->execute(array('Carte National d’identité de la mére',$chemin,$jus));
+						}
+						else
+						{
+							echo"transfert non ok";
+						}
+					}
+					
+					
+					if(!empty($_FILES['cert_accouch']))
+					{
+						
+						
+						$h=date('dmYHis',time());
+						$photos=$_FILES['cert_accouch'];
+						$dest=$h.'_'.$photos['name'];
+						$chemin ='photos/'.$dest;
+						$images=move_uploaded_file($photos['tmp_name'],$chemin);
+						if($images)
+						{
+							$req2 = $connect->prepare("INSERT into justificatif(libelle,url,idRegistre) values (?,?,?)");
+							$res1 = $req2->execute(array('Certificat d\'accouchement',$chemin,$jus));
+						}
+						else
+						{
+							echo"transfert non ok";
+						}
+					}
 			header("Location:RegistreDesNaissances.php");
 		}
 		else

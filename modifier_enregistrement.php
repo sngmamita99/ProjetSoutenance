@@ -301,8 +301,69 @@ $degre_parente=$ligne["degre_parente"];
 							  </div>
 							</li>
 							<!-- Pièces justificatives -->
+							<?php
+							$idRegistre=$_GET["idRegistre"];
+							$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
+							if($connect)
+							{ 	
+								$req2="Select * FROM  justificatif where idRegistre=$idRegistre ";
+								$result2=$connect->query($req2);
+								while($ligne=$result2->fetch())
+								{
+									$jus=$ligne["libelle"];
+									if($jus=='Carte National d’identité du pére')
+									{
+										$cniP=$ligne["libelle"];
+									}
+									else if($jus=='Carte National d’identité de la mére')
+									{
+										$cniM=$ligne["libelle"];
+									}
+									else
+									{
+										$cer=$ligne["libelle"];
+									}
+								}
+							}
+							?>
 							<li>
-							  <div class="collapsible-header"><b>Pièces Justificatives</b></div>
+							<div class="collapsible-header"><b>Pièces Justificatives</b></div>
+					      <div class="collapsible-body">
+					      	<div class="row" id="doc">
+								<div class="file-field input-field col s12">
+									<div class="btn blue darken-4">
+										<span>Pièce d’identité</span>
+										<input type="file" accept="images/*" name="cniP" class=" pi">
+									</div>
+									<div class="file-path-wrapper">
+										<input class="file-path validate pi" placeholder="Carte National d’identité du pére "  type="text" value="<?php echo '$cniP';?>" >
+									</div>
+								</div>
+							</div>
+							<div class="row" id="doc">
+								<div class="file-field input-field col s12">
+									<div class="btn blue darken-4">
+										<span>Pièce d’identité</span>
+										<input type="file" accept="images/*" name="cniM" class="domicle">
+									</div>
+									<div class="file-path-wrapper">
+										<input class="file-path validate domicle" placeholder="Carte National d’identité de la mére"  type="text" value="<?php echo '$cniM';?>">
+									</div>
+								</div>
+							</div>
+							<div class="row" id="doc">
+								<div class="file-field input-field col s12">
+									<div class="btn blue darken-4">
+										<span >Sélectionner</span>
+										<input type="file" accept="images/*" name="cert_accouch" class=" fichier_naissance" value="<?php echo '$cer';?>" >
+									</div>
+									<div class="file-path-wrapper">
+										<input class="file-path validate fichier_naissance" placeholder="Certificat d'accouchement"  type="text" >
+									</div>
+								</div>
+							</div>
+					      </div>
+							 <!-- <div class="collapsible-header"><b>Pièces Justificatives</b></div>
 							  <div class="collapsible-body">
 							  									<div class="row" id="doc">
 									<div class="file-field input-field col s12">
@@ -315,7 +376,7 @@ $degre_parente=$ligne["degre_parente"];
 										</div>
 									</div>
 								</div>
-							  </div>
+							  </div>-->
 							</li>
 						</ul>
 							

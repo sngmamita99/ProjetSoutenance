@@ -1,5 +1,5 @@
 <?php
-require_once("headerAgent.php");
+// require_once("headerAgent.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,6 +22,7 @@ nav ul li a:hover
 {
 	text-decoration:none;
 }
+
 	</style>
 	</body>
 <?php

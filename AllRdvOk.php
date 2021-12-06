@@ -1,7 +1,7 @@
 <?php
 require_once("heederOfficier.php");
 ?>
-<<!--link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!--link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
@@ -10,10 +10,25 @@ require_once("heederOfficier.php");
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Cours Complet Bootstrap 4</title>
+    <title></title>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<style>
+	body
+	{
+		background-image:url("https://cdn.pixabay.com/photo/2018/04/07/08/28/notepad-3297994_1280.jpg");
+	}
+	#aucun
+{
+	text-align:center;
+	font-size:25px;
+}
+table
+	{
+		width:50%;
+		text-align:center;
+		margin:auto;
+	}
 	button
 {
 	width:63%;
@@ -66,13 +81,19 @@ nav ul li a:hover
 {
 	text-decoration:none;
 }
+#val
+{
+	width:20px;
+	height:20px;
+}
 	</style>
   </head>
   <body>
 
 <!--<script  src="rechercher.js"></script>-->	
 	 <?php 
-	$date=$_GET['date'];
+	 
+		$date=$_GET['date'];
 		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
 		{ 
@@ -85,7 +106,7 @@ nav ul li a:hover
 				echo"<thead>";
 				echo"<tr>";
                 echo"<th>Prenom</th><th>Nom</th><th>Heure De Début</th><th>Heure De Fin</th>";
-                echo'<th colspan="2">Etat</th>'; 
+                echo'<th></th>'; 
                 echo"</tr>";	
 				echo"</thead>";
                while($row=$result->fetch(PDO::FETCH_ASSOC))
@@ -102,20 +123,24 @@ nav ul li a:hover
 							$hd=$sql2['heureDebut'];
 							$hf=$sql2['heureFin'];
 							$etat=$sql2['etatRdv'];
-							// $etat=$row['etatRdv'];
+							$idRdv=$sql2['idRdv'];
 							// $hdeb=$row['heureDebut'];
 							// $hfin=$row['heureFin'];
 						 echo "<tbody>";
                         echo "<tr>";
-                            echo "<td>$p</td><td>$nm</td><td>$hd</td><td>$hf</td>";
+                            echo 
+							"<td>$p</td>
+							<td>$nm</td>
+							<td>$hd</td>
+							<td>$hf</td>
+							<td><a href='supprimerRdv.php?idRdv=$idRdv'><img id='val' src='images/v.png' alt='image de validation'></a></td>";
 							
 							if($etat=='0')
 							{
-								//letat doit etre modifié car il permet de l'effacer cote citoyen
 								echo "<td  id='desact'>";
 								    echo '<span>ABSENT</span>';
                                    echo "</td>";
-								   // echo '<td><a href="activer.php"><button class="btn btn-success">activer</button></a></td>';
+								 
 								   echo '<td><a title="cliquez ici si la personne est presente" href="present.php?code='.$numCompte.'&date='.$date.'"><img id="presence" src="images/presence.png"></a></td>';
 							}
 							// else
@@ -133,7 +158,7 @@ nav ul li a:hover
 			}
 			else
 			{
-				echo"Il n'ya pas de rdv affecté à cette date";
+				echo"<div id='aucun'>Il n'ya pas de rdv affecté à cette date</div>";
 			}
 		}
 				

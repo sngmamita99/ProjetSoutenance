@@ -36,7 +36,11 @@ body
 	{
 		background-image:url("https://cdn.pixabay.com/photo/2018/04/07/08/28/notepad-3297994_1280.jpg");
 	}
-
+#aucun
+{
+	text-align:center;
+	font-size:30px;
+}
 </style>
 <body>
 <br/>
@@ -95,7 +99,7 @@ body
 			}
 			else
 			{
-				echo"Il n'ya pas encore de declaration de naissance";
+				echo"<div id='aucun'>Il n'ya pas encore de declaration de naissance</div>";
 			}
 				
 			

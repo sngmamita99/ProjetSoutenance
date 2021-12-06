@@ -13,9 +13,10 @@ require_once("heederOfficier.php");
 <link type="text/css" rel="stylesheet" href="css1/formulaire.css" media="screen,projection" />
 
 <style type="text/css">
-body {
-    background-color: white;
-}
+body
+	{
+		background-image:url("https://cdn.pixabay.com/photo/2018/04/07/08/28/notepad-3297994_1280.jpg");
+	}
 nav ul li a
 {
 	text-decoration:none;
@@ -431,22 +432,22 @@ background-color: #eff1f2;
 					      	<div class="row" id="doc">
 								<div class="file-field input-field col s12">
 									<div class="btn blue darken-4">
-										<span >Pièce d’identités</span>
-										<input type="file" accept="application/pdf" name="pi[]" class=" pi" multiple>
+										<span>Pièce d’identité</span>
+										<input type="file" accept="images/*" name="cniP" class=" pi">
 									</div>
 									<div class="file-path-wrapper">
-										<input class="file-path validate pi" placeholder="Carte National d’identité / Passeport / Permis de Conduire "  type="text" >
+										<input class="file-path validate pi" placeholder="Carte National d’identité du pére "  type="text" >
 									</div>
 								</div>
 							</div>
 							<div class="row" id="doc">
 								<div class="file-field input-field col s12">
 									<div class="btn blue darken-4">
-										<span >Autres</span>
-										<input type="file" accept="application/pdf" name="domicle[]" class=" domicle" multiple>
+										<span>Pièce d’identité</span>
+										<input type="file" accept="images/*" name="cniM" class="domicle">
 									</div>
 									<div class="file-path-wrapper">
-										<input class="file-path validate domicle" placeholder="Autres justificatifs"  type="text" >
+										<input class="file-path validate domicle" placeholder="Carte National d’identité de la mére"  type="text" >
 									</div>
 								</div>
 							</div>
@@ -454,10 +455,10 @@ background-color: #eff1f2;
 								<div class="file-field input-field col s12">
 									<div class="btn blue darken-4">
 										<span >Sélectionner</span>
-										<input type="file" accept="application/pdf" name="fichier_naissance[]" class=" fichier_naissance" multiple>
+										<input type="file" accept="images/*" name="cert_accouch" class=" fichier_naissance" >
 									</div>
 									<div class="file-path-wrapper">
-										<input class="file-path validate fichier_naissance" placeholder="Attestation de naissance de l’hôpital / Clinique / Sanitaire"  type="text" >
+										<input class="file-path validate fichier_naissance" placeholder="Certificat d'accouchement"  type="text" >
 									</div>
 								</div>
 							</div>

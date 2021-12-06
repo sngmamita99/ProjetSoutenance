@@ -1,5 +1,5 @@
 <?php
-require_once("heederOfficier.php");
+// require_once("heederOfficier.php");
 ?>
 <!DOCTYPE html>
 <html>

@@ -6,7 +6,10 @@ $idConnected=$_SESSION['idConnected'];
 ?>
 
    <style>
- 
+ body
+	{
+		background-image:url("https://cdn.pixabay.com/photo/2018/04/07/08/28/notepad-3297994_1280.jpg");
+	}
    #impression
    {
 	   width:25px;
@@ -68,6 +71,7 @@ $idConnected=$_SESSION['idConnected'];
 						<th></th>
 						<th></th>
 						<th></th>
+						<th></th>
 					</tr>
 				</thead>';
 				while($ligne=$result->fetch())
@@ -90,7 +94,7 @@ $idConnected=$_SESSION['idConnected'];
 					<td>$type_declaration</td>
 					<td>$prenom</td>
 					<td>$nom</td>
-					<td>$date_naissance à $heure_naissance_enfant</td>
+					<td>$date_naissance  $heure_naissance_enfant</td>
 					<td>$lieuNaiss</td>
 					<td>$prenom_pere & $prenom_mere $nom_mere</td>
 					
@@ -108,6 +112,7 @@ $idConnected=$_SESSION['idConnected'];
 					<td>
 					<a href='suppressionDec.php?idRegistre=$idRegistre'><img id='suppression' src='images/supp.png'/></a>
 					</td>
+					<td><a href='justificatifReg.php'><img id='suppression' src='images/fi.png'/></td>
 					</tr>";
 					
 					// </td><td><img id='impression' src='https://previews.123rf.com/images/sulikns/sulikns1706/sulikns170600418/80878621-dessiner-modifier-stylo-crayon-%C3%A9crire-ic%C3%B4ne-vector-illustration-.jpg' alt='imprimerie'/><a href='impressionExtrait.php?idRegistre=$idRegistre'>Extrait de Naissance</a><br/><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionCopieLitteral.php'>Copie littérale</a></td></tr>";
