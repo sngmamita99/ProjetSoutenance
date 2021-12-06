@@ -49,7 +49,7 @@
 	{
 		width:50%;
 		margin-left:40%;
-		margin-top:-10%;
+		margin-top:-14%;
 		
 	}
 	#fina

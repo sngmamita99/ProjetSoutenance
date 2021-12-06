@@ -393,7 +393,7 @@ $degre_parente=$ligne["degre_parente"];
 						<a class="waves-effect waves-light btn modal-trigger yellow accent-4" href="#verification">Verification</a>
 					</div>
 					<div class="col s1 offset-s1 input-field">
-						<input class="btn valider" type="submit" name="enregsitrer" value="Enregsitrer">
+						<input class="btn valider" type="submit" name="enregsitrer" value="Enregistrer">
 					</div>
 					<div class="col s4 offset-s8 center ">
 						<span class="erreur red-text" ></span>

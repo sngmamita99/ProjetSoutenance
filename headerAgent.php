@@ -88,7 +88,7 @@ $(window).on('load', function() {
 });
 </script>
 	</head>
-	<body id="debut" >
+	<body id="debut">
 		<!--Dropdown structure demande d'acte 
 <ul id="demande_acte" class="dropdown-content">
   <li> <a href="traitementDemNaiss.php" > Naissance</a></li>

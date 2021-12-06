@@ -8,6 +8,10 @@ require_once("headerCitoyen.php");
 	<meta charset="utf-8"/>
 	<title>Traitement</title>
 	<style>
+	 body
+	{
+		background-image:url("https://cdn.pixabay.com/photo/2018/04/07/08/28/notepad-3297994_1280.jpg");
+	}
 	#ok
 	{
 		background:#FF8800;

@@ -24,21 +24,11 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style type="text/css">
 body {
-    background-color: white;
+    background-color: #eff1f2;
 }
 nav ul li a
 {
-	text-decoration:none;
 	font-size:20px;
-}
-nav ul li a:hover
-{
-	text-decoration:none;
-	color:white;
-}
-.brand-logo
-{
-	text-decoration:none;
 }
 </style>
 <!--Let browser know website is optimized for mobile-->
@@ -47,20 +37,7 @@ nav ul li a:hover
 <script type="text/javascript" src="js1/jquery.min.js"></script>
 <script type="text/javascript" src="js1/materialize.min.js"></script>
 
-
-<div class="modal modal" id="timeoutModal">
-    <div class="modal-content">
-        <h4 class="center">Timeout</h4>
-        <h5>
-            Vous session a été déconnecté.<br>
-            Veillez vous reconnectez.
-        </h5>
-    </div>
-    <div class="modal-footer">
-        <a class="modal-close btn-flat waves-effect blue">Connexion</a>
-    </div>
-</div>
-
+<script type="text/javascript">
 <script type="text/javascript">
 // Set timeout variables.
 var timoutNow = 900000;
@@ -116,10 +93,7 @@ $(window).on('load', function() {
 });
 </script>
 	</head>
-
-		
-
-
+<body id="debut">
 <!--Dropdown structure impression -->
 <ul id="impression" class="dropdown-content">
   <li><a href="valider_dem_acte_livraison.php">Naissance</a></li>
@@ -246,34 +220,5 @@ belowOrigin: false,
 alignment: 'right'
 });
 });
-</script>						<div id="preloader">
-				<div id="status">&nbsp;</div>
-				<script type="text/javascript">
-					M.toast({html: 'Bonjour <?php echo" $prenom $nom";?>!', classes: 'rounded'});
-				</script>
-					</body>
-	<style type="text/css">
-	git git histo
-#preloader {
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: #fefefe;
-z-index: 99;
-height: 100%;
-}
-#status {
-width: 200px;
-height: 200px;
-position: absolute;
-left: 50%;
-top: 50%;
-background-image: url(css/images/Spinner.gif);
-background-repeat: no-repeat;
-background-position: center;
-margin: -100px 0 0 -100px;
-}
-	</style>
-	
+</script>					
+</body>

@@ -51,7 +51,7 @@ nav ul li a:hover
         </h5>
     </div>
     <div class="modal-footer">
-        <a class="modal-close btn-flat waves-effect blue">Connexion</a>
+        <a class="modal-close btn-flat waves-effect blue">Fermer</a>
     </div>
 </div>
 

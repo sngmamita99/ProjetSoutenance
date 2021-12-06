@@ -143,13 +143,14 @@ th,td
 								echo "</td>";
 								echo '<td><a title="cliquez ici si la personne est presente" href="present.php?code='.$numCompte.'&date='.$date.'"><img id="presence" src="images/presence.png"></a></td>';
 							}
-							else
-							{
-								echo "<td  id='act'>";
-							    echo '<span>Présent</span>';
-                                echo "</td>";
-								echo '<td><a href="absent.php?code='.$numCompte.'&date='.$date.'"><button id="btn" ><img id="absent" src="images/absent.png"  "></button></a></td>';
-							}
+							// else
+							// {
+								// echo "<td  id='act'>";
+							    // echo '<span>Présent</span>';
+                                // echo "</td>";
+								// echo '<td><a href="absent.php?code='.$numCompte.'&date='.$date.'">
+								// <button id="btn" ><img id="absent" src="images/absent.png"  "></button></a></td>';
+							// }
 						echo "</tr>";
 						 echo "</tbody>";
 				
