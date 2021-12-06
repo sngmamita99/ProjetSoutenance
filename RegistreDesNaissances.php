@@ -112,7 +112,7 @@ $idConnected=$_SESSION['idConnected'];
 					<td>
 					<a href='suppressionDec.php?idRegistre=$idRegistre'><img id='suppression' src='images/supp.png'/></a>
 					</td>
-					<td><a href='justificatifReg.php'><img id='suppression' src='images/fi.png'/></td>
+					<td><a href='justificatifReg.php?idRegistre=$idRegistre'><img id='suppression' src='images/fi.png'/></td>
 					</tr>";
 					
 					// </td><td><img id='impression' src='https://previews.123rf.com/images/sulikns/sulikns1706/sulikns170600418/80878621-dessiner-modifier-stylo-crayon-%C3%A9crire-ic%C3%B4ne-vector-illustration-.jpg' alt='imprimerie'/><a href='impressionExtrait.php?idRegistre=$idRegistre'>Extrait de Naissance</a><br/><img id='impression' src='images/impression.png' alt='imprimerie'/><a href='impressionCopieLitteral.php'>Copie littérale</a></td></tr>";
