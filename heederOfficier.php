@@ -96,10 +96,9 @@ $(window).on('load', function() {
 <body id="debut">
 <!--Dropdown structure impression -->
 <ul id="impression" class="dropdown-content">
-  <li><a href="valider_dem_acte_livraison.php">Naissance</a></li>
+  <li><a href="valider_dem_acte_livraison.php">Par Livraison</a></li>
   <li class="divider"></li>
-  <li><a href="i_deces.php">Décés</a></li>
-  <li><a href="i_mariage.php">Mariage</a></li>
+   <li> <a href="traitementDemNaissSurPlace.php" >Sur Place</a></li>
 </ul>
 <!--Dropdown structure déclarations -->
 <ul id="declaration" class="dropdown-content">

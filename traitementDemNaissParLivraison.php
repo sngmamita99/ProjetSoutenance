@@ -180,7 +180,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					else
 					{
 						echo "<td>";
-								echo"<a href=''><button>Notifier</button></a>";
+								echo"<a href='Notification.php'><button>Notifier</button></a>";
 								echo "</td>";	
 					}
 					

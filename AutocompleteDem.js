@@ -5,7 +5,6 @@
 	var MonTitre=document.getElementById('MonTitre');
      icon_prefix.addEventListener("keyup",function(e){
        l_naissance.style.visibility='hidden';
-	   MonTitre.style.visibility='hidden';
        var nt=icon_prefix.value;
        var xhr=new XMLHttpRequest();
        var url="rechercherSurPlace.php";

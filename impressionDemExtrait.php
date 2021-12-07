@@ -162,7 +162,7 @@ $(window).on('load', function() {
 	</head>
 	<body >
 				<a href="" class="btn" onclick="window.print();">Imprimer</a>
-		<a href="traitementDemNaiss.php" class="btn" onclick="window.close();">Fermer</a>
+		<a href="traitementDemNaissSurPlace.php" class="btn" onclick="window.close();">Fermer</a>
 		<div class="contai white" style="padding:  10px">
 			<div class="row premier">
 				<div class="col s7 " style="border: 1px solid; height: 47mm">

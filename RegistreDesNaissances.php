@@ -47,9 +47,10 @@ $idConnected=$_SESSION['idConnected'];
 			$req="select * from registrenaissance ";
 			$result=$connect->query($req);
 			if($result->rowCount())
-			{echo"<div id='rech'>";
-		echo'<br/>';
-		echo'<br/>';
+			{
+					echo"<div id='rech'>";
+					echo'<br/>';
+					echo'<br/>';
                     echo' <form method="POST" action="rechercher.php">';
                        echo' <input id="icon_prefix" placeholder="prenom ou nom figurant sur la demande" 
 					   type="search" class="validate" name="Code_de_recherche">';

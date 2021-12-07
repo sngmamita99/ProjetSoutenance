@@ -97,7 +97,7 @@ $(window).on('load', function() {
     <li><a href="historique_dem_acte.php">Historiques</a></li>
 </ul>-->
 <ul id="demande_acte" class="dropdown-content">
-  <li> <a href="traitementDemNaissSurPlace.php" >Sur Place</a></li>
+ 
   <li><a href="traitementDemNaissParLivraison.php">Par Livraison</a></li>
     <li><a href="historique_dem_acte.php">Historiques</a></li>
 </ul>

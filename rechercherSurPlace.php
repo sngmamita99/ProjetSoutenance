@@ -1,77 +1,15 @@
-<script src='AutocompleteDem.js'></script><!DOCTYPE html>
-
-<html>
-<head>
-	<meta charset="utf-8"/>
-	<title>Traitement</title>
-	<style>
-	 body
-	{
-		background-image:url("https://cdn.pixabay.com/photo/2018/04/07/08/28/notepad-3297994_1280.jpg");
-	}
-	#desact
-	{
-		background:red;
-		color:white;
-		text-align:center;
-		
-	}
-	#act
-	{
-		background:green;
-		color:white;
-		text-align:center;
-		
-	}
-	#im
-	{
-		width:15px;
-		height:15px;
-	}
-	#imd
-	{
-		width:20px;
-		height:20px;
-	}
-	#icon_prefix
-{
-	width:300px;
-	margin-left:72%;
-}
-#l_naissance
-{
-	width:100%;
-	margin:auto;
-}
-td ,th
-{
-	font-size:20px;
-	text-align:center;
-}
-	
-	</style>
-</head>
-<body>
-
 <?php
-require_once("heederOfficier.php");
-$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
+if(isset($_POST['nom']))
+{
+	$nom=$_POST['nom'];
+	$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
-		{ 
-			$req="select * from demandeactedenaissance  where etat_demande=0 AND methode_paiement='Sur Place'";
+		{
+			$req="select * from demandeactedenaissance where (prenom like '%$nom%' OR nom like '%$nom%') AND methode_paiement = 'Sur Place' ";
 			$result=$connect->query($req);
-			if($result->rowCount())
+			if($result->rowCount()>=1)
 			{
-				echo'<br/>';
-				echo"<div id='rech'>";
-                    echo' <form method="POST" action="rechercherSurPlace.php">';
-                       echo' <input id="icon_prefix" placeholder="prenom ou nom figurant sur la demande" 
-					   type="search" class="validate" name="Code_de_recherche">';
-                echo'</form>'; 
-				echo'<br/>';
-				echo"<br/>";
-				echo"<div id='recuperation'></div>";
-			echo'<table class="col s12 responsive-table striped " id="l_naissance">
+				echo'<table class="col s12 responsive-table striped " id="l_naissance">
 				<thead>
 					<tr class="white darken-3 lighten-2 black-text center ">
 					<th>Numéro de Registre </th>
@@ -157,18 +95,13 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 				echo"</td>";
 				}
 				
-					echo"</table>";
+			echo"</table>";
 			}
 			else
 			{
-				echo"Il n'a aucune decaration de Naissance";
+				echo"Aucun élément correspondant trouvé";
 			}
+			
 		}
-		else
-		{
-			echo "Base de donnée non connecté";
-		}
+}
 ?>
-</body>
-<script src='AutocompleteDem.js'></script><!DOCTYPE html>
-</html>
