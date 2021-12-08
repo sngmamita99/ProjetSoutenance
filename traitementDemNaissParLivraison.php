@@ -174,18 +174,18 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					try 
 					{
 						
-					if($row["etat_demande"]==0)
-					{
-						echo "<td>";
-								echo"<button>en attente</button>";
-								echo "</td>";	
-					}
-					else
-					{
-						echo "<td>";
+						if($row["etat_demande"]==0)
+						{
+							echo "<td>";
+									echo"<button>en attente</button>";
+									echo "</td>";	
+						}
+						else
+						{
+							echo "<td>";
 								echo"<a href='Notification.php'><button>Notifier</button></a>";
 								echo "</td>";	
-					}
+						}
 					
 					}
 					catch(Exception $e)
