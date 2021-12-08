@@ -171,12 +171,10 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 								echo"<span>demande transmise</span>";
 								echo "</td>";	
 					}
-					try 
-					{
 						
-						if($row["etat_demande"]==0)
+						if(!empty($row["etat_demande"]==0))
 						{
-							echo "<td>";
+									echo "<td>";
 									echo"<button>en attente</button>";
 									echo "</td>";	
 						}
@@ -187,6 +185,9 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 								echo "</td>";	
 						}
 					
+					try
+					{
+						
 					}
 					catch(Exception $e)
 					{
