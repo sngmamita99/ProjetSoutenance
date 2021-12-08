@@ -119,7 +119,7 @@ $(window).on('load', function() {
 <!--Dropdown déconnexion -->
 <ul id="deconnexion" class="dropdown-content">
   <li> <a  href="deconnexion.php">Déconnexion</a></li>
-  <li> <a  href="m_pwd.php">Changer password</a></li>
+  <li> <a href="modificationPasswordOff.php">Changer password</a></li>
 </ul>
 
 <!--Dropdown autres documents -->
@@ -138,7 +138,7 @@ $(window).on('load', function() {
 
 <nav>
     <div class="nav-wrapper">
-      <a href="accueil.php" class="brand-logo">&nbsp&nbsp&nbsp Registre+</a>
+      <a href="acceuilOfficier.php" class="brand-logo">&nbsp&nbsp&nbsp Registre+</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="ab"   href="#"></a></li>

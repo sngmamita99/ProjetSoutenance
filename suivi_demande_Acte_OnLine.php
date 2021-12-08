@@ -9,6 +9,10 @@ require_once("headerCitoyen.php");
 	<meta charset="utf-8"/>
 	<title>Traitement</title>
 	<style>
+	 body
+	{
+		background-image:url("https://cdn.pixabay.com/photo/2018/04/07/08/28/notepad-3297994_1280.jpg");
+	}
 	#ok
 	{
 		background:#FF8800;
@@ -175,10 +179,10 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 				}
 				else if($etat_demande==1 AND $etat_paiement==1)
 				{
-					echo"<td><span id='oui'>Paiment ok</span></td>";
+					echo"<td><span id='oui'>dejà payé</span></td>";
 				
-						echo"<td id='termine'>
-						<a href='acceuil_demande.php'>Suivre Mes Livraisons</a>
+						echo"<td >
+						<a href='acceuil_demande.php?numDem=$num_dem'><button id='termine'>Consulter livraison </button></a>
 						";
 						echo"</td>
 						";

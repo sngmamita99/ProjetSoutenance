@@ -158,10 +158,10 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					{
 								
 								echo "<td>";
-								echo"<button>Déjà payé</button>";
+								echo"<button id='DejaPaye'>Déjà payé</button>";
 								echo "<a href='Transmission.php?
 								numDem=$numDemande&annDec=$annee_registre
-								&numReg=$numeroDeRegistre'><button>Transmettre</button></a>";
+								&numReg=$numeroDeRegistre'><button id='transmettre'>Transmettre</button></a>";
 								echo "</td>";	
 					}
 					else
@@ -171,6 +171,9 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 								echo"<span>demande transmise</span>";
 								echo "</td>";	
 					}
+					try 
+					{
+						
 					if($row["etat_demande"]==0)
 					{
 						echo "<td>";
@@ -184,6 +187,11 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 								echo "</td>";	
 					}
 					
+					}
+					catch(Exception $e)
+					{
+						echo"y a une exception ici";
+					}
 				}
 				
 					echo"</table>";

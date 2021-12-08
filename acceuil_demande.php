@@ -1,14 +1,17 @@
-
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
+<?php
+require_once("headerCitoyen.php");
+$numDem=$_GET["numDem"];
+?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8"/>
 <title>acceuil dem</title>
 <!--Import materialize.min.css-->
-<link type="text/css" rel="stylesheet" href="css1/materialize.min.css" media="screen,projection" />
-<link type="text/css" rel="stylesheet" href="css1/icones.css" media="screen,projection" />
-<link type="text/css" rel="stylesheet" href="css1/formulaire.css" media="screen,projection" />
+
 <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js" > </script > 
+
 <style type="text/css">
 body 
 {
@@ -40,17 +43,18 @@ body
     </div>-->
     <div class="row">
         <div class="col s12 m6 offset-m6">
-            <div class="card green  darken-4" id='carre'>
-                <div class="card-content white-text">
+            <div class="card   darken-4" id='carre'>
+                <div class="card-content black-text">
                     <span class="card-title">Consultation de l'etat d'avancement</span>
-                    <h5>Ici, il vous est possible de suivre l'état d'avancement de votre demande d'acte d'Etat civils
+                    <h5>Ici, il vous est possible de suivre l'état d'avancement de votre demande d'acte d'Etat civil
                         pour le recupérer. Pour cela, insérer juste le numéro de la demande
 						
                         puis cliquez sur le bouton recherche.</h5>
                     <div class="input-field col s6 m6 offset-s6 white">
-                     <form method="POST" action="rechercherDem.php">
+                    <!-- <form method="POST" action="rechercherDem.php"> -->
+					 <form method="POST" action="">
                         <input id="icon_prefix" placeholder="Code de recherche" type="search" class="validate" 
-						name="Code_de_recherche">
+						name="Code_de_recherche" value='<?php echo "$numDem" ?>'>
                     </div>
                     <br>
                     <br>
@@ -65,4 +69,68 @@ body
         </div>	
     </div>
  
+			 <?php
+if(isset($_POST["Code_de_recherche"]))
+{
+	$rech=$_POST["Code_de_recherche"];
+		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
+		if($connect)
+		{
+			$req="select * from demandeactedenaissance where numDemande=$rech LIMIT 1" ;
+			$result=$connect->query($req);
+			if($result->rowCount())
+			{
+			$ligne=$result->fetch();
+			$etat_demande=$ligne["etat_demande"];
+			$etat_paiement=$ligne["etat_paiement"];
+			$etat_transmission=$ligne["etat_transmission"];
+			// echo" $etat_demande $etat_paiement $etat_transmission";
+			if($etat_demande==1 AND $etat_paiement==1 AND $etat_transmission==1)
+			{
 				
+				echo'<script>';
+							echo'swal({
+								title="ok"
+								text: "Le traitement de votre demande est terminé!
+								la date de livraison vous sera communiqué ulterieurement",
+								icon: "success",
+								button: "ok"
+							});';
+					echo'</script>';
+					
+				
+				// echo"Le traitement de votre demande est terminé 
+				// la 
+				// date de livraison vous sera communiqué ulterieurement ";
+			}
+			else 
+			{
+				echo'<script>';
+							echo'swal({
+								
+								text: "Votre demande est en cours de traitement",
+								icon: "",
+								button: "ok"
+							});';
+					echo'</script>';
+			}
+		}
+		else
+		{
+				echo'<script>';
+							echo'swal({
+								
+								text: "Ce numéro de demande n\'existe pas",
+								icon: "error",
+								button: "ok"
+							});';
+					echo'</script>';
+					
+				// echo"";
+		}
+					
+	}
+}
+
+ ?>	
+ <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 

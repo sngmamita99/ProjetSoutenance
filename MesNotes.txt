@@ -13,3 +13,6 @@ Il faudra enlever la notion d'annuler ou de rejeter dans les use cases des offic
 pondent àceux de la BD ils ne seront enregistrées dan sla plateforme
 la page de recherche pour la demande en ligne il faut le reserver au cas de suivi d'une livraison
 Apres pour le menu le mettre en cascade
+
+
+Controler le montant gérer la somme de 300f si c'est les 300f qui ont été donné ou pas
