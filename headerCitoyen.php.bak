@@ -22,9 +22,10 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 <link type="text/css" rel="stylesheet" href="css1/icones.css" media="screen,projection" />
 <link type="text/css" rel="stylesheet" href="css1/formulaire.css" media="screen,projection" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <style type="text/css">
 body {
-    background-color: #eff1f2;
+    background-color: white;
 }
 nav ul li a
 {
@@ -88,24 +89,20 @@ $(window).on('load', function() {
 });
 </script>
 	</head>
-	<body id="debut">
-		<!--Dropdown structure demande d'acte 
+	<body id="debut" >
+		<!--Dropdown structure demande d'acte -->
 <ul id="demande_acte" class="dropdown-content">
-  <li> <a href="traitementDemNaiss.php" > Naissance</a></li>
+  <li> <a href="demandeActeNaiss.php"> Naissance</a></li>
   <li><a href="l_demande_acte_confirme.php">Mariage</a></li>
     <li><a href="l_demande_acte_confirme.php">Déces</a></li>
-    <li><a href="historique_dem_acte.php">Historiques</a></li>
-</ul>-->
-<ul id="demande_acte" class="dropdown-content">
- 
-  <li><a href="traitementDemNaissParLivraison.php">Par Livraison</a></li>
-    <li><a href="historique_dem_acte.php">Historiques</a></li>
+	<li><a href="suivi_demande_Acte.php">Suivi de nos demandes sur place</a></li>
+	<li><a href="suivi_demande_Acte_OnLine.php">Suivi de nos demandes Par Livraison</a></li>
 </ul>
 <ul id="declaration" class="dropdown-content">
-  <li> <a href="Traitement_DemandeDecNaiss.php"> Naissance</a></li>
+   <li> <a href="DemandeDecNaiss.php"> Naissance</a></li>
   <li><a href="l_demande_acte_confirme.php">Mariage</a></li>
     <li><a href="l_demande_acte_confirme.php">Déces</a></li>
-	<li><a href="historique_dem_decla.php">Historiques</a></li>
+	<li><a href="suivi_demandeDec.php">Suivi de mes demandes</a></li>
 </ul>
 
 <!--Dropdown structure impression -->
@@ -113,37 +110,27 @@ $(window).on('load', function() {
 </ul>
 <!--Dropdown déconnexion -->
 <ul id="deconnexion" class="dropdown-content">
-  <li> <a  href="deconnexion.php">Déconnexion</a></li>
-  <li> <a  href="modificationPassword.php">Changer Mot de Passe</a></li>
-  
+  <li> <a  href="deconnexion.php">Déconnexion</a></li> 
+   <li> <a  href="modificationPassword.php">Changer Mot de passe</a></li> 
 </ul>
-
-<!--Dropdown autres documents -->
-<ul id="autres_documents" class="dropdown-content">
-  <li> <a  href="#">Certificat</a></li>
-  <li> <a  href="#">Attestation</a></li>
-  <li> <a  href="#">Demandes</a></li>
-  <li> <a  href="#">Fiche</a></li>
-</ul>
-
 <div class="white center entete_img row center" style="margin-bottom: 0px">
-  <img  id="logo" style="" src=""  alt="logo" class="col s2 offset-s2" >
-  <h4 class="col s6" style="font:'times new roman';">Système d'Enregistrement<br>d'Etat Civil </h4>
+  <img style="" src=""  alt="logo" class="col s2 offset-s2" >
+  <h4 class="col s6" style="font:'times new roman';">Commune de Diamaguene<br> d'Etat Civil Automatisé</h4>
 </div>
 
 <nav>
     <div class="nav-wrapper">
-      <a href="acceuilAgent.php" class="brand-logo">&nbsp&nbsp&nbsp Registre+</a>
+      <a href="acceuilCitoyen.php" class="brand-logo">&nbsp&nbsp&nbsp Registre+</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="ab"   href="#"></a></li>
         <li>
-          <a href="calendrier.php">
+           <a href="rdv_citoyen.php">
             Rendez-vous</a>
         </li>
       <li>
-          <a href="" class="dropdown-trigger"  data-target="demande_acte" >
-            Demandes d'actes de Naissance
+          <a href="" class="dropdown-trigger" data-beloworigin="true" data-target="demande_acte">
+            Demandes d'actes
                       </a>
         </li>
 		 <li>
@@ -151,20 +138,14 @@ $(window).on('load', function() {
             Demandes de déclaration
             </a>
         </li>
-        
-        <li>
+		 <li>
           <a class="dropdown-trigger ab"  href="" data-beloworigin="true"  data-target="deconnexion">
-		  
-		  <i class="material-icons right" style="font-size: 40px">person_pin</i>L'agent<?php echo" $prenom $nom";?></a>
+		  <i class="material-icons right" style="font-size: 40px">person_pin</i><?php echo" $prenom $nom";?></a>
         </li>
         
-
-		  </a>
-        </li>
       </ul>
     </div>
   </nav>
-		 <!-- <img id="fa" src="fa.png" alt="se connecter">-->
   <ul class="sidenav" id="mobile-demo">
     <li><a href=""></a></li>
   </ul>
@@ -177,14 +158,14 @@ $(window).on('load', function() {
 	height:30px;
 }
 nav {
-  background-color: #1a237e   ; 
+  background-color: #00695c    ; 
 }
 ul.dropdown-content>li>a{/*Sélection des liens qui sont dans les listes déroulentes de la barre de navigation que l'on met en bleu*/
 background-color : white   ;
-color: #1a237e    ;
+color: #00695c     ;
 }
 ul.dropdown-content>li>a:hover{
-background-color : #1a237e        ;
+background-color : #00695c        ;
 color: white;
 }
 .dropdown-trigger{
@@ -195,14 +176,12 @@ padding-left: 50px;
 overflow-y: visible;
 }
 /* Permet de décaler la liste déroulante vers la droite*/
-.dropdown-content .dropdown-content 
-{
-	margin-left: 100%;
+.dropdown-content .dropdown-content {
+margin-left: 100%;
 }
-body
-{
-		font: 14pt 'times new roman';
-		background-color: white;
+body{
+font: 14pt 'times new roman';
+background-color: white;
 }
 </style>
 <script type="text/javascript">
@@ -239,6 +218,7 @@ alignment: 'right'
 		}
 	</style>
 	<script type="text/javascript">
+	
 		function demandes() {
 				var mois = $('select:eq(0)').val();
 			    var annee = $('select:eq(1)').val();

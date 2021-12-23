@@ -1,5 +1,5 @@
 <?php 
-require_once("headerAgent.php")
+require_once("heederOfficier.php")
 ?>
 <!DOCTYPE html>
 <html>
@@ -133,7 +133,7 @@ $(window).on('load', function() {
 
 ul.dropdown-content>li>a{/*Sélection des liens qui sont dans les listes déroulentes de la barre de navigation que l'on met en bleu*/
 background-color : white   ;
-color: black   ;
+color: #1a237e    ;
 }
 ul.dropdown-content>li>a:hover{
 background-color :  #00695c  ; 

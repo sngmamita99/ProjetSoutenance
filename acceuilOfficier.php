@@ -133,12 +133,12 @@ $(window).on('load', function() {
 
 ul.dropdown-content>li>a{/*Sélection des liens qui sont dans les listes déroulentes de la barre de navigation que l'on met en bleu*/
 background-color : white   ;
-color: #1a237e    ;
+color: black  ;
 }
-ul.dropdown-content>li>a:hover
-{
-	background-color : #650065    ; 
-	color: white;
+ul.dropdown-content>li>a:hover{
+background-color :  #00695c  ; 
+color: white;
+font-weight:bold;
 }
 .dropdown-trigger{
 padding-left: 50px;
@@ -231,7 +231,7 @@ h3,h5
 	font-weight:bold;
 }
 nav {
-  background-color:  #650065    ; 
+  background-color: #00695c  ; 
 }
 body {
     background-position: center center;

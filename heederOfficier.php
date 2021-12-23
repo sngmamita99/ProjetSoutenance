@@ -119,7 +119,7 @@ $(window).on('load', function() {
 <!--Dropdown déconnexion -->
 <ul id="deconnexion" class="dropdown-content">
   <li> <a  href="deconnexion.php">Déconnexion</a></li>
-  <li> <a href="modificationPasswordOff.php">Changer password</a></li>
+  <li> <a href="modificationPasswordOff.php">Changer Mot de Passe</a></li>
 </ul>
 
 <!--Dropdown autres documents -->
@@ -148,11 +148,11 @@ $(window).on('load', function() {
         <li><a href="calendrierOff.php" data-beloworigin="true" data-target="autres_documents" >Rendez-vous</a></li>
         <li>
           <a class="dropdown-trigger ab"  
-		  href="deconnexion.php" data-beloworigin="true" 
+		  href="" data-beloworigin="true" 
 		  data-target="deconnexion">
 		 
 		   <i class="material-icons right" style="font-size: 40px">
-		   person_pin</i><?php echo" $prenom $nom";?></a>
+		   person_pin</i>L'officier<?php echo" $prenom $nom";?></a>
         </li>
         
       </ul>
