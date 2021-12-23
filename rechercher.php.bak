@@ -80,8 +80,8 @@ if(isset($_POST['nom']))
 					</a>
 					</td>
 					<td>
-					<a href='justificatifReg.php?idRegistre=$idRegistre'>
-					<img id='suppression' src='images/fi.png'/>
+					<a href='justificatifReg.php'>
+					<img id='suppression' src='images/jus.png'/>
 					</td>
 					</tr>
 					</tr>";

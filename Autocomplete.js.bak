@@ -17,6 +17,7 @@
         xhr.onreadystatechange=function(){
           if(xhr.readyState==4 && xhr.status==200);{
           recuperation.innerHTML=xhr.responseText;
+
           recuperation.style.visibility='visible';
           }
         }

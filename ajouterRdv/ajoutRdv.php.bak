@@ -135,7 +135,7 @@ $('#hFin').blur(function (e) {
 		if (hFin<hDebut)
 		{ 
 			var heure = hFin.getHours();
-			alert(heure);
+			alert(hFin);
 			// alert('Erreur\nL\'heure de Fin ne peut pas inferieur à l\'heure de Début');
 			// $(this).addClass('invalid');
 			// $('#ajout').attr("disabled","");
