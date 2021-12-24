@@ -112,35 +112,6 @@ $(window).on('load', function() {
 </script>
 	 	
 	</head>
-	
-<style type="text/css">
-nav {
-  background-color: #00695c    ; 
-}
-ul.dropdown-content>li>a{/*Sélection des liens qui sont dans les listes déroulentes de la barre de navigation que l'on met en bleu*/
-background-color : white   ;
-color: #00695c     ;
-}
-ul.dropdown-content>li>a:hover{
-background-color : #00695c ;
-color: white;
-}
-.dropdown-trigger{
-padding-left: 50px;
-}
-/*Code nécessaire pour la barre de navigation */
-.dropdown-content {
-overflow-y: visible;
-}
-/* Permet de décaler la liste déroulante vers la droite*/
-.dropdown-content .dropdown-content {
-margin-left: 100%;
-}
-body{
-font: 14pt 'times new roman';
-background-color: white;
-}
-</style>
 
 </script>	
 <body >

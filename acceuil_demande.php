@@ -95,6 +95,7 @@ if(isset($_POST["Code_de_recherche"]))
 								la date de livraison vous sera communiqué ulterieurement",
 								icon: "success",
 								button: "ok"
+								
 							});';
 					echo'</script>';
 					

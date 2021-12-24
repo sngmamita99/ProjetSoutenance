@@ -124,7 +124,7 @@ $(window).on('load', function() {
 		<li>
 			<a class="dropdown-trigger ab"  href="Connexion.php" data-beloworigin="true"  data-target="deconnexion">
 			<i class="material-icons " style="font-size: 40px">person_pin</i><a>
-        </li>
+        </li!
       </ul>
     </div>
   </nav>-->

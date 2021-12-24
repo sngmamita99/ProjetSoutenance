@@ -10,7 +10,7 @@ $numDem=$_GET["numDem"];
 <title>acceuil dem</title>
 <!--Import materialize.min.css-->
 
-<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js" > </script > 
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script> 
 
 <style type="text/css">
 body 

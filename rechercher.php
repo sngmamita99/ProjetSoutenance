@@ -7,6 +7,10 @@
 {
 	text-align:center;
 }
+#entete
+{
+	background:#007D6C;
+}
 </style>
 </head>
 
@@ -19,10 +23,12 @@ if(isset($_POST['nom']))
 		{
 			$req="select * from registrenaissance where prenom_enfant like '%$nom%' OR nom_enfant like '%$nom%' ";
 			$result=$connect->query($req);
-			echo"<h5>REGISTRE DES NAISSANCES</h5>";
+				if($result->rowCount())
+				{
+					echo"<h5>REGISTRE DES NAISSANCES</h5>";
 			echo'<table class="col s12 responsive-table striped " id="l_naissance">
 				<thead>
-					<tr class="purple darken-3 lighten-2 white-text center ">
+					<tr class="white-text center"  id="entete">
 						<th>N° Acte</th>
 						<th>Date déclaration</th>	
 						<th>Type déclaration</td>
@@ -37,8 +43,6 @@ if(isset($_POST['nom']))
 						<th></th>
 					</tr>
 				</thead>';
-				if($result->rowCount())
-				{
 					while($ligne=$result->fetch())
 					{
 					$idRegistre=$ligne["idRegistre"];

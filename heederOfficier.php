@@ -180,14 +180,14 @@ $(window).on('load', function() {
     color: #1a237e;
   }
 nav {
-  background-color:  #650065    ; 
+  background-color:  #00695c; 
 }
 ul.dropdown-content>li>a{/*Sélection des liens qui sont dans les listes déroulentes de la barre de navigation que l'on met en bleu*/
 background-color : white   ;
-color: #1a237e    ;
+color: #00695c     ;
 }
 ul.dropdown-content>li>a:hover{
-background-color : #650065 ;
+background-color :  #00695c ;
 color: white;
 }
 .dropdown-trigger{

@@ -1,7 +1,7 @@
 <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script > 
 <?php
-session_start();
-// require_once("../headerAgent.php");
+// session_start();
+// require_once("headerAgent.php");
 // require_once("../SessionError.php");
 // $SESSION = new Session();
 $date=$_SESSION['date'];
@@ -18,9 +18,10 @@ $numCompte=$_SESSION['numCompte'];
 
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href=
+	"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
-	<script type="text/javascript" src="../jquery.min.js"></script>
+	
 	<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script > 
 <style>
 #alert
@@ -54,7 +55,7 @@ body
 	<?php
 	// $SESSION->flash();
 	?>
-	<section class="ftco-section">
+<section class="ftco-section">
 		<div class="container">
 			
 			<div class="row justify-content-center">
@@ -63,8 +64,7 @@ body
 						<div class="row no-gutters mb-5">
 							<div class="col-md-5">
 								<div class="contact-wrap w-100 p-md-5 p-4">
-<!--<form method="POST"  action="../traitementAjoutRdv.php" 
-id="contactForm" name="contactForm" class="contactForm">-->
+
 <form method="POST"  action="" 
 id="contactForm" name="contactForm" class="contactForm">
 				<div class="row">
@@ -135,7 +135,7 @@ $('#hFin').blur(function (e) {
 		if (hFin<hDebut)
 		{ 
 			var heure = hFin.getHours();
-			alert(hFin);
+			alert(heure);
 			// alert('Erreur\nL\'heure de Fin ne peut pas inferieur à l\'heure de Début');
 			// $(this).addClass('invalid');
 			// $('#ajout').attr("disabled","");

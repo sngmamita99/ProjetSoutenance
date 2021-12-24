@@ -99,6 +99,7 @@ $(window).on('load', function() {
 <ul id="demande_acte" class="dropdown-content">
  
   <li><a href="traitementDemNaissParLivraison.php">Par Livraison</a></li>
+  <li><a href="traitementDemNaissSurPlace.php">Sur Place</a></li>
     <li><a href="historique_dem_acte.php">Historiques</a></li>
 </ul>
 <ul id="declaration" class="dropdown-content">
@@ -177,14 +178,14 @@ $(window).on('load', function() {
 	height:30px;
 }
 nav {
-  background-color: #1a237e   ; 
+  background-color:  #00695c     ; 
 }
 ul.dropdown-content>li>a{/*Sélection des liens qui sont dans les listes déroulentes de la barre de navigation que l'on met en bleu*/
 background-color : white   ;
-color: #1a237e    ;
+color:  #00695c       ;
 }
 ul.dropdown-content>li>a:hover{
-background-color : #1a237e        ;
+background-color :  #00695c ;
 color: white;
 }
 .dropdown-trigger{

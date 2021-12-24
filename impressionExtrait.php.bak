@@ -310,11 +310,6 @@ $(window).on('load', function() {
 			.contai1{
 				margin: 40px;
 			}
-			.btn
-{
-	background:#00695c ;
-}
-
 		</style>
 		
 		</script>

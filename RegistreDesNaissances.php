@@ -37,6 +37,10 @@ $idConnected=$_SESSION['idConnected'];
 	text-align:center;
 	
 }
+#entete
+{
+	background:#007D6C;
+}
    </style>
 	</head>
 	<body >
@@ -60,7 +64,7 @@ $idConnected=$_SESSION['idConnected'];
 				echo"<h5 id='MonTitre'>REGISTRE DES NAISSANCES</h5>";
 			echo'<table class="col s12 responsive-table striped " id="l_naissance">
 				<thead>
-					<tr class="purple darken-3 lighten-2 white-text center ">
+					<tr class="white-text center" id="entete">
 						<th>N° Registre</th>
 						<th>Date déclaration</th>	
 						<th>Type déclaration</td>
