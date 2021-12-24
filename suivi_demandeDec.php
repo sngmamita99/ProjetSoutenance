@@ -49,7 +49,9 @@
 	{
 		width:50%;
 		margin-left:40%;
-		margin-top:-14%;
+		margin-top:-17.9%;
+		position:absolute;
+		
 		
 	}
 	#fina
