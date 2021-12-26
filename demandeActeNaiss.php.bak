@@ -288,9 +288,9 @@ if(isset($_POST["registre"]) && isset($_POST["naissances"]) && isset($_POST["num
 					$stmt->bindParam(9, $methode_paiement);
 					$stmt->bindParam(10, $date_demande);
 					$stmt->execute();
-					$numDem=$connect->lastInsertId();
+					// $numDem=$connect->lastInsertId();
 						echo'<script>';
-							echo'swal({
+							echo'swal.fire({
 								title: "Demande d\'Acte Réussi!",
 								text: " Vous pouvez désormais suivre vos demandes",
 								icon: "success",
@@ -299,10 +299,11 @@ if(isset($_POST["registre"]) && isset($_POST["naissances"]) && isset($_POST["num
 								
 								
 							});';
-							// echo "window.location.href='suivi_demande_Acte_OnLine.php'";
+							
 					echo'</script>';
 					
 				}
+				// echo "window.location.href='suivi_demande_Acte_OnLine.php'";
 				else
 				{
 					echo'<script>';

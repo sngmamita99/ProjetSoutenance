@@ -1,3 +1,5 @@
+
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
 <?php 
 session_start();
 $idConnected=$_SESSION['idConnected'];
@@ -38,6 +40,7 @@ nav ul li a
 <script type="text/javascript" src="../js1/jquery.min.js"></script>
 <script type="text/javascript" src="../js1/materialize.min.js"></script>
 
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
 <script type="text/javascript">
 // Set timeout variables.
 var timoutNow = 900000;
@@ -271,8 +274,21 @@ if (array_key_exists('paymentId', $_GET) && array_key_exists('PayerID', $_GET)) 
 			VALUES('". $payment_id ."', '". $payer_id ."', '". $payer_email ."', '". $amount ."', '". $currency ."', '". $payment_status ."','". $num_dem ."')");
 			$numDemande=$db->query("UPDATE demandeactedenaissance SET etat_paiement =1 where numDemande = '".$num_dem."'");
         }
+		echo'<script>';
+							echo'swal({
+								title: "Paiement reussi!",
+								text: " ",
+								icon: "success",
+								button: "ok",
+							
+								
+								
+							});';
+							
+					echo'</script>';
+					
  
-        echo "Le paiement est réussi. Votre identifiant de transaction est : ". $payment_id;
+        // echo "Le paiement est réussi.  ";
     } else {
         echo $response->getMessage();
     }
@@ -280,3 +296,4 @@ if (array_key_exists('paymentId', $_GET) && array_key_exists('PayerID', $_GET)) 
     echo 'La transaction a échoué';
 }
 ?>
+<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 

@@ -74,7 +74,6 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					$numero_registre=$ligne["numeroDeRegistre"];
 					$etat_demande=$ligne["etat_demande"];
 					$etat_transmission=$ligne["etat_transmission"];
-					$etat_retour=$ligne["etat_retour"];
 			
 						 echo "<tbody>";
                         echo "<tr>";
