@@ -144,7 +144,7 @@ $(window).on('load', function() {
         <li>
           <a class="dropdown-trigger ab"  href="deconnexion.php" data-beloworigin="true"  data-target="deconnexion">
 		  
-		  <i class="material-icons right" style="font-size: 40px">person_pin</i>Le livreur<?php echo" $prenom $nom";?></a>
+		  <i class="material-icons right" style="font-size: 40px">person_pin</i><?php echo" $prenom $nom";?></a>
         </li>
         
 

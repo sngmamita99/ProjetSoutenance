@@ -22,9 +22,10 @@
 #btnSuccess
 {
 	background:green;
-	width:110px;
+	color:white;
+	border:0px hidden green;
 	text-align:center;
-	font-weight:bold;
+	
 }
 #impression
    {
@@ -34,12 +35,20 @@
    #btnWarnig
 {
 	background:orange;
-	width:200px;
+	border:0px hidden orange;
 	text-align:center;
+	color:white;
 }
  body
 	{
 		background-image:url("https://cdn.pixabay.com/photo/2018/04/07/08/28/notepad-3297994_1280.jpg");
+	}
+	#sup
+	{
+		background:#ff5252;
+		color:white;
+		border:0px hidden #ff5252;
+		text-align:center;
 	}
 </style>
 
@@ -92,7 +101,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 								echo"<td>";
 								echo"<a href='valider.php?
 								numDem=$num_demande&annDec=$annee_registre
-								&numReg=$numero_registre'><button class='btn btn-success' id='btnSuccess'>valider</button></a>";
+								&numReg=$numero_registre'><button  id='btnSuccess'>valider</button></a>";
 								echo"</td>";
 								
 							}
@@ -100,7 +109,10 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 							{
 							
 								echo "<td>
-								<button class='btn btn-danger' id='btnWarnig'>demande finalisée</button></a></td>";
+								<button id='btnWarnig'>Demande finalisée</button>
+								<a href='sup.php'><button id='sup'>supprimer</button></a>
+								</td>";
+								
 								
 							}
 						

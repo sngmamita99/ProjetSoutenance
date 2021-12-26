@@ -40,16 +40,30 @@
 }
 #DejaPaye
 {
-	background:red;
+	background:#cd6133;
+	color:white;
+	border:0px hidden #cd6133;
 }
 #transmettre
 {
-	background:green;
+	background:#34ace0;
+	color:white;
 	margin-left:10%;
 	border-radius:2px 2px;
+	border:0px hidden #34ace0;
 }
-
-	
+#attente
+{
+	background:#ffb142;
+	border:0px hidden #ffb142;
+	color:white;
+}
+#notifier
+{
+	background:#40407a;
+	border:0px hidden #40407a;
+	color:white;
+}
 	</style>
 </head>
 <body>
@@ -182,18 +196,20 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 								echo"<span>demande transmise</span>";
 								echo "</td>";	
 					}
+					echo"<div id ='kk'>";
 						if($etat_retour==0)
 						{
 									echo "<td>";
-									echo"<button>en attente</button>";
+									echo"<button id='attente'>en attente</button>";
 									echo "</td>";	
 						}
 						else
 						{
 							 echo "<td>";
-							echo"<a href='Notification.php'><button>Notifier</button></a>";
+							echo"<a href='Notification.php'><button id='notifier'>Notifier</button></a>";
 							echo "</td>";	
 						}
+						echo"</div>";
 						// if(!empty($row["etat_demande"]==0))
 						// {
 									// echo "<td>";
@@ -222,4 +238,36 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 		}
 ?>
 </body>
+<script>
+// $("#kk").hide();
+var transmettre=document.getElementById('transmettre');
+transmettre.addEventListener('click', function(e){
+	alert("ok");
+	// $('#kk').show();
+}, false);
+ // function select_acte() {
+        // var registre = $('.registre').val();
+        // if (registre == "Registre des deces") {
+            // $('#naissances').addClass('hide');
+            // $('#mariages').addClass('hide');
+            // $('#deces').removeClass('hide');
+        // } else if (registre == "Registre des naissances") {
+            // $('#deces').addClass('hide');
+            // $('#mariages').addClass('hide');
+            // $('#naissances').removeClass('hide');
+        // } else if (registre == "Registre des mariages") {
+            // $('#naissances').addClass('hide');
+            // $('#deces').addClass('hide');
+            // $('#mariages').removeClass('hide');
+        // }
+        // $('input').removeClass('hide');
+        // $('label').removeClass('hide');
+		 // $('#methode_paiement').removeClass('hide');
+    // }
+
+
+    // $('.registre').change(function() {
+        // select_acte();
+    // });
+</script>
 </html>
