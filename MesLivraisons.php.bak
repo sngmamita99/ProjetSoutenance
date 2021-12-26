@@ -54,10 +54,6 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					<td>$nom</td>
 					<td>$adresse</td>
 					<td>$numTel</td>
-					<td>
-					<a href='demarrerLivraison.php'><button>
-					Demarrer Livraison</buttton></a>
-					</td>
 					
 					<td>
 					<a href='demarrerLivraison.php'><button>

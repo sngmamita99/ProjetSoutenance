@@ -52,12 +52,12 @@
 	border-radius:2px 2px;
 	border:0px hidden #34ace0;
 }
-/*#attente
+#attente
 {
 	background:#ffb142;
 	border:0px hidden #ffb142;
 	color:white;
-}*/
+}
 #notifier
 {
 	background:#40407a;
@@ -92,7 +92,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 						<th>Prenom</th>
 						<th>Nom</th>	
 						<th>Année</th>
-						<th>Nombre de Copies</th>
+						<th> Copies</th>
 						<th>Demande de:</th>
 						<th></th>
 						<th></th>
@@ -114,6 +114,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					$etat_paiement=$ligne["etat_paiement"];
 					$etat_transmission=$ligne["etat_transmission"];
 					$etat_retour=$ligne["etat_retour"];
+					$numCompte=$ligne["numCompte"];
 					// $req1="select * from transmettredeman where num_demande=$numDemande";
 					// $resulat=$connect->query($req1);
 					// $row=$resulat->fetch();
@@ -196,20 +197,28 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 								echo"<span>demande transmise</span>";
 								echo "</td>";	
 					}
-					echo"<div id ='kk'>";
+					// echo"<div id ='kk'>";
 						if($etat_retour==0)
 						{
 									echo "<td>";
-									echo"<button id='attente'></button>";
+									echo"<button id='attente'>en attente</button>";
 									echo "</td>";	
 						}
-						else
+						else if($etat_retour==1)
 						{
-							 echo "<td>";
-							echo"<a href='Notification.php'><button id='notifier'>Notifier</button></a>";
+							echo "<td>";
+							echo"<a href='Notification.php?numCompte=$numCompte&numDemande=$numDemande''><button id='notifier'>Notifier</button></a>";
 							echo "</td>";	
 						}
-						echo"</div>";
+						else  if($etat_retour==2)
+						{
+							echo "<td>";
+							echo"<button id='notifier'>Déja notifier</button>";
+							// echo"<a href='Notification.php?numCompte=$numCompte&numDemande=$numDemande''><button id='notifier'>livrékk</button></a>";
+							echo "</td>";	
+						}
+			
+						// echo"</div>";
 						// if(!empty($row["etat_demande"]==0))
 						// {
 									// echo "<td>";
