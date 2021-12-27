@@ -210,7 +210,7 @@ h1
 	<video autoplay ="autoplay" muted=""  loop="infinite" src="../drapeauSN.mp4"></video>
 	   
        <div class="col-md-6 mb-4  text-center text-md-left"  id="ok" >
-            <h1 class="display-4 font-weight-bold">Registre+</h1>
+            <h1 class="display-4 font-weight-bold">e_civil</h1>
 
             <hr class="hr-light">
 

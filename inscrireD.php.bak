@@ -121,7 +121,7 @@ input:focus
             <div class="modal-body">
 			<div class="card-header">
 				  <h3 class="dark-white-text text-center">
-                    <strong>Inscription:</strong>
+                    <strong>Authentification :</strong>
                   </h3>
                 
 			</div>

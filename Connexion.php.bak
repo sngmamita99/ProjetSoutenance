@@ -222,7 +222,7 @@ h1
               <p id="just">
 				démocratisation de l'accés à l'information
 				<br>
-                 Pour des villes intelligentes et écologiques
+                 Pour des villes  écologiques
               </p>
             </p>
             
