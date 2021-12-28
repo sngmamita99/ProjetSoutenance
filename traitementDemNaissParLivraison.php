@@ -63,6 +63,7 @@
 	background:#40407a;
 	border:0px hidden #40407a;
 	color:white;
+	border-radius: 20px 20px;
 }
 	</style>
 </head>
@@ -214,7 +215,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 						{
 							echo "<td>";
 							echo"<button id='notifier'>Déja notifier</button>";
-							// echo"<a href='Notification.php?numCompte=$numCompte&numDemande=$numDemande''><button id='notifier'>livrékk</button></a>";
+							 echo"<a href='Notification.php?numCompte=$numCompte&numDemande=$numDemande''><button id='notifier'>Remettre</button></a>";
 							echo "</td>";	
 							
 						}

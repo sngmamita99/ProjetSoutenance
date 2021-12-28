@@ -132,13 +132,13 @@ $(window).on('load', function() {
 
 
 <div class="white center entete_img row center" style="margin-bottom: 0px">
-  <img style="" src="" alt="logo" class="col s2 offset-s2" >
+  <img  src="" alt="logo" class="col s2 offset-s2" >
   <h4 class="col s6" style="font:'times new roman';">Système d'Enregistrement<br>d'Etat Civil Automatisé</h4>
 </div>
 
 <nav>
     <div class="nav-wrapper">
-      <a href="acceuilOfficier.php" class="brand-logo">&nbsp&nbsp&nbsp Registre+</a>
+      <a href="acceuilOfficier.php" class="brand-logo">&nbsp&nbsp&nbsp e_civil</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="ab"   href="#"></a></li>

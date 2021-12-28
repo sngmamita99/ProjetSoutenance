@@ -1,0 +1,7 @@
+{
+    "require": {
+        "league/omnipay": "^3.2",
+        "omnipay/paypal": "^3.0",
+        "messagebird/php-rest-api": "^2.1"
+    }
+}
