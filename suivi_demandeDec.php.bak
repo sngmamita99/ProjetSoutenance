@@ -23,6 +23,7 @@
 		color:white;
 		text-align:center;
 		border:0px hidden red;
+		border-radius:2px 2px;
 		
 	}
 	#annR
@@ -49,7 +50,8 @@
 	{
 		width:50%;
 		margin-left:40%;
-		margin-top:-17.9%;
+		margin-top:-22%;
+		
 		
 		
 	}

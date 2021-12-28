@@ -167,9 +167,9 @@ $(window).on('load', function() {
 		<div class="contai white" style="padding:  10px">
 			<div class="row premier"  id="ok">
 				<div class="col s7 " style="border: 1px solid; height: 47mm" >
-					<p class="center"><b>REGION DE LOUGA<br>
-						DEPARTEMENT DE KEBEMER<br>
-						COMMUNE DE NDANDE</b><br>
+					<p class="center"><b>REGION DE DAKAR<br>
+						DEPARTEMENT DE PIKINE<br>
+						COMMUNE DE TIVAOUNE DIACKSAO</b><br>
 											</p>
 				</div>
 				<div class="col s5" style="border: 1px solid; height: 47mm">
@@ -177,7 +177,7 @@ $(window).on('load', function() {
 					UN PEUPLE - UN BUT -UNE FOI<br>
 					____________________</b></p>
 					<h5 class="center"><b>ETAT - CIVIL</b></h5>
-					<p class="center"><b>COMMUNE DE NDANDE</b></p>
+					<p class="center"><b>TIVAOUNE DIACKSAO</b></p>
 				</div>
 			</div>
 			<div class="row" style="border: 1px solid;  margin-top: -21px;">
@@ -223,7 +223,7 @@ $(window).on('load', function() {
 						de naissance</p>
 					</div>
 					<div class="col s8" style="border: 1px solid; height: 50mm">
-						<p><i>Délivré par le juge de paix de KEBEMER</i></p>
+						<p><i>Délivré par le juge de paix de TIVAOUNE DIACKSAO</i></p>
 						<p>Le <b>
 						 
 					</b>
@@ -248,18 +248,37 @@ $(window).on('load', function() {
 					</div>
 				</div>
 				<div class="row " style="border: 1px solid; margin-top: -21px;	">
-					<p class="col s12">Extrait délivré par&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  POUR EXTRAIT CERTIFIE CONFORME
-						<br><b>la Mairie de NDANDE</b>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  <b>A NDANDE &nbsp &nbsp &nbsp&nbsp &nbsp <?php echo $date;?></b><br>
-						&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  L'officier d'etat-civil soussigné<br><br>
-						&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  <?php echo "$prenomOff $nomOff";?>
+					<p class="col s12">Extrait délivré par&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
+					&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp 
+					&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  POUR EXTRAIT CERTIFIE CONFORME
+						<br><b>la Mairie de TIVAOUNE DIACKSAO</b>&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp
+						&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp &nbsp &nbsp&nbsp 
+						&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  <b>A TIVAOUNE DIACKSAO &nbsp &nbsp &nbsp&nbsp &nbsp <?php echo $date;?></b><br>
+						&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp 
+						&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
+						&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp 
+						&nbsp&nbsp&nbsp &nbsp &nbsp  L'officier d'etat-civil soussigné<br><br>
+						&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp
+						&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
+						&nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp 
+						&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp  <?php echo "$prenomOff $nomOff";?>
 					</p>
 					<p style="font-size: 12px">(1) (2) (3) Notes et mentions marginales au verso</p>
 				</div>
 				<div class="row " style="border: 1px solid; margin-top: -21px;	">
 					<div class="col s12">
 						<br>
-						<p><b>RESERVE</b> &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp|__|__| &nbsp&nbsp|__|__|__|&nbsp&nbsp|__|__|&nbsp&nbsp|__|__||__|__||__|__|&nbsp&nbsp|__|__||__|&nbsp&nbsp|__|__|&nbsp&nbsp|__|__||__|<br>
-							<span style="font-size: 10px">&nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp  &nbsp &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp &nbsp &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbspDEP &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp CL &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp&nbsp CEC &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp  DN &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp  S &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp PN &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbspIDP
+						<p><b>RESERVE</b> &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp|__|__| 
+						&nbsp&nbsp|__|__|__|&nbsp&nbsp|__|__|&nbsp&nbsp|__|__||__|__||__|__|&nbsp
+						&nbsp|__|__||__|&nbsp&nbsp|__|__|&nbsp&nbsp|__|__||__|<br>
+							<span style="font-size: 10px">&nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp 
+							&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp  &nbsp &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp &nbsp 
+							&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbspDEP &nbsp&nbsp &nbsp 
+							&nbsp &nbsp&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp CL &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp
+							&nbsp&nbsp CEC &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp
+							DN &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp 
+							&nbsp&nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp  S &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp 
+							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp PN &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbspIDP
 							</span>
 						</p>
 					</div>

@@ -290,7 +290,7 @@ if(isset($_POST["registre"]) && isset($_POST["naissances"]) && isset($_POST["num
 					$stmt->execute();
 					// $numDem=$connect->lastInsertId();
 						echo'<script>';
-							echo'swal.fire({
+							echo'swal({
 								title: "Demande d\'Acte Réussi!",
 								text: " Vous pouvez désormais suivre vos demandes",
 								icon: "success",

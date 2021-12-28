@@ -134,7 +134,7 @@ $(window).on('load', function() {
 
 <nav>
     <div class="nav-wrapper">
-      <a href="acceuilAgent.php" class="brand-logo">&nbsp&nbsp&nbsp Registre+</a>
+      <a href="acceuilAgent.php" class="brand-logo">&nbsp&nbsp&nbsp e_civil</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="ab"   href="#"></a></li>

@@ -3,20 +3,20 @@ session_start();
 $idConnected=$_SESSION['idConnected'];
 $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
-		{ 
-			$req="select nom,prenom from users where idUser=$idConnected ";
-			$res=$connect->query($req);
-			$ligne=$res->fetch();
-			$prenom=$ligne["prenom"];
-			$nom=$ligne["nom"];
-		}
+    { 
+      $req="select nom,prenom from users where idUser=$idConnected ";
+      $res=$connect->query($req);
+      $ligne=$res->fetch();
+      $prenom=$ligne["prenom"];
+      $nom=$ligne["nom"];
+    }
 
 ?> 
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Liste des demandes d'actes</title>
-		<meta charset="utf-8">
+  <head>
+    <title>Liste des demandes d'actes</title>
+    <meta charset="utf-8">
 <!--Import materialize.min.css-->
 <link type="text/css" rel="stylesheet" href="css1/materialize.min.css" media="screen,projection" />
 <link type="text/css" rel="stylesheet" href="css1/icones.css" media="screen,projection" />
@@ -29,7 +29,7 @@ body {
 }
 nav ul li a
 {
-	font-size:20px;
+  font-size:20px;
 }
 </style>
 <!--Let browser know website is optimized for mobile-->
@@ -88,21 +88,21 @@ $(window).on('load', function() {
 
 });
 </script>
-	</head>
-	<body id="debut" >
-		<!--Dropdown structure demande d'acte -->
+  </head>
+  <body id="debut" >
+    <!--Dropdown structure demande d'acte -->
 <ul id="demande_acte" class="dropdown-content">
   <li> <a href="demandeActeNaiss.php"> Naissance</a></li>
   <li><a href="l_demande_acte_confirme.php">Mariage</a></li>
     <li><a href="l_demande_acte_confirme.php">Déces</a></li>
-	<li><a href="suivi_demande_Acte.php">Suivi de nos demandes sur place</a></li>
-	<li><a href="suivi_demande_Acte_OnLine.php">Suivi de nos demandes Par Livraison</a></li>
+  <li><a href="suivi_demande_Acte.php">Suivi de nos demandes sur place</a></li>
+  <li><a href="suivi_demande_Acte_OnLine.php">Suivi de nos demandes Par Livraison</a></li>
 </ul>
 <ul id="declaration" class="dropdown-content">
    <li> <a href="DemandeDecNaiss.php"> Naissance</a></li>
   <li><a href="l_demande_acte_confirme.php">Mariage</a></li>
     <li><a href="l_demande_acte_confirme.php">Déces</a></li>
-	<li><a href="suivi_demandeDec.php">Suivi de mes demandes</a></li>
+  <li><a href="suivi_demandeDec.php">Suivi de mes demandes</a></li>
 </ul>
 
 <!--Dropdown structure impression -->
@@ -120,7 +120,7 @@ $(window).on('load', function() {
 
 <nav>
     <div class="nav-wrapper">
-      <a href="acceuilCitoyen.php" class="brand-logo">&nbsp&nbsp&nbsp Registre+</a>
+      <a href="acceuilCitoyen.php" class="brand-logo">&nbsp&nbsp&nbsp e_civil</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="ab"   href="#"></a></li>
@@ -133,14 +133,14 @@ $(window).on('load', function() {
             Demandes d'actes
                       </a>
         </li>
-		 <li>
+     <li>
           <a href="" class="dropdown-trigger" data-beloworigin="true" data-target="declaration">
             Demandes de déclaration
             </a>
         </li>
-		 <li>
+     <li>
           <a class="dropdown-trigger ab"  href="" data-beloworigin="true"  data-target="deconnexion">
-		  <i class="material-icons right" style="font-size: 40px">person_pin</i>Le Citoyen<?php echo" $prenom $nom";?></a>
+      <i class="material-icons right" style="font-size: 40px">person_pin</i>Le Citoyen<?php echo" $prenom $nom";?></a>
         </li>
         
       </ul>
@@ -154,8 +154,8 @@ $(window).on('load', function() {
 
 #fa
 {
-	width:30px;
-	height:30px;
+  width:30px;
+  height:30px;
 }
 nav {
   background-color: #00695c    ; 
@@ -197,44 +197,44 @@ belowOrigin: false,
 alignment: 'right'
 });
 });
-</script>	
-	
-		
+</script> 
+  
+    
 </style>
 
-	<style type="text/css">
+  <style type="text/css">
 
-		body
-		{
-			background-position: center center;
-			background-repeat:  no-repeat;
-			background-attachment: fixed;
-			background-size:  cover;
+    body
+    {
+      background-position: center center;
+      background-repeat:  no-repeat;
+      background-attachment: fixed;
+      background-size:  cover;
 
-		}
-		table{
-			font-family: "times new roman";
-			font-size: 20px;
-		}
-	</style>
-	<script type="text/javascript">
-	
-		function demandes() {
-				var mois = $('select:eq(0)').val();
-			    var annee = $('select:eq(1)').val();
-				$.ajax({
-					type:'POST',
-					url:'l_demande_acte_confirme_ajax.php',
-					data:'a=a',
-					success:function (html) {
-						$('tbody').html(html);
-					}
-				});
-			}
-			demandes();
-			$('select').change(function () {
-				demandes();
-			});
-	$('.tooltipped').tooltip();
-	 $('.fixed-action-btn').floatingActionButton();
+    }
+    table{
+      font-family: "times new roman";
+      font-size: 20px;
+    }
+  </style>
+  <script type="text/javascript">
+  
+    function demandes() {
+        var mois = $('select:eq(0)').val();
+          var annee = $('select:eq(1)').val();
+        $.ajax({
+          type:'POST',
+          url:'l_demande_acte_confirme_ajax.php',
+          data:'a=a',
+          success:function (html) {
+            $('tbody').html(html);
+          }
+        });
+      }
+      demandes();
+      $('select').change(function () {
+        demandes();
+      });
+  $('.tooltipped').tooltip();
+   $('.fixed-action-btn').floatingActionButton();
 </script>

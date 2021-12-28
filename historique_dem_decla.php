@@ -44,7 +44,7 @@ require_once("headerAgent.php");
 	{
 		width:50%;
 		margin-left:40%;
-		margin-top:-22%;
+		margin-top:-31%;
 		position:absolute;
 		
 		

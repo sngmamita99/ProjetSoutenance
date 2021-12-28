@@ -1,4 +1,4 @@
-en perspective faire une aplicati mobile pour le demandeur
+en perspective faire une aplicati mobile pour le demandeur et pour le livreur aussi
 faire des predeclarations
 Si l'etat etait porteur de projet et quil apportera une solution sur les timbres on pourrait par exemple etre dans 
 des localites differents rgouper tous les bases de donnees du senegal des en sorte comme djogo de sorte que 
@@ -7,3 +7,29 @@ registre
 Le probleme de faux document sera reglé
 notifier va modifier l'etat 
 dire qu client que le livraison est demarre vous allez recevoir un appel pour plus de detail
+email automatique
+
+
+terminer livraison conicide aussi avc la suppressin de la demande cote citoyen
+et marquer livraisn terminer cote agent
+notifier aussi mail automatique livreur et citoyen
+
+L’Agence de l’informatique de l’État (ADIE) travaille, avec le ministère en charge de la
+Gouvernance locale, sur un projet qui devrait permettre aux centres d’état-civil, quel que soit
+l’endroit où ils se situent, de délivrer à distance, des extraits et autres documents administratifs a
+révélé, lundi, son directeur général Cheikh Bakhoum
+au moment de la prise de parole nous allon voir les elemtns de la page d'acceuil et y parler
+
+
+Pour automatiser et rendre le travail plus rapide et efficace on va ajouter une fonctionnalité qui
+permet d’enregistrer les informations sur des fichiers. Ces derniers, imprimables sera disponible
+au niveau de la partie administrative du projet. Ceci aura comme objectif de récupérer directement
+les données sous forme de fichiers PDF ou EXCEL. En effet ça va permettre d’importer les
+données et les statistiques des demandes et enregistrements, les deux éléments importants de ce
+projet.
+Avec ce système de fichier automatique, on va pouvoir faire des actes de naissances, de décès ou
+de mariage sous format PDF ou EXCEL.
+À l’aide d’un ORC, les agents vont pouvoir aussi numériser des documents facilement et très
+rapidement, pour un archivage numérique très efficace.
+
+t schema relationnnel  mettre les interfacees d'acceuil de chaque utulisateur expliquer les liens dougagoul

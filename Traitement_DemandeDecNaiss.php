@@ -13,12 +13,15 @@ require_once("headerAgent.php");
 	background:#dc3545;
 	margin-left:10px;
 	color:white;
-	border:0px 
+	border:0px ;
+	border-radius:12px 12px;
 }
 .valid
 {
 	background:#28a745;
-	border:0px 
+	border:0px ;
+	border-radius:12px 12px;
+	color:white;
 }
 #icon_prefix
 {

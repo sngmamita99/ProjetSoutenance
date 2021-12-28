@@ -110,7 +110,7 @@ $(window).on('load', function() {
         <div class="row">
             <form class="col s12 m12 l12" method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>">
                 <input type="number" name="s" hidden="">
-                <h3 class="center">Formulaire de demande d'acte d'état civil</h3>
+                <h3 class="center">Formulaire de demande d'acte de naissance</h3>
                 <div class="row">
                    <!-- <div class=" input-field col s6 m4 l4 " , id="mairie">
                         <select class="browser-default acte" name="mairie">

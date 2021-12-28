@@ -57,7 +57,7 @@ require_once("headerCitoyen.php");
 	{
 		background:green;
 		color:white;
-		
+		border-radius:10px 10px;
 	}
 	#nf
 	{
@@ -70,6 +70,7 @@ require_once("headerCitoyen.php");
 		color:white;
 		text-align:center;
 		border:0px hidden green;
+		border-radius:10px 10px;
 	}
 	#payer
 	{
@@ -77,12 +78,14 @@ require_once("headerCitoyen.php");
 		background:yellow;
 		color:white;
 		text-align:center;
+		border-radius:10px 10px;
 	}
 	#annuler
 	{
 		background:red;
 		border:0px hidden red;
 		text-align:center;
+		border-radius:10px 10px;
 	}
 	</style>
 </head>

@@ -177,11 +177,11 @@ $(window).on('load', function() {
 						<p class="center"><b>REPUBLIQUE DU SENEGAL <br>
 							<i>UN PEUPLE - UN BUT -UNE FOI</i><br><br>
 						</b>
-						<b>REGION DE LOUGA<br>
-							DEPARTEMENT DE KEBEMER<br>
-							COMMUNE DE NDANDE</b><br>
+						<b>REGION DE DAKAR<br>
+							DEPARTEMENT DE PIKINE<br>
+							COMMUNE DE TIVAOUNE DIACKSAO</b><br>
 							<br>
-							CENTRE  ETAT CIVIL DE NDANDE						</p>
+							CENTRE  ETAT CIVIL DE TIVAOUNE DIACKSAO						</p>
 					</div>
 					<h6 class="col s10 offset-s4">
 						<i>ANNEE</i>&nbsp&nbsp&nbsp .....<b><?php echo $annee_registre;?></b>.....<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i>N°</i>&nbsp&nbsp&nbsp .....<b><?php echo $num_registre;?></b>.....
@@ -215,7 +215,7 @@ $(window).on('load', function() {
 					<h6 class="col s12" style="margin-top: -20px; font: 18pt 'times new roman'">
 						<span class="truncate">Sur la déclaration de ....................................................................................................................................................................................................</span>
 						&nbsp&nbsp&nbsp&nbsp Ou Par le jugement d’autorisation d’inscription tardive de naissance <br>
-						N°....<b>016</b>..... &nbsp&nbsp DU ......<b>  </b>... Du tribunal d’instance de <b>KEBEMER</b><br>
+						N°....<b>016</b>..... &nbsp&nbsp DU ......<b>  </b>... Du tribunal d’instance de <b>TIVAOUNE DIACKSAO</b><br>
 						Oui, lecture faite, a signé avec nous .................................................................<br>
 						Mentions Marginales....................................................................................<br>
 						............................................................................................................................<br>
@@ -229,8 +229,12 @@ $(window).on('load', function() {
 						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
 						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp
 						&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-						&nbsp&nbspFait à NDANDE le <b><?php echo "$date";?></b><br><br>
-						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp L’officier d’état civil
+						&nbsp&nbspFait à TIVAOUNE DIACKSAO le <b><?php echo "$date";?></b><br><br>
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp
+						&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp L’officier d’état civil
 					</h6>
 					<div class="col s12">
 						(1) Prénom et Nom de l’enfant<br>	
