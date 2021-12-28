@@ -154,7 +154,7 @@ $(window).on('load', function() {
 
 <nav>
     <div class="nav-wrapper">
-      <a href="accueil.php" class="brand-logo">&nbsp&nbsp&nbsp e_civil</a>
+      <a href="accueil.php" class="brand-logo">&nbsp&nbsp&nbsp Registre+</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="ab"   href="#"></a></li>
@@ -189,7 +189,7 @@ $(window).on('load', function() {
 			{
 				
 				echo'<div id="recherche">';
-				echo'<h4 class="center col s12 m12 black-text">Liste des agents</h4>';
+				echo'<h4 class="center col s12 m12 black-text">Liste des Officiers</h4>';
 				echo "<table id='ta' class='bordered highlight centered col s12 m12'>";
 				echo"<thead>";
 				echo"<tr><th>Prénom</th>";

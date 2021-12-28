@@ -27,49 +27,6 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 body {
     background-color: white;
 }
-#btnSuccess
-{
-	background:green;
-	width:110px;
-	text-align:center;
-}
-#btnDanger
-{
-	background:red;
-	width:110px;
-	text-align:center;
-}
-#btnWarnig
-{
-	background:orange;
-	width:110px;
-	text-align:center;
-}
-#ta
-{
-
-	
-	width:900px;
-	margin-left:150px;
-	border:2px solid white;
-	
-}
-#rech
-{
-	width:250px;
-	margin-left:780px;
-}
-#recherche
-{
-	
-	margin-top:50px;
-}
-#NoLive
-{
-	font-size:40px;
-	text-align:center;
-	margin-top:60px;
-}
 </style>
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -132,7 +89,7 @@ $(window).on('load', function() {
 		<!--Dropdown structure demande d'acte -->
 <ul id="demande_acte" class="dropdown-content">
   <li> <a href="officier.php">Officiers</a></li>
-  <li><a href="agent.php">Agents</a></li>
+  <li><a href="agent.php">Agent</a></li>
     <li><a href="livreur.php">Livreurs</a></li>
 	<li><a href="citoyen.php">Citoyens</a></li>
 </ul>
@@ -142,7 +99,8 @@ $(window).on('load', function() {
 </ul>
 <!--Dropdown déconnexion -->
 <ul id="deconnexion" class="dropdown-content">
-  <li> <a  href="deconnexion.php">Déconnexion</a></li>
+  <li><a  href="deconnexion.php">Déconnexion</a></li>
+  <li><a  href="modificationPassword.php">Changer Mot de Passe</a></li>
   
 </ul>
 
@@ -154,7 +112,7 @@ $(window).on('load', function() {
 
 <nav>
     <div class="nav-wrapper">
-      <a href="accueil.php" class="brand-logo">&nbsp&nbsp&nbsp e_civil</a>
+      <a href="accueil.php" class="brand-logo">&nbsp&nbsp&nbsp Registre+</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="ab"   href="#"></a></li>
@@ -176,68 +134,9 @@ $(window).on('load', function() {
   <ul class="sidenav" id="mobile-demo">
     <li><a href=""></a></li>
   </ul>
-  <body>
- 
-  <?php 
-	
-		$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
-        if($connect){ 
-		
-		    $req="SELECT * FROM users WHERE profil='agent'";
-			$res=$connect->query($req);
-			if($res->rowCount())
-			{
-				
-				echo'<div id="recherche">';
-				echo'<h4 class="center col s12 m12 black-text">Liste des agents</h4>';
-				echo "<table id='ta' class='bordered highlight centered col s12 m12'>";
-				echo"<thead>";
-				echo"<tr><th>Prénom</th>";
-                    echo"<th>Nom</th>";
-                    
-                    echo'<th>Etat</th>'; 
-					 
-                echo"</tr>";	
-			echo"</thead>";
-            while($row=$res->fetch(PDO::FETCH_ASSOC)){
-				
-				$id=$row['idUser'];
-				$nm=$row['nom'];
-				$pnm=$row['prenom'];
-				$etat=$row['etat'];
-                $profil=$row['profil'];
-				echo "<tbody>";
-                echo "<tr>";
-                echo "<td>$pnm</td><td>$nm</td>";
-							if($etat=='0')
-							{
-									echo "<td><a href='activer.php?code=$id'><button class='btn btn-success' id='btnSuccess'>activer</button></a></td>";
-                                  
-							}
-							else
-							{
-									echo "<td><a href='desactiver.php?code=$id'><button id='btnWarnig' class='btn btn-warning' >désactiver</button></a></td>";
-                                
-							}
-							
-						echo "</tr>";
-						 echo "</tbody>";
-					}
-			echo "</table>";
-			}
-			else
-			{
-				echo"<div id='NoLive'>";
-						echo"Il n'ya pas encore d'Agent inscrit sur la plateforme";
-				echo"</div>";
-				
-				
-			}
-		}
-				 echo' </div>';
-    ?>
-  </body>
-
+<body>
+faire des caroussels
+</body>
 <style type="text/css">
 
 #fa
@@ -325,4 +224,4 @@ alignment: 'right'
 	$('.tooltipped').tooltip();
 	 $('.fixed-action-btn').floatingActionButton();
 </script>
-
+<!--<!DOCTYPE html>
