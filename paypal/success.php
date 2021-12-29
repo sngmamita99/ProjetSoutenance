@@ -274,7 +274,8 @@ if (array_key_exists('paymentId', $_GET) && array_key_exists('PayerID', $_GET)) 
 			VALUES('". $payment_id ."', '". $payer_id ."', '". $payer_email ."', '". $amount ."', '". $currency ."', '". $payment_status ."','". $num_dem ."')");
 			$numDemande=$db->query("UPDATE demandeactedenaissance SET etat_paiement =1 where numDemande = '".$num_dem."'");
         }
-		echo'<script>';
+        echo $num_dem;
+		/*echo'<script>';
 							echo'swal({
 								title: "Paiement reussi!",
 								text: " ",
@@ -283,7 +284,7 @@ if (array_key_exists('paymentId', $_GET) && array_key_exists('PayerID', $_GET)) 
 							
 								
 								
-							});';
+							});';*/
 							
 					echo'</script>';
 					

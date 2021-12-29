@@ -12,6 +12,34 @@ require_once("headerLivreur.php");
 		{
 			background-image:url("https://cdn.pixabay.com/photo/2018/04/07/08/28/notepad-3297994_1280.jpg");
 		}
+			#demLi
+		{
+			color:white;
+			background:#ffb142;
+			border:0px hidden #ffb142;
+			border-radius: 10px 10px;
+		
+			
+		}
+		#li
+		{
+			color:white;
+		}
+		#dem
+		{
+			background:green;
+			border:0px hidden #ffb142;
+			color: white;
+			text-align: center;
+			margin-left: 40px;
+			border-radius: 10px 10px;
+
+		}
+		#Montitre
+		{
+			text-align: center;
+		}
+	
 		</style>
 		
 </head>
@@ -26,6 +54,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 			{
 				echo'<br/>';
 				echo"<br/>";
+				//echo"<h5 id='MonTitre'>Liste des demandeurs par Livraison</h5>";
 				echo'<table class="col s12 responsive-table striped " id="l_naissance">
 				<thead>
 					<tr class="white darken-3 lighten-2 black-text center ">
@@ -48,23 +77,50 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					$nom=$ligne["nom"];
 					$adresse=$ligne["adresse"];
 					$numTel=$ligne["numTel"];
+					$etat=$ligne["etat"];
 					echo"<tr>
 					<td>$numDemande</td>
 					<td>$prenom</td>
 					<td>$nom</td>
 					<td>$adresse</td>
-					<td>$numTel</td>
-					<td>
-					<a href='demarrerLivraison.php'><button>
-					Demarrer Livraison</buttton></a>
-					</td>
+					<td>$numTel</td>";
+					$req2="select *from demandeactedenaissance where numDemande=$numDemande";
+					$result2=$connect->query($req2);
+					$row=$result2->fetch();
+					$etat_retour=$row["etat_retour"];
+					//echo "$etat_retour";
 					
-					<td>
-					<a href='demarrerLivraison.php'><button>
+					if($etat==0)
+					{
+						echo"<td><a id='li' href='demarrerLivraison.php?numDemande=$numDemande'><button  id='demLi'>
+						Demarrer Livraison</buttton></a></td>";
+					}
+					else
+					{
+						echo"
+						<td>
+						<button id='dem'>
+						Demarré</buttton>
+						</td>";
+					}
+
+					if(($etat_retour==1) OR ($etat_retour==2) OR ($etat_retour==3))
+					{
+						echo"<td>
+					<a  id='li' href='terminerLivraison.php?numDemande=$numDemande'><button id='demLi'>
 					Terminer Livraison</buttton></a>
-					</td>
+					</td>";
+				}
+					else
+					{
+						echo"
+						<td>
+						<button id='dem'>
+						Terminer</buttton>
+						</td>";
+					}
 					
-					</tr>";
+					echo"</tr>";
 				}
 				echo"</table>";
 			}

@@ -15,12 +15,23 @@
 		text-align:center;
 		
 	}
+	#acc1
+	{
+		background:green;
+		color:white;
+		text-align:center;
+		border:0px hidden green;
+		border-radius: 12px 12px;
+		margin-left: 22px;
+		
+	}
 	#acc
 	{
 		background:green;
 		color:white;
 		text-align:center;
 		border:0px hidden green;
+		border-radius: 12px 12px;
 		
 	}
 	#im
@@ -43,6 +54,7 @@
 	background:#cd6133;
 	color:white;
 	border:0px hidden #cd6133;
+	border-radius: 12px 12px;
 }
 #transmettre
 {
@@ -51,12 +63,14 @@
 	margin-left:10%;
 	border-radius:2px 2px;
 	border:0px hidden #34ace0;
+	border-radius: 12px 12px;
 }
 #attente
 {
 	background:#ffb142;
 	border:0px hidden #ffb142;
 	color:white;
+	border-radius: 12px 12px;
 }
 #notifier
 {
@@ -65,7 +79,27 @@
 	color:white;
 	border-radius: 20px 20px;
 }
+#MonTitre
+{
+	text-align:center;
+	font-size: 30px;
+}
+#livre
+{
+	background-color:#ff793f;
+	margin-left: 15%;
+	color:white;
+	border-radius: 20px 20px;
+	border:0px hidden #40407a;
+	
+	
+
+}
+
+}
 	</style>
+}
+}
 </head>
 <body>
 
@@ -80,21 +114,23 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 			if($result->rowCount())
 			{echo'<br/>';
 				echo"<div id='rech'>";
-                    echo' <form method="POST" action="rechercher.php">';
+                    echo' <form method="POST" action="rechercherLiv.php">';
                        echo' <input id="icon_prefix" placeholder="prenom ou nom figurant sur la demande" 
 					   type="search" class="validate" name="Code_de_recherche">';
                 echo'</form>'; 
 				echo'<br/>';
 				echo"<br/>";
+				echo"<div id='recuperation'></div>";
+				echo"<h5 id='MonTitre'>Liste des demandeurs par Livraison</h5>";
 			echo'<table class="col s12 responsive-table striped " id="l_naissance">
 				<thead>
 					<tr class="white darken-3 lighten-2 black-text center ">
-					<th>Numéro</th>
+					<th>Numéro de demande</th>
 						<th>Prenom</th>
 						<th>Nom</th>	
 						<th>Année</th>
 						<th> Copies</th>
-						<th>Demande de:</th>
+						
 						<th></th>
 						<th></th>
 						<th></th>
@@ -120,13 +156,13 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					// $resulat=$connect->query($req1);
 					// $row=$resulat->fetch();
 					echo"<tr>
-					<td>$numeroDeRegistre</td>
+					<td>$numDemande</td>
 					<td>$prenom</td>
 					<td>$nom</td>
 					<td>$annee_registre</td>
 					<td>$nbre_copie</td>";
 					
-					if($typePapier=='Extrait de naissance')
+					/*if($typePapier=='Extrait de naissance')
 					{ 
 				
 						echo"<td>
@@ -143,7 +179,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 								echo"<a href='index.php'>Copie Littérale</a>";
 						echo"</td>";
 					}
-					
+					*/
 					// if($etat_demande=='0')
 							// {
 								// echo "<td id='desact'>";
@@ -161,7 +197,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 						if($etat_demande=='0')
 							{
 								echo "<td>";
-								echo "<a href='accepter.php?idRegistre=$numDemande'><button id='acc'>Accepter</button></a></td>";
+								echo "<a href='accepter.php?idRegistre=$numDemande'><button id='acc1'>Accepter</button></a></td>";
 								echo "</td>";
 							}
 							else
@@ -215,16 +251,24 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 						{
 							echo "<td>";
 							echo"<button id='notifier'>Déja notifier</button>";
-							 echo"<a href='Notification.php?numCompte=$numCompte&numDemande=$numDemande''><button id='notifier'>Remettre</button></a>";
+							 echo"<a href='remettre.php?numCompte=$numCompte&numDemande=$numDemande''><button id='notifier'>Remettre</button></a>";
 							echo "</td>";	
 							
+						  
+						} 
+						else if($etat_retour==3)
+						{
+							echo "<td>";
+							echo"<button id='notifier'>Remise</button>
+							<button id='livre'>Non livré</button>
+							</td>";	
 						}
 						else
 						{
-							echo "<td>";
-							echo"<a href='Notification.php?numCompte=$numCompte&numDemande=$numDemande''><button id='notifier'>livrékk</button></a>";
-							// echo"<a href='Notification.php?numCompte=$numCompte&numDemande=$numDemande''><button id='notifier'>Notifier</button></a>";
-							echo "</td>";	
+							echo "<td>
+							<button id='notifier'>Remise</button>
+							<button id='livre'>livré</button>
+							</td>";	
 						}
 			
 						// echo"</div>";
@@ -256,36 +300,6 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 		}
 ?>
 </body>
-<script>
-// $("#kk").hide();
-var transmettre=document.getElementById('transmettre');
-transmettre.addEventListener('click', function(e){
-	alert("ok");
-	// $('#kk').show();
-}, false);
- // function select_acte() {
-        // var registre = $('.registre').val();
-        // if (registre == "Registre des deces") {
-            // $('#naissances').addClass('hide');
-            // $('#mariages').addClass('hide');
-            // $('#deces').removeClass('hide');
-        // } else if (registre == "Registre des naissances") {
-            // $('#deces').addClass('hide');
-            // $('#mariages').addClass('hide');
-            // $('#naissances').removeClass('hide');
-        // } else if (registre == "Registre des mariages") {
-            // $('#naissances').addClass('hide');
-            // $('#deces').addClass('hide');
-            // $('#mariages').removeClass('hide');
-        // }
-        // $('input').removeClass('hide');
-        // $('label').removeClass('hide');
-		 // $('#methode_paiement').removeClass('hide');
-    // }
-
-
-    // $('.registre').change(function() {
-        // select_acte();
-    // });
+<script src="autocompleteLiv.js">
 </script>
 </html>
