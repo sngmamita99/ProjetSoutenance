@@ -15,9 +15,11 @@ require_once("headerLivreur.php");
 			#demLi
 		{
 			color:white;
-			background:#ffb142;
+			background:#40407a;
 			border:0px hidden #ffb142;
 			border-radius: 10px 10px;
+			margin-left: 40px;
+
 		
 			
 		}
@@ -31,8 +33,9 @@ require_once("headerLivreur.php");
 			border:0px hidden #ffb142;
 			color: white;
 			text-align: center;
-			margin-left: 40px;
+			margin-left: 75px;
 			border-radius: 10px 10px;
+
 
 		}
 		#Montitre
@@ -95,16 +98,28 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 						echo"<td><a id='li' href='demarrerLivraison.php?numDemande=$numDemande'><button  id='demLi'>
 						Demarrer Livraison</buttton></a></td>";
 					}
+					else if($etat==1)
+					{
+						echo"
+						<td>
+						<button id='dem'>
+						Demarré</buttton></td>
+						<td><a  id='li' href='terminerLivraison.php?numDemande=$numDemande'><button id='demLi'>
+						Terminer Livraison</buttton></a>
+						</td>";
+					}
 					else
 					{
 						echo"
 						<td>
 						<button id='dem'>
-						Demarré</buttton>
+						Demarré</buttton></td>
+						<td><button id='dem'>
+						Terminé</buttton></a>
 						</td>";
 					}
 
-					if(($etat_retour==1) OR ($etat_retour==2) OR ($etat_retour==3))
+					/*if(($etat_retour==1) OR ($etat_retour==2) OR ($etat_retour==3))
 					{
 						echo"<td>
 					<a  id='li' href='terminerLivraison.php?numDemande=$numDemande'><button id='demLi'>
@@ -119,7 +134,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 						Terminer</buttton>
 						</td>";
 					}
-					
+					*/
 					echo"</tr>";
 				}
 				echo"</table>";

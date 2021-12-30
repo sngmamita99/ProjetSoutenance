@@ -5,6 +5,8 @@ $numDemande=$_GET["numDemande"];
 $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
 		{
+			$req1="UPDATE livraison SET etat=2 where numDemande=$numDemande";
+			$result1=$connect->exec($req1);
 			$req="UPDATE demandeactedenaissance SET etat_retour=4 where numDemande=$numDemande";
 			$result=$connect->exec($req);
 			header("location:MesLivraisons.php");
