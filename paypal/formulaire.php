@@ -1,4 +1,6 @@
-
+<?php
+require_once("../headerCitoyen.php")
+?>
 <!doctype html>
 <html>
 <head>
@@ -95,21 +97,23 @@ p {
 }
 	</style>
 </head>
-<body>
+<!--<body>
 <form action="charge.php" method="post">
 <div class="container p-0">
     <div class="card px-4">
-        <p class="h8 py-3">Entrez le montant</p>
+        <h6>Montant à payer:</h6>
         <div class="row gx-3">
             <div class="col-12">
                 <div class="d-flex flex-column">
-                    <p class="text mb-1"></p> <input class="form-control mb-3" type="text" name="amount"  placeholder="montant à payer" value="300">
+                    <p class="text mb-1"></p> <input class="form-control mb-3" type="text" 
+                    name="amount"  placeholder="montant à payer" value="500" readonly="readonly" 
+                    style="background-color: #223C60;">
                 </div>
             </div>
-           
-           
+
             <div class="col-12">
-                 <p class="text mb-1"></p> <input class="form-control mb-3"  type="submit" name="submit" value="Payer Maintenant">
+                 <p class="text mb-1"></p> <input class="form-control mb-3" 
+                  type="submit" name="submit" value="Payer Maintenant">
             </div>
         </div>
     </div>
@@ -119,7 +123,7 @@ p {
 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 </html>
-<!--<form action="charge.php" method="post">
+<form action="charge.php" method="post">
     <input type="text" name="amount" value="300" />
     <input type="submit" name="submit" value="Payer Maintenant">
 </form>-->

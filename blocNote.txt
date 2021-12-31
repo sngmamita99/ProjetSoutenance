@@ -1,0 +1,2 @@
+
+idLivraison,dateLivraison,etat,adresse,prenom,nom,numTel	

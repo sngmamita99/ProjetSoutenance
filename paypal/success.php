@@ -1,5 +1,6 @@
 
-<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  
 <?php 
 session_start();
 $idConnected=$_SESSION['idConnected'];
@@ -24,72 +25,25 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 <link type="text/css" rel="stylesheet" href="../css1/icones.css" media="screen,projection" />
 <link type="text/css" rel="stylesheet" href="../css1/formulaire.css" media="screen,projection" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 <style type="text/css">
-body {
-    background-color: white;
-}
-nav ul li a
-{
-	font-size:20px;
-}
+          body
+           {
+              background-color: white;
+          }
+          nav ul li a
+          {
+          	font-size:20px;
+          }
 </style>
-<!--Let browser know website is optimized for mobile-->
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="../js1/jquery.min.js"></script>
+<!--<script type="text/javascript" src="../js1/jquery.min.js"></script>-->
 <script type="text/javascript" src="../js1/materialize.min.js"></script>
-
-<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
 <script type="text/javascript">
-// Set timeout variables.
-var timoutNow = 900000;
-var logoutUrl = 'deconnexion.php?session_expired=1';
-var timeoutTimer;
-// Start timers.
-function StartTimers() {
-    timeoutTimer = setTimeout("IdleTimeout()", timoutNow);
-}
-// Reset timers.
-function ResetTimers() {
-    console.log('reset');
-    clearTimeout(timeoutTimer);
-    StartTimers();
-    $('#idle_warning').hide();
-}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
-// Show idle timeout warning dialog.
-function IdleWarning() {
-    $('#idle_warning').show();
-}
-
-// Logout the user.
-
-
-$(document).ready(function() {
-    $('.modal').modal({
-        dismissible: false,
-        opacity: 0.6, // Opacity of modal background
-        in_duration: 300, // Transition in duration
-        out_duration: 200, // Transition out duration
-        preventScrolling: false,
-        onCloseEnd: function() {
-            window.location = "deconnexion.php";
-        }
-    });
-    StartTimers();
-    $(document).on('mousemove scroll keyup keypress mousedown mouseup mouseover', function() {
-        ResetTimers();
-    });
-});
-
-$(window).on('load', function() {
-
-    $(window).on('mousemove scroll keyup keypress mousedown mouseup mouseover', function() {
-        ResetTimers();
-    });
-
-});
 </script>
 	</head>
 	<body id="debut" >
@@ -117,13 +71,13 @@ $(window).on('load', function() {
    <li> <a  href="../modificationPassword.php">Changer Mot de passe</a></li> 
 </ul>
 <div class="white center entete_img row center" style="margin-bottom: 0px">
-  <img style="" src=""  alt="logo" class="col s2 offset-s2" >
-  <h4 class="col s6" style="font:'times new roman';">Système d'Enregistrement<br>d'Etat Civil Automatisé</h4>
+ <img  id="logo" style="" src="../images/lo.jpeg"  alt="logo" class="col s2 offset-s2" >
+  <h4 class="col s6" style="font:'times new roman';">Commune de TIVAOUNE DIACKSAO<br>Centre d'Etat Civil de  TIVAOUNE DIACKSAO</h4>
 </div>
 
 <nav>
     <div class="nav-wrapper">
-      <a href="accueil.php" class="brand-logo">&nbsp&nbsp&nbsp Registre+</a>
+      <a href="accueil.php" class="brand-logo">&nbsp&nbsp&nbsp </a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="ab"   href="#"></a></li>
@@ -143,7 +97,7 @@ $(window).on('load', function() {
         </li>
 		 <li>
           <a class="dropdown-trigger ab"  href="deconnexion.php" data-beloworigin="true"  data-target="deconnexion">
-		  <i class="material-icons right" style="font-size: 40px">person_pin</i><?php echo" $prenom $nom";?></a>
+		  <i class="material-icons right" style="font-size: 40px">person_pin</i>L'agent<?php echo" $prenom $nom";?></a>
         </li>
         
       </ul>
@@ -240,7 +194,7 @@ alignment: 'right'
 	$('.tooltipped').tooltip();
 	 $('.fixed-action-btn').floatingActionButton();
 </script>
-<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script > 
+<!--<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script > -->
 
 
 <?php
@@ -274,22 +228,46 @@ if (array_key_exists('paymentId', $_GET) && array_key_exists('PayerID', $_GET)) 
 			VALUES('". $payment_id ."', '". $payer_id ."', '". $payer_email ."', '". $amount ."', '". $currency ."', '". $payment_status ."','". $num_dem ."')");
 			$numDemande=$db->query("UPDATE demandeactedenaissance SET etat_paiement =1 where numDemande = '".$num_dem."'");
         }
-        echo $num_dem;
-		/*echo'<script>';
-							echo'swal({
+       // echo $num_dem;
+
+	
+					 /*		echo'swal({
 								title: "Paiement reussi!",
 								text: " ",
 								icon: "success",
 								button: "ok",
-							
+							.then(function() {
+    window.location = "suivi_demande_Acte_OnLine.php";
+});
 								
 								
-							});';*/
+							});';
+     echo"<script>;
+              swal.fire({
+                title: 'Error!',
+                text: 'Do you want to continue',
+                icon: 'error',
+                confirmButtonText: 'Cool'
+});
 							
-					echo'</script>';
-					
- 
-        // echo "Le paiement est réussi.  ";
+				</script>";*/
+        echo"
+    <script>
+swal.fire({
+                title: 'Paiement effectué avec succés!',
+                text: '',
+                icon: 'success',
+                button: 'ok'   
+
+      }).then(function() 
+              {
+                     window.location = '../suivi_demande_Acte_OnLine.php';
+                })
+                
+
+  </script>";
+
+				
     } else {
         echo $response->getMessage();
     }
@@ -297,4 +275,6 @@ if (array_key_exists('paymentId', $_GET) && array_key_exists('PayerID', $_GET)) 
     echo 'La transaction a échoué';
 }
 ?>
-<script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script> 
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  

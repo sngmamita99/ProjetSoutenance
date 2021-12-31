@@ -22,7 +22,9 @@
 		text-align:center;
 		border:0px hidden green;
 		border-radius: 12px 12px;
-		margin-left: 22px;
+		
+		width: 80%;
+	
 		
 	}
 	#acc
@@ -78,20 +80,50 @@
 	border:0px hidden #40407a;
 	color:white;
 	border-radius: 20px 20px;
+	width: 80%;
+	
+}
+#notifier1
+{
+	background:#40407a;
+	border:0px hidden #40407a;
+	color:white;
+	border-radius: 20px 20px;
+
+	
+}
+#notifier3
+{
+	
+	border:0px hidden #40407a;
+	color:white;
+	border-radius: 20px 20px;
+	background:#34ace0;
 }
 #MonTitre
 {
 	text-align:center;
 	font-size: 30px;
 }
-#livre
+#livre1
 {
 	background-color:#ff793f;
-	margin-left: 15%;
+	
 	color:white;
 	border-radius: 20px 20px;
 	border:0px hidden #40407a;
+	width: 80%;
 	
+
+
+}
+#livre2
+{
+	background-color:#ff793f;
+
+	color:white;
+	border-radius: 20px 20px;
+	border:0px hidden #40407a;
 	
 
 }
@@ -249,25 +281,24 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 						}
 						else  if($etat_retour==2)
 						{
-							echo "<td>";
-							echo"<button id='notifier'>Déja notifier</button>";
-							 echo"<a href='remettre.php?numCompte=$numCompte&numDemande=$numDemande''><button id='notifier'>Remettre</button></a>";
-							echo "</td>";	
+							echo "
+							<td><button id='notifier1'>Déja notifier</button></td>
+							<td><a href='remettre.php?numCompte=$numCompte&numDemande=$numDemande'><button id='notifier3'>Remettre</button></a></td>";	
 							
 						  
 						} 
 						else if($etat_retour==3)
 						{
-							echo "<td>";
-							echo"<button id='notifier'>Remise</button>
-							<button id='livre'>Non livré</button>
+							
+							echo"<td><button id='notifier'>Remise</button></td>
+							<td><button id='livre2'>Non livré</button>
 							</td>";	
 						}
 						else
 						{
 							echo "<td>
-							<button id='notifier'>Remise</button>
-							<button id='livre'>livré</button>
+							<button id='notifier'>Remise</button></td>
+							<td><button id='livre1'>livré</button>
 							</td>";	
 						}
 			

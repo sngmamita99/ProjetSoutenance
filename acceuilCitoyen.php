@@ -176,20 +176,10 @@ alignment: 'right'
         <div class="slider ">
 		
             <ul class="slides">
-                <li>
-				<img src="https://cdn.pixabay.com/photo/2020/08/06/22/29/fathers-day-5469310_1280.jpg"> 
-				 
-                   <!-- random image -->
-                    <div class="caption left-align ">
-                      <!--  <h3 style="color:white" class="">Persistance des données</h3>
-                        <h5 class="light white-text text-lighten-3 blue-grey darken-1" >
-						Introduction et sauvegarde des données d'un acte d'état civil 
-						(Naissance), anciens ou en cours de constitution</h5>-->
-                    </div>
-                </li>
+              
                 <li>
                     <!-- random image -->
-					<img src="https://cdn.pixabay.com/photo/2016/11/21/15/58/wedding-1846114_1280.jpg">
+					<img src="https://cdn.pixabay.com/photo/2020/01/19/19/39/sleep-4778818_1280.jpg">
 					 
                     <div class="caption left-align">
                        <!--  <h3 >Utilisation ergonomique</h3>
@@ -206,9 +196,20 @@ alignment: 'right'
 						-->
                     </div>
                 </li>
+                  <li>
+                <img src="https://cdn.pixabay.com/photo/2016/06/09/16/24/baby-1446064_1280.jpg"> 
+                
+                   <!-- random image -->
+                    <div class="caption left-align ">
+                      <!--  <h3 style="color:white" class="">Persistance des données</h3>
+                        <h5 class="light white-text text-lighten-3 blue-grey darken-1" >
+                        Introduction et sauvegarde des données d'un acte d'état civil 
+                        (Naissance), anciens ou en cours de constitution</h5>-->
+                    </div>
+                </li>
                 <li>
                    
-					  <img src="https://cdn.pixabay.com/photo/2016/11/23/17/56/flowers-1854075_1280.jpg"><!-- random image -->
+					  <img src=" https://cdn.pixabay.com/photo/2020/08/06/22/29/fathers-day-5469310_1280.jpg"><!-- random image -->
                     <div class="caption center-align">
                        <!--  <h3>Vue d'ensemble des données</h3>
                         <h5 class="light white-text text-lighten-3 blue-grey darken-1" >

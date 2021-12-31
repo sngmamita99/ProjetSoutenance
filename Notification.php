@@ -17,11 +17,11 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 				
 		}
 
-/*$MessageBird=new \MessageBird\Client('Mg3D9i2of1UHD2LyIPREVHvCT');
+$MessageBird=new \MessageBird\Client('Mg3D9i2of1UHD2LyIPREVHvCT');
 $Message=new \MessageBird\Objects\Message();
 $Message->originator="Ecivil";
 $Message->recipients =array("+221$numTel");
-$Message->body="Bonjour $prenom $nom! votre demande d'acte est prête.Vous recevrez un sms pour la livraison";
+$Message->body="Bonjour $prenom $nom! votre demande d'acte est prête.Vous recevrez un appel venant du livreur";
 //print_r(json_encode($MessageBird->messages->create($Message)));
 $MessageBird=new \MessageBird\Client('GogvVLUsBWWyaZlmUsTJ7znCD');
 $Message=new \MessageBird\Objects\Message();
@@ -30,5 +30,5 @@ $Message->recipients =array("+221784269070");
 $Message->body="Bonjour! cher livreur vos avez le document numero $numDemande en attente .Pour plus d'info veuillez vous connecter sur la plateforme";
 //print_r(json_encode($MessageBird->messages->create($Message)));
 header("location:traitementDemNaissParLivraison.php");
-*/
+
 ?>

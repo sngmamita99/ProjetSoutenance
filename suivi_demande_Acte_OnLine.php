@@ -50,7 +50,7 @@ require_once("headerCitoyen.php");
 	{
 		width:50%;
 		margin-left:40%;
-		margin-top:-10%;
+	
 		
 	}
 	#fina
@@ -177,7 +177,7 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 						<button id='termine'>Termine</button>
 						</td>";
 						echo"<td>
-						<a href='paypal/formulaire.php'><button  id ='payer'>Payer</button> </a></td>
+						<a href='selectionnerModePaiement.php'><button  id ='payer'>Payer</button> </a></td>
 						";	
 				}
 				else if($etat_demande==1 AND $etat_paiement==1)

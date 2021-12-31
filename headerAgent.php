@@ -128,13 +128,13 @@ $(window).on('load', function() {
 </ul>
 
 <div class="white center entete_img row center" style="margin-bottom: 0px">
-  <img  id="logo" style="" src=""  alt="logo" class="col s2 offset-s2" >
-  <h4 class="col s6" style="font:'times new roman';">Système d'Enregistrement<br>d'Etat Civil </h4>
+   <img  id="logo" style="" src="images/lo.jpeg"  alt="logo" class="col s2 offset-s2" >
+  <h4 class="col s6" style="font:'times new roman';">Commune de TIVAOUNE DIACKSAO<br>Centre d'Etat Civil de  TIVAOUNE DIACKSAO</h4>
 </div>
 
 <nav>
     <div class="nav-wrapper">
-      <a href="acceuilAgent.php" class="brand-logo">&nbsp&nbsp&nbsp e_civil</a>
+      <a href="acceuilAgent.php" class="brand-logo">&nbsp&nbsp&nbsp</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="ab"   href="#"></a></li>
