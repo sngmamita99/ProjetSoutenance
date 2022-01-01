@@ -103,6 +103,7 @@ $(window).on('load', function() {
 </ul>
 <ul id="declaration" class="dropdown-content">
   <li> <a href="MesLivraisons.php">Livraison</a></li>
+   <li> <a href="HistoriqueLivraison.php">Historiques</a></li>
   
 </ul>
 

@@ -1,7 +1,7 @@
 <?php
-require_once("headerAgent.php");
-
+require_once("headerLivreur.php");
 ?>
+
 <!DOCTYPE html3
 <html>
 <head>
@@ -44,8 +44,7 @@ require_once("headerAgent.php");
 	{
 		width:50%;
 		margin-left:40%;
-		margin-top:-48%;
-		position: absolute;
+		margin-top:-10%;
 		
 	}
 	#fina
@@ -71,8 +70,9 @@ require_once("headerAgent.php");
 
 $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 		if($bdd)
+			
 		{
-			$req="select * from demandeactedenaissance where  etat_demande=1";
+			$req="select * from livraison where  etat=2";
 			$result=$bdd->query($req);
 			if($result->rowCount())
 			{
@@ -82,15 +82,14 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 				<thead>
 					<tr class="white darken-3 lighten-2 black-text center ">
 						<th>Numero de demande</th>
-						<th>Date de demande</th>
+						<th>Date de livraison</th>
 						
 					</tr>
 				</thead>';
 			while($ligne=$result->fetch())
 			{
 				$num_dem=$ligne["numDemande"];
-				$date_dec=$ligne["date_demande"];
-				$etat_demande=$ligne["etat_demande"];
+				$date_dec=$ligne["dateLivraison"];
 				echo"<tr>
 				<td> $num_dem</td>
 				<td> $date_dec</td>";
@@ -108,46 +107,5 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 		}
 ?>
 
-<?php
-
-$bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
-		if($bdd)
-		{
-			$req="select * from demandeactedenaissance where  etat_demande=0" ;
-			$result=$bdd->query($req);
-			if($result->rowCount())
-			{
-				echo"<br/><br/>";
-			echo'<table class="col s12 responsive-table striped " id="l_naissances">
-			<caption id="nf" >Demandes En Cours de Traitement</caption>
-				<thead>
-					<tr class="white darken-3 lighten-2 black-text center ">
-						<th>Numero de demande</th>
-						<th>Date de demande</th>
-						
-						<td></td>
-					</tr>
-				</thead>';
-			while($ligne=$result->fetch())
-			{
-				$num_dem=$ligne["numDemande"];
-				$date_dec=$ligne["date_demande"];
-				
-				echo"<tr>
-				<td> $num_dem</td>
-				<td> $date_dec</td>";
-				
-			}
-			}
-			else
-			{
-				echo"Vous n'avez pas de nouveles demandes d'acte";
-			}
-		}
-		else
-		{
-			echo"Base de donnée non connectéé";
-		}
-?>
 <body>
 </html>
