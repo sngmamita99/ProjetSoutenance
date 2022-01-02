@@ -15,6 +15,7 @@ table
 		width:50%;
 		text-align:center;
 		margin:auto;
+		margin-top: 10%;
 	}
 	</style>
 </head>

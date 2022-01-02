@@ -139,8 +139,8 @@ $(window).on('load', function() {
       <ul class="right hide-on-med-and-down">
         <li><a class="ab"   href="#"></a></li>
         <li>
-        <!--  <a href="ajout_de_rdv.php"> Rendez-vous</a>-->
-        <a href="jour.php"> Rendez-vous</a>
+          <a href="ajout_de_rdv.php">
+            Rendez-vous</a>
         </li>
       <li>
           <a href="" class="dropdown-trigger"  data-target="demande_acte" >
@@ -156,7 +156,7 @@ $(window).on('load', function() {
         <li>
           <a class="dropdown-trigger ab"  href="" data-beloworigin="true"  data-target="deconnexion">
 		  
-		  L'agent<?php echo" $prenom $nom";?></a>
+		  <i class="material-icons right" style="font-size: 40px">person_pin</i>L'agent<?php echo" $prenom $nom";?></a>
         </li>
         
 

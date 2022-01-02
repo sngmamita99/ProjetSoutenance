@@ -138,8 +138,7 @@ $(window).on('load', function() {
       <ul class="right hide-on-med-and-down">
         <li><a class="ab"   href="#"></a></li>
         <li>
-          <a href="calendrier.php">
-            Rendez-vous</a>
+          <a href="ajout_de_rdv.php">Rendez-vous</a>
         </li>
       <li>
           <a href="" class="dropdown-trigger"  data-target="demande_acte" >

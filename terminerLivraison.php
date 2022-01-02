@@ -6,6 +6,8 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
 
 		{
+			$req4="UPDATE livraison SET etat_terminer=1 where numDemande=$numDemande";
+			$result4=$connect->exec($req4);
 			$req3="UPDATE livraison SET dateLivraison='$date' where numDemande=$numDemande";
 			$result3=$connect->exec($req3);
 			$req1="UPDATE livraison SET etat=2 where numDemande=$numDemande";

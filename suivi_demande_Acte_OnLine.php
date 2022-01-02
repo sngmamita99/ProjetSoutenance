@@ -39,20 +39,7 @@ require_once("headerCitoyen.php");
 		color:white;
 	}
 	
-	#l_naissance
-	{
-		
-		width:30%;
-		text-align:center;
-		margin-left:2%;
-	}
-	#l_naissances
-	{
-		width:50%;
-		margin-left:40%;
-	
-		
-	}
+
 	#fina
 	{
 		background:green;
@@ -64,6 +51,12 @@ require_once("headerCitoyen.php");
 		background:#FFC107;
 		color:white;
 	}
+	#nf1
+	{
+		background:green;
+		color:white;
+	}
+	
 	#termine
 	{
 		background:green;
@@ -75,10 +68,11 @@ require_once("headerCitoyen.php");
 	#payer
 	{
 		border:0px hidden red;
-		background:yellow;
+		background:#ff793f;
 		color:white;
 		text-align:center;
 		border-radius:10px 10px;
+		width: 80px;
 	}
 	#annuler
 	{
@@ -87,6 +81,23 @@ require_once("headerCitoyen.php");
 		text-align:center;
 		border-radius:10px 10px;
 	}
+	#l_naissance
+	{
+		
+		width:50%;
+		margin-left:48%;
+		text-align:center;
+		
+	}
+	#l_naissances
+	{
+		width:30%;
+	
+		
+		position: absolute;
+		
+	}
+
 	</style>
 </head>
 <body>
@@ -97,18 +108,18 @@ require_once("headerCitoyen.php");
 $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 		if($bdd)
 		{
-			$req="select * from demandeactedenaissance where numCompte=$idConnected " ;
+			$req="select * from demandeactedenaissance where numCompte=$idConnected AND etat_terminer=1" ;
 			$result=$bdd->query($req);
 			if($result->rowCount())
 			{
 				echo"<br/><br/>";
 			echo'<table class="col s12 responsive-table striped " id="l_naissances">
-			<caption id="nf" >Mes Demandes En Cours de Traitement</caption>
+			<caption id="nf1" >Mes Demandes finalisées</caption>
 				<thead>
 					<tr class="white darken-3 lighten-2 black-text center ">
 						<th>Numero de demande</th>
 						<th>Date de demande</th>
-						<th>Etat</th>
+						
 						<th></th>
 					</tr>
 				</thead>';
@@ -121,50 +132,15 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 				$etat_paiement=$ligne["etat_paiement"];
 				echo"<tr>
 				<td> $num_dem</td>
-				<td> $date_dec</td>";
-				if($etat_demande==0 AND $etat_paiement==0)
-				{
-					echo "<td>
-						<button id='ann'>En Cours</button></td>
-						";
-						
-						echo"<td>
-						<a href='annulerDemandeActe.php?numDem=$num_dem'><button  id ='annuler'>Annuler</a></button></td>";
-				}
-				else if($etat_demande==1 AND $etat_paiement==0)
-				{
-						echo "<td>
-						<button id='termine'>Termine</button>
-						</td>";
-						echo"<td>
-						<a href='selectionnerModePaiement.php'><button  id ='payer'>Payer</button> </a></td>
-						";	
-				}
-				else if($etat_demande==1 AND $etat_paiement==1)
-				{
-					echo"<td><span id='oui'>dejà payé</span></td>";
+				<td> $date_dec</td>
+				</tr>";
 				
-						echo"<td >
-						<a href='acceuil_demande.php?numDem=$num_dem'><button id='termine'>Consulter livraison </button></a>
-						";
-						echo"</td>
-						";
-				}
-				// else
-				// {
-					// echo"<td><span id='oui'>go</span></td>";
 				
-						// echo"<td id='termine'>
-						// <a href='acceuil_demande.php'>go</a>
-						// ";
-						// echo"</td>
-						// ";
-				// }
 			}
-			}
+		}
 			else
 			{
-				echo"Vous n'avez jamais fait de demande de declaration";
+				echo"Vous n'avez pas encore finalisée une demande ";
 			}
 		}
 		else
@@ -177,12 +153,12 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 		if($bdd)
 		{
-			$req="select * from demandeactedenaissance where numCompte=$idConnected " ;
+			$req="select * from demandeactedenaissance where numCompte=$idConnected AND etat_terminer=0" ;
 			$result=$bdd->query($req);
 			if($result->rowCount())
 			{
 				echo"<br/><br/>";
-			echo'<table class="col s12 responsive-table striped " id="l_naissances">
+			echo'<table class="col s12 responsive-table striped " id="l_naissance">
 			<caption id="nf" >Mes Demandes En Cours de Traitement</caption>
 				<thead>
 					<tr class="white darken-3 lighten-2 black-text center ">
@@ -229,7 +205,7 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 						";
 						echo"</td>
 						";
-				}
+				} 
 				// else
 				// {
 					// echo"<td><span id='oui'>go</span></td>";
@@ -244,7 +220,7 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 			}
 			else
 			{
-				echo"Vous n'avez jamais fait de demande de declaration";
+				echo"Vous n'avez pas fait une demande";
 			}
 		}
 		else

@@ -67,7 +67,7 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 			if($result->rowCount())
 			{
 				echo'<h4 class="center col s12 m12 black-text">Liste des Demandeurs d\'Acte de Naissance</h4>';
-				echo "<table id='ta' class='bordered highlight centered col s12 m12'>";
+				echo "<table id='ta' class='bordered highlight centered col s12 m12' >";
 				echo"<thead>";
 				echo"<tr><th>Numero Demande</th>";
                 echo"<th>Annee de Declaration</th>"; 
