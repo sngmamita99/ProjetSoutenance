@@ -16,7 +16,7 @@ require_once("headerAgent.php");
             </div>
             
         </div>
-         <script src="jquery.min.js"></script>
+       
  <script type="text/javascript">
     $(document).ready(function() {
                 function rdv() {

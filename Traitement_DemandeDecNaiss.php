@@ -56,7 +56,7 @@ body
         if($connect)
 		{ 
 		
-		    $req="SELECT * FROM declarationnaissance  where etat =0 AND etat_rejet =0  ORDER  by date_declaration DESC";
+		    $req="SELECT * FROM declarationnaissance  where etat = 0 AND etat_rejet =0  ORDER  by date_declaration DESC";
 			$res=$connect->query($req);
 			if($res->rowCount()>=1)
 			{
@@ -87,7 +87,7 @@ body
 						$p=$ligne['prenom'];	
 						 echo "<tbody>";
                         echo "<tr>";
-                            echo "<td>$numDe</td><td>$p</td><td>$n</td><td>$lien</td><td><a href='justificatif.php?code=$x'><img id='IconeEye' src='images/eye.png' alt='Icone details'/></a></td><td class='dateSoumission'>$date</td>";
+                            echo "<td>$numDe</td><td>$p</td><td>$n</td><td>$lien</td><td><a href='justificatif.php?code=$x&numDe=$numDe'><img id='IconeEye' src='images/eye.png' alt='Icone details'/></a></td><td class='dateSoumission'>$date</td>";
 								echo "<td>";
 								    echo "<a href='ajout_de_rdv.php?code=$x&numDe=$numDe'><button class='valid'>Valider</button></a>";
 									echo "<a href='annulerDemande.php?code=$x&numDe=$numDe'><button class='annuler'>Rejeter</button></a>";

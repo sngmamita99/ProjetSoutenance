@@ -34,10 +34,11 @@ require_once("headerAgent.php");
 	<body>
 <?php
 $numCompte=$_GET['code'];
+$numDe=$_GET['numDe'];
  $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 	if($connect)
 	{
-	   $req="SELECT url FROM declarationnaissance NATURAL JOIN justification WHERE numCompte=$numCompte";
+	   $req="SELECT url FROM declarationnaissance NATURAL JOIN justification WHERE numCompte=$numCompte AND numDeclaration=$numDe";
 		$result=$connect->query($req);
 		while($row=$result->fetch())
 		{

@@ -1,21 +1,30 @@
 <?php
-if(isset($_GET["msg"]))
+if(isset($_POST['jour_d']))
+
 {
-	$msg=$_GET["msg"];
+	$msg=$_POST['jour_d'];
 	$connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
         if($connect)
+
 		{
-			$req="select num_registre from registrenaissance where annee_registre='$msg' DESC LIMIT 1";
+			$req="select max(num_registre) from registrenaissance   where annee_registre = $msg ";
 			$result=$connect->query($req);
-			if($result)
+			//echo $req;
+			if($result->rowCount())
 			{
-				 if($ligne=$result->fetch())
-				 {
-					 $num=$ligne["num_registre"]+1;
-					 echo $num;
-				 }
+					
+				 	$ligne=$result->fetch();
+					 $num=$ligne["0"]+1;
+					 echo "<input name='num_registre' type='number' value='$num' readonly/>";
+					
+			}
+				
+			else
+			{
+				echo "<input name='num_registre' type='number' value='1' readonly/>";
 			}
 			
 		}
 }
 ?>
+

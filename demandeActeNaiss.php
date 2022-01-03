@@ -156,7 +156,7 @@ $(window).on('load', function() {
                 </div>
                 <div class="row">
                     <div class="input-field col s6 m2 l2">
-                        <input type="number" required min="1980" max="2021" name="annee_registre"
+                        <input type="number" required min="1980" max="2022" name="annee_registre"
                             id="annee_acte">
                         <label for="annee_acte">Année du registre</label>
                     </div>
@@ -273,8 +273,10 @@ if(isset($_POST["registre"]) && isset($_POST["naissances"]) && isset($_POST["num
 				
 				$req="select * from registrenaissance where num_registre=$num_registre AND annee_registre='$annee_registre' AND prenom_enfant='$prenom' AND nom_enfant='$nom' ";
 				$result=$connect->query($req);
+                
 				if($result->rowCount()==1)
 				{
+                    echo"ok";
 					$req="insert into demandeactedenaissance(numCompte,nom,prenom,numeroDeRegistre,annee_registre,etat_demande,nbre_copie,typePapier,methode_paiement,date_demande) value (?,?,?,?,?,?,?,?,?,?);";
 					$stmt = $connect->prepare($req);
 					$stmt->bindParam(1, $idConnected);
@@ -303,7 +305,7 @@ if(isset($_POST["registre"]) && isset($_POST["naissances"]) && isset($_POST["num
 					echo'</script>';
 					
 				}
-				// echo "window.location.href='suivi_demande_Acte_OnLine.php'";
+				
 				else
 				{
 					echo'<script>';

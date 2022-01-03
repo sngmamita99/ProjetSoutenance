@@ -46,9 +46,9 @@ $k=$_GET["numDe"];
 }
 body
 {
-	/*background-image:url("https://cdn.pixabay.com/photo/2017/06/09/19/02/time-2387976_1280.jpg");
+	background-image:url("https://cdn.pixabay.com/photo/2017/06/09/19/02/time-2387976_1280.jpg");
 	
-	overflow: hidden;*/
+	overflow: hidden;
 }
 </style>
 	</head>
