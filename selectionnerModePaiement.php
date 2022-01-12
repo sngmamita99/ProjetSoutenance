@@ -1,12 +1,14 @@
-
+   
 <?php
 require_once("headerCitoyen.php");
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8"/>
 	<title>Traitement</title>
+
 	<style type="text/css">
 		#ss
 		{
@@ -44,12 +46,21 @@ body
 	</style>
 </head>
  <body>
- 	
- 	<div id='ss'>
- 		<h6>Selectionner votre mode de paiement:</h6><br><br><br><br>
- 		<a href="formulaire.php"><img src="paypal/paypal.png" alt="logo paypal" id="img1" ></a>
- 		<img src="paypal/om.png" alt="logo Orange Money" id="img1">
- 		<img src="paypal/wave.png" alt="logo wave" id="img1">
+ 	<?php
+ 	$numDem=$_GET["numDem"];
+ 	$idConnected=$_GET["idConnected"];
+
+ 	echo"<div id='ss'>
+ 		<h6>Selectionner votre mode de paiement:</h6>
+ 		<br><br><br><br>
+ 		<img src='paypal/paypal.png' alt='logo paypal' id='img1'>
+ 		<a href='formulaire.php?numDem=$numDem&idConnected=$idConnected'>
+ 			<img src='paypal/om.png' alt='logo Orange Money' id='img1'>
+ 		</a>
+ 		<img src='paypal/wave.png' alt='logo wave' id='img1'>
  	</span>
- </body>
+ </body>";
+ ?>
  </html>
+
+  

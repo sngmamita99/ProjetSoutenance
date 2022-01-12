@@ -87,10 +87,10 @@ $connect=new PDO("mysql:host=localhost;port=3306;dbname=ecivil","root","");
 					<td>$nom</td>
 					<td>$adresse</td>
 					<td>$numTel</td>";
-					$req2="select *from demandeactedenaissance where numDemande=$numDemande";
+					/*$req2="select *from demandeactedenaissance where numDemande=$numDemande";
 					$result2=$connect->query($req2);
 					$row=$result2->fetch();
-					$etat_retour=$row["etat_retour"];
+					$etat_retour=$row["etat_retour"];*/
 					//echo "$etat_retour";
 					
 					if($etat==0)

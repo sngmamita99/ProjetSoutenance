@@ -50,8 +50,8 @@
 	{
 		width:50%;
 		margin-left:40%;
-		margin-top:-14%;
-		position: absolute;
+	margin-top: -10%;
+		position: fixed;
 		
 		
 		

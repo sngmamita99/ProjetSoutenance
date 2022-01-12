@@ -193,7 +193,7 @@ $bdd = new PDO ("mysql:host=localhost;dbname=ecivil","root", "");
 						<button id='termine'>Termine</button>
 						</td>";
 						echo"<td>
-						<a href='selectionnerModePaiement.php'><button  id ='payer'>Payer</button> </a></td>
+						<a href='selectionnerModePaiement.php?numDem=$num_dem&idConnected=$idConnected'><button  id ='payer'>Payer</button> </a></td>
 						";	
 				}
 				else if($etat_demande==1 AND $etat_paiement==1)
